@@ -104,7 +104,24 @@ document.addEventListener("DOMContentLoaded", function () {
           // (.ceil-product-hero: вертикальные баффлы, горизонтальные
           // дизайн-баффлы, парящие стены) — заказчик попросил убрать
           // параллакс в этих 3 блоках.
-          !img.closest(".ceil-product-hero")
+          !img.closest(".ceil-product-hero") &&
+          // Фото в блоке "собственное производство баффлов" на странице
+          // "Потолочные решения" (.ceil-production-photo) — тот же случай,
+          // что и .ceil-hardware-photo/.radius-image-block: картинка должна
+          // заполнять блок через height:100%+object-fit:cover, а обёртка
+          // simpleParallax даёт родителю height:auto — height:100% у
+          // картинки перестаёт резолвиться, и фото не дотягивается до низа
+          // блока (сообщил заказчик, видно на iPhone).
+          !img.closest(".ceil-production-photo") &&
+          // Блок "варианты укладки" на странице "Стеновые панели"
+          // (.pattern-item) — та же самая история: замер показал разрыв
+          // 67px между высотой блока и высотой картинки (обёртка
+          // simpleParallax ломает height:100%).
+          !img.closest(".pattern-item") &&
+          // Фото на странице "Фетр" (.fetr-shape-right/.fetr-thick-left) —
+          // те же 80px разрыва по той же причине.
+          !img.closest(".fetr-shape-right") &&
+          !img.closest(".fetr-thick-left")
         );
       });
 
