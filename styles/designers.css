@@ -1,0 +1,2128 @@
+/* ==========================================================================
+   HUBOX DESIGN CLUB — СТИЛИ ДЛЯ СТРАНИЦЫ "ДИЗАЙНЕРАМ И СТРОИТЕЛЯМ"
+   ========================================================================== */
+
+/* Hero Banner */
+.club-hero-section {
+  position: relative;
+  background-image: url("../assets/image/wall/slider1.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 0;
+  min-height: clamp(520px, 46vw, 750px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(40px, 4vw, 80px) clamp(20px, 4.5vw, 80px);
+  color: #ffffff;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.club-hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 18, 24, 0.65) 0%,
+    rgba(15, 18, 24, 0.85) 100%
+  );
+  z-index: 1;
+}
+
+.club-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 2.5vw, 36px);
+}
+
+.club-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(250, 70, 22, 0.15);
+  border: 1px solid var(--orange, #fa4616);
+  color: var(--orange, #fa4616);
+  padding: 8px 20px;
+  border-radius: 40px;
+  font-family: var(--t-text-font, "TTNorms", sans-serif);
+  font-size: clamp(13px, 1.1vw, 16px);
+  font-weight: 500;
+  text-transform: lowercase;
+  width: fit-content;
+}
+
+.club-hero-title {
+  font-family: var(--t-headline-font, "TT Firs Neue", sans-serif);
+  font-size: clamp(40px, 5.5vw, 96px);
+  line-height: 0.95;
+  font-weight: 500;
+  letter-spacing: -2px;
+  text-transform: lowercase;
+  color: #ffffff;
+  margin: 0;
+}
+
+.club-hero-subtitle {
+  font-family: var(--t-text-font, "TTNorms", sans-serif);
+  font-size: clamp(18px, 1.8vw, 32px);
+  line-height: 1.35;
+  color: #e2e8f0;
+  max-width: 820px;
+  margin: 0;
+}
+
+.club-hero-desc {
+  font-family: var(--t-text-font, "TTNorms", sans-serif);
+  font-size: clamp(14px, 1.15vw, 20px);
+  line-height: 1.5;
+  color: #94a3b8;
+  max-width: 780px;
+  margin: 0;
+}
+
+.btn-club-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--orange, #fa4616);
+  color: #ffffff;
+  font-family: var(--t-text-font, "TTNorms", sans-serif);
+  font-size: clamp(15px, 1.2vw, 20px);
+  font-weight: 500;
+  padding: clamp(16px, 1.4vw, 24px) clamp(32px, 2.8vw, 54px);
+  border-radius: 50px;
+  text-decoration: none;
+  text-transform: lowercase;
+  transition: all 0.3s ease;
+  width: fit-content;
+  box-shadow: 0 8px 24px rgba(250, 70, 22, 0.3);
+  margin-top: 10px;
+}
+
+.btn-club-action:hover {
+  background-color: #e03a0d;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(250, 70, 22, 0.4);
+}
+
+/* ===== ДВА НОВЫХ БЛОКА ПОСЛЕ HERO (2x2 GRID) ===== */
+.hero-two-blocks-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(15px, 2.5vw, 30px);
+  background-color: #ffffff;
+  width: 100%;
+}
+
+.hero-two-blocks-wrapper .hero-block-card {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: clamp(520px, 38vw, 680px);
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-two-blocks-wrapper .card-image-samples,
+.hero-two-blocks-wrapper .card-image-interior,
+.hero-two-blocks-wrapper .living-slider-wrapper {
+  min-height: clamp(520px, 38vw, 680px);
+  height: 100%;
+}
+
+/* Блок 1 - Левый: В нашем фокусе */
+.card-focus-white {
+  background-color: #ffffff;
+  padding: clamp(24px, 2.8vw, 45px) clamp(24px, 3.2vw, 55px);
+  justify-content: flex-start !important;
+}
+
+.focus-card-title {
+  font-family: var(--t-headline-font, "TT Firs Neue", sans-serif);
+  font-size: clamp(32px, 2.7vw, 100px);
+  font-weight: 500;
+  color: #4c5262;
+  margin: 0 0 clamp(20px, 2vw, 36px) 0;
+  letter-spacing: -1px;
+}
+
+.focus-bullets-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(30px, 0.75vw, 50px);
+}
+
+.focus-bullets-list li {
+  position: relative;
+  padding-left: clamp(36px, 2.5vw, 55px);
+  font-family: var(--t-text-font, "TTNorms", sans-serif);
+  font-size: clamp(24px, 2vw, 120px);
+  color: #475262;
+  line-height: 1.3;
+  font-weight: 500;
+  letter-spacing: -0.2px;
+}
+
+.focus-bullets-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.35em;
+  width: clamp(15px, 0.8vw, 20px);
+  height: clamp(15px, 0.8vw, 20px);
+  border-radius: 50%;
+  background-color: #b4bcc8;
+}
+
+/* Блок 1 - Правый: Фото образцов фетра в руках */
+.card-image-samples {
+  background-color: #f1f5f9;
+}
+
+.card-image-samples img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Блок 2 - Левый: Фото интерьера / Слайдер */
+.card-image-interior {
+  background-color: #f1f5f9;
+}
+
+.card-image-interior img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Блок 2 - Правый: Цифровой шоурум (нежно-голубой) */
+.card-showroom-blue {
+  background-color: #cae0f1;
+  padding: clamp(24px, 3vw, 50px);
+  justify-content: flex-start !important;
+}
+
+.showroom-card-title {
+  font-family: var(--t-headline-font, "TT Firs Neue", sans-serif);
+  font-size: clamp(32px, 3.5vw, 56px);
+  font-weight: 500;
+  color: #4c5262;
+  line-height: 0.9;
+  font-weight: 500;
+  letter-spacing: -0.7px;
+  margin: 0 0 clamp(14px, 1.5vw, 22px) 0;
+  text-transform: lowercase;
+}
+
+.showroom-card-desc {
+  font-family: var(--t-text-font, "TTNorms", sans-serif);
+  font-size: clamp(14px, 1.15vw, 18px);
+  line-height: 1.45;
+  color: #586578;
+  margin: 0 0 clamp(24px, 3vw, 42px) 0;
+  max-width: 500px;
+}
+
+.showroom-pills-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(10px, 1vw, 14px);
+}
+
+.showroom-pill-btn {
+  background-color: #eff6fb;
+  color: #4c5262;
+  border-radius: 50px;
+  padding: clamp(12px, 1vw, 20px) clamp(14px, 1.6vw, 24px);
+  font-family: var(--t-text-font, "TTNorms", sans-serif);
+  font-size: clamp(16px, 1.3vw, 30px);
+  font-weight: 400;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.showroom-pill-btn:hover {
+  background-color: var(--orange, #fa4616);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Section: В нашем фокусе (In Our Focus) */
+.focus-section {
+  background-color: #161a22;
+  padding: clamp(50px, 6vw, 110px) clamp(20px, 4.5vw, 80px);
+  color: #ffffff;
+}
+
+.focus-header {
+  margin-bottom: clamp(36px, 4vw, 70px);
+}
+
+.focus-title {
+  font-family: var(--t-headline-font, "TT Firs Neue", sans-serif);
+  font-size: clamp(34px, 4vw, 72px);
+  line-height: 1;
+  font-weight: 500;
+  color: #ffffff;
+  margin: 0 0 16px 0;
+  text-transform: lowercase;
+}
+
+.focus-subtitle {
+  font-family: var(--t-text-font, "TTNorms", sans-serif);
+  font-size: clamp(15px, 1.2vw, 22px);
+  color: #94a3b8;
+  margin: 0;
+}
+
+.focus-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: clamp(16px, 1.8vw, 28px);
+}
+
+.focus-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: clamp(28px, 2.4vw, 42px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 180px;
+  transition: all 0.3s ease;
+}
+
+.focus-card:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(250, 70, 22, 0.4);
+  transform: translateY(-4px);
+}
+
+.focus-card-num {
+  font-family: var(--t-headline-font, "TT Firs Neue", sans-serif);
+  font-size: clamp(20px, 1.6vw, 32px);
+  color: var(--orange, #fa4616);
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.focus-card-text {
+  font-family: var(--t-text-font, "TTNorms", sans-serif);
+  font-size: clamp(16px, 1.35vw, 24px);
+  line-height: 1.35;
+  color: #f1f5f9;
+  font-weight: 400;
+}
+
+/* Section: Цифровой шоурум (Digital Showroom) */
+.showroom-section {
+  background-color: #ffffff;
+  padding: clamp(50px, 6vw, 110px) clamp(20px, 4.5vw, 80px);
+  color: #161a22;
+}
+
+.showroom-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(30px, 4vw, 80px);
+  margin-bottom: clamp(40px, 5vw, 80px);
+  align-items: flex-end;
+}
+
+.showroom-title {
+  font-family: var(--t-headline-font, "TT Firs Neue", sans-serif);
+  font-size: clamp(36px, 4.5vw, 80px);
+  line-height: 0.95;
+  font-weight: 500;
+  color: #161a22;
+  margin: 0;
+  text-transform: lowercase;
+}
+
+.showroom-subtitle {
+  font-family: var(--t-text-font, "TTNorms", sans-serif);
+  font-size: clamp(16px, 1.35vw, 24px);
+  line-height: 1.4;
+  color: #475569;
+  margin: 0;
+}
+
+.showroom-downloads-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(16px, 2vw, 30px);
+  margin-bottom: clamp(40px, 5vw, 80px);
+}
+
+.download-card {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: clamp(24px, 2.2vw, 40px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 150px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.download-card:hover {
+  background-color: #ffffff;
+  border-color: var(--orange, #fa4616);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transform: translateY(-3px);
+}
+
+.download-title {
+  font-family: var(--t-headline-font, "TT Firs Neue", sans-serif);
+  font-size: clamp(20px, 1.6vw, 30px);
+  font-weight: 500;
+  color: #0f172a;
+  text-transform: lowercase;
+}
+
+.download-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--orange, #fa4616);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  align-self: flex-end;
+}
+
+.showroom-steps-block {
+  background: #0f172a;
+  color: #ffffff;
+  border-radius: 24px;
+  padding: clamp(36px, 4vw, 70px);
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: clamp(30px, 4vw, 70px);
+  align-items: center;
+}
+
+.showroom-steps-title {
+  font-family: var(--t-headline-font, "TT Firs Neue", sans-serif);
+  font-size: clamp(28px, 2.8vw, 48px);
+  line-height: 1.1;
+  font-weight: 500;
+  margin: 0;
+  text-transform: lowercase;
+}
+
+.showroom-steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.showroom-step-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: var(--t-text-font, "TTNorms", sans-serif);
+  font-size: clamp(16px, 1.35vw, 22px);
+  color: #cbd5e1;
+}
+
+.showroom-step-item i {
+  color: var(--orange, #fa4616);
+  font-size: 20px;
+}
+
+/* Section: Строителям (For Builders) */
+.builders-section {
+  background-color: #0f172a;
+  padding: clamp(50px, 6vw, 110px) clamp(20px, 4.5vw, 80px);
+  color: #ffffff;
+}
+
+.builders-tag {
+  color: var(--orange, #fa4616);
+  font-family: var(--t-text-font, "TTNorms", sans-serif);
+  font-size: clamp(14px, 1.2vw, 18px);
+  font-weight: 600;
+  text-transform: lowercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.builders-headline {
+  font-family: var(--t-headline-font, "TT Firs Neue", sans-serif);
+  font-size: clamp(34px, 4vw, 72px);
+  line-height: 1;
+  font-weight: 500;
+  color: #ffffff;
+  margin: 0 0 20px 0;
+  text-transform: lowercase;
+}
+
+.builders-sub {
+  font-family: var(--t-text-font, "TTNorms", sans-serif);
+  font-size: clamp(16px, 1.3vw, 22px);
+  color: #94a3b8;
+  max-width: 800px;
+  margin-bottom: clamp(36px, 4vw, 70px);
+}
+
+.builders-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(20px, 2.5vw, 40px);
+  margin-bottom: clamp(50px, 6vw, 90px);
+}
+
+.builder-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: clamp(30px, 2.8vw, 50px);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.builder-card-title {
+  font-family: var(--t-headline-font, "TT Firs Neue", sans-serif);
+  font-size: clamp(22px, 1.8vw, 32px);
+  font-weight: 500;
+  color: #ffffff;
+  text-transform: lowercase;
+}
+
+.builder-card-desc {
+  font-family: var(--t-text-font, "TTNorms", sans-serif);
+  font-size: clamp(15px, 1.15vw, 18px);
+  line-height: 1.5;
+  color: #94a3b8;
+}
+
+/* Tools Block */
+.tools-block {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 24px;
+  padding: clamp(30px, 3.5vw, 60px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.tools-title {
+  font-family: var(--t-headline-font, "TT Firs Neue", sans-serif);
+  font-size: clamp(24px, 2.2vw, 38px);
+  color: #ffffff;
+  margin: 0 0 30px 0;
+  text-transform: lowercase;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(16px, 2vw, 30px);
+}
+
+.tool-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 24px 20px;
+  text-align: center;
+  font-family: var(--t-text-font, "TTNorms", sans-serif);
+  font-size: clamp(14px, 1.1vw, 18px);
+  color: #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.tool-item i {
+  font-size: 28px;
+  color: var(--orange, #fa4616);
+}
+
+/* Section: Наше производство и поддержка проектов */
+.factory-section {
+  background-color: #ffffff;
+  padding: clamp(50px, 6vw, 110px) clamp(20px, 4.5vw, 80px);
+  color: #0f172a;
+}
+
+.factory-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(30px, 4vw, 80px);
+  align-items: center;
+  margin-bottom: clamp(40px, 5vw, 80px);
+}
+
+.factory-title {
+  font-family: var(--t-headline-font, "TT Firs Neue", sans-serif);
+  font-size: clamp(32px, 3.8vw, 68px);
+  line-height: 1;
+  font-weight: 500;
+  color: #0f172a;
+  margin: 0 0 20px 0;
+  text-transform: lowercase;
+}
+
+.factory-desc {
+  font-family: var(--t-text-font, "TTNorms", sans-serif);
+  font-size: clamp(16px, 1.25vw, 22px);
+  line-height: 1.55;
+  color: #475569;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(16px, 2vw, 30px);
+}
+
+.service-card {
+  background-color: #f8fafc;
+  border-radius: 20px;
+  padding: clamp(24px, 2.2vw, 36px);
+  border: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.service-card-title {
+  font-family: var(--t-headline-font, "TT Firs Neue", sans-serif);
+  font-size: clamp(18px, 1.4vw, 24px);
+  font-weight: 500;
+  color: #0f172a;
+  text-transform: lowercase;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1024px) {
+  .showroom-top,
+  .factory-grid,
+  .showroom-steps-block {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .showroom-downloads-grid,
+  .services-grid,
+  .tools-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .focus-grid,
+  .builders-grid,
+  .showroom-downloads-grid,
+  .services-grid,
+  .tools-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .club-hero-section {
+    padding: 30px 18px;
+    min-height: 480px;
+  }
+
+  .focus-section,
+  .showroom-section,
+  .builders-section,
+  .factory-section {
+    padding: 40px 18px;
+  }
+}
+
+/* ===== НОВЫЙ БЛОК: ПАНЕЛИ HUBOX СБЛИЖАЮТ ДИЗАЙНЕРОВ И СТРОИТЕЛЕЙ ===== */
+.designers-connect-block {
+  background-color: #ffffff;
+  padding: clamp(20px, 7vw, 40px) clamp(20px, 5vw, 80px);
+  min-height: clamp(400px, 40vw, 800px);
+  color: #161a22;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.designers-connect-container {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: clamp(30px, 4vw, 80px);
+  align-items: stretch;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  min-height: 100%;
+  flex: 1;
+  margin: 0;
+}
+
+.connect-left {
+  align-self: flex-start;
+}
+
+.connect-main-title {
+  font-family: var(--t-headline-font, "TT Firs Neue", sans-serif);
+  font-size: clamp(36px, 4.5vw, 76px);
+  line-height: 0.8;
+  font-weight: 500;
+  color: #4c5262;
+  letter-spacing: -1.5px;
+  text-transform: lowercase;
+  margin: 0;
+}
+
+.connect-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-self: flex-end;
+  justify-self: end;
+  margin-left: auto;
+  gap: clamp(20px, 2vw, 32px);
+  margin-top: clamp(60px, 8vw, 160px);
+  width: 100%;
+  max-width: 820px;
+}
+
+.connect-subtitle {
+  font-family: var(--t-headline-font, "TT Firs Neue", sans-serif);
+  font-size: clamp(40px, 2.4vw, 60px);
+  font-weight: 500;
+  color: #4c5262;
+  margin: 0;
+  text-transform: lowercase;
+  letter-spacing: -0.5px;
+}
+
+.connect-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 1.2vw, 18px);
+}
+
+.connect-list li {
+  position: relative;
+  padding-left: 26px;
+  font-family: var(--t-text-font, "TTNorms", sans-serif);
+  font-size: clamp(24px, 1.15vw, 32px);
+  line-height: 1.45;
+  color: #475262;
+  font-weight: 500;
+}
+
+.connect-list li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 9px;
+  width: clamp(6px, 0.7vw, 50px);
+  height: clamp(6px, 0.7vw, 50px);
+  border-radius: 50%;
+  background-color: #b4bcc8;
+}
+
+.noise-form-wrapper-design {
+  flex: 1.8;
+  width: 100%;
+  max-width: 50%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-orange-pill-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--orange, #fa4616);
+  color: #ffffff;
+  font-family: var(--t-text-font, "TTNorms", sans-serif);
+  font-size: clamp(15px, 1.2vw, 20px);
+  font-weight: 500;
+  padding: clamp(24px, 1.4vw, 40px) clamp(40px, 3.5vw, 70px);
+  border-radius: 50px;
+  text-decoration: none;
+  text-transform: lowercase;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 24px rgba(250, 70, 22, 0.25);
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.btn-orange-pill-cta:hover {
+  background-color: #e03a0d;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(250, 70, 22, 0.4);
+}
+
+@media (max-width: 960px) {
+  .designers-connect-container {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .btn-orange-pill-cta {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+}
+
+/* ===== 3 КАРТОЧКИ ТИПОВ ФЕТРА (ТЕМНО-СЕРЫЕ С СЛОЯМИ И ВОЛНОЙ) ===== */
+.fetr-types-cards-section {
+  background-color: #ffffff;
+  padding: 0;
+  width: 100%;
+}
+
+.fetr-types-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(16px, 2vw, 30px);
+  width: 100%;
+}
+
+.fetr-type-card {
+  background-color: #4b5262;
+  padding: clamp(40px, 4vw, 70px) clamp(30px, 3.5vw, 55px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: clamp(620px, 50vw, 840px);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.fetr-type-card-title {
+  font-family: var(--t-headline-font, "TT Firs Neue", sans-serif);
+  font-size: clamp(28px, 2.8vw, 46px);
+  line-height: 1.08;
+  font-weight: 500;
+  color: #ffffff;
+  margin: 0 0 24px 0;
+  text-transform: lowercase;
+  letter-spacing: -0.5px;
+}
+
+.fetr-type-visual {
+  position: relative;
+  width: 100%;
+  height: clamp(400px, 34vw, 560px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+}
+
+.fetr-type-img {
+  max-height: 95%;
+  max-width: 90%;
+  object-fit: contain;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.3));
+}
+
+.fetr-type-soundwave {
+  position: absolute;
+  width: clamp(360px, 30vw, 520px);
+  height: clamp(360px, 30vw, 520px);
+  aspect-ratio: 1 / 1 !important;
+  object-fit: contain !important;
+  top: 50%;
+  left: 46%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  opacity: 0.95;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+.types-section-design {
+  background: var(--white);
+  min-height: 550px;
+  height: auto;
+  display: flex;
+  align-items: stretch;
+  padding: 50px 70px;
+  box-sizing: border-box;
+}
+
+.types-container-design {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  gap: 40px;
+}
+
+.types-title-design {
+  font-family: var(--t-headline-font);
+  color: var(--orange);
+  font-size: clamp(36px, 4.2vw, 110px);
+  line-height: 0.9;
+  font-weight: 500;
+  text-transform: lowercase;
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+
+.types-list-design {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  max-width: 800px;
+  align-self: flex-end;
+}
+.types-list-design li {
+  font-family: var(--t-text-font);
+  font-size: clamp(16px, 1.4vw, 60px);
+  line-height: 1.5;
+  font-weight: 500;
+
+  color: var(--text);
+
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 25px;
+  text-transform: lowercase;
+}
+.types-list-design li:last-child {
+  margin-bottom: 0;
+}
+.types-list-design li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: clamp(10px, 0.7vw, 50px);
+  height: clamp(10px, 0.7vw, 50px);
+  background-color: #4c5262;
+  opacity: 0.3;
+  border-radius: 50%;
+}
+
+.badge-layer {
+  position: absolute;
+  z-index: 5;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+  padding: clamp(8px, 0.8vw, 12px) clamp(18px, 1.5vw, 28px);
+  border-radius: 40px;
+  font-family: var(--t-text-font, "TTNorms", sans-serif);
+  font-size: clamp(13px, 1.05vw, 17px);
+  font-weight: 400;
+  white-space: nowrap;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.badge-layer.top-left {
+  top: 15%;
+  left: 5%;
+}
+
+.badge-layer.bottom-right {
+  bottom: 15%;
+  right: 5%;
+}
+
+@media (max-width: 960px) {
+  .fetr-types-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .fetr-type-card {
+    min-height: 400px;
+  }
+}
+
+/* ===== НОВЫЙ БЛОК: СВЕТЛО-ГОЛУБЫЕ КАРТОЧКИ (ЕДИНАЯ КОНСТРУКЦИЯ И ПРОСТАЯ УСТАНОВКА) ===== */
+.light-blue-cards-section {
+  background-color: #ffffff;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.light-blue-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(10px, 0.8vw, 25px);
+  min-height: 600px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+}
+
+.light-blue-card {
+  background-color: #cbe0ed;
+  border-radius: 0;
+  padding: clamp(30px, 3.5vw, 55px) clamp(30px, 4vw, 70px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: clamp(180px, 15vw, 250px);
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+}
+
+.light-blue-card-title {
+  font-family: var(--t-headline-font, "TT Firs Neue", sans-serif);
+  font-size: clamp(28px, 2.2vw, 60px);
+  line-height: 1.05;
+  font-weight: 500;
+  color: #4c5262;
+  margin: 0 0 16px 0;
+  text-transform: lowercase;
+  letter-spacing: -0.5px;
+}
+
+.light-blue-card-desc {
+  font-family: var(--t-text-font, "TTNorms", sans-serif);
+  font-size: clamp(18px, 1.05vw, 28px);
+  line-height: 1.3;
+  color: #4b586a;
+  margin: 0;
+  max-width: 520px;
+}
+
+/* ===== НОВЫЙ БЛОК: НЕОБХОДИМЫЕ ИНСТРУМЕНТЫ (ТЕМНО-СЕРЫЙ) ===== */
+.required-tools-section {
+  background-color: #4b5262;
+  color: #ffffff;
+  min-height: 800px;
+  padding: clamp(30px, 7vw, 70px) clamp(20px, 5vw, 80px);
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.required-tools-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(30px, 5vw, 100px);
+  align-items: stretch;
+  height: 100%;
+  min-height: 100%;
+  flex: 1;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+}
+
+.tools-left-col {
+  align-self: flex-start;
+}
+
+.tools-main-title {
+  font-family: var(--t-headline-font, "TT Firs Neue", sans-serif);
+  font-size: clamp(36px, 4.5vw, 76px);
+  line-height: 0.98;
+  font-weight: 500;
+  color: #ffffff;
+  letter-spacing: -1.5px;
+  text-transform: lowercase;
+  margin: 0;
+}
+
+.tools-right-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-self: flex-end;
+  padding-top: 0;
+}
+
+.tools-subtitle {
+  font-family: var(--t-headline-font, "TT Firs Neue", sans-serif);
+  font-size: clamp(26px, 2.2vw, 38px);
+  line-height: 1.12;
+  font-weight: 500;
+  color: #ffffff;
+  margin: 0 0 clamp(24px, 2.5vw, 40px) 0;
+  text-transform: lowercase;
+  letter-spacing: -0.5px;
+  max-width: 900px;
+}
+
+.tools-bullets-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 1.5vw, 24px);
+}
+
+.tools-bullets-list li {
+  position: relative;
+  padding-left: clamp(34px, 2.2vw, 46px);
+  font-family: var(--t-text-font, "TTNorms", sans-serif);
+  font-size: clamp(20px, 1.8vw, 28px);
+  line-height: 1.38;
+  color: #ffffff;
+  font-weight: 400;
+}
+
+.tools-bullets-list li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 0.42em;
+  width: clamp(8px, 0.7vw, 12px);
+  height: clamp(8px, 0.7vw, 12px);
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+@media (max-width: 960px) {
+  .light-blue-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .required-tools-container {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .tools-right-col {
+    padding-top: 0;
+  }
+}
+
+/* ===== НОВЫЙ БЛОК: БЕЛЫЕ КАРТОЧКИ ПРОИЗВОДСТВА И КОНТРОЛЯ ===== */
+.white-production-cards-section {
+  background-color: #ffffff;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.white-production-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(16px, 1.5vw, 24px);
+  background-color: #f8f9fa;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+}
+
+.white-production-card {
+  background-color: #ffffff;
+  padding: clamp(35px, 4vw, 65px) clamp(30px, 4vw, 65px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: clamp(700px, 20vw, 800px);
+  box-sizing: border-box;
+}
+
+.white-production-title {
+  font-family: var(--t-headline-font, "TT Firs Neue", sans-serif);
+  font-size: clamp(26px, 2.8vw, 44px);
+  font-weight: 500;
+  line-height: 0.9;
+  letter-spacing: -0.7px;
+  color: #4c5262;
+  margin: 0 0 30px 0;
+  text-transform: lowercase;
+}
+
+.promo-form-wrapper-design {
+  flex: 1.8;
+  width: 100%;
+  max-width: 50%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.white-production-desc {
+  font-family: var(--t-text-font, "TTNorms", sans-serif);
+  font-size: clamp(16px, 1.05vw, 50px);
+  line-height: 1.3;
+  font-weight: 400;
+  letter-spacing: -0.2px;
+  color: #586578;
+  margin: 0;
+  max-width: 520px;
+}
+
+@media (max-width: 960px) {
+  .white-production-grid {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .white-production-card {
+    min-height: 220px;
+    padding: 30px 24px;
+  }
+}
+
+/* ===== НОВЫЙ БЛОК: КОМПАНИИ, С КОТОРЫМИ РАБОТАЕМ ===== */
+.client-partners-section {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: #ffffff;
+}
+
+.client-partners-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(16px, 1.5vw, 24px);
+  background-color: #f8f9fa;
+  width: 100%;
+  min-height: clamp(700px, 32vw, 800px);
+  max-width: 100%;
+  margin: 0;
+}
+
+.client-partners-title-card {
+  background-color: #cae0f1;
+  padding: clamp(40px, 4.5vw, 80px) clamp(30px, 4vw, 65px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: clamp(380px, 32vw, 480px);
+  box-sizing: border-box;
+}
+
+.client-partners-main-title {
+  font-family: var(--t-headline-font, "TT Firs Neue", sans-serif);
+  font-size: clamp(60px, 4.5vw, 90px);
+  line-height: 0.9;
+  font-weight: 500;
+  color: #4c5262;
+  margin: 0;
+  letter-spacing: -0.7px;
+  text-transform: lowercase;
+  max-width: 480px;
+}
+
+.client-partners-logos-col {
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f9fa;
+}
+
+.client-logo-card {
+  background-color: #ffffff;
+  padding: clamp(24px, 2.5vw, 36px) clamp(20px, 3vw, 40px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex: 1;
+  box-sizing: border-box;
+  transition: background-color 0.25s ease;
+}
+
+.client-logo-card:hover {
+  background-color: #f8fafc;
+}
+
+.client-logo-img {
+  max-height: clamp(200px, 2vw, 400px);
+  max-width: clamp(300px, 2vw, 400px);
+  object-fit: contain;
+}
+
+.client-logo-name {
+  font-family: var(--t-text-font, "TTNorms", sans-serif);
+  font-size: clamp(18px, 0.95vw, 60px);
+  font-weight: 500;
+  color: #586578;
+  margin: 0;
+  text-align: center;
+}
+
+@media (max-width: 960px) {
+  .client-partners-grid {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .client-partners-title-card {
+    min-height: 200px;
+    padding: 35px 24px;
+  }
+}
+
+/* ===== НОВЫЙ БЛОК: СВЯЖИТЕСЬ С НАШИМ МЕНЕДЖЕРОМ ===== */
+.manager-contact-cta-section {
+  background-color: #cae0f1;
+  padding: clamp(30px, 7vw, 60px) clamp(30px, 5vw, 60px);
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  color: #2b3545;
+}
+
+.manager-contact-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(40px, 5vw, 85px);
+}
+
+.manager-contact-main-title {
+  font-family: var(--t-headline-font, "TT Firs Neue", sans-serif);
+  font-size: clamp(44px, 5.5vw, 92px);
+  line-height: 0.8;
+  font-weight: 500;
+  color: #4c5262;
+  margin: 0;
+  letter-spacing: -1.5px;
+  text-transform: lowercase;
+}
+
+.manager-contact-desc {
+  font-family: var(--t-text-font, "TTNorms", sans-serif);
+  font-size: clamp(16px, 1.35vw, 22px);
+  line-height: 1.3;
+  color: #586578;
+  margin: clamp(20px, 2vw, 32px) 0 0 0;
+  max-width: 600px;
+}
+
+.manager-orange-buttons {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 2vw, 24px);
+  margin: 0;
+}
+
+.orange-circle-btn {
+  width: clamp(64px, 5.5vw, 84px);
+  height: clamp(64px, 5.5vw, 84px);
+  border-radius: 50%;
+  background-color: var(--orange, #fa4616);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease,
+    box-shadow 0.25s ease;
+  box-shadow: 0 8px 24px rgba(250, 70, 22, 0.3);
+  text-decoration: none;
+}
+
+.orange-circle-btn:hover {
+  background-color: #e03a0d;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(250, 70, 22, 0.45);
+}
+
+.orange-circle-btn img,
+.orange-circle-btn svg {
+  width: clamp(28px, 2.5vw, 36px);
+  height: clamp(28px, 2.5vw, 36px);
+  fill: #ffffff;
+}
+
+.manager-bottom-info-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: clamp(30px, 5vw, 100px);
+  padding-top: clamp(20px, 3vw, 50px);
+  font-family: var(--t-text-font, "TTNorms", sans-serif);
+  color: #586578;
+  font-size: clamp(15px, 1.25vw, 20px);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.info-col-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.info-socials-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 10px;
+}
+
+.info-social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.info-social-icon:hover {
+  opacity: 0.8;
+  transform: translateY(-2px);
+}
+
+.info-social-icon svg {
+  width: clamp(40px, 1vw, 100px);
+  height: clamp(40px, 1vw, 100px);
+  fill: var(--orange, #fa4616);
+}
+
+.info-phone-link,
+.info-email-link {
+  color: #2b3545;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: clamp(16px, 1.3vw, 22px);
+  transition: color 0.2s ease;
+}
+
+.info-phone-link:hover,
+.info-email-link:hover {
+  color: var(--orange, #fa4616);
+}
+
+.info-col-address p {
+  margin: 0;
+  font-weight: 500;
+  font-size: clamp(16px, 1.3vw, 22px);
+}
+
+.info-col-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.info-col-links a {
+  color: #586578;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  font-weight: 500;
+  font-size: clamp(16px, 1.3vw, 22px);
+  line-height: 1;
+}
+
+.info-col-links a:hover {
+  color: #2b3545;
+}
+
+/* ==========================================================================
+   АДАПТИВНОСТЬ: МОБИЛЬНЫЕ УСТРОЙСТВА И БОЛЬШИЕ ЭКРАНЫ (> Full HD / 4K)
+   ========================================================================== */
+
+/* ===== МОБИЛЬНЫЕ УСТРОЙСТВА И ПЛАНШЕТЫ (<= 960px / 768px / 480px) ===== */
+@media (max-width: 960px) {
+  /* Intro Content */
+  .intro-content {
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    text-align: left !important;
+  }
+
+  .intro-content p {
+    text-align: left !important;
+  }
+
+  /* Interior View Section */
+  .interior-view-section {
+    min-height: clamp(420px, 70vw, 550px) !important;
+    height: clamp(420px, 70vw, 550px) !important;
+  }
+
+  /* 2x2 Hero Grid */
+  .hero-two-blocks-wrapper {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .hero-two-blocks-wrapper .hero-block-card {
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: flex !important;
+  }
+
+  .hero-two-blocks-wrapper .card-focus-white {
+    height: auto !important;
+    min-height: auto !important;
+    padding: 30px 20px !important;
+  }
+
+  .hero-two-blocks-wrapper .card-showroom-blue {
+    height: auto !important;
+    min-height: auto !important;
+    padding: 30px 20px !important;
+  }
+
+  .hero-two-blocks-wrapper .card-image-samples,
+  .hero-two-blocks-wrapper .card-image-interior,
+  .hero-two-blocks-wrapper .living-slider-wrapper {
+    height: 440px !important;
+    min-height: 440px !important;
+  }
+
+  /* Блок "получить доступ к материалам" (noise-control-section) — Точно как на фото */
+  /* Блок "поможем с дизайн-проектом" (promo-section) — Точно как на фото */
+  .promo-section {
+    background-color: #fa4616 !important;
+    padding: 20px 24px 50px 24px !important;
+  }
+
+  .promo-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 36px !important;
+    width: 100% !important;
+  }
+
+  .promo-info {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .promo-title {
+    font-size: clamp(48px, 9.5vw, 600px) !important;
+    line-height: 0.95 !important;
+    font-weight: 500 !important;
+    color: #ffffff !important;
+    margin: 0 0 32px 0 !important;
+    text-transform: lowercase !important;
+    letter-spacing: -1px !important;
+  }
+
+  .promo-benefits {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 22px !important;
+  }
+
+  .promo-benefits li {
+    font-size: 18px !important;
+    line-height: 1.35 !important;
+    color: #ffffff !important;
+    position: relative !important;
+    padding-left: 22px !important;
+    margin: 0 !important;
+    font-weight: 400 !important;
+  }
+
+  .promo-benefits li::before {
+    content: "•" !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: -2px !important;
+    color: #ffffff !important;
+    font-size: 20px !important;
+  }
+
+  .promo-form-wrapper-design {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    display: block !important;
+  }
+
+  .promo-form {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+  }
+
+  .promo-form .input-group {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4) !important;
+    padding-bottom: 12px !important;
+  }
+
+  .promo-form .input-group label {
+    font-size: 14px !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+    text-transform: lowercase !important;
+    margin: 0 !important;
+  }
+
+  .promo-form .input-group input {
+    font-size: 20px !important;
+    color: rgba(255, 255, 255, 0.95) !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 4px 0 !important;
+    outline: none !important;
+    font-family: var(--t-text-font, "TTNorms", sans-serif) !important;
+  }
+
+  .promo-form .input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.5) !important;
+  }
+
+  .promo-form .checkbox-group {
+    display: flex !important;
+    gap: 14px !important;
+    align-items: flex-start !important;
+    margin-top: 4px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .promo-form .checkbox-group input[type="checkbox"] {
+    width: 22px !important;
+    height: 22px !important;
+    flex-shrink: 0 !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.8) !important;
+    border-radius: 2px !important;
+    background-color: transparent !important;
+    cursor: pointer !important;
+    margin: 0 !important;
+  }
+
+  .promo-form .checkbox-group label {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+    margin: 0 !important;
+  }
+
+  .promo-form .checkbox-group a {
+    color: #ffffff !important;
+    text-decoration: underline !important;
+    text-underline-offset: 3px !important;
+  }
+
+  .promo-form .btn-submit {
+    width: 100% !important;
+    display: block !important;
+    border-radius: 999px !important;
+    background-color: #ffffff !important;
+    color: #3b4251 !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    padding: 18px 20px !important;
+    text-align: center !important;
+    border: none !important;
+    cursor: pointer !important;
+    text-transform: lowercase !important;
+    margin-top: 8px !important;
+    box-sizing: border-box !important;
+  }
+
+  .noise-control-section {
+    background-color: #4b5260 !important;
+    padding: 45px 24px 50px 24px !important;
+  }
+
+  .noise-control-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 100px !important;
+    width: 100% !important;
+  }
+
+  .noise-info {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .noise-title {
+    font-size: clamp(50px, 9.5vw, 70px) !important;
+    line-height: 0.8 !important;
+    font-weight: 500 !important;
+    color: #ffffff !important;
+    margin: 0 !important;
+    text-transform: lowercase !important;
+    letter-spacing: -1px !important;
+  }
+
+  .noise-form-wrapper-design {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    display: block !important;
+  }
+
+  .noise-form {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+  }
+
+  .input-group-dark {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4) !important;
+    padding-bottom: 12px !important;
+  }
+
+  .input-group-dark label {
+    font-size: 14px !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+    text-transform: lowercase !important;
+    margin: 0 !important;
+  }
+
+  .input-group-dark input {
+    font-size: 20px !important;
+    color: rgba(255, 255, 255, 0.95) !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 4px 0 !important;
+    outline: none !important;
+    font-family: var(--t-text-font, "TTNorms", sans-serif) !important;
+  }
+
+  .input-group-dark input::placeholder {
+    color: rgba(255, 255, 255, 0.5) !important;
+  }
+
+  .checkbox-group-dark {
+    display: flex !important;
+    gap: 14px !important;
+    align-items: flex-start !important;
+    margin-top: 4px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .checkbox-group-dark input[type="checkbox"] {
+    width: 22px !important;
+    height: 22px !important;
+    flex-shrink: 0 !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.6) !important;
+    border-radius: 2px !important;
+    background-color: transparent !important;
+    cursor: pointer !important;
+    margin: 0 !important;
+  }
+
+  .checkbox-group-dark label {
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+    margin: 0 !important;
+  }
+
+  .checkbox-group-dark a {
+    color: #ffffff !important;
+    text-decoration: underline !important;
+    text-underline-offset: 3px !important;
+  }
+
+  .btn-submit-grey {
+    width: 100% !important;
+    display: block !important;
+    border-radius: 999px !important;
+    background-color: #c7cdd6 !important;
+    color: #3b4251 !important;
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    padding: 18px 0 !important;
+    text-align: center !important;
+    border: none !important;
+    cursor: pointer !important;
+    text-transform: lowercase !important;
+    margin-top: 8px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Блок "строителям" (types-section-design) */
+  .types-section-design {
+    padding: 35px 20px;
+    min-height: auto;
+  }
+
+  .types-container-design {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: clamp(100px, 3vw, 150px);
+  }
+
+  .types-title-design {
+    align-self: flex-start;
+    font-size: clamp(48px, 8vw, 60px);
+  }
+
+  .types-list-design {
+    align-self: flex-start;
+    max-width: 100%;
+  }
+
+  .types-list-design li {
+    font-size: clamp(15px, 4vw, 20px);
+    padding-left: 28px;
+    margin-bottom: 16px;
+  }
+
+  /* Блок "панели hubox сближают" */
+  .designers-connect-block {
+    padding: 35px 20px;
+    min-height: auto;
+  }
+
+  .designers-connect-container {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .connect-main-title {
+    font-size: clamp(40px, 7vw, 48px);
+  }
+
+  .connect-right {
+    margin-top: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .connect-subtitle {
+    font-size: clamp(28px, 5vw, 30px);
+  }
+
+  .connect-list li {
+    font-size: clamp(14px, 3.8vw, 17px);
+  }
+
+  .btn-orange-pill-cta {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 16px;
+    padding: 28px 30px;
+  }
+
+  /* 3 Карточки типов фетра */
+  .fetr-types-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .fetr-type-card {
+    min-height: 420px;
+    padding: 30px 20px;
+  }
+
+  .fetr-type-card-title {
+    font-size: clamp(24px, 6vw, 32px);
+  }
+
+  .fetr-type-visual {
+    height: 280px;
+  }
+
+  .fetr-type-soundwave {
+    width: 240px;
+    height: 240px;
+  }
+
+  /* Светло-голубые карточки */
+  .light-blue-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    min-height: auto;
+  }
+
+  .light-blue-card {
+    padding: 28px 20px;
+    gap: clamp(50px, 2vw, 100px);
+    min-height: 180px;
+  }
+
+  .light-blue-card-title {
+    font-size: clamp(28px, 5.5vw, 36spx);
+  }
+
+  /* Необходимые инструменты */
+  .required-tools-section {
+    padding: 35px 20px;
+    min-height: auto;
+  }
+
+  .required-tools-container {
+    grid-template-columns: 1fr;
+    gap: clamp(100px, 3vw, 150px);
+  }
+
+  .tools-main-title {
+    font-size: clamp(40px, 7vw, 60px);
+  }
+
+  .tools-right-col {
+    align-self: flex-start;
+    gap: clamp(60px, 2vw, 120px);
+  }
+
+  .tools-subtitle {
+    font-size: clamp(22px, 5vw, 30px);
+  }
+
+  .tools-bullets-list li {
+    font-size: clamp(16px, 4vw, 20px);
+    padding-left: 26px;
+  }
+
+  /* Белые карточки производства */
+  .white-production-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .white-production-card {
+    min-height: 180px;
+    gap: clamp(40px, 2vw, 80px);
+    padding: 28px 20px;
+  }
+
+  .white-production-title {
+    font-size: clamp(26px, 5.5vw, 36px);
+  }
+
+  /* Компании, с которыми работаем */
+  .client-partners-grid {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .client-partners-title-card {
+    min-height: 160px;
+    padding: 28px 20px;
+  }
+
+  .client-partners-main-title {
+    font-size: clamp(48px, 6.5vw, 60px);
+  }
+
+  .client-logo-card {
+    padding: 20px 16px;
+    min-height: 200px;
+  }
+
+  .client-logo-img {
+    max-height: 100px;
+  }
+
+  /* Свяжитесь с нашим менеджером */
+  .manager-contact-cta-section {
+    padding: 35px 20px;
+  }
+
+  .manager-contact-main-title {
+    font-size: clamp(40px, 7vw, 48px);
+  }
+
+  .manager-contact-desc {
+    font-size: 15px;
+  }
+
+  .manager-orange-buttons {
+    gap: 12px;
+  }
+
+  .orange-circle-btn {
+    width: 56px;
+    height: 56px;
+  }
+
+  .orange-circle-btn svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .manager-bottom-info-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+/* ===== СВЕРХМАЛЕНЬКИЕ ЭКРАНЫ (<= 480px) ===== */
+@media (max-width: 480px) {
+  .hero-two-blocks-wrapper .hero-block-card,
+  .hero-two-blocks-wrapper .living-slider-wrapper {
+    min-height: 340px !important;
+  }
+
+  .focus-bullets-list li {
+    font-size: 14px;
+    padding-left: 24px;
+  }
+
+  .focus-bullets-list li::before {
+    width: 12px;
+    height: 12px;
+  }
+
+  .main-text-block {
+    font-size: 14px;
+    line-height: 0.8;
+  }
+
+  .fetr-type-card {
+    min-height: 380px;
+    padding: 24px 16px;
+  }
+
+  .hero-two-blocks-wrapper {
+    flex-direction: column;
+    display: flex;
+  }
+
+  .client-partners-logos-col {
+    gap: clamp(10px, 1.5vw, 24px);
+  }
+
+  .designers-connect-container {
+    gap: clamp(100px, 5vw, 150px);
+  }
+  .fetr-type-visual {
+    height: 240px;
+  }
+
+  .fetr-type-soundwave {
+    width: 200px;
+    height: 200px;
+  }
+
+  .badge-layer {
+    padding: 6px 14px;
+    font-size: 12px;
+  }
+
+  .info-socials-row {
+    gap: 14px;
+  }
+
+  .info-social-icon svg {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* ===== БОЛЬШИЕ ЭКРАНЫ (> FULL HD: min-width: 1920px & 2560px 4K) ===== */
+@media (min-width: 1920px) {
+  .designers-connect-container,
+  .manager-contact-container,
+  .required-tools-container,
+  .types-container-design {
+    max-width: 1800px;
+    margin: 0 auto;
+  }
+
+  .hero-two-blocks-wrapper .hero-block-card,
+  .hero-two-blocks-wrapper .card-focus-white,
+  .hero-two-blocks-wrapper .card-image-samples,
+  .hero-two-blocks-wrapper .card-image-interior,
+  .hero-two-blocks-wrapper .card-showroom-blue,
+  .hero-two-blocks-wrapper .living-slider-wrapper {
+    height: clamp(520px, 30vw, 680px) !important;
+    min-height: clamp(520px, 30vw, 680px) !important;
+    max-height: clamp(520px, 30vw, 680px) !important;
+  }
+
+  .connect-main-title,
+  .tools-main-title,
+  .manager-contact-main-title {
+    font-size: clamp(64px, 4vw, 96px);
+  }
+
+  .fetr-type-card {
+    min-height: clamp(750px, 45vw, 950px);
+  }
+
+  .fetr-type-visual {
+    height: clamp(480px, 30vw, 650px);
+  }
+
+  .fetr-type-soundwave {
+    width: clamp(420px, 24vw, 580px);
+    height: clamp(420px, 24vw, 580px);
+  }
+}
+
+@media (min-width: 2560px) {
+  .designers-connect-container,
+  .manager-contact-container,
+  .required-tools-container,
+  .types-container-design {
+    max-width: 2200px;
+  }
+
+  .hero-two-blocks-wrapper .hero-block-card,
+  .hero-two-blocks-wrapper .living-slider-wrapper {
+    height: 750px !important;
+    min-height: 750px !important;
+    max-height: 750px !important;
+  }
+
+  .focus-bullets-list li {
+    font-size: 22px;
+  }
+
+  .connect-main-title,
+  .tools-main-title,
+  .manager-contact-main-title {
+    font-size: 110px;
+  }
+
+  .connect-subtitle,
+  .tools-subtitle {
+    font-size: 44px;
+  }
+
+  .connect-list li,
+  .tools-bullets-list li {
+    font-size: 24px;
+  }
+}

@@ -1,0 +1,165 @@
+/* ==========================================================================
+   07-material.css — designers.html: «строителям» + сетка из 4 преимуществ
+   стеновой системы (базовый 1200)
+   Проверено по data-field-*/getComputedStyle на живом сайте
+   (rec2131964221, rec2131964241): «строителям» — белая карточка (10px
+   отступ, 334 высоты), заголовок 60px accent слева, список — 2 одинаковых
+   по стилю пункта (14px/500, #4c5262) с точкой 8px справа (l606/642);
+   сетка преимуществ — 4 карточки 585×408 #cae0f1, заголовок сверху (t50),
+   текст отдельным блоком ниже с большим отступом (justify: space-between).
+   ========================================================================== */
+
+.craft {
+  padding: 10px 10px 0;
+  background: var(--c-light);
+}
+
+.craft-card {
+  position: relative;
+  min-height: 334px;
+  padding: 50px 56px;
+  background: var(--c-white);
+}
+
+.craft-title {
+  font-family: var(--ff-display);
+  font-size: 60px;
+  font-weight: 500;
+  letter-spacing: -1px;
+  color: var(--c-accent);
+}
+
+.craft-list {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  margin-top: 26px;
+  margin-left: auto;
+  max-width: 456px;
+}
+
+.craft-list-item {
+  position: relative;
+  padding-left: 28px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.2px;
+  color: var(--c-ink);
+}
+
+.craft-list-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--c-ink);
+}
+
+/* ===== СЕТКА ПРЕИМУЩЕСТВ ===== */
+.material-section {
+  padding: 0 10px 10px;
+  background: var(--c-light);
+}
+
+.material-grid {
+  --c-material-blue: #cae0f1;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.material-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 408px;
+  padding: 50px 32px 40px;
+  background: var(--c-material-blue);
+}
+
+.material-item-title {
+  font-family: var(--ff-display);
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.3px;
+  color: var(--c-ink);
+}
+
+.material-item-text {
+  font-size: 13px;
+  line-height: 1.5;
+  letter-spacing: -0.2px;
+  color: var(--c-ink);
+}
+
+/* ===== МАКЕТ 960 ===== */
+@media (max-width: 1199px) {
+  .craft-card {
+    min-height: 260px;
+    padding: 40px;
+  }
+
+  .material-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .material-item {
+    min-height: 300px;
+  }
+}
+
+/* ===== МАКЕТ 640 ===== */
+@media (max-width: 959px) {
+  .craft-card {
+    min-height: 0;
+    padding: 40px 30px;
+  }
+
+  .craft-title {
+    font-size: 44px;
+  }
+
+  .craft-list {
+    margin-left: 0;
+    max-width: none;
+  }
+}
+
+/* ===== МАКЕТ 360 ===== */
+@media (max-width: 639px) {
+  .craft {
+    padding: 8px 8px 0;
+  }
+
+  .craft-card {
+    padding: 32px 20px;
+  }
+
+  .craft-title {
+    font-size: 32px;
+  }
+
+  .craft-list {
+    margin-top: 22px;
+    gap: 16px;
+  }
+
+  .material-section {
+    padding: 0 8px 8px;
+  }
+
+  .material-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .material-item {
+    min-height: 0;
+    padding: 28px 20px;
+  }
+}

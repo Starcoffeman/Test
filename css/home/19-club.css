@@ -1,0 +1,176 @@
+/* ==========================================================================
+   19-club.css — блок «hubox дизайнерам»: белая карточка на светлой подложке,
+   слева крупный заголовок, справа список привилегий и кнопка (макет 1200)
+   ========================================================================== */
+
+.club {
+  background: var(--c-light);
+}
+
+.club-stage {
+  width: 1200px;
+  margin: 0 auto;
+  /* карточка прижата к низу секции — снизу поля нет */
+  padding: 10px 9px 0 10px;
+}
+
+.club-card {
+  height: 606px;
+  padding: 40px 40px 0;
+  background: var(--c-white);
+}
+
+.club-title {
+  font-family: var(--ff-display);
+  font-size: 80px;
+  font-weight: 500;
+  line-height: 64px;
+  letter-spacing: -2px;
+  color: var(--c-accent);
+}
+
+.club-body {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  width: 547px;
+  margin-top: 80px;
+  margin-left: 556px;
+}
+
+.club-subtitle {
+  font-family: var(--ff-display);
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 28.8px;
+  letter-spacing: -0.7px;
+  color: var(--c-ink);
+}
+
+.club-offer {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.club-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* высота строки задана макетом: текст выше строки и выступает за неё */
+.club-list-item {
+  display: flex;
+  align-items: center;
+  height: 18px;
+}
+
+.club-list-dot {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--c-ink);
+  opacity: 0.3;
+}
+
+.club-list-text {
+  margin-left: 28px;
+  font-family: var(--ff-base);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18.2px;
+  letter-spacing: -0.2px;
+  color: var(--c-ink);
+}
+
+.club-btn {
+  width: 547px;
+  height: 52px;
+  font-size: 14px;
+  line-height: 14px;
+}
+
+/* ===== МАКЕТ 960 ===== */
+@media (max-width: 1199px) {
+  .club-stage {
+    width: 960px;
+    padding: 10px 10px 0;
+  }
+
+  .club-body {
+    margin-left: 0;
+  }
+
+  .club-list-item {
+    height: 24px;
+  }
+}
+
+/* ===== МАКЕТ 640 ===== */
+@media (max-width: 959px) {
+  .club-stage {
+    width: 640px;
+  }
+
+  .club-card {
+    height: 618px;
+    padding: 30px 20px 0;
+  }
+
+  .club-title {
+    font-size: 70px;
+    line-height: 56px;
+  }
+
+  .club-body {
+    margin-top: 120px;
+  }
+}
+
+/* ===== МАКЕТ 360 ===== */
+@media (max-width: 639px) {
+  .club-stage {
+    width: 360px;
+    padding: 8px 9px 0 8px;
+  }
+
+  .club-card {
+    height: 614px;
+    padding: 24px 16px 0;
+  }
+
+  .club-title {
+    font-size: 49px;
+    line-height: 39px;
+    letter-spacing: -1px;
+  }
+
+  .club-body {
+    width: 311px;
+    margin-top: 146px;
+  }
+
+  .club-subtitle {
+    width: 300px;
+    font-size: 24px;
+    line-height: 19.2px;
+    letter-spacing: -0.2px;
+  }
+
+  .club-offer {
+    gap: 24px;
+  }
+
+  .club-list-item {
+    height: 36px;
+  }
+
+  .club-btn {
+    width: 311px;
+    height: 64px;
+    font-size: 13px;
+    line-height: 13px;
+  }
+}

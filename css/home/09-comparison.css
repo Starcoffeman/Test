@@ -1,0 +1,458 @@
+/* ==========================================================================
+   09-comparison.css — сравнение обычных панелей и панелей hubox (макет 1200)
+   Две карточки на светлой подложке; изображения панелей выходят за границы
+   карточек и подрезаются секцией — поэтому раскладка построена на слоях.
+   ========================================================================== */
+
+.compare {
+  position: relative;
+  height: 606px;
+  overflow: hidden;
+  background: var(--c-light);
+}
+
+.compare-stage {
+  position: relative;
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+/* ===== ТЁМНАЯ КАРТОЧКА ===== */
+.compare-dark {
+  position: absolute;
+  left: 605px;
+  top: 10px;
+  width: 585px;
+  height: 596px;
+  background: var(--c-ink);
+}
+
+.compare-dark-title {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  height: 55px;
+  font-family: var(--ff-display);
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 25.2px;
+  letter-spacing: -0.7px;
+  color: var(--c-white);
+}
+
+.compare-dark-title--usual {
+  left: 60px;
+  top: 31px;
+  width: 224px;
+}
+
+.compare-dark-title--hubox {
+  left: 357px;
+  top: 31px;
+  width: 178px;
+}
+
+/* ===== ПОДПИСИ-ПИЛЮЛИ ===== */
+.compare-pill {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  font-family: var(--ff-base);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14px;
+  text-align: center;
+  color: var(--c-white);
+}
+
+/* подложка вынесена в псевдоэлемент: полупрозрачна только она, текст — нет */
+.compare-pill::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--c-white);
+  border-radius: 30px;
+  background: var(--c-ink);
+  opacity: 0.4;
+}
+
+.compare-pill--usual {
+  left: 83px;
+  top: 107px;
+  width: 164px;
+}
+
+.compare-pill--hubox {
+  left: 364px;
+  top: 107px;
+  width: 164px;
+}
+
+/* ===== ИЗОБРАЖЕНИЯ ПАНЕЛЕЙ ===== */
+.compare-panels {
+  position: absolute;
+  left: 821px;
+  top: 253px;
+  width: 464px;
+  height: 464px;
+}
+
+.compare-plain {
+  position: absolute;
+  left: 585px;
+  top: 266px;
+  width: 418px;
+  height: 418px;
+}
+
+.compare-wave {
+  position: absolute;
+  left: 923px;
+  top: 225px;
+  width: 242px;
+  height: 413px;
+  background: url('../../assets/misc-home/77ee8129-c406-4294-b.png.webp') 50% 50% / cover no-repeat;
+  animation: compare-wave-pulse 6s ease-in-out infinite;
+}
+
+@keyframes compare-wave-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.22);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .compare-wave {
+    animation: none;
+  }
+}
+
+/* ===== СВЕТЛАЯ КАРТОЧКА ===== */
+.compare-info {
+  position: absolute;
+  left: 12px;
+  top: 10px;
+  width: 585px;
+  height: 596px;
+  background: var(--c-white);
+}
+
+.compare-info-title {
+  position: absolute;
+  left: 40px;
+  top: 40px;
+  width: 401px;
+  font-family: var(--ff-display);
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 22.4px;
+  letter-spacing: -0.7px;
+  color: var(--c-ink);
+}
+
+.compare-info-subtitle {
+  position: absolute;
+  left: 40px;
+  top: 192px;
+  font-family: var(--ff-display);
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 20.8px;
+  letter-spacing: -0.7px;
+  color: var(--c-ink);
+}
+
+.compare-list {
+  position: absolute;
+  left: 40px;
+  top: 231px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.compare-list-item {
+  display: flex;
+  align-items: center;
+  min-height: 24px;
+}
+
+.compare-list-dot {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--c-ink);
+  opacity: 0.3;
+}
+
+.compare-list-text {
+  margin-left: 28px;
+  font-family: var(--ff-base);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18.2px;
+  letter-spacing: -0.2px;
+  color: var(--c-ink);
+}
+
+/* ===== МАКЕТ 960 ===== */
+@media (max-width: 1199px) {
+  .compare-stage {
+    width: 960px;
+  }
+
+  .compare-dark {
+    left: 485px;
+    width: 465px;
+  }
+
+  .compare-dark-title--usual {
+    left: 28px;
+    top: 40px;
+    width: 377px;
+  }
+
+  .compare-dark-title--hubox {
+    left: 273px;
+    top: 40px;
+    width: 377px;
+  }
+
+  /* пилюли уезжают под светлую карточку и не видны */
+  .compare-pill {
+    display: none;
+  }
+
+  .compare-panels {
+    left: 630px;
+    top: 254px;
+  }
+
+  .compare-wave {
+    left: 752px;
+    top: 254px;
+    width: 185px;
+  }
+
+  .compare-plain {
+    left: 432px;
+    top: 254px;
+  }
+
+  .compare-info {
+    left: 10px;
+    width: 465px;
+  }
+
+  .compare-info-subtitle {
+    left: 42px;
+    top: 179px;
+  }
+
+  .compare-list {
+    top: 212px;
+  }
+}
+
+/* ===== МАКЕТ 640 ===== */
+@media (max-width: 959px) {
+  .compare {
+    height: 1213px;
+  }
+
+  .compare-stage {
+    width: 640px;
+  }
+
+  .compare-dark {
+    left: 10px;
+    top: 448px;
+    width: 620px;
+    height: 429px;
+  }
+
+  .compare-dark-title--usual {
+    left: 20px;
+    top: 40px;
+  }
+
+  .compare-dark-title--hubox {
+    left: 30px;
+    top: 50px;
+  }
+
+  .compare-wave {
+    left: 315px;
+    top: 477px;
+  }
+
+  .compare-info {
+    width: 620px;
+    height: 597px;
+  }
+
+  .compare-info-title {
+    left: 20px;
+  }
+
+  .compare-info-subtitle {
+    left: 30px;
+    top: 50px;
+  }
+
+  .compare-list {
+    left: 20px;
+  }
+}
+
+/* ===== МАКЕТ 360 ===== */
+@media (max-width: 639px) {
+  .compare {
+    height: 878px;
+  }
+
+  .compare-stage {
+    width: 360px;
+  }
+
+  .compare-dark {
+    left: 8px;
+    top: 8px;
+    width: 344px;
+    height: 344px;
+  }
+
+  .compare-dark-title {
+    font-size: 24px;
+    line-height: 19.2px;
+    letter-spacing: -0.2px;
+  }
+
+  .compare-dark-title--usual {
+    left: 16px;
+    top: 24px;
+    width: 141px;
+  }
+
+  .compare-dark-title--hubox {
+    left: 192px;
+    top: 24px;
+    width: 136px;
+  }
+
+  .compare-pill {
+    display: flex;
+    height: 32px;
+    font-size: 12px;
+    line-height: 12px;
+  }
+
+  .compare-pill--usual {
+    left: 14px;
+    top: 93px;
+    width: 126px;
+  }
+
+  .compare-pill--hubox {
+    left: 190px;
+    top: 93px;
+    width: 141px;
+  }
+
+  .compare-panels {
+    left: 127px;
+    top: 157px;
+    width: 253px;
+    height: 253px;
+  }
+
+  .compare-wave {
+    left: 212px;
+    top: 153px;
+    width: 79px;
+    height: 239px;
+  }
+
+  .compare-plain {
+    left: -12px;
+    top: 162px;
+    width: 224px;
+    height: 224px;
+  }
+
+  .compare-info {
+    left: 8px;
+    top: 351px;
+    width: 344px;
+    height: 517px;
+  }
+
+  .compare-info-title {
+    left: 16px;
+    top: 24px;
+    width: 280px;
+    font-size: 24px;
+    line-height: 19.2px;
+    letter-spacing: -0.2px;
+  }
+
+  .compare-info-subtitle {
+    left: 16px;
+    top: 169px;
+    font-size: 24px;
+    line-height: 19.2px;
+    letter-spacing: -0.2px;
+  }
+
+  /* в мобильном макете шаг между пунктами неравномерный — задаём явно */
+  .compare-list {
+    left: 16px;
+    top: 201px;
+    display: block;
+  }
+
+  .compare-list-item {
+    position: absolute;
+    left: 0;
+    top: var(--y);
+  }
+
+  .compare-list-item:nth-child(1) {
+    --y: 0px;
+  }
+  .compare-list-item:nth-child(2) {
+    --y: 33px;
+  }
+  .compare-list-item:nth-child(3) {
+    --y: 58px;
+  }
+  .compare-list-item:nth-child(4) {
+    --y: 91px;
+  }
+  .compare-list-item:nth-child(5) {
+    --y: 132px;
+  }
+  .compare-list-item:nth-child(6) {
+    --y: 165px;
+  }
+  /* пункт в две строки центрируется по своей высоте, отсюда другой сдвиг */
+  .compare-list-item:nth-child(7) {
+    --y: 193px;
+  }
+  .compare-list-item:nth-child(8) {
+    --y: 232px;
+  }
+
+  .compare-list-text {
+    width: 273px;
+    margin-left: 28px;
+  }
+}

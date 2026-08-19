@@ -1,0 +1,40 @@
+/* ==========================================================================
+   12-dividers.css — designers.html: полноширинные декоративные фото между
+   секциями (базовый 1200)
+   ========================================================================== */
+
+.divider-photo {
+  padding: 10px 10px 0;
+  background: var(--c-light);
+}
+
+.divider-photo img {
+  width: 100%;
+  height: 560px;
+  object-fit: cover;
+}
+
+/* ===== МАКЕТ 960 ===== */
+@media (max-width: 1199px) {
+  .divider-photo img {
+    height: 420px;
+  }
+}
+
+/* ===== МАКЕТ 640 ===== */
+@media (max-width: 959px) {
+  .divider-photo img {
+    height: 320px;
+  }
+}
+
+/* ===== МАКЕТ 360 ===== */
+@media (max-width: 639px) {
+  .divider-photo {
+    padding: 8px 8px 0;
+  }
+
+  .divider-photo img {
+    height: 220px;
+  }
+}

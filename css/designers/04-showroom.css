@@ -1,0 +1,91 @@
+/* ==========================================================================
+   04-showroom.css — designers.html: тёмная секция «получить доступ к
+   материалам» с формой (базовый 1200)
+   ========================================================================== */
+
+.access {
+  padding: 10px 10px 0;
+  background: var(--c-light);
+}
+
+.access-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 597px;
+  padding: 50px 56px 60px;
+  background: var(--c-ink);
+}
+
+.access-title {
+  max-width: 885px;
+  font-family: var(--ff-display);
+  font-size: 80px;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -1.2px;
+  color: var(--c-white);
+}
+
+.access-form-wrap {
+  align-self: flex-end;
+  width: 420px;
+}
+
+/* ===== МАКЕТ 960 ===== */
+@media (max-width: 1199px) {
+  .access-card {
+    min-height: 420px;
+    padding: 48px 40px;
+  }
+
+  .access-title {
+    max-width: 680px;
+    font-size: 56px;
+  }
+
+  .access-form-wrap {
+    width: 320px;
+  }
+}
+
+/* ===== МАКЕТ 640 ===== */
+@media (max-width: 959px) {
+  .access-card {
+    align-items: flex-start;
+    gap: 32px;
+    padding: 48px 30px;
+  }
+
+  .access-title {
+    max-width: 460px;
+    font-size: 44px;
+  }
+
+  .access-form-wrap {
+    align-self: stretch;
+    width: 100%;
+    max-width: 420px;
+  }
+}
+
+/* ===== МАКЕТ 360 ===== */
+@media (max-width: 639px) {
+  .access {
+    padding: 8px 8px 0;
+  }
+
+  .access-card {
+    min-height: 0;
+    gap: 24px;
+    padding: 32px 20px;
+  }
+
+  .access-title {
+    font-size: 26px;
+  }
+
+  .access-form-wrap {
+    max-width: none;
+  }
+}

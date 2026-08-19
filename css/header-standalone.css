@@ -1,0 +1,605 @@
+/* ===== ШРИФТЫ ДЛЯ ШАПКИ И НАВИГАЦИИ ===== */
+@font-face {
+  font-family: 'TTNorms';
+  src: url('../assets/fonts/TTNorms-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'TTNorms';
+  src: url('../assets/fonts/TTNorms-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'TTNorms';
+  src: url('../assets/fonts/TTNorms-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ==========================================================================
+   header-standalone.css — автономные стили шапки для Tilda страниц
+   Не содержит глобальных сбросов box-sizing, img max-width и body zoom.
+   ========================================================================== */
+:root {
+  --c-accent: #fa4616;
+  --c-ink: #4c5262;
+  --c-black: #000;
+  --c-white: #fff;
+  --c-light: #f1f1f1;
+  --c-grey: #818589;
+  --c-line: #edeeef;
+
+  --ff-base: 'TTNorms', Arial, Helvetica, sans-serif;
+  --ff-display: 'TTFirsNeue', Arial, Helvetica, sans-serif;
+
+  --header-h: 90px;
+  --z-header: 900;
+  --z-menu: 1000;
+}
+
+/* Кнопки в шапке */
+.header .btn,
+.mobile-menu .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 52px;
+  font-family: var(--ff-base);
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.header .btn--outline,
+.mobile-menu .btn--outline {
+  border: 2px solid var(--c-accent);
+  background: transparent;
+  color: var(--c-accent);
+}
+
+.header .btn--outline:hover,
+.mobile-menu .btn--outline:hover {
+  background: var(--c-accent);
+  color: var(--c-white);
+}
+
+.header a,
+.mobile-menu a {
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.header button,
+.mobile-menu button {
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+/* Переключатель мобильного меню */
+body.is-locked {
+  overflow: hidden !important;
+}
+
+/* ==========================================================================
+   01-header.css — фиксированная шапка (базовый макет 1200)
+   ========================================================================== */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: var(--z-header);
+}
+
+.header-bar {
+  position: relative;
+  height: 90px;
+  margin: 0 10px;
+  background: var(--c-white);
+}
+
+/* ===== ЛОГОТИП ===== */
+.header-logo {
+  position: absolute;
+  top: 17px;
+  left: 40px;
+  width: 80px;
+  height: 45.92px;
+}
+
+.header-logo img {
+  width: 100%;
+  height: 100%;
+}
+
+/* ===== РАЗДЕЛИТЕЛИ ===== */
+.header-line {
+  position: absolute;
+  background: var(--c-line);
+}
+
+.header-line--left {
+  top: 0;
+  left: 160px;
+  width: 1px;
+  height: 90px;
+}
+
+.header-line--right {
+  top: 0;
+  left: 985px;
+  width: 1px;
+  height: 90px;
+}
+
+.header-line--mid {
+  top: 48px;
+  left: 160px;
+  width: 826px;
+  height: 1px;
+}
+
+/* ===== ВЕРХНИЙ РЯД ===== */
+.header-top {
+  position: absolute;
+  top: 18px;
+  left: 201px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  height: 18px;
+}
+
+.header-top-link {
+  font-family: 'TTNorms', Arial, Helvetica, sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  line-height: 18px !important;
+  letter-spacing: -0.2px !important;
+  color: var(--c-ink) !important;
+  transition: color 0.25s ease !important;
+}
+
+/* в макете последний пункт отбит чуть шире остальных */
+.header-top-link--last {
+  margin-left: 4px;
+}
+
+.header-top-link:hover,
+.header-top-link.is-current {
+  color: var(--c-accent);
+}
+
+/* ===== НИЖНИЙ РЯД (якоря по странице) ===== */
+.header-menu {
+  position: absolute;
+  top: 60px;
+  left: 201px;
+  display: flex;
+  align-items: center;
+  gap: 21px;
+  height: 12px;
+}
+
+.header-menu-link {
+  font-family: 'TTNorms', Arial, Helvetica, sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  line-height: 12px !important;
+  letter-spacing: 0 !important;
+  color: var(--c-ink) !important;
+  transition: color 0.25s ease !important;
+}
+
+.header-menu-link:hover {
+  color: var(--c-accent);
+}
+
+.header-menu-link.is-active {
+  color: var(--c-accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+/* ===== КНОПКА И ТЕЛЕФОН ===== */
+.header-callback {
+  position: absolute;
+  top: 10px;
+  left: 1023px;
+  width: 117px;
+  height: 34px;
+  font-size: 12px;
+  line-height: 12px;
+}
+
+.header-phone {
+  position: absolute;
+  top: 55px;
+  left: 1024px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -0.2px;
+  color: var(--c-accent);
+}
+
+/* ===== БУРГЕР ===== */
+.header-burger {
+  position: absolute;
+  display: none;
+  top: 8px;
+  left: 855px;
+  width: 45px;
+  height: 45px;
+}
+
+.header-burger svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ===== 960 ===== */
+@media (max-width: 1199px) {
+  .header-bar {
+    height: 60px;
+  }
+
+  .header-logo {
+    top: 7px;
+    left: 40px;
+  }
+
+  .header-line,
+  .header-top,
+  .header-menu,
+  .header-callback,
+  .header-phone {
+    display: none;
+  }
+
+  .header-burger {
+    display: block;
+  }
+}
+
+/* ===== 640 ===== */
+@media (max-width: 959px) {
+  .header-logo {
+    left: 20px;
+  }
+
+  .header-burger {
+    left: 555px;
+  }
+}
+
+/* ===== 360 ===== */
+@media (max-width: 639px) {
+  .header-bar {
+    margin: 0;
+  }
+
+  .header-logo {
+    top: 12px;
+    left: 24px;
+    width: 62px;
+    height: 35.59px;
+  }
+
+  .header-burger {
+    top: 12px;
+    left: 300px;
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* ==========================================================================
+   02-mobile-menu.css — оверлей мобильного меню
+   Меню показывается с бургером, то есть на ширине ≤1199px,
+   поэтому базовые значения здесь — макет 960, дальше идут 640 и 360.
+   ========================================================================== */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-menu);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+}
+
+.mobile-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Высота = высота артборда оригинала: она задаёт вертикальное центрирование */
+.mobile-menu-inner {
+  position: relative;
+  width: 100%;
+  height: 720px;
+}
+
+/* Белая подложка и оранжевая шапка шире экрана — как в оригинале */
+.mobile-menu-bg,
+.mobile-menu-head {
+  position: absolute;
+  left: -32px;
+  right: -32px;
+  display: block;
+}
+
+.mobile-menu-bg {
+  top: 60px;
+  height: 660px;
+  background: var(--c-white);
+}
+
+.mobile-menu-head {
+  top: 0;
+  height: 137px;
+  background: var(--c-accent);
+}
+
+.mobile-menu-logo {
+  position: absolute;
+  top: 80px;
+  left: 50px;
+  width: 76px;
+  height: 43.66px;
+}
+
+.mobile-menu-logo img {
+  width: 100%;
+  height: 100%;
+}
+
+.mobile-menu-close {
+  position: absolute;
+  top: 79px;
+  left: 866px;
+  width: 45px;
+  height: 45px;
+}
+
+.mobile-menu-close svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ===== ССЫЛКИ ===== */
+.mobile-menu-nav {
+  position: absolute;
+  top: 169px;
+  left: 50px;
+  display: flex;
+  flex-direction: column;
+  width: 340px;
+}
+
+.mobile-menu-link {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 28px;
+  color: var(--c-ink);
+  transition: color 0.25s ease;
+}
+
+.mobile-menu-link:hover,
+.mobile-menu-link.is-current {
+  color: var(--c-accent);
+}
+
+.mobile-menu-line {
+  display: block;
+  height: 1px;
+  margin: 16px 0 17px;
+  background: var(--c-ink);
+}
+
+/* ===== БАННЕР (только узкие экраны) ===== */
+.mobile-menu-banner {
+  display: none;
+}
+
+/* ===== СОЦСЕТИ И КНОПКА ===== */
+.mobile-menu-footer {
+  position: absolute;
+  top: 634px;
+  left: 50px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.mobile-menu-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--c-accent);
+}
+
+.icon-wa {
+  width: 22px;
+  height: 22px;
+}
+
+.icon-max {
+  width: 32px;
+  height: 32px;
+}
+
+.icon-tg {
+  width: 23px;
+  height: 19.5px;
+}
+
+/* иконка телефона в исходнике тёмная, на оранжевом круге нужна белая */
+.icon-tel {
+  width: 30px;
+  height: 30px;
+  filter: brightness(0) invert(1);
+}
+
+.mobile-menu-callback {
+  width: 116px;
+  height: 56px;
+  background: var(--c-white);
+  font-size: 14px;
+  line-height: 14px;
+}
+
+/* ===== 640 ===== */
+@media (max-width: 959px) {
+  .mobile-menu-inner {
+    height: 820px;
+  }
+
+  .mobile-menu-logo {
+    left: 30px;
+  }
+
+  .mobile-menu-close {
+    top: 80px;
+    left: 565px;
+  }
+
+  .mobile-menu-nav {
+    top: 179px;
+    left: 30px;
+  }
+
+  .mobile-menu-footer {
+    top: 586px;
+    left: 30px;
+  }
+
+  .mobile-menu-callback {
+    width: 170px;
+    margin-top: 10px;
+  }
+}
+
+/* ===== 360 ===== */
+@media (max-width: 639px) {
+  .mobile-menu-inner {
+    height: 658px;
+  }
+
+  .mobile-menu-bg,
+  .mobile-menu-head {
+    left: 0;
+    right: 0;
+  }
+
+  .mobile-menu-bg {
+    top: 0;
+    height: 654px;
+  }
+
+  .mobile-menu-head {
+    top: 2px;
+    height: 68px;
+  }
+
+  .mobile-menu-logo {
+    top: 18px;
+    left: 20px;
+    width: 62px;
+    height: 35.61px;
+  }
+
+  .mobile-menu-close {
+    top: 18px;
+    left: 304px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .mobile-menu-nav {
+    top: 90px;
+    left: 20px;
+    width: 320px;
+  }
+
+  /* ширина уже полосы-разделителя: длинный пункт переносится на две строки */
+  .mobile-menu-link {
+    width: 281px;
+    font-size: 24px;
+    line-height: 25px;
+  }
+
+  .mobile-menu-banner {
+    position: absolute;
+    top: 415px;
+    left: 14px;
+    display: block;
+    width: 330px;
+    height: 109.33px;
+  }
+
+  .mobile-menu-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .mobile-menu-footer {
+    top: 550px;
+    left: 14px;
+    gap: 9px;
+  }
+
+  .mobile-menu-social {
+    width: 40px;
+    height: 40px;
+  }
+
+  .icon-wa {
+    width: 20px;
+    height: 20px;
+  }
+
+  .icon-max {
+    width: 27px;
+    height: 27px;
+  }
+
+  .icon-tg {
+    width: 21px;
+    height: 17.8px;
+  }
+
+  .icon-tel {
+    width: 19px;
+    height: 19px;
+  }
+
+  .mobile-menu-callback {
+    width: 131px;
+    height: 42px;
+    margin-top: 1px;
+    margin-left: 5px;
+  }
+}

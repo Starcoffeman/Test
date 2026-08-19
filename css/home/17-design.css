@@ -1,0 +1,294 @@
+/* ==========================================================================
+   17-design.css — «бесконечные возможности дизайна» (макет 1200)
+   Текстовая часть лежит на голубой подложке, снимок панели и превью коллекций
+   выходят за её границы и подрезаются секцией — отсюда слои поверх .design-stage.
+   ========================================================================== */
+
+.design {
+  position: relative;
+  height: 585px;
+  overflow: hidden;
+  background: var(--c-light);
+}
+
+.design-stage {
+  position: relative;
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+/* оттенок голубого фетра из превью коллекций, вне палитры проекта */
+.design-card {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  width: 607px;
+  height: 596px;
+  background: #cae0f1;
+}
+
+/* в оригинале текст центрируется по высоте своей рамки — отсюда явные height */
+.design-title {
+  position: absolute;
+  left: 50px;
+  top: 50px;
+  display: flex;
+  align-items: center;
+  width: 642px;
+  height: 163px;
+  font-family: var(--ff-display);
+  font-size: 60px;
+  font-weight: 500;
+  line-height: 54px;
+  letter-spacing: -0.7px;
+  color: var(--c-ink);
+}
+
+.design-badge {
+  position: absolute;
+  left: 522px;
+  top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: var(--c-accent);
+}
+
+.design-badge svg {
+  width: 35px;
+  height: auto;
+}
+
+.design-text {
+  position: absolute;
+  left: 50px;
+  top: 391px;
+  display: flex;
+  align-items: center;
+  width: 392px;
+  height: 51px;
+  font-family: var(--ff-base);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18.2px;
+  letter-spacing: -0.2px;
+  color: var(--c-ink);
+}
+
+.design-btn {
+  position: absolute;
+  left: 50px;
+  top: 502px;
+  width: 397px;
+  height: 54px;
+  font-size: 14px;
+  line-height: 14px;
+}
+
+/* ===== ПРЕВЬЮ КОЛЛЕКЦИЙ ===== */
+.design-tiles {
+  position: absolute;
+  left: 926px;
+  top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 264px;
+}
+
+.design-tile {
+  height: 192px;
+}
+
+.design-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* четвёртая плитка есть только в макетах 640 и 360 */
+.design-tile--extra {
+  display: none;
+}
+
+.design-photo {
+  position: absolute;
+  left: 605px;
+  top: 10px;
+  width: 312px;
+  height: auto;
+}
+
+/* ===== МАКЕТ 960 ===== */
+@media (max-width: 1199px) {
+  .design {
+    height: 605px;
+  }
+
+  .design-stage {
+    width: 960px;
+  }
+
+  .design-card {
+    width: 702px;
+    height: 595px;
+  }
+
+  .design-title {
+    left: 40px;
+  }
+
+  .design-badge {
+    left: 628px;
+  }
+
+  .design-text {
+    left: 40px;
+    top: 372px;
+    width: 388px;
+    height: 108px;
+  }
+
+  .design-btn {
+    left: 40px;
+    top: 520px;
+  }
+
+  .design-tiles {
+    left: 722px;
+    gap: 11px;
+    width: 227px;
+  }
+
+  .design-tile {
+    height: 141px;
+  }
+}
+
+/* ===== МАКЕТ 640 ===== */
+@media (max-width: 959px) {
+  .design {
+    height: 1121px;
+  }
+
+  .design-stage {
+    width: 640px;
+  }
+
+  .design-card {
+    width: 619px;
+    height: 491px;
+  }
+
+  .design-title {
+    left: 30px;
+    width: 498px;
+  }
+
+  .design-badge {
+    left: 546px;
+  }
+
+  .design-text {
+    left: 30px;
+    top: 259px;
+    height: 108px;
+  }
+
+  .design-btn {
+    left: 30px;
+    top: 407px;
+  }
+
+  .design-tiles {
+    left: 10px;
+    top: 511px;
+    gap: 10px;
+    width: 620px;
+  }
+
+  .design-tile {
+    height: 145px;
+  }
+
+  .design-tile--extra {
+    display: block;
+  }
+
+  /* снимок панели уезжает за нижнюю границу секции */
+  .design-photo {
+    display: none;
+  }
+}
+
+/* ===== МАКЕТ 360 ===== */
+@media (max-width: 639px) {
+  .design {
+    height: 895px;
+  }
+
+  .design-stage {
+    width: 360px;
+  }
+
+  .design-card {
+    left: 8px;
+    top: 8px;
+    width: 344px;
+    height: 443px;
+  }
+
+  .design-title {
+    left: 24px;
+    top: 32px;
+    height: 129px;
+    font-size: 42px;
+    line-height: 37.8px;
+    letter-spacing: -0.2px;
+  }
+
+  .design-badge {
+    left: 22px;
+    top: 176px;
+    width: 43px;
+    height: 43px;
+  }
+
+  .design-badge svg {
+    width: 26px;
+  }
+
+  .design-text {
+    left: 32px;
+    top: 240px;
+    width: 311px;
+    height: 141px;
+  }
+
+  .design-btn {
+    left: 25px;
+    top: 366px;
+    width: 311px;
+    height: 63px;
+  }
+
+  .design-tiles {
+    left: 8px;
+    top: 463px;
+    gap: 8px;
+    width: 344px;
+  }
+
+  .design-tile {
+    height: 100px;
+  }
+
+  /* в мобильном макете это превью идёт первым */
+  .design-tile--extra {
+    order: -1;
+  }
+}

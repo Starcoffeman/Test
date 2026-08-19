@@ -1,0 +1,193 @@
+.video-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.video-modal.active {
+    display: flex;
+    opacity: 1;
+}
+.modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.9);
+    backdrop-filter: blur(10px);
+}
+.modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    z-index: 10;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 50px rgba(0,0,0,0.5);
+}
+.modal-content video {
+    width: 100%;
+    display: block;
+    background: #000;
+}
+.close-modal {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.3s;
+}
+.close-modal:hover {
+    color: var(--orange);
+}
+
+.modal-callback {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.modal-callback.active {
+    display: flex;
+}
+.modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(5px);
+}
+.modal-window {
+    position: relative;
+    background: var(--white);
+    width: 100%;
+    max-width: 550px;
+    padding: 60px 50px;
+    border-radius: 4px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+.modal-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.modal-header h2 {
+    font-family: var(--t-headline-font);
+    font-size: 42px;
+    color: var(--text);
+    margin: 0 0 15px 0;
+    text-transform: lowercase;
+}
+.modal-header p {
+    font-family: var(--t-text-font);
+    font-size: 16px;
+    color: #6b7280;
+    line-height: 1.4;
+    margin: 0;
+}
+.modal-input-group {
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+}
+.modal-input-group label {
+    font-family: var(--t-text-font);
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--text);
+    margin-bottom: 15px;
+    text-transform: lowercase;
+}
+.modal-input-group input,
+.modal-input-group textarea {
+    border: none;
+    border-bottom: 1px solid #d1d5db;
+    padding: 10px 0;
+    font-family: var(--t-text-font);
+    font-size: 18px;
+    outline: none;
+    color: var(--text);
+    background: transparent;
+}
+.modal-input-group input::placeholder,
+.modal-input-group textarea::placeholder {
+    color: #b0bec5;
+    text-transform: lowercase;
+}
+.modal-checkbox-group {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+.modal-checkbox-group input {
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    border: 1.5px solid var(--orange);
+    border-radius: 2px;
+    cursor: pointer;
+    flex-shrink: 0;
+    position: relative;
+    margin-top: 2px;
+}
+.modal-checkbox-group input:checked::after {
+    content: "✓";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--orange);
+    font-size: 16px;
+}
+.modal-checkbox-group label {
+    font-size: 13px;
+    line-height: 1.4;
+    color: #6b7280;
+}
+.modal-checkbox-group a {
+    color: var(--orange);
+    text-decoration: underline;
+}
+.btn-modal-submit {
+    width: 100%;
+    background: transparent;
+    border: 2px solid var(--orange);
+    color: var(--orange);
+    padding: 22px;
+    border-radius: 50px;
+    font-family: var(--t-text-font);
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: lowercase;
+}
+.btn-modal-submit:hover,
+.btn-modal-submit:focus,
+.btn-modal-submit:active {
+    background: #4c5262 !important;
+    border-color: #4c5262 !important;
+    color: var(--white) !important;
+}
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: #b0bec5;
+    cursor: pointer;
+}

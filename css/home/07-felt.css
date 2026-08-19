@@ -1,0 +1,92 @@
+/* ==========================================================================
+   07-felt.css — «прикоснитесь к тишине» (базовый макет 1200)
+   ========================================================================== */
+.felt {
+  background: var(--c-light);
+  padding: 10px 10px 9px;
+}
+
+.felt-card {
+  position: relative;
+  height: 437px;
+  background: var(--c-white);
+}
+
+.felt-title {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  font-family: var(--ff-display);
+  font-size: 80px;
+  font-weight: 500;
+  line-height: 64px;
+  letter-spacing: -2px;
+  color: var(--c-accent);
+}
+
+.felt-text {
+  position: absolute;
+  top: 330px;
+  left: 595px;
+  width: 537px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.2px;
+  color: var(--c-ink);
+}
+
+/* ===== МАКЕТ 960 ===== */
+@media (max-width: 1199px) {
+  .felt-text {
+    top: 261px;
+    left: 513px;
+    width: 405px;
+  }
+}
+
+/* ===== МАКЕТ 640 ===== */
+@media (max-width: 959px) {
+  .felt {
+    padding: 10px 10px 0;
+  }
+
+  .felt-card {
+    height: 436px;
+  }
+
+  .felt-title {
+    top: 30px;
+    left: 20px;
+  }
+
+  .felt-text {
+    top: 309px;
+    left: 30px;
+    width: 521px;
+  }
+}
+
+/* ===== МАКЕТ 360 ===== */
+@media (max-width: 639px) {
+  .felt {
+    padding: 8px 8px 0;
+  }
+
+  .felt-card {
+    height: 379px;
+  }
+
+  .felt-title {
+    top: 24px;
+    left: 16px;
+    font-size: 44px;
+    line-height: 35px;
+  }
+
+  .felt-text {
+    top: 213px;
+    left: 16px;
+    width: 308px;
+  }
+}

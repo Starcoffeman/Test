@@ -1,0 +1,422 @@
+/* ==========================================================================
+   15-application.css — «применение в пространствах» (макет 1200)
+   Здесь же общий слайдер .hb-slider: его использует и секция 16-commercial,
+   как и общий скрипт js/15-application.js.
+   ========================================================================== */
+
+/* ===== ОБЩИЙ СЛАЙДЕР ===== */
+.hb-slider {
+  position: absolute;
+  overflow: hidden;
+  --c-dot: #cacaca;
+}
+
+.hb-slider-track {
+  display: flex;
+  height: 100%;
+  will-change: transform;
+}
+
+/* Кадрирование каждого слайда задаёт секция: в оригинале у слайдов свои
+   background-size/position, а ниже 1200px все они показаны как cover. */
+.hb-slider-slide {
+  flex: 0 0 100%;
+  height: 100%;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.hb-slider-bars {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  display: flex;
+  gap: var(--bars-gap);
+}
+
+.hb-slider-bar {
+  position: relative;
+  width: var(--bar-w);
+  height: 1px;
+  padding: 0;
+  border: 0;
+  background: var(--c-grey);
+  cursor: pointer;
+}
+
+/* полоса высотой 1px — расширяем зону клика, не меняя вид */
+.hb-slider-bar::before {
+  content: '';
+  position: absolute;
+  inset: -12px 0;
+}
+
+.hb-slider-bar-fill {
+  position: absolute;
+  inset: 0 100% 0 0;
+  background: var(--c-white);
+}
+
+.hb-slider-bar.is-active .hb-slider-bar-fill {
+  inset: 0;
+  transition: inset var(--slide-time, 5000ms) linear;
+}
+
+.hb-slider-dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+  display: none;
+  justify-content: center;
+  gap: 15px;
+}
+
+.hb-slider-dot {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--c-dot);
+  cursor: pointer;
+}
+
+.hb-slider-dot::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+}
+
+.hb-slider-dot.is-active {
+  background: var(--c-white);
+}
+
+/* ===== ЗАГОЛОВОК-БАННЕР ===== */
+.app {
+  --c-sky: #cae0f1;
+}
+
+.app-head {
+  height: 410px;
+  overflow: hidden;
+  background: var(--c-light);
+}
+
+.app-head-inner,
+.app-body-inner {
+  position: relative;
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.app-head-card {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  width: 1180px;
+  height: 400px;
+  background: var(--c-sky);
+}
+
+.app-head-title {
+  position: absolute;
+  left: 50px;
+  top: 50px;
+  width: 619px;
+  font-family: var(--ff-display);
+  font-size: 80px;
+  font-weight: 500;
+  line-height: 64px;
+  letter-spacing: -2px;
+  color: var(--c-ink);
+}
+
+/* ===== СЛАЙДЕР И КАРТОЧКА ===== */
+.app-body {
+  height: 606px;
+  overflow: hidden;
+  background: var(--c-light);
+}
+
+.app-slider {
+  left: 10px;
+  top: 10px;
+  width: 585px;
+  height: 596px;
+  --bar-w: 170px;
+  --bars-gap: 17px;
+}
+
+.app-slide--1 {
+  background-image: url('../../assets/misc-home/hf_20260305_090240_6.png');
+  background-position: 80.363% 0%;
+  background-size: 240.389%;
+}
+
+.app-slide--2 {
+  background-image: url('../../assets/misc-home/Frame_2085666653.png');
+}
+
+.app-slide--3 {
+  background-image: url('../../assets/misc-home/Frame_454_1.png');
+}
+
+.app-card {
+  position: absolute;
+  left: 605px;
+  top: 10px;
+  width: 585px;
+  height: 596px;
+  background: var(--c-sky);
+}
+
+.app-card-title {
+  position: absolute;
+  left: 40px;
+  top: 40px;
+  width: 425px;
+  font-family: var(--ff-display);
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 25.2px;
+  letter-spacing: -0.7px;
+  color: var(--c-ink);
+}
+
+/* ===== СПИСОК ПРОСТРАНСТВ ===== */
+.app-list {
+  position: absolute;
+  left: 40px;
+  top: 270px;
+}
+
+/* шаг между пунктами неравномерный: короткие строки в макете ниже прочих */
+.app-list-item {
+  position: absolute;
+  left: 0;
+  top: var(--y);
+  display: flex;
+  align-items: center;
+  height: var(--h, 21px);
+}
+
+.app-list-item--short {
+  --h: 18.2px;
+}
+
+.app-list-item:nth-child(1) {
+  --y: 0px;
+}
+.app-list-item:nth-child(2) {
+  --y: 30.2px;
+}
+.app-list-item:nth-child(3) {
+  --y: 63.2px;
+}
+.app-list-item:nth-child(4) {
+  --y: 96.2px;
+}
+.app-list-item:nth-child(5) {
+  --y: 126.4px;
+}
+.app-list-item:nth-child(6) {
+  --y: 159.4px;
+}
+.app-list-item:nth-child(7) {
+  --y: 192.4px;
+}
+.app-list-item:nth-child(8) {
+  --y: 225.4px;
+}
+
+.app-list-dot {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--c-ink);
+  opacity: 0.3;
+}
+
+.app-list-text {
+  width: 232px;
+  margin-left: 28px;
+  font-family: var(--ff-base);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18.2px;
+  letter-spacing: -0.2px;
+  color: var(--c-ink);
+}
+
+/* ===== МАКЕТ 960 ===== */
+@media (max-width: 1199px) {
+  .hb-slider-bars {
+    display: none;
+  }
+
+  .hb-slider-dots {
+    display: flex;
+  }
+
+  .hb-slider-slide {
+    background-position: 100% 50%;
+    background-size: cover;
+  }
+
+  /* ниже 1200px оригинал показывает в этом слайдере другие два кадра */
+  .app-slide--1 {
+    background-image: url('https://static.tildacdn.com/tild6465-3631-4061-b261-656133653630/Frame_2085666659.png');
+  }
+
+  .app-slide--2 {
+    background-image: url('https://static.tildacdn.com/tild6338-6535-4361-b634-656162663864/Frame_478.jpg');
+  }
+
+  .app-head-inner,
+  .app-body-inner {
+    width: 960px;
+  }
+
+  .app-head-card {
+    width: 940px;
+  }
+
+  .app-slider {
+    width: 465px;
+  }
+
+  .app-card {
+    left: 485px;
+    width: 465px;
+  }
+
+  .app-list {
+    top: 304px;
+  }
+
+  .app-list-text {
+    width: 371px;
+  }
+}
+
+/* ===== МАКЕТ 640 ===== */
+@media (max-width: 959px) {
+  .app-head {
+    height: 246px;
+  }
+
+  .app-head-inner,
+  .app-body-inner {
+    width: 640px;
+  }
+
+  .app-head-card {
+    width: 620px;
+    height: 236px;
+  }
+
+  .app-head-title {
+    left: 30px;
+    top: 40px;
+    font-size: 72px;
+    line-height: 57.6px;
+  }
+
+  .app-body {
+    height: 1213px;
+  }
+
+  .app-slider {
+    top: 617px;
+    width: 620px;
+  }
+
+  .app-card {
+    left: 10px;
+    width: 620px;
+    height: 597px;
+  }
+
+  .app-card-title {
+    left: 20px;
+  }
+
+  .app-list {
+    left: 20px;
+    top: 305px;
+  }
+}
+
+/* ===== МАКЕТ 360 ===== */
+@media (max-width: 639px) {
+  .hb-slider-dots {
+    bottom: 18px;
+    gap: 8px;
+  }
+
+  .app-head {
+    height: 200px;
+  }
+
+  .app-head-inner,
+  .app-body-inner {
+    width: 360px;
+  }
+
+  .app-head-card {
+    left: 8px;
+    top: 8px;
+    width: 344px;
+    height: 192px;
+  }
+
+  .app-head-title {
+    left: 24px;
+    top: 32px;
+    width: 309px;
+    font-size: 40px;
+    line-height: 32px;
+    letter-spacing: -1px;
+  }
+
+  .app-body {
+    height: 801px;
+  }
+
+  .app-slider {
+    left: 8px;
+    top: 8px;
+    width: 344px;
+    height: 377px;
+  }
+
+  .app-card {
+    left: 8px;
+    top: 393px;
+    width: 344px;
+    height: 408px;
+  }
+
+  .app-card-title {
+    left: 16px;
+    top: 24px;
+    width: 272px;
+    font-size: 24px;
+    line-height: 19.2px;
+    letter-spacing: -0.2px;
+  }
+
+  .app-list {
+    left: 22px;
+    top: 122px;
+  }
+
+  .app-list-text {
+    width: 310px;
+  }
+}

@@ -1,0 +1,527 @@
+/* ==========================================================================
+   22-footer.css — футер: тёмная карточка «оставьте заявку», реквизиты,
+   правовые ссылки (макет 1200)
+   Оригинал — zero-block со свободной раскладкой: связи между элементами
+   нет ни по строкам, ни по колонкам, поэтому блоки размещены абсолютно
+   внутри сцены, а flex использован там, где элементы реально образуют ряд.
+   ========================================================================== */
+
+.footer {
+  position: relative;
+  overflow: hidden;
+  background: var(--c-light);
+}
+
+.footer-stage {
+  position: relative;
+  width: 1200px;
+  height: 687px;
+  margin: 0 auto;
+}
+
+/* ===== ТЁМНАЯ КАРТОЧКА ===== */
+.footer-cta {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  width: 1179px;
+  height: 520px;
+  background: var(--c-ink);
+  color: var(--c-white);
+}
+
+.footer-cta-title {
+  position: absolute;
+  left: 40px;
+  top: 40px;
+  display: flex;
+  align-items: center;
+  width: 716px;
+  height: 54px;
+  font-family: var(--ff-display);
+  font-size: 60px;
+  font-weight: 500;
+  line-height: 54px;
+}
+
+.footer-cta-list {
+  position: absolute;
+  left: 41px;
+  top: 116px;
+  width: 373px;
+  padding-left: 20px;
+  list-style: disc;
+  font-family: var(--ff-display);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+}
+
+.footer-cta-list li {
+  list-style: inherit;
+}
+
+/* пустая строка между пунктами в оригинале — отсюда шаг, равный интерлиньяжу */
+.footer-cta-list li + li {
+  margin-top: 24px;
+}
+
+/* ===== КРУГЛЫЕ КНОПКИ МЕССЕНДЖЕРОВ ===== */
+.footer-messengers {
+  position: absolute;
+  left: 25px;
+  top: 275px;
+  display: flex;
+}
+
+.footer-messenger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 76px;
+}
+
+.footer-messenger-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--c-accent);
+  transition: transform 0.2s ease;
+}
+
+.footer-messenger:hover .footer-messenger-circle {
+  transform: scale(1.06);
+}
+
+.footer-messenger-icon {
+  color: var(--c-white);
+}
+
+.footer-messenger-icon--wa {
+  width: 22px;
+  height: 22px;
+}
+
+/* в оригинале иконка Max смещена относительно центра кружка — повторяем */
+.footer-messenger-icon--max {
+  width: 32px;
+  height: 32px;
+  transform: translateY(-2px);
+}
+
+.footer-messenger-icon--tg {
+  width: 23px;
+  height: 19.5px;
+}
+
+/* ===== СОЦСЕТИ ===== */
+.footer-socials {
+  position: absolute;
+  left: 42px;
+  top: 387px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer-social {
+  display: flex;
+  color: var(--c-white);
+  transition: color 0.2s ease;
+}
+
+.footer-social:hover {
+  color: var(--c-accent);
+}
+
+.footer-social-icon--pin {
+  width: 17px;
+  height: 22px;
+}
+
+.footer-social-icon--vk {
+  width: 24px;
+  height: 16px;
+}
+
+.footer-social-icon--tg {
+  width: 22px;
+  height: 18.7px;
+}
+
+.footer-social-icon--yt {
+  width: 22px;
+  height: 15.42px;
+}
+
+/* ===== КОНТАКТЫ И МЕНЮ ВНУТРИ КАРТОЧКИ ===== */
+.footer-phone,
+.footer-email,
+.footer-address,
+.footer-nav a {
+  font-family: var(--ff-base);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -0.1px;
+}
+
+.footer-phone,
+.footer-email,
+.footer-address,
+.footer-nav {
+  position: absolute;
+}
+
+.footer-phone {
+  left: 40px;
+  top: 426px;
+}
+
+.footer-email {
+  left: 40px;
+  top: 445px;
+}
+
+.footer-address {
+  left: 595px;
+  top: 426px;
+  width: 190px;
+}
+
+.footer-nav {
+  left: 894px;
+  top: 426px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.footer-phone:hover,
+.footer-email:hover,
+.footer-nav a:hover {
+  color: var(--c-accent);
+}
+
+/* ===== РЕКВИЗИТЫ И ПРАВОВЫЕ ССЫЛКИ ===== */
+.footer-req,
+.footer-legal {
+  position: absolute;
+  color: var(--c-ink);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: -0.2px;
+  opacity: 0.6;
+}
+
+.footer-req {
+  top: 554px;
+  width: max-content;
+  line-height: 16px;
+}
+
+.footer-req--company {
+  left: 50px;
+}
+
+.footer-req--contacts {
+  left: 605px;
+}
+
+.footer-legal {
+  left: 50px;
+  top: 645px;
+  display: flex;
+  gap: 24px;
+  line-height: 15.6px;
+  white-space: nowrap;
+}
+
+.footer-legal a:hover {
+  color: var(--c-accent);
+}
+
+/* ==========================================================================
+   МАКЕТ 960
+   ========================================================================== */
+@media (max-width: 1199px) {
+  .footer-stage {
+    width: 960px;
+    height: 649px;
+  }
+
+  .footer-cta {
+    width: 940px;
+    height: 487px;
+  }
+
+  .footer-cta-title {
+    font-size: 48px;
+    height: 43px;
+    line-height: 43px;
+  }
+
+  .footer-cta-list {
+    top: 133px;
+  }
+
+  .footer-messengers {
+    top: 249px;
+    gap: 10px;
+  }
+
+  .footer-messenger {
+    width: 72px;
+  }
+
+  .footer-messenger-circle {
+    width: 56px;
+    height: 56px;
+  }
+
+  .footer-messenger-icon--max {
+    transform: translate(5px, 5px);
+  }
+
+  .footer-socials {
+    top: 354px;
+  }
+
+  .footer-phone {
+    top: 390px;
+  }
+
+  .footer-email {
+    top: 409px;
+  }
+
+  .footer-address {
+    left: 470px;
+    top: 373px;
+  }
+
+  .footer-nav {
+    left: 720px;
+    top: 373px;
+  }
+
+  .footer-req {
+    top: 521px;
+  }
+
+  .footer-req--company {
+    left: 10px;
+  }
+
+  .footer-req--contacts {
+    left: 480px;
+  }
+
+  .footer-legal {
+    left: 10px;
+    top: 609px;
+    gap: 20px;
+  }
+}
+
+/* ==========================================================================
+   МАКЕТ 640
+   ========================================================================== */
+@media (max-width: 959px) {
+  .footer-stage {
+    width: 640px;
+    height: 750px;
+  }
+
+  .footer-cta {
+    width: 620px;
+  }
+
+  .footer-cta-title {
+    left: 20px;
+  }
+
+  .footer-cta-list {
+    left: 20px;
+  }
+
+  .footer-messengers {
+    left: 5px;
+    top: 226px;
+  }
+
+  .footer-socials {
+    left: 22px;
+    top: 315px;
+  }
+
+  /* в оригинале YouTube отбит от остальных иконок сильнее */
+  .footer-social--yt {
+    margin-left: 20px;
+  }
+
+  .footer-phone {
+    left: 20px;
+    top: 353px;
+  }
+
+  .footer-email {
+    left: 20px;
+    top: 372px;
+  }
+
+  .footer-address {
+    left: 20px;
+    top: 411px;
+    width: 275px;
+  }
+
+  .footer-nav {
+    left: 400px;
+    top: 353px;
+  }
+
+  .footer-req {
+    top: 521px;
+  }
+
+  .footer-req--company {
+    left: 10px;
+    width: 195px;
+  }
+
+  .footer-req--contacts {
+    left: 275px;
+    width: 226px;
+  }
+
+  .footer-legal {
+    left: 10px;
+    top: 627px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+/* ==========================================================================
+   МАКЕТ 360
+   ========================================================================== */
+@media (max-width: 639px) {
+  .footer-stage {
+    width: 360px;
+    height: 810px;
+  }
+
+  .footer-cta {
+    left: 8px;
+    top: 8px;
+    width: 344px;
+    height: 550px;
+  }
+
+  .footer-cta-title {
+    left: 16px;
+    top: 24px;
+    width: 328px;
+    height: 34px;
+    font-size: 38px;
+    line-height: 34px;
+    letter-spacing: -1px;
+  }
+
+  .footer-cta-list {
+    left: 16px;
+    top: 81.5px;
+    width: 286px;
+    line-height: 15px;
+  }
+
+  .footer-cta-list li + li {
+    margin-top: 15px;
+  }
+
+  .footer-messengers {
+    left: 5px;
+    top: 224px;
+    gap: 3px;
+  }
+
+  .footer-messenger {
+    width: 66px;
+  }
+
+  .footer-messenger-circle {
+    width: 50px;
+    height: 50px;
+  }
+
+  .footer-messenger-icon--wa {
+    width: 20px;
+    height: 20px;
+  }
+
+  .footer-messenger-icon--max {
+    width: 27px;
+    height: 27px;
+    transform: none;
+  }
+
+  .footer-messenger-icon--tg {
+    width: 20.98px;
+    height: 17.8px;
+  }
+
+  .footer-socials {
+    left: 16px;
+    top: 310px;
+  }
+
+  .footer-social--yt {
+    margin-left: 0;
+  }
+
+  .footer-phone {
+    left: 17px;
+    top: 346px;
+  }
+
+  .footer-email {
+    left: 17px;
+    top: 363px;
+  }
+
+  .footer-address {
+    left: 16px;
+    top: 408px;
+    width: 307px;
+  }
+
+  .footer-nav {
+    left: 16px;
+    top: 470px;
+  }
+
+  .footer-req {
+    top: 582px;
+  }
+
+  .footer-req--company {
+    left: 24px;
+    width: 148px;
+  }
+
+  .footer-req--contacts {
+    left: 183px;
+    width: 169px;
+  }
+
+  .footer-legal {
+    left: 24px;
+    top: 702px;
+  }
+}

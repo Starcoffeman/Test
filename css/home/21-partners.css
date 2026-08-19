@@ -1,0 +1,329 @@
+/* ==========================================================================
+   21-partners.css — «компании, с которыми работаем»: голубая карточка
+   с заголовком и белые плитки с логотипами партнёров (макет 1200).
+   Логотипы в оригинале выставлены вручную, поэтому их кадры заданы явно.
+   ========================================================================== */
+
+.partners {
+  /* голубая подложка встречается только в этом блоке — токена в base.css нет */
+  --c-partners-blue: #cae0f1;
+
+  background: var(--c-light);
+}
+
+.partners-stage {
+  display: flex;
+  gap: 10px;
+  width: 1200px;
+  margin: 0 auto;
+  /* плитки прижаты к низу секции — снизу поля нет */
+  padding: 10px 10px 0;
+}
+
+.partners-intro {
+  flex: none;
+  width: 585px;
+  height: 596px;
+  padding: 40px;
+  background: var(--c-partners-blue);
+}
+
+.partners-title {
+  width: 490px;
+  font-family: var(--ff-display);
+  font-size: 60px;
+  font-weight: 500;
+  line-height: 54px;
+  letter-spacing: -0.7px;
+  color: var(--c-ink);
+}
+
+.partners-list {
+  display: flex;
+  flex-direction: column;
+  gap: 13.5px;
+  width: 585px;
+}
+
+.partner {
+  position: relative;
+  background: var(--c-white);
+}
+
+/* --shift — ручная поправка выкладки логотипа или подписи из оригинала */
+.partner-logo,
+.partner-link,
+.partner-name {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateX(var(--shift, 0px));
+}
+
+.partner-link .partner-logo {
+  position: static;
+  width: 100%;
+  height: 100%;
+  transform: none;
+}
+
+.partner-name {
+  font-family: var(--ff-base);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -0.2px;
+  text-align: center;
+  color: var(--c-ink);
+}
+
+.partner--rosatom {
+  height: 189px;
+}
+
+.partner--rosatom .partner-logo {
+  top: 29px;
+  width: 97px;
+  height: 97px;
+  --shift: -2px;
+}
+
+.partner--rosatom .partner-name {
+  top: 148px;
+}
+
+.partner--azbuka {
+  height: 190px;
+}
+
+.partner--azbuka .partner-logo {
+  top: 29px;
+  width: 120px;
+  height: 97px;
+}
+
+.partner--azbuka .partner-name {
+  top: 149px;
+}
+
+.partner--cifra {
+  height: 190px;
+}
+
+.partner--cifra .partner-link {
+  top: 34px;
+  width: 191px;
+  height: 105px;
+  --shift: 4px;
+}
+
+/* подпись «Цифра брокер» в оригинале смещена вправо от центра плитки */
+.partner--cifra .partner-name {
+  top: 150px;
+  --shift: 10px;
+}
+
+/* ===== МАКЕТ 960 ===== */
+@media (max-width: 1199px) {
+  .partners-stage {
+    width: 960px;
+  }
+
+  .partners-intro {
+    width: 461px;
+    height: 595px;
+    padding: 40px 20px;
+  }
+
+  .partners-title {
+    width: 355px;
+  }
+
+  .partners-list {
+    gap: 5px;
+    width: 469px;
+  }
+
+  .partner--rosatom {
+    height: 202px;
+  }
+
+  .partner--rosatom .partner-logo {
+    top: 12px;
+    width: 115px;
+    height: 115px;
+    --shift: 0;
+  }
+
+  .partner--rosatom .partner-name {
+    top: 154px;
+  }
+
+  .partner--azbuka .partner-logo {
+    top: 19px;
+    width: 143px;
+    height: 116px;
+  }
+
+  /* подписи в две строки — ширина задана макетом */
+  .partner--azbuka .partner-name,
+  .partner--cifra .partner-name {
+    width: 67px;
+  }
+
+  .partner--azbuka .partner-name {
+    top: 144px;
+  }
+
+  .partner--cifra .partner-link {
+    top: 45px;
+    width: 143px;
+    height: 79px;
+    --shift: 0;
+  }
+
+  .partner--cifra .partner-name {
+    top: 141px;
+    --shift: 6px;
+  }
+}
+
+/* ===== МАКЕТ 640 ===== */
+@media (max-width: 959px) {
+  .partners-stage {
+    flex-direction: column;
+    gap: 9px;
+    width: 640px;
+    padding: 10px 10px 15px;
+  }
+
+  .partners-intro {
+    width: 620px;
+    height: 387px;
+  }
+
+  .partners-title {
+    width: 498px;
+  }
+
+  .partners-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 11px 10px;
+    width: 620px;
+  }
+
+  .partner {
+    width: 305px;
+    height: 294px;
+  }
+
+  /* третья плитка стоит одна в ряду и в макете чуть левее центра */
+  .partner--cifra {
+    margin-right: 5px;
+  }
+
+  .partner--rosatom .partner-logo {
+    top: 64px;
+    width: 75px;
+    height: 75px;
+  }
+
+  .partner--azbuka .partner-logo {
+    top: 83px;
+    width: 94px;
+    height: 76px;
+  }
+
+  .partner--cifra .partner-link {
+    top: 83px;
+    width: 94px;
+    height: 53px;
+    --shift: 1.5px;
+  }
+
+  .partner--azbuka .partner-name,
+  .partner--cifra .partner-name {
+    width: auto;
+  }
+
+  .partner--rosatom .partner-name,
+  .partner--azbuka .partner-name,
+  .partner--cifra .partner-name {
+    top: 215px;
+  }
+
+  .partner--cifra .partner-name {
+    --shift: 6px;
+  }
+}
+
+/* ===== МАКЕТ 360 ===== */
+@media (max-width: 639px) {
+  .partners-stage {
+    gap: 8px;
+    width: 360px;
+    padding: 8px 8px 10px;
+  }
+
+  .partners-intro {
+    width: 344px;
+    height: 218px;
+    padding: 24px 16px;
+  }
+
+  .partners-title {
+    width: 303px;
+    font-size: 42px;
+    line-height: 37.8px;
+    letter-spacing: -0.2px;
+  }
+
+  .partners-list {
+    flex-direction: column;
+    gap: 8px;
+    width: 344px;
+  }
+
+  .partner {
+    width: 344px;
+    height: 240px;
+  }
+
+  .partner--cifra {
+    margin-top: 2px;
+    margin-right: 0;
+  }
+
+  .partner--rosatom .partner-logo {
+    top: 41px;
+    width: 116px;
+    height: 116px;
+  }
+
+  .partner--rosatom .partner-name {
+    top: 181px;
+  }
+
+  .partner--azbuka .partner-logo {
+    top: 52px;
+    width: 116px;
+    height: 94px;
+  }
+
+  .partner--azbuka .partner-name {
+    top: 170px;
+  }
+
+  .partner--cifra .partner-link {
+    top: 52px;
+    width: 116px;
+    height: 65px;
+    --shift: 0;
+  }
+
+  .partner--cifra .partner-name {
+    top: 170px;
+    --shift: 5px;
+  }
+}

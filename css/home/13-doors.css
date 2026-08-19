@@ -1,0 +1,93 @@
+/* ==========================================================================
+   13-doors.css — секция «решение для дверей»
+   Общие примитивы .solution-* лежат в css/11-walls.css — файл обязателен.
+   Здесь только высоты блока подписей и координаты единственной карточки.
+   ========================================================================== */
+
+/* ===== МАКЕТ 1200 ===== */
+.solution--doors .solution-cards {
+  height: 133px;
+}
+
+.solution--doors .solution-card--1 {
+  --x: 308px;
+  --y: -162px;
+  --mx: 82px;
+  --my: 82px;
+}
+
+/* Отступ подписи 25px есть только в макете 1200; в остальных — общий из 11-walls.css,
+   поэтому правило заперто в диапазон, иначе перебьёт его по специфичности */
+@media (min-width: 1200px) {
+  .solution--doors .solution-card--1 {
+    --tx: 25px;
+    --ty: 25px;
+  }
+}
+
+/* ===== МАКЕТ 960 ===== */
+@media (max-width: 1199px) {
+  .solution--doors .solution-cards {
+    height: 157px;
+  }
+
+  .solution--doors .solution-card--1 {
+    --x: 320px;
+    --y: -130px;
+    --mx: 83px;
+    --my: 83px;
+  }
+}
+
+/* Отступы подписи и её перенос в две строки задаются только в макете 960.
+   Диапазон, а не «сверху вниз»: правила специфичнее сбросов в макете 640. */
+@media (min-width: 960px) and (max-width: 1199px) {
+  .solution--doors .solution-card--1 {
+    --tx: 28px;
+    --ty: 28px;
+    --tw: 230px;
+  }
+
+  .solution--doors .solution-card-title {
+    width: var(--tw);
+    white-space: normal;
+  }
+}
+
+/* ===== МАКЕТ 640 ===== */
+@media (max-width: 959px) {
+  .solution--doors .solution-cards {
+    height: 154px;
+  }
+
+  .solution--doors .solution-card--1 {
+    --x: 325px;
+    --y: -150px;
+    --mx: 88px;
+    --my: 87px;
+  }
+}
+
+/* ===== МАКЕТ 360 ===== */
+@media (max-width: 639px) {
+  .solution--doors .solution-head {
+    height: 150px;
+  }
+
+  .solution--doors .solution-panel {
+    height: 136px;
+  }
+
+  .solution--doors .solution-cards {
+    height: 106px;
+  }
+
+  .solution--doors .solution-card--1 {
+    --x: 21px;
+    --y: -141px;
+    --h: 236px;
+    --tw: 129px;
+    --mx: 34px;
+    --my: 105px;
+  }
+}

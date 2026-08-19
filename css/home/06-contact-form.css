@@ -1,0 +1,448 @@
+/* ==========================================================================
+   06-contact-form — оранжевый блок «получите персональное предложение»
+   В оригинале это холст фиксированной высоты: заголовок, список и форма
+   стоят на своих координатах и на разных макетах не образуют общего потока,
+   поэтому три верхних блока позиционируются абсолютно.
+   ========================================================================== */
+
+.offer {
+  height: 698px;
+  padding: 11px 10px;
+  overflow: hidden;
+  background: var(--c-light);
+
+  /* приглушённый оттенок подписей на оранжевом — только в этой секции */
+  --c-offer-soft: #fdc7b9;
+}
+
+.offer-card {
+  position: relative;
+  height: 676px;
+  background: var(--c-accent);
+  color: var(--c-white);
+}
+
+/* ===== ЗАГОЛОВОК ===== */
+.offer-title {
+  position: absolute;
+  left: 40px;
+  top: 39px;
+  display: flex;
+  align-items: center;
+  width: 749px;
+  height: 193px;
+  font-family: var(--ff-display);
+  font-size: 80px;
+  font-weight: 500;
+  line-height: 64px;
+  letter-spacing: -2px;
+}
+
+/* ===== СПИСОК ПРЕИМУЩЕСТВ ===== */
+.offer-list {
+  position: absolute;
+  left: 61px;
+  top: 329px;
+  width: 439px;
+  padding-left: 20px;
+  list-style: disc;
+}
+
+.offer-item {
+  display: list-item;
+  font-family: var(--ff-display);
+  font-size: 27px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.7px;
+}
+
+.offer-item--base {
+  font-family: var(--ff-base);
+}
+
+.offer-item:nth-child(1) {
+  margin-bottom: 32px;
+}
+
+.offer-item:nth-child(2) {
+  margin-bottom: 31.5px;
+}
+
+/* ===== ФОРМА ===== */
+.offer-form {
+  position: absolute;
+  left: 614px;
+  top: 329px;
+  width: 523px;
+}
+
+.offer-label {
+  display: block;
+  height: 15px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+  color: var(--c-offer-soft);
+}
+
+.offer-input {
+  display: block;
+  width: 100%;
+  height: 48px;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid var(--c-offer-soft);
+  border-radius: 0;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18.62px;
+  color: var(--c-white);
+}
+
+/* полупрозрачный белый: на оранжевом даёт тот же оттенок, что в эталоне */
+.offer-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  opacity: 1;
+}
+
+.offer-input.is-invalid {
+  border-bottom-color: var(--c-white);
+}
+
+.offer-check {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 24px;
+  cursor: pointer;
+}
+
+.offer-check-input {
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  margin: 0;
+  opacity: 0;
+  z-index: -1;
+}
+
+.offer-check-box {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--c-white);
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+.offer-check-input:checked ~ .offer-check-box {
+  position: relative;
+  opacity: 1;
+}
+
+.offer-check-input:checked ~ .offer-check-box::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  width: 6px;
+  height: 11px;
+  border: solid var(--c-white);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.offer-check-input:focus-visible ~ .offer-check-box {
+  outline: 2px solid var(--c-white);
+  outline-offset: 2px;
+}
+
+.offer-check.is-invalid .offer-check-box {
+  opacity: 1;
+}
+
+.offer-check-text {
+  padding-top: 2.8px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14.4px;
+  color: var(--c-offer-soft);
+}
+
+.offer-check-text a {
+  color: var(--c-white);
+  border-bottom: 1px solid var(--c-white);
+}
+
+.offer-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 522px;
+  height: 52px;
+  margin-top: 24px;
+  border-radius: 100px;
+  background: var(--c-white);
+  font-family: var(--ff-base);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--c-ink);
+  transition: opacity 0.25s ease;
+}
+
+.offer-submit:hover {
+  opacity: 0.85;
+}
+
+/* сообщение об ошибке не должно двигать форму — висит под кнопкой */
+.offer-error {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  margin-top: 10px;
+  font-size: 12px;
+  line-height: 14.4px;
+  color: var(--c-white);
+}
+
+/* ===== ПОПАП «ЗАПРОС ПРИНЯТ» ===== */
+.offer-popup {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(26, 26, 26, 0.5);
+}
+
+.offer-popup.is-open {
+  display: flex;
+}
+
+.offer-popup-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 401px;
+  height: 214px;
+  padding: 40px 0;
+  background: var(--c-accent);
+  color: var(--c-white);
+  text-align: center;
+}
+
+.offer-popup-title {
+  font-family: var(--ff-display);
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 25.6px;
+  letter-spacing: -0.7px;
+}
+
+.offer-popup-text {
+  margin-top: 24px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18.2px;
+  letter-spacing: -0.2px;
+}
+
+.offer-popup-btn {
+  width: 102px;
+  height: 40px;
+  margin-top: auto;
+  border-radius: 52px;
+  background: var(--c-white);
+  font-family: var(--ff-base);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 14px;
+  color: var(--c-ink);
+}
+
+/* ===== МАКЕТ 960 ===== */
+@media (max-width: 1199px) {
+  .offer-list {
+    left: 54px;
+    top: 325px;
+    width: 412px;
+  }
+
+  .offer-item:nth-child(1) {
+    margin-bottom: 44px;
+  }
+
+  .offer-item:nth-child(2) {
+    margin-bottom: 41.5px;
+  }
+
+  .offer-form {
+    left: 510px;
+    width: 385px;
+  }
+
+  .offer-submit {
+    width: 100%;
+  }
+
+  .offer-popup-card {
+    width: 413px;
+    height: 219px;
+    padding-bottom: 25px;
+  }
+
+  .offer-popup-btn {
+    width: 116px;
+    height: 56px;
+  }
+}
+
+/* ===== МАКЕТ 640 ===== */
+@media (max-width: 959px) {
+  .offer {
+    height: 850px;
+    padding-bottom: 0;
+  }
+
+  .offer-card {
+    height: 840px;
+  }
+
+  .offer-title {
+    left: 20px;
+    width: 598px;
+    height: 288px;
+    line-height: 72px;
+  }
+
+  /* на этом макете порядок пунктов в оригинале обратный */
+  .offer-list {
+    display: flex;
+    flex-direction: column;
+    left: 35px;
+    top: 326px;
+    width: 486px;
+  }
+
+  .offer-item:nth-child(1) {
+    order: 3;
+    margin-bottom: 0;
+  }
+
+  .offer-item:nth-child(2) {
+    order: 2;
+    margin-bottom: 38.5px;
+  }
+
+  .offer-item:nth-child(3) {
+    order: 1;
+    margin-bottom: 30.5px;
+  }
+
+  .offer-form {
+    left: 40px;
+    top: 559px;
+  }
+
+  /* в оригинале холст попапа ниже центра экрана на 4.5px — повторяем сдвиг */
+  .offer-popup {
+    padding-top: 9px;
+  }
+
+  .offer-popup-card {
+    width: 379px;
+    height: 229px;
+    padding-bottom: 40px;
+  }
+}
+
+/* ===== МАКЕТ 360 ===== */
+@media (max-width: 639px) {
+  .offer {
+    height: 739px;
+    padding: 8px 7px 8px 8px;
+  }
+
+  .offer-card {
+    height: 723px;
+  }
+
+  .offer-title {
+    left: 16px;
+    top: -16px;
+    width: 305px;
+    height: 215px;
+    font-size: 48px;
+    line-height: 43px;
+  }
+
+  .offer-list {
+    display: block;
+    left: 15px;
+    top: 185px;
+    width: 274px;
+  }
+
+  .offer-item {
+    font-size: 16px;
+    line-height: 14px;
+  }
+
+  .offer-item:nth-child(1) {
+    margin-bottom: 23.5px;
+  }
+
+  .offer-item:nth-child(2) {
+    margin-bottom: 23.5px;
+  }
+
+  .offer-item:nth-child(3) {
+    width: 215px;
+    margin-left: -2px;
+  }
+
+  .offer-form {
+    left: 19px;
+    top: 477px;
+    width: 314px;
+  }
+
+  .offer-label {
+    height: 12px;
+    font-size: 10px;
+    line-height: 12px;
+  }
+
+  .offer-submit {
+    width: 312px;
+    height: 56px;
+  }
+
+  .offer-popup {
+    padding-top: 0;
+  }
+
+  .offer-popup-card {
+    width: 344px;
+    height: 239px;
+  }
+
+  .offer-popup-title {
+    font-size: 24px;
+    line-height: 19.2px;
+    letter-spacing: -0.2px;
+  }
+
+  .offer-popup-text {
+    width: 172px;
+    margin-top: 16px;
+  }
+
+  .offer-popup-btn {
+    width: 312px;
+  }
+}

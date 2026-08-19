@@ -1,0 +1,148 @@
+/* ==========================================================================
+   06-comparison.css — designers.html: 3 карточки материалов эко-фетра,
+   тёмные, с изображением слоёв панели и «пульсом» (базовый 1200)
+   Проверено по data-field-*/getComputedStyle на живом сайте (rec2131964201):
+   карточка 395×540, #4c5262; заголовок — ОДИН текстовый блок (явные
+   переносы строк), 28px/500 белый, прижат к ВЕРХУ карточки; пилюли
+   «лицевой/базовый слой» — сплошной фон #4c5262 (не полупрозрачный).
+   ========================================================================== */
+
+.materials {
+  background: var(--c-ink);
+}
+
+.materials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.material-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 540px;
+  padding: 39px 32px 0;
+  border-left: 1px solid rgb(255 255 255 / 8%);
+}
+
+.material-card:first-child {
+  border-left: 0;
+}
+
+.material-card-title {
+  font-family: var(--ff-display);
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.3px;
+  color: var(--c-white);
+}
+
+.material-card-stage {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.material-card-glow {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  width: 340px;
+  height: 340px;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: screen;
+  animation: material-card-pulse 3s ease-in-out infinite;
+}
+
+.material-card-glow img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@keyframes material-card-pulse {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.22);
+  }
+}
+
+.material-card-img {
+  position: relative;
+  z-index: 1;
+  max-height: 90%;
+  width: auto;
+  object-fit: contain;
+}
+
+.material-card-pin {
+  position: absolute;
+  z-index: 2;
+  padding: 9px 16px;
+  border-radius: 30px;
+  background: var(--c-ink);
+  font-size: 14px;
+  color: var(--c-white);
+  white-space: nowrap;
+}
+
+.material-card-pin--front {
+  left: 4%;
+  bottom: 32%;
+}
+
+.material-card-pin--back {
+  right: 4%;
+  top: 28%;
+}
+
+/* ===== МАКЕТ 960 ===== */
+@media (max-width: 1199px) {
+  .material-card {
+    height: 440px;
+    padding: 28px 24px 0;
+  }
+
+  .material-card-title {
+    font-size: 22px;
+  }
+}
+
+/* ===== МАКЕТ 640 ===== */
+@media (max-width: 959px) {
+  .materials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .material-card {
+    border-left: 0;
+    border-top: 1px solid rgb(255 255 255 / 8%);
+  }
+
+  .material-card:first-child {
+    border-top: 0;
+  }
+
+  .material-card-stage {
+    height: 420px;
+  }
+}
+
+/* ===== МАКЕТ 360 ===== */
+@media (max-width: 639px) {
+  .material-card {
+    height: 340px;
+    padding: 24px 20px 0;
+  }
+
+  .material-card-title {
+    font-size: 20px;
+  }
+}

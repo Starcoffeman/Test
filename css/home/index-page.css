@@ -1,0 +1,82 @@
+@media (max-width: 1199px) {
+  .header-bar {
+    height: 60px !important;
+    position: relative !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 0 20px !important;
+    background: #ffffff !important;
+  }
+
+  .header-logo {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 80px !important;
+    height: 46px !important;
+    display: block !important;
+    margin: 0 !important;
+  }
+
+  .header-burger {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    display: block !important;
+    width: 42px !important;
+    height: 42px !important;
+    margin: 0 !important;
+  }
+
+  .header-line,
+  .header-top,
+  .header-menu,
+  .header-callback,
+  .header-phone,
+  .tn-elem__ceiling_nav,
+  [data-elem-id="175981923536160010"],
+  [data-elem-id="175981925860255080"],
+  [data-elem-id="175981926787540010"],
+  [data-elem-id="1779707904086000001"],
+  [data-elem-id="1779707904086000099"],
+  [data-elem-id="1778668836349000001"],
+  [data-elem-id="1779707751780000001"],
+  [data-elem-id="1779707751780000099"] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    pointer-events: none !important;
+  }
+}
+
+@media (max-width: 639px) {
+  .header-bar {
+    height: 52px !important;
+    padding: 0 16px !important;
+  }
+
+  .header-logo {
+    width: 66px !important;
+    height: 38px !important;
+  }
+
+  .header-burger {
+    width: 38px !important;
+    height: 38px !important;
+  }
+}
+
+.hero-slide-1 { background-image: url("../../assets/misc-home/3128ad0bd3a9db7088ce.jpg"); }
+.hero-slide-2 { background-image: url("../../assets/misc-home/11__1_1_2.png"); }
+.hero-slide-3 { background-image: url("../../assets/misc-home/Img-frame.png"); }
+.hero-slide-4 { background-image: url("../../assets/misc-home/19__1_1.png.webp"); }
+
+.hero-slide-m1 { background-image: url("../../assets/misc-home/3128ad0bd3a9db7088ce.jpg"); }
+.hero-slide-m2 { background-image: url("https://static.tildacdn.com/tild3866-3264-4532-b435-613538653066/Img-frame_9.png"); }
+.hero-slide-m3 { background-image: url("https://static.tildacdn.com/tild3761-6164-4536-a565-393433366262/Img-frame_8.png"); }
+.hero-slide-m4 { background-image: url("https://static.tildacdn.com/tild6539-6262-4637-a631-306562636439/Img-frame_11.png"); }

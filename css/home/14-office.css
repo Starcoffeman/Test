@@ -1,0 +1,143 @@
+/* ==========================================================================
+   14-office.css — секция «решение для офиса и зонирования»
+   Общие примитивы .solution-* лежат в css/11-walls.css — файл обязателен.
+   Здесь только заголовок в три строки и координаты карточек.
+   ========================================================================== */
+
+/* ===== МАКЕТ 1200 ===== */
+/* Узкая колонка заголовка: «для офиса и зонирования» переносится по ширине */
+.solution--office .solution-title {
+  width: 587px;
+}
+
+.solution--office .solution-card--1 {
+  --x: 605px;
+  --y: -143px;
+  --mx: 83px;
+  --my: 82px;
+}
+.solution--office .solution-card--2 {
+  --x: 903px;
+  --y: 144px;
+  --mx: 83px;
+  --my: 82px;
+}
+.solution--office .solution-card--3 {
+  --x: 308px;
+  --y: 144px;
+  --mx: 82px;
+  --my: 82px;
+}
+
+/* ===== МАКЕТ 960 ===== */
+@media (max-width: 1199px) {
+  .solution--office .solution-card--1 {
+    --x: 376px;
+    --y: 434px;
+    --mx: 83px;
+    --my: 83px;
+  }
+  .solution--office .solution-card--2 {
+    --x: 663px;
+    --y: 137px;
+    --mx: 83px;
+    --my: 83px;
+  }
+  .solution--office .solution-card--3 {
+    --x: 10px;
+    --y: -160px;
+    --mx: 82px;
+    --my: 82px;
+  }
+}
+
+/* Две подписи переносятся в две строки — сбрасываем nowrap макета 960.
+   Диапазон, а не «сверху вниз»: правила специфичнее сбросов в макете 640. */
+@media (min-width: 960px) and (max-width: 1199px) {
+  .solution--office .solution-card--1 {
+    --tw: 230px;
+  }
+  .solution--office .solution-card--3 {
+    --tw: 189px;
+  }
+
+  .solution--office .solution-card--1 .solution-card-title,
+  .solution--office .solution-card--3 .solution-card-title {
+    width: var(--tw);
+    white-space: normal;
+  }
+}
+
+/* ===== МАКЕТ 640 ===== */
+@media (max-width: 959px) {
+  .solution--office .solution-title {
+    width: 552px;
+  }
+
+  .solution--office .solution-cards {
+    height: 792px;
+  }
+
+  .solution--office .solution-card--1 {
+    --x: 10px;
+    --y: 172px;
+    --mx: 88px;
+    --my: 87px;
+  }
+  .solution--office .solution-card--2 {
+    --x: 325px;
+    --y: 486px;
+    --mx: 88px;
+    --my: 87px;
+  }
+  .solution--office .solution-card--3 {
+    --x: 325px;
+    --y: -142px;
+    --mx: 85px;
+    --my: 85px;
+  }
+}
+
+/* ===== МАКЕТ 360 ===== */
+@media (max-width: 639px) {
+  .solution--office .solution-title {
+    width: 304px;
+  }
+
+  .solution--office .solution-head {
+    height: 170px;
+  }
+
+  .solution--office .solution-panel {
+    height: 162px;
+  }
+
+  .solution--office .solution-cards {
+    height: 520px;
+  }
+
+  .solution--office .solution-card--1 {
+    --x: 8px;
+    --y: 138px;
+    --h: 196px;
+    --tw: 136px;
+    --mx: 36px;
+    --my: 64px;
+  }
+  .solution--office .solution-card--2 {
+    --x: 184px;
+    --y: 342px;
+    --h: 178px;
+    --tw: 152px;
+    --mx: 34px;
+    --my: 46px;
+  }
+  .solution--office .solution-card--3 {
+    --x: 184px;
+    --y: -66px;
+    --h: 196px;
+    --tw: 136px;
+    --mx: 34px;
+    --my: 64px;
+  }
+}

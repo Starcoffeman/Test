@@ -1,0 +1,189 @@
+/* ==========================================================================
+   04-production — «hubox» + вступительный текст + список «производство»
+   Белая карточка на светлом фоне, отступ карточки от краёв — 10px.
+   ========================================================================== */
+
+.production {
+  padding: 10px 10px 0;
+  background: var(--c-light);
+}
+
+.production-card {
+  display: flex;
+  height: 453px;
+  padding: 40px 0 0 40px;
+  background: var(--c-white);
+}
+
+.production-logo {
+  flex: none;
+  width: 555px;
+  font-family: var(--ff-display);
+  font-size: 80px;
+  font-weight: 500;
+  line-height: 64px;
+  letter-spacing: -2px;
+  color: var(--c-accent);
+}
+
+.production-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* фиксированная высота держит «производство» на одной отметке независимо
+   от числа строк вступительного текста */
+.production-intro {
+  height: 188px;
+  width: 574px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.2px;
+}
+
+.production-block {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.production-title {
+  font-family: var(--ff-display);
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 25.2px;
+  letter-spacing: -0.7px;
+}
+
+.production-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.production-item {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  height: 16px;
+}
+
+.production-dot {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--c-accent);
+}
+
+.production-text {
+  flex: none;
+  width: 443px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18.2px;
+  letter-spacing: -0.2px;
+}
+
+/* ===== МАКЕТ 960 ===== */
+@media (max-width: 1199px) {
+  .production-logo {
+    width: 440px;
+  }
+
+  .production-intro {
+    width: 405px;
+  }
+
+  .production-item {
+    height: 24px;
+  }
+
+  .production-text {
+    width: 405px;
+  }
+
+  .production-item:nth-child(2) .production-text {
+    width: 336px;
+  }
+}
+
+/* ===== МАКЕТ 640 ===== */
+@media (max-width: 959px) {
+  .production-card {
+    flex-direction: column;
+    gap: 100px;
+    height: 673px;
+    padding: 30px 0 0 20px;
+  }
+
+  .production-logo,
+  .production-intro {
+    width: auto;
+  }
+
+  .production-col {
+    gap: 100px;
+  }
+
+  .production-intro {
+    height: auto;
+    width: 521px;
+  }
+
+  .production-text,
+  .production-item:nth-child(2) .production-text {
+    width: 521px;
+  }
+}
+
+/* ===== МАКЕТ 360 ===== */
+@media (max-width: 639px) {
+  .production {
+    padding: 8px 8px 0;
+  }
+
+  .production-card {
+    gap: 80px;
+    height: 668px;
+    padding: 24px 0 0 16px;
+  }
+
+  .production-col {
+    gap: 80px;
+  }
+
+  .production-logo {
+    font-size: 60px;
+    line-height: 48px;
+  }
+
+  .production-intro {
+    width: 308px;
+  }
+
+  .production-title {
+    font-size: 24px;
+    line-height: 19.2px;
+    letter-spacing: -0.2px;
+  }
+
+  .production-item {
+    height: 24px;
+  }
+
+  /* второй пункт переносится на три строки — высота строки задана явно,
+     чтобы третий пункт не уехал */
+  .production-item:nth-child(2) {
+    height: 57px;
+  }
+
+  .production-text {
+    width: 273px;
+  }
+
+  .production-item:nth-child(2) .production-text {
+    width: 213px;
+  }
+}

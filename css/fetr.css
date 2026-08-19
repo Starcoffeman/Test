@@ -1,0 +1,2866 @@
+/* ==========================================================================
+   Hubox — Фетр (Fetr Page Styles)
+   ========================================================================== */
+
+/* Блок цветовых палитр (Секция с веером образцов цветов) */
+.fetr-palettes-block {
+  background: var(--white, #ffffff);
+  padding: clamp(35px, 4vw, 70px) 0 0 clamp(35px, 4vw, 70px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.fetr-palettes-content {
+  text-align: left;
+  max-width: clamp(550px, 50vw, 850px);
+}
+
+.fetr-palettes-title {
+  font-family: var(--t-headline-font, "TT Firs Neue", "TTNorms", sans-serif);
+  font-size: clamp(24px, 3vw, 90px);
+  font-weight: 500;
+  color: #4c5262;
+  line-height: 0.9;
+  letter-spacing: -0.01em;
+  text-transform: lowercase;
+  margin: 0 0 clamp(12px, 1.2vw, 24px) 0;
+}
+
+.fetr-palettes-sub {
+  font-family: var(--t-text-font, "TTNorms", sans-serif);
+  font-size: clamp(12px, 1.2vw, 30px);
+  color: #4c5262;
+  font-weight: 400;
+  line-height: 1.4;
+  margin: 0;
+  text-transform: lowercase;
+}
+
+.fetr-palettes-image-wrap {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-top: clamp(20px, 2.5vw, 40px);
+  width: 100%;
+}
+
+.fetr-palettes-image-wrap img {
+  width: 100%;
+  max-width: 70%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* ===== БЛОК ИНТРО ПРОИЗВОДСТВА (Как производится эко-фетр?) ===== */
+.fetr-prod-intro-block {
+  background: var(--white, #ffffff);
+  padding: clamp(20px, 2vw, 40px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: clamp(20px, 3vw, 50px);
+  align-items: stretch;
+  overflow: hidden;
+  min-height: clamp(700px, 28vw, 800px);
+}
+
+.fetr-prod-left {
+  display: flex;
+  align-items: flex-start;
+}
+
+.fetr-prod-title {
+  font-family: var(--t-headline-font, "TT Firs Neue", "TTNorms", sans-serif);
+  font-size: clamp(36px, 7vw, 120px);
+  font-weight: 500;
+  color: var(--orange, #fa4616);
+  line-height: 0.9;
+  text-transform: lowercase;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.fetr-prod-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.fetr-prod-stat-img img {
+  width: clamp(180px, 16vw, 490px);
+  height: auto;
+  display: block;
+}
+
+.fetr-prod-desc {
+  font-family: var(--t-text-font, "TTNorms", sans-serif);
+  font-size: clamp(12px, 1.2vw, 32px);
+  color: #6b7280;
+  line-height: 1.3;
+  text-transform: lowercase;
+  width: 100%;
+  margin: clamp(20px, 2vw, 40px) 0 0 0;
+}
+
+/* ===== PRODUCT TYPE ===== */
+.product-type-section-fetr {
+  position: relative;
+  width: 100%;
+  min-height: 1000px;
+  margin-top: clamp(10px, 1vw, 30px);
+  height: auto;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #1a1a1a;
+}
+.product-type-content-fetr {
+  position: absolute;
+  top: 70px;
+  left: 70px;
+  z-index: 2;
+}
+.product-type-title-fetr {
+  font-family: var(--t-headline-font);
+  color: var(--white);
+  font-size: clamp(16px, 3vw, 90px);
+  letter-spacing: -0.7px;
+  font-weight: 500;
+  line-height: 0.9;
+  text-transform: lowercase;
+  margin: 0;
+}
+
+.product-type-title-fetr1 {
+  font-family: var(--t-headline-font);
+  color: var(--white);
+  font-size: clamp(16px, 5vw, 120px);
+  letter-spacing: -0.7px;
+  font-weight: 500;
+  line-height: 0.9;
+  text-transform: lowercase;
+  margin: 0 0 40px 0;
+}
+
+.product-type-description-fetr {
+  max-width: 600px;
+  margin-top: 20px;
+}
+.product-type-description-fetr p {
+  font-family: var(--t-text-font);
+  color: var(--white);
+  font-size: clamp(16px, 1.3vw, 80px);
+  line-height: 1.6;
+  font-weight: 400;
+  text-transform: lowercase;
+  margin: 0;
+}
+.product-type-section-fetr .product-type-title-fetr {
+  margin-bottom: 40px;
+}
+
+/* ===== БЛОК ИНТЕРЬЕРНОГО БАННЕРА (Технология PET Felt) ===== */
+.fetr-banner-block {
+  background: url("../assets/image/fetr/1_banner_4.png") no-repeat center center;
+  background-size: cover;
+  border-radius: clamp(16px, 1.4vw, 24px);
+  height: 600px;
+  min-height: 600px;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  margin-top: clamp(15px, 1.2vw, 25px);
+  padding: clamp(35px, 4vw, 70px);
+  box-sizing: border-box;
+}
+
+.fetr-banner-title {
+  font-family: var(--t-headline-font, "TT Firs Neue", "TTNorms", sans-serif);
+  font-size: clamp(22px, 2.4vw, 42px);
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 1.15;
+  text-transform: lowercase;
+  margin: 0;
+  max-width: clamp(450px, 45vw, 750px);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+  letter-spacing: -0.01em;
+}
+
+/* ===== БЛОК ЭТАПОВ ПЕРЕРАБОТКИ (Всё начинается с его переработки) ===== */
+.fetr-recyc-block {
+  background: var(--white, #ffffff);
+  padding: clamp(35px, 4vw, 80px) clamp(35px, 4vw, 70px) clamp(40px, 6vw, 100px)
+    clamp(35px, 4vw, 70px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+}
+
+.fetr-recyc-title {
+  font-family: var(--t-headline-font, "TT Firs Neue", "TTNorms", sans-serif);
+  font-size: clamp(24px, 4vw, 100px);
+  font-weight: 500;
+  letter-spacing: -0.7px;
+  color: #4c5262;
+  line-height: 0.8;
+  margin: 0 0 clamp(12px, 1.5vw, 30px) 0;
+  text-transform: lowercase;
+  letter-spacing: -0.01em;
+}
+
+.fetr-recyc-desc {
+  font-family: var(--t-text-font, "TTNorms", sans-serif);
+  font-size: clamp(12px, 1.4vw, 34px);
+  display: flex;
+  color: #6b7280;
+  line-height: 1.3;
+  font-weight: 400;
+  letter-spacing: -0.2px;
+  text-transform: lowercase;
+  margin: 0;
+  max-width: clamp(480px, 45vw, 620px);
+}
+
+.fetr-recyc-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(28px, 8vw, 100px);
+  margin-top: clamp(30px, 8vw, 100px);
+  max-width: 100%;
+}
+
+.fetr-recyc-card {
+  width: clamp(100px, 15vw, 500px);
+  height: clamp(100px, 15vw, 500px);
+  flex-shrink: 0;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f9fa;
+}
+
+.fetr-recyc-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===== БЛОК РАБОТЫ С ФОРМОЙ (Дальше начинается работа с формой) ===== */
+.fetr-shape-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(15px, 1.2vw, 25px);
+  align-items: stretch;
+}
+
+.fetr-shape-left {
+  background: var(--white, #ffffff);
+  padding: clamp(35px, 4vw, 70px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: clamp(380px, 32vw, 540px);
+  box-sizing: border-box;
+}
+
+.fetr-shape-title {
+  font-family: var(--t-headline-font, "TT Firs Neue", "TTNorms", sans-serif);
+  font-size: clamp(24px, 3vw, 100px);
+  font-weight: 500;
+  color: #4c5262;
+  line-height: 0.8;
+  letter-spacing: -0.7px;
+  margin: 0;
+  text-transform: lowercase;
+  letter-spacing: -0.01em;
+}
+
+.fetr-shape-desc {
+  font-family: var(--t-text-font, "TTNorms", sans-serif);
+  font-size: clamp(12px, 1vw, 44px);
+  color: #6b7280;
+  line-height: 1.5;
+  margin: 0;
+  text-transform: lowercase;
+  max-width: clamp(400px, 40vw, 520px);
+}
+
+.fetr-shape-right {
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  background: var(--white, #ffffff);
+  display: flex;
+  min-height: clamp(380px, 32vw, 540px);
+}
+
+.fetr-shape-right img {
+  width: 100%;
+  height: 100%;
+  scale: 1.3;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===== БЛОК ИНТРО ПРИМЕНЕНИЯ (Применение фетра hubox) ===== */
+.fetr-app-intro-block {
+  background: var(--white, #ffffff);
+  padding: clamp(35px, 4vw, 70px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: clamp(20px, 3vw, 50px);
+  align-items: stretch;
+  overflow: hidden;
+  min-height: clamp(340px, 28vw, 550px);
+}
+
+.fetr-app-intro-block1 {
+  background: var(--white, #ffffff);
+  padding: clamp(35px, 4vw, 70px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: clamp(20px, 3vw, 50px);
+  align-items: stretch;
+  overflow: hidden;
+  min-height: clamp(550px, 32vw, 750px);
+}
+
+.fetr-app-left {
+  display: flex;
+  align-items: flex-start;
+}
+
+.fetr-app-title {
+  font-family: var(--t-headline-font, "TT Firs Neue", "TTNorms", sans-serif);
+  font-size: clamp(32px, 6vw, 150px);
+  color: var(--orange, #fa4616);
+  line-height: 1.05;
+  font-weight: 500;
+  letter-spacing: -2px;
+  text-transform: lowercase;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.fetr-app-title1 {
+  font-family: var(--t-headline-font, "TT Firs Neue", "TTNorms", sans-serif);
+  font-size: clamp(32px, 6vw, 120px);
+  color: var(--orange, #fa4616);
+  line-height: 0.8;
+  font-weight: 500;
+  letter-spacing: -2px;
+  text-transform: lowercase;
+  margin: 0;
+}
+
+.fetr-app-title2 {
+  font-family: var(--t-headline-font, "TT Firs Neue", "TTNorms", sans-serif);
+  font-size: clamp(32px, 6vw, 100px);
+  color: var(--orange, #fa4616);
+  line-height: 0.8;
+  font-weight: 500;
+  letter-spacing: -2px;
+  text-transform: lowercase;
+  margin: 0;
+}
+
+.fetr-app-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.fetr-app-desc {
+  font-family: var(--t-text-font, "TTNorms", sans-serif);
+  font-size: clamp(12px, 1.1vw, 40px);
+  color: #6b7280;
+  font-weight: 400;
+  letter-spacing: -0.2px;
+  text-transform: lowercase;
+  width: 100%;
+  margin: 0;
+}
+
+.fetr-app-desc1 {
+  font-family: var(--t-text-font, "TTNorms", sans-serif);
+  font-size: clamp(12px, 1.2vw, 30px);
+  color: #6b7280;
+  font-weight: 400;
+  letter-spacing: -0.2px;
+  text-transform: lowercase;
+  width: 100%;
+  margin: 0;
+}
+
+/* ===== БЛОК ТОЛЩИН МАТЕРИАЛОВ (9, 12, 24 мм) ===== */
+.fetr-thick-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(15px, 1.2vw, 25px);
+  align-items: stretch;
+}
+
+.fetr-thick-left {
+  background: #484f5c;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  display: flex;
+  min-height: clamp(380px, 32vw, 540px);
+}
+
+.fetr-thick-left img {
+  width: 100%;
+  height: 100%;
+  scale: 1.2;
+  object-fit: cover;
+  display: block;
+}
+
+.fetr-thick-right {
+  background: var(--white, #ffffff);
+  padding: clamp(35px, 4vw, 70px);
+  display: flex;
+  flex-direction: column;
+
+  justify-content: flex-end;
+  min-height: clamp(380px, 32vw, 540px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  box-sizing: border-box;
+}
+
+.fetr-thick-desc {
+  font-family: var(--t-text-font, "TTNorms", sans-serif);
+  font-size: clamp(12px, 1.2vw, 28px);
+  color: #6b7280;
+  line-height: 1.3;
+  font-weight: 400;
+  letter-spacing: -0.2px;
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* ===== БЛОК СФЕРЫ ПРИМЕНЕНИЯ (В жилых и коммерческих интерьерах...) ===== */
+.fetr-usecases-block {
+  background: var(--white, #ffffff);
+  padding: clamp(35px, 4vw, 70px) clamp(35px, 6vw, 200px) clamp(35px, 4vw, 70px)
+    clamp(35px, 4vw, 70px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(25px, 3vw, 45px);
+  overflow: hidden;
+}
+
+.fetr-usecases-left {
+  position: static;
+  width: 100%;
+}
+
+.fetr-usecases-title {
+  font-family: var(--t-headline-font, "TT Firs Neue", "TTNorms", sans-serif);
+  font-size: clamp(24px, 4vw, 100px);
+  font-weight: 500;
+  color: #4c5262;
+  line-height: 1.15;
+  margin: 0;
+  line-height: 0.8;
+  letter-spacing: -2px;
+  text-transform: lowercase;
+}
+
+.fetr-usecases-right {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+  margin-left: auto;
+  max-width: 100%;
+}
+
+.fetr-usecases-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
+  gap: clamp(20px, 4vw, 60px);
+  line-height: 1.3;
+  font-weight: 500;
+  letter-spacing: -0.2px;
+}
+
+.fetr-usecases-item {
+  display: flex;
+  align-items: center;
+  gap: clamp(15px, 2vw, 50px);
+}
+
+.fetr-usecases-icon {
+  width: clamp(44px, 6vw, 200px);
+  height: clamp(44px, 6vw, 200px);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fetr-usecases-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.fetr-usecases-text {
+  font-family: var(--t-text-font, "TTNorms", sans-serif);
+  font-size: clamp(12px, 1.5vw, 40px);
+  color: #4c5262;
+  line-height: 1.45;
+  margin: 0;
+  text-transform: lowercase;
+  max-width: 700px;
+}
+
+/* ===== БЛОК ИНТРО СВОЙСТВ ФЕТРА (Какие свойства у фетра?) ===== */
+.fetr-props-intro-block {
+  background: var(--white, #ffffff);
+  padding: clamp(35px, 4vw, 70px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: clamp(20px, 3vw, 50px);
+  align-items: stretch;
+  overflow: hidden;
+  min-height: clamp(280px, 24vw, 440px);
+}
+
+.fetr-props-left {
+  display: flex;
+  align-items: flex-start;
+}
+
+.fetr-props-title {
+  font-family: var(--t-headline-font, "TT Firs Neue", "TTNorms", sans-serif);
+  font-size: clamp(32px, 7.5vw, 120px);
+  font-weight: 500;
+  letter-spacing: -2px;
+  color: var(--orange, #fa4616);
+  line-height: 0.8;
+  text-transform: lowercase;
+  margin: 0;
+}
+
+.fetr-props-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.fetr-props-desc {
+  font-family: var(--t-text-font, "TTNorms", sans-serif);
+  font-size: clamp(12px, 0.95vw, 15px);
+  color: #6b7280;
+  line-height: 1.5;
+  text-transform: lowercase;
+  max-width: 520px;
+  margin: 0;
+}
+
+/* ===== БЛОК ТИПЫ ФЕТРА, ФАКТУРЫ И ЦВЕТА (Получить образцы) ===== */
+.fetr-types-cta-block {
+  background: var(--white, #ffffff);
+  padding: clamp(35px, 4vw, 70px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: stretch;
+  overflow: hidden;
+  min-height: clamp(550px, 32vw, 750px);
+}
+
+.fetr-types-cta-block-one {
+  background: var(--white, #ffffff);
+  padding: clamp(35px, 4vw, 70px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  overflow: hidden;
+  min-height: clamp(250px, 32vw, 200px);
+}
+.types-section-fetr1 {
+  background: var(--white);
+  min-height: 400px;
+  height: auto;
+  display: flex;
+  align-items: start;
+  padding: 50px 70px;
+  box-sizing: border-box;
+}
+.types-list-fetr {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  padding-top: clamp(100px, 1.4vw + 5px, 200px);
+  max-width: 1000px;
+}
+.types-list-fetr li {
+  font-family: var(--t-text-font);
+  font-size: clamp(16px, 1vw + 5px, 40px);
+  line-height: 1.5;
+  font-weight: 500;
+  color: var(--text);
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 25px;
+  text-transform: lowercase;
+}
+.types-list-fetr li:last-child {
+  margin-bottom: 0;
+}
+.types-list-fetr li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  background-color: var(--orange);
+  border-radius: 50%;
+}
+
+.types-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  max-width: 1000px;
+}
+.types-list li {
+  font-family: var(--t-text-font);
+  font-size: clamp(16px, 1.4vw + 5px, 60px);
+  line-height: 1.5;
+  font-weight: 500;
+  color: var(--text);
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 25px;
+  text-transform: lowercase;
+}
+
+.types-section-fetr {
+  background: var(--white);
+  min-height: 550px;
+  height: auto;
+  display: flex;
+  align-items: start;
+  padding: 50px 70px;
+  box-sizing: border-box;
+}
+
+.fetr-types-left {
+  display: flex;
+  align-items: flex-start;
+}
+
+.types-container-fetr {
+  display: flex;
+  align-items: start;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.fetr-types-title {
+  font-family: var(--t-headline-font, "TT Firs Neue", "TTNorms", sans-serif);
+  font-size: clamp(32px, 9vw, 110px);
+  color: var(--orange, #fa4616);
+  line-height: 0.8;
+  font-weight: 500;
+  letter-spacing: -2px;
+  text-transform: lowercase;
+  margin: 0;
+}
+
+.fetr-types-title1 {
+  font-family: var(--t-headline-font, "TT Firs Neue", "TTNorms", sans-serif);
+  font-size: clamp(32px, 9vw, 120px);
+  color: var(--orange, #fa4616);
+  line-height: 0.8;
+  font-weight: 500;
+  width: 100%;
+  letter-spacing: -2px;
+  text-transform: lowercase;
+  margin: 0;
+}
+
+.fetr-types-right {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: stretch;
+}
+
+.fetr-types-right .btn-orange-pill {
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  display: block;
+}
+
+.btn-orange-pill {
+  background: var(--orange, #fa4616);
+  color: #ffffff;
+  border-radius: 40px;
+  padding: clamp(14px, 1.4vw, 30px) clamp(30px, 2.5vw, 48px);
+  font-family: var(--t-headline-font, "TT Firs Neue", "TTNorms", sans-serif);
+  font-size: clamp(14px, 1.3vw, 30px);
+  font-weight: 500;
+  text-transform: lowercase;
+  text-decoration: none;
+  display: inline-block;
+  transition:
+    background 0.3s ease,
+    transform 0.2s ease,
+    box-shadow 0.3s ease;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(250, 70, 22, 0.25);
+}
+
+.btn-orange-pill:hover {
+  background: #e03b0d;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(250, 70, 22, 0.35);
+}
+
+/* ===== БЛОК ХАРАКТЕРИСТИК И СПЕЦИФИКАЦИЙ (Состав, 9, 12, 24 мм) ===== */
+.fetr-specs-table-block {
+  background: var(--white, #ffffff);
+  padding: clamp(35px, 4vw, 70px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.fetr-specs-top {
+  display: flex;
+  align-items: center;
+  gap: clamp(20px, 3vw, 80px);
+  width: 80%;
+  margin-left: auto;
+}
+
+.fetr-specs-top-label {
+  font-family: var(--t-text-font, "TTNorms", sans-serif);
+  font-size: clamp(14px, 1.4vw, 24px);
+  color: #4c5262;
+  line-height: 1.3;
+  font-weight: 500;
+  letter-spacing: -0.2px;
+  width: clamp(180px, 18vw, 260px);
+  flex-shrink: 0;
+  text-transform: lowercase;
+}
+
+.fetr-specs-top-value {
+  font-family: var(--t-text-font, "TTNorms", sans-serif);
+  font-size: clamp(16px, 1.3vw, 24px);
+  color: #4c5262;
+  line-height: 1.3;
+  font-weight: 400;
+  letter-spacing: -0.2px;
+  text-transform: lowercase;
+}
+
+.fetr-specs-divider {
+  height: 1px;
+  background: #eaeaea;
+  margin: clamp(20px, 2.5vw, 40px) 0;
+  width: 80%;
+  margin-left: auto;
+}
+
+.fetr-specs-table-wrap {
+  width: 80%;
+  margin-left: auto;
+  overflow-x: auto;
+}
+
+.fetr-specs-mobile-cards {
+  display: none;
+}
+
+.fetr-specs-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.fetr-specs-table th,
+.fetr-specs-table td {
+  padding: clamp(18px, 2vw, 36px) 0;
+  border-bottom: 1px solid #f0f0f2;
+}
+
+.fetr-specs-table tr:last-child td {
+  border-bottom: none;
+}
+
+.fetr-specs-table .col-label {
+  width: clamp(180px, 18vw, 260px);
+  font-family: var(--t-text-font, "TTNorms", sans-serif);
+  font-size: clamp(14px, 1.4vw, 24px);
+  color: #4c5262;
+  font-weight: 400;
+  padding-right: 40px;
+  vertical-align: middle;
+  text-transform: lowercase;
+}
+
+.fetr-specs-table .col-thick {
+  font-family: var(--t-headline-font, "TT Firs Neue", "TTNorms", sans-serif);
+  font-size: clamp(32px, 3vw, 56px);
+  font-weight: 500;
+  color: var(--orange, #fa4616);
+  text-transform: lowercase;
+  width: 25%;
+  vertical-align: bottom;
+  padding-bottom: clamp(15px, 2vw, 30px);
+}
+
+.fetr-specs-table .col-val {
+  font-family: var(--t-text-font, "TTNorms", sans-serif);
+  font-size: clamp(16px, 1.8vw, 30px);
+  font-weight: 500;
+  color: var(--orange, #fa4616);
+  text-transform: lowercase;
+  width: 25%;
+  vertical-align: middle;
+}
+
+/* ===== БЛОК ИНТЕРЬЕРНОГО БАННЕРА (Больше звукоизоляции) ===== */
+.fetr-soundproof-block {
+  background: url("../assets/image/fetr/1_banner_1.png") no-repeat center center;
+  background-size: cover;
+  border-radius: clamp(16px, 1.4vw, 24px);
+  height: 600px;
+  min-height: 600px;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  margin-top: clamp(15px, 1.2vw, 25px);
+  padding: clamp(35px, 4vw, 70px);
+  box-sizing: border-box;
+}
+
+.fetr-soundproof-content {
+  max-width: clamp(450px, 45vw, 750px);
+}
+
+.fetr-soundproof-title {
+  font-family: var(--t-headline-font, "TT Firs Neue", "TTNorms", sans-serif);
+  font-size: clamp(32px, 3.8vw, 68px);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.05;
+  text-transform: lowercase;
+  margin: 0 0 clamp(12px, 1.2vw, 20px) 0;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+  letter-spacing: -0.01em;
+}
+
+.fetr-soundproof-sub {
+  font-family: var(--t-text-font, "TTNorms", sans-serif);
+  font-size: clamp(12px, 0.95vw, 15px);
+  color: #ffffff;
+  line-height: 1.45;
+  text-transform: lowercase;
+  margin: 0;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+
+/* ===== БЛОК ТЕХНИЧЕСКИЕ ПОКАЗАТЕЛИ ШУМОИЗОЛЯЦИИ ===== */
+.fetr-noise-specs-block {
+  background: var(--white, #ffffff);
+  padding: clamp(35px, 4vw, 70px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.fetr-noise-specs-top {
+  width: 100%;
+  margin-bottom: clamp(30px, 3.5vw, 60px);
+}
+
+.fetr-noise-specs-title {
+  font-family: var(--t-headline-font, "TT Firs Neue", "TTNorms", sans-serif);
+  font-size: clamp(32px, 8vw, 120px);
+  color: var(--orange, #fa4616);
+  line-height: 0.8;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: lowercase;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.fetr-noise-specs-table-wrap {
+  width: 80%;
+  margin-left: auto;
+  overflow-x: auto;
+}
+
+.fetr-noise-specs-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.fetr-noise-specs-table th,
+.fetr-noise-specs-table td {
+  padding: clamp(18px, 2vw, 36px) 0;
+  border-bottom: 1px solid #f0f0f2;
+}
+
+.fetr-noise-specs-table tr:last-child td {
+  border-bottom: none;
+  padding-top: clamp(20px, 2.5vw, 40px);
+}
+
+.fetr-noise-specs-table .col-label {
+  width: clamp(220px, 22vw, 320px);
+  font-family: var(--t-text-font, "TTNorms", sans-serif);
+  font-size: clamp(13px, 1.1vw, 18px);
+  color: #6b7280;
+  font-weight: 400;
+  padding-right: 20px;
+  vertical-align: middle;
+  text-transform: lowercase;
+  line-height: 1.35;
+}
+
+.fetr-noise-specs-table .col-thick {
+  font-family: var(--t-headline-font, "TT Firs Neue", "TTNorms", sans-serif);
+  font-size: clamp(32px, 4vw, 68px);
+  font-weight: 700;
+  color: var(--orange, #fa4616);
+  text-transform: lowercase;
+  width: 25%;
+  vertical-align: bottom;
+  padding-bottom: clamp(15px, 2vw, 30px);
+}
+
+.fetr-noise-specs-table .col-thick1 {
+  font-family: var(--t-headline-font, "TT Firs Neue", "TTNorms", sans-serif);
+  font-size: clamp(32px, 4vw, 68px);
+  line-height: 0.8;
+  font-weight: 500;
+  letter-spacing: -1.5px;
+  color: var(--orange, #fa4616);
+  text-transform: lowercase;
+  width: 25%;
+  text-align: center;
+  vertical-align: bottom;
+  padding-bottom: clamp(15px, 2vw, 30px);
+}
+
+.fetr-noise-specs-table .col-label1 {
+  width: clamp(220px, 22vw, 320px);
+  font-family: var(--t-text-font, "TTNorms", sans-serif);
+  font-size: clamp(13px, 1.6vw, 32px);
+  color: #4c5262;
+  line-height: 1.3;
+  font-weight: 500;
+  letter-spacing: -0.2px;
+  padding-right: clamp(30px, 2vw, 60px);
+  vertical-align: middle;
+  text-transform: lowercase;
+}
+
+.fetr-noise-specs-table .col-val1 {
+  font-family: var(--t-text-font, "TTNorms", sans-serif);
+  font-size: clamp(16px, 1.8vw, 40px);
+  line-height: 1.3;
+  font-weight: 500;
+  letter-spacing: -0.2px;
+  color: var(--orange, #fa4616);
+  width: 25%;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.fetr-noise-specs-table .col-btn1 {
+  width: 25%;
+  vertical-align: middle;
+  text-align: center;
+}
+
+/* Кнопка "подробнее" в этой ячейке использует общий класс .btn-orange-pill
+   (не .btn-orange-pill1 — тот класс нигде не встречается в разметке,
+   мёртвое правило выше). Заказчик прислал стили этой кнопки с оригинала:
+   border-radius 52px (не 40px), шрифт --t-text-font (не --t-headline-font),
+   и цвет hover #4c5262 (не тёмно-оранжевый) — точечно поправляем именно
+   здесь, не трогая .btn-orange-pill в остальных местах страницы. */
+.fetr-noise-specs-table .col-btn1 .btn-orange-pill {
+  padding: clamp(19px, 1.9vw, 28px) clamp(40px, 3.8vw, 64px);
+  font-size: clamp(18px, 1.5vw, 23px);
+  font-family: var(--t-text-font, "TTNorms", Arial, sans-serif);
+  line-height: 1;
+  border-radius: 52px;
+  display: inline-block;
+  width: auto;
+}
+
+.fetr-noise-specs-table .col-btn1 .btn-orange-pill:hover {
+  background: #4c5262;
+}
+
+.fetr-noise-specs-mobile-wrap {
+  display: none;
+}
+
+/* ===== БЛОК ПОЖАРНАЯ БЕЗОПАСНОСТЬ ===== */
+.fetr-fire-safety-block {
+  background: var(--white, #ffffff);
+  padding: clamp(35px, 4vw, 70px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.fetr-fire-safety-header {
+  margin-bottom: clamp(30px, 3.5vw, 60px);
+}
+
+.fetr-fire-safety-title {
+  font-family: var(--t-headline-font, "TT Firs Neue", "TTNorms", sans-serif);
+  font-size: clamp(32px, 7vw, 120px);
+  color: var(--orange, #fa4616);
+  line-height: 0.8;
+  font-weight: 500;
+  letter-spacing: -2px;
+  text-transform: lowercase;
+  margin: 0 0 clamp(8px, 1vw, 16px) 0;
+}
+
+.fetr-fire-safety-sub {
+  font-family: var(--t-text-font, "TTNorms", sans-serif);
+  font-size: clamp(14px, 3vw, 36px);
+  color: #000000;
+  margin: 0;
+  text-transform: lowercase;
+  font-weight: 500;
+}
+
+.fetr-fire-safety-body {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: clamp(25px, 4vw, 70px);
+  align-items: flex-start;
+  width: 100%;
+}
+
+.fetr-fire-safety-cert {
+  width: 100%;
+  border-radius: clamp(8px, 1vw, 16px);
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.fetr-fire-safety-cert img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.fetr-fire-safety-specs {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.fetr-fire-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(15px, 2vw, 35px);
+  align-items: baseline;
+  padding: clamp(12px, 1.5vw, 24px) 0;
+}
+
+.fetr-fire-label {
+  font-family: var(--t-text-font, "TTNorms", sans-serif);
+  font-size: clamp(11px, 1.8vw, 32px);
+  color: #4c5262;
+  font-weight: 500;
+  text-transform: lowercase;
+  line-height: 1.3;
+  letter-spacing: -0.2px;
+}
+
+.fetr-fire-text {
+  font-family: var(--t-text-font, "TTNorms", sans-serif);
+  font-size: clamp(13px, 1.5vw, 32px);
+  color: #4c5262;
+  line-height: 1.3;
+  font-weight: 400;
+  letter-spacing: -0.2px;
+  text-transform: lowercase;
+}
+
+.fetr-fire-val-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.fetr-fire-code {
+  font-family: var(--t-headline-font, "TT Firs Neue", "TTNorms", sans-serif);
+  font-size: clamp(36px, 8vw, 140px);
+  line-height: 0.75;
+  font-weight: 500;
+  color: var(--orange, #fa4616);
+}
+
+.fetr-fire-tag {
+  font-family: var(--t-text-font, "TTNorms", sans-serif);
+  font-size: clamp(13px, 1.3vw, 32px);
+  line-height: 1;
+  margin-top: clamp(10px, 2vw, 40px);
+  font-weight: 500;
+  color: var(--orange, #fa4616);
+  text-transform: lowercase;
+}
+
+.fetr-fire-divider {
+  height: 1px;
+  background: #f0f0f2;
+  width: 100%;
+}
+
+.fetr-fire-compare-list {
+  list-style-type: disc;
+  padding-left: 18px;
+  margin: 0;
+  font-family: var(--t-text-font, "TTNorms", sans-serif);
+  font-size: clamp(11px, 1.1vw, 40px);
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+.fetr-fire-compare-list li {
+  margin-bottom: 4px;
+}
+
+/* ===== БЛОК МАЛОФОРМАТНЫЕ ПАНЕЛИ ===== */
+.fetr-small-panels-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(15px, 1.2vw, 25px);
+  align-items: stretch;
+  min-height: clamp(600px, 34vw, 700px);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.fetr-small-panels-wrapper-reverse {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(15px, 1.2vw, 25px);
+  align-items: stretch;
+  min-height: clamp(600px, 34vw, 700px);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.fetr-small-panels-left {
+  background: var(--white, #ffffff);
+  padding: clamp(35px, 4vw, 70px) clamp(35px, 4vw, 70px) clamp(10px, 3vw, 40px)
+    clamp(35px, 4vw, 70px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.fetr-small-panels-title {
+  font-family: var(--t-headline-font, "TT Firs Neue", "TTNorms", sans-serif);
+  font-size: clamp(24px, 3vw, 60px);
+  font-weight: 500;
+  color: #4c5262;
+  line-height: 0.8;
+  font-weight: 500;
+  letter-spacing: -0.7px;
+  margin: 0;
+  text-transform: lowercase;
+}
+
+.fetr-small-panels-sub {
+  font-family: var(--t-text-font, "TTNorms", sans-serif);
+  font-size: clamp(12px, 1.2vw, 34px);
+  color: #4c5262;
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: -0.2px;
+  margin: 0;
+  text-transform: lowercase;
+}
+
+.fetr-small-panels-right {
+  overflow: hidden;
+  background: var(--white, #ffffff);
+  display: flex;
+  position: relative;
+}
+
+.fetr-small-panels-right img {
+  /* .fetr-small-panels-wrapper задаёт min-height (не явную height) —
+     в этой ситуации height:100% у картинки ненадёжно резолвится
+     (та же проблема, что уже чинили у .radius-image-block). Абсолютное
+     позиционирование на всю площадь родителя решает это независимо от
+     resolve процентной высоты. */
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.fetr-noise-specs-table .col-val {
+  font-family: var(--t-text-font, "TTNorms", sans-serif);
+  font-size: clamp(16px, 1.8vw, 30px);
+  font-weight: 600;
+  color: var(--orange, #fa4616);
+  text-transform: lowercase;
+  width: 25%;
+  vertical-align: middle;
+}
+
+.fetr-noise-specs-table .col-btn {
+  width: 25%;
+  vertical-align: middle;
+}
+
+.fetr-noise-specs-table .col-btn .btn-orange-pill {
+  padding: clamp(10px, 1vw, 16px) clamp(24px, 2vw, 40px);
+  font-size: clamp(13px, 1vw, 16px);
+  display: inline-block;
+  width: auto;
+}
+
+/* ===== БЛОК ШПОНИРОВАННОГО ФЕТРА (11+ шпон 0,5 мм) ===== */
+.fetr-veneer-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(15px, 1.2vw, 25px);
+  min-height: clamp(800px, 32vw, 950px);
+  align-items: stretch;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.fetr-veneer-wrapper-reverse {
+  /* Было display:flex + flex-direction:"row-srevere" — опечатка
+     (невалидное значение), из-за которой блок не переворачивался вообще
+     (реально работал как обычный row), а сам flex:1 1 0 давал неровный
+     раздел (632px/748px вместо 50/50 — та же история, что и с
+     .trends-section-reverce). Grid с 1fr 1fr даёт точный раздел пополам,
+     а order ниже переворачивает визуальный порядок колонок. */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(15px, 1.2vw, 25px);
+  min-height: clamp(800px, 32vw, 950px);
+  align-items: stretch;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.fetr-veneer-wrapper-reverse .fetr-veneer-left {
+  order: 2;
+}
+
+.fetr-veneer-wrapper-reverse .fetr-veneer-right {
+  order: 1;
+}
+
+.fetr-veneer-left {
+  overflow: hidden;
+  background: var(--white, #ffffff);
+  display: flex;
+  position: relative;
+  min-height: clamp(380px, 32vw, 540px);
+}
+
+.fetr-veneer-left img {
+  /* .fetr-veneer-wrapper задаёт min-height (не явную height) — height:100%
+     у картинки ненадёжно резолвится в этой ситуации (та же проблема, что
+     уже чинили у .radius-image-block/.fetr-small-panels-right). Абсолютное
+     позиционирование на всю площадь родителя решает это. */
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.fetr-veneer-right {
+  background: var(--white, #ffffff);
+  padding: clamp(35px, 4vw, 70px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: clamp(20px, 2.5vw, 45px);
+  min-height: clamp(380px, 32vw, 540px);
+  box-sizing: border-box;
+}
+
+.fetr-veneer-row {
+  display: flex;
+  flex-direction: column;
+  margin-left: clamp(100px, 6vw, 200px);
+  gap: 8px;
+}
+
+.fetr-veneer-val {
+  font-family: var(--t-headline-font, "TT Firs Neue", "TTNorms", sans-serif);
+  font-size: clamp(36px, 5vw, 90px);
+  font-weight: 500;
+  color: var(--orange, #fa4616);
+  line-height: 1.05;
+  text-transform: lowercase;
+}
+
+.fetr-veneer-val .num {
+  font-weight: 500;
+}
+
+.fetr-veneer-val-flex {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  font-family: var(--t-headline-font, "TT Firs Neue", "TTNorms", sans-serif);
+  font-size: clamp(36px, 5.5vw, 100px);
+  font-weight: 500;
+  color: var(--orange, #fa4616);
+  line-height: 1.05;
+}
+
+.fetr-veneer-val-flex .color-icon {
+  width: clamp(36px, 4.5vw, 85px);
+  height: clamp(36px, 4.5vw, 85px);
+  object-fit: contain;
+}
+
+.fetr-veneer-sub {
+  font-family: var(--t-text-font, "TTNorms", sans-serif);
+  font-size: clamp(14px, 1.3vw, 26px);
+  color: var(--orange, #fa4616);
+  line-height: 1.4;
+  margin: 0;
+  text-transform: lowercase;
+}
+
+.fetr-veneer-divider {
+  height: 1px;
+  background: #f0f0f2;
+  width: 100%;
+  margin: 15px 0;
+}
+
+/* Адаптив для мобильных устройств */
+@media (max-width: 768px) {
+  .fetr-palettes-block {
+    padding: 24px 20px;
+    min-height: auto;
+  }
+
+  .fetr-palettes-title {
+    font-size: clamp(20px, 5.5vw, 28px);
+    margin-bottom: 12px;
+  }
+
+  .fetr-palettes-sub {
+    font-size: 13px;
+  }
+
+  .fetr-palettes-image-wrap {
+    margin-top: 20px;
+  }
+
+  .fetr-palettes-image-wrap img {
+    max-width: 100%;
+  }
+
+  .fetr-prod-intro-block {
+    grid-template-columns: 1fr;
+    padding: 24px 20px;
+    gap: 30px;
+    min-height: auto;
+  }
+
+  .fetr-prod-title {
+    font-size: clamp(28px, 8vw, 44px);
+  }
+
+  .fetr-prod-stat-img img {
+    width: 200px;
+  }
+
+  .fetr-prod-desc {
+    margin-top: 20px;
+    font-size: 13px;
+  }
+
+  .fetr-banner-block {
+    height: 380px;
+    min-height: 380px;
+    padding: 24px 20px;
+  }
+
+  .fetr-banner-title {
+    font-size: clamp(18px, 5vw, 26px);
+    max-width: 100%;
+  }
+
+  .fetr-recyc-block {
+    padding: 24px 20px;
+  }
+
+  .fetr-recyc-title {
+    font-size: clamp(20px, 5.5vw, 28px);
+  }
+
+  .fetr-recyc-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(10px, 2.5vw, 16px);
+    margin-top: 25px;
+    justify-items: center;
+  }
+
+  .fetr-recyc-card {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+
+  .fetr-shape-wrapper {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .fetr-shape-left {
+    padding: 24px 20px;
+    min-height: auto;
+  }
+
+  .fetr-shape-title {
+    font-size: clamp(20px, 5.5vw, 28px);
+    margin-bottom: 20px;
+  }
+
+  .fetr-shape-right {
+    min-height: 280px;
+  }
+
+  .fetr-app-intro-block {
+    grid-template-columns: 1fr;
+    padding: 24px 20px;
+    gap: 20px;
+    min-height: auto;
+  }
+
+  .fetr-app-title {
+    font-size: clamp(28px, 8vw, 44px);
+  }
+
+  .fetr-app-desc {
+    font-size: 13px;
+  }
+
+  .fetr-thick-wrapper {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .fetr-thick-left {
+    min-height: 280px;
+  }
+
+  .fetr-thick-right {
+    padding: 24px 20px;
+    min-height: auto;
+  }
+
+  .fetr-thick-desc {
+    font-size: 13px;
+  }
+
+  .fetr-usecases-block {
+    flex-direction: column;
+    padding: 24px 20px;
+    gap: 25px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .fetr-usecases-left {
+    position: static;
+    width: 100%;
+  }
+
+  .fetr-usecases-right {
+    width: 100%;
+    margin-left: 0;
+    align-self: flex-start;
+    max-width: 100%;
+  }
+
+  .fetr-usecases-title {
+    font-size: clamp(20px, 5.5vw, 28px);
+  }
+
+  .fetr-usecases-list {
+    width: 100% !important;
+    max-width: 100% !important;
+    gap: 24px !important;
+  }
+
+  .fetr-usecases-item {
+    width: 100% !important;
+    gap: 16px !important;
+    align-items: center !important;
+  }
+
+  .fetr-usecases-icon {
+    width: 58px !important;
+    height: 58px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .fetr-usecases-text {
+    font-size: 15px !important;
+    line-height: 1.4 !important;
+    max-width: 100% !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  .fetr-props-intro-block {
+    grid-template-columns: 1fr;
+    padding: 24px 20px;
+    gap: 20px;
+    min-height: auto;
+  }
+
+  .fetr-props-title {
+    font-size: clamp(28px, 8vw, 44px);
+  }
+
+  .fetr-props-desc {
+    font-size: 13px;
+  }
+
+  .fetr-types-cta-block {
+    grid-template-columns: 1fr;
+    padding: 24px 20px;
+    gap: 24px;
+    min-height: auto;
+  }
+
+  .fetr-types-title {
+    font-size: clamp(28px, 8vw, 44px);
+  }
+
+  .btn-orange-pill {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .fetr-specs-table-block {
+    padding: 24px 20px !important;
+    align-items: stretch !important;
+  }
+
+  .fetr-specs-top {
+    width: 100% !important;
+    margin-left: 0 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: flex-start !important;
+    gap: 15px !important;
+  }
+
+  .fetr-specs-top-label {
+    width: auto !important;
+    font-size: 13px !important;
+    color: #4c5262 !important;
+    font-weight: 500 !important;
+  }
+
+  .fetr-specs-top-value {
+    font-size: 13px !important;
+    color: #4c5262 !important;
+    text-align: right !important;
+    max-width: 65% !important;
+  }
+
+  .fetr-specs-divider {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin: 15px 0 !important;
+  }
+
+  .fetr-specs-table-wrap {
+    display: none !important;
+  }
+
+  .fetr-specs-mobile-cards {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 30px !important;
+    width: 100% !important;
+    margin-top: 10px !important;
+  }
+
+  .fetr-specs-m-card {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    margin-bottom: 25px !important;
+  }
+
+  .fetr-specs-m-thick {
+    font-family: var(
+      --t-headline-font,
+      "TT Firs Neue",
+      "TTNorms",
+      sans-serif
+    ) !important;
+    font-size: clamp(38px, 10vw, 54px) !important;
+    font-weight: 700 !important;
+    color: var(--orange, #fa4616) !important;
+    text-align: right !important;
+    margin: 25px 0 15px auto !important;
+    line-height: 1 !important;
+  }
+
+  .fetr-specs-m-divider {
+    height: 1px !important;
+    background: #f0f0f2 !important;
+    width: 100% !important;
+  }
+
+  .fetr-specs-m-row {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 15px !important;
+    padding: 20px 0 !important;
+  }
+
+  .fetr-specs-m-label {
+    font-family: var(--t-text-font, "TTNorms", sans-serif) !important;
+    font-size: 14px !important;
+    color: #4c5262 !important;
+    font-weight: 500 !important;
+    line-height: 1.35 !important;
+    text-transform: lowercase !important;
+    max-width: 50% !important;
+  }
+
+  .fetr-specs-m-val {
+    font-family: var(--t-text-font, "TTNorms", sans-serif) !important;
+    font-size: 15px !important;
+    color: var(--orange, #fa4616) !important;
+    font-weight: 600 !important;
+    text-align: right !important;
+    text-transform: lowercase !important;
+  }
+
+  .product-type-section-fetr {
+    background-position: 20% center !important;
+  }
+
+  .fetr-soundproof-block {
+    height: 380px;
+    min-height: 380px;
+    padding: 24px 20px;
+  }
+
+  .fetr-soundproof-title {
+    font-size: clamp(28px, 8vw, 44px);
+  }
+
+  .fetr-soundproof-sub {
+    font-size: 13px;
+  }
+
+  .fetr-veneer-wrapper,
+  .fetr-veneer-wrapper-reverse {
+    flex-direction: column;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    min-height: auto;
+    width: 100%;
+  }
+
+  .fetr-veneer-right {
+    min-height: auto !important;
+    height: auto !important;
+    padding: 24px 20px !important;
+    gap: 20px !important;
+  }
+
+  .fetr-veneer-row {
+    margin-left: 0;
+  }
+
+  .fetr-noise-specs-block {
+    padding: 24px 20px;
+  }
+
+  .fetr-noise-specs-top {
+    margin-bottom: 24px;
+  }
+
+  .fetr-noise-specs-title {
+    font-size: clamp(28px, 8vw, 44px);
+  }
+
+  .fetr-noise-specs-table-wrap {
+    display: none !important;
+  }
+
+  .fetr-noise-specs-mobile-wrap {
+    display: block !important;
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .fetr-noise-m-table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .fetr-noise-m-header {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 6px;
+    align-items: center;
+    padding-bottom: 12px;
+  }
+
+  .fetr-noise-m-col-thick {
+    font-family: var(--t-headline-font, "TT Firs Neue", "TTNorms", sans-serif);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--orange, #fa4616);
+    text-align: center;
+  }
+
+  .fetr-noise-m-divider {
+    height: 1px;
+    background: #f0f0f2;
+    width: 100%;
+  }
+
+  .fetr-noise-m-row {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 6px;
+    align-items: center;
+    padding: 18px 0;
+  }
+
+  .fetr-noise-m-col-label {
+    font-family: var(--t-text-font, "TTNorms", sans-serif);
+    font-size: 12px;
+    color: #4c5262;
+    font-weight: 500;
+    line-height: 1.35;
+    text-transform: lowercase;
+  }
+
+  .fetr-noise-m-col-val {
+    font-family: var(--t-text-font, "TTNorms", sans-serif);
+    font-size: 13px;
+    color: var(--orange, #fa4616);
+    font-weight: 600;
+    text-align: center;
+    text-transform: lowercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .fetr-noise-m-btn-row {
+    padding-top: 10px;
+    padding-bottom: 0;
+  }
+
+  .btn-orange-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--orange, #fa4616);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 400;
+    text-decoration: none;
+    line-height: 1;
+    box-shadow: 0 2px 10px rgba(250, 70, 22, 0.25);
+    transition:
+      transform 0.2s,
+      background-color 0.2s;
+  }
+
+  .btn-orange-circle:hover {
+    transform: scale(1.08);
+    background: #e03d10;
+  }
+
+  .fetr-fire-safety-block {
+    padding: 24px 20px;
+  }
+
+  .fetr-fire-safety-header {
+    margin-bottom: 24px;
+  }
+
+  .fetr-fire-safety-title {
+    font-size: clamp(28px, 8vw, 44px);
+  }
+
+  .fetr-fire-safety-body {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .fetr-fire-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .fetr-small-panels-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 15px !important;
+  }
+
+  .fetr-small-panels-left {
+    order: 1 !important;
+    padding: 24px 20px;
+    min-height: clamp(220px, 45vw, 300px);
+  }
+
+  .fetr-small-panels-right {
+    order: 2 !important;
+    min-height: 280px;
+  }
+}
+
+/* ============================================================
+   АДАПТИВ ДЛЯ ПЛАНШЕТОВ (768px - 1366px)
+   ============================================================ */
+@media (min-width: 769px) and (max-width: 1366px) {
+  .fetr-palettes-block {
+    padding: 40px 30px;
+    min-height: auto;
+  }
+
+  .fetr-prod-intro-block,
+  .fetr-app-intro-block,
+  .fetr-props-intro-block,
+  .fetr-types-cta-block {
+    padding: 40px 30px;
+    gap: 30px;
+    min-height: auto;
+  }
+
+  .fetr-banner-block,
+  .fetr-soundproof-block {
+    height: 480px;
+    min-height: 480px;
+    padding: 40px 30px;
+  }
+
+  .fetr-recyc-block,
+  .fetr-specs-table-block,
+  .fetr-noise-specs-block,
+  .fetr-fire-safety-block {
+    padding: 40px 30px;
+  }
+
+  .fetr-shape-left,
+  .fetr-shape-right,
+  .fetr-thick-left,
+  .fetr-thick-right,
+  .fetr-small-panels-left,
+  .fetr-small-panels-right {
+    min-height: 380px;
+    padding: 40px 30px;
+  }
+
+  .fetr-veneer-wrapper,
+  .fetr-veneer-wrapper-reverse {
+    min-height: 520px;
+  }
+
+  .fetr-veneer-right {
+    padding: 40px 30px;
+    min-height: 380px;
+  }
+
+  .fetr-veneer-row {
+    margin-left: 0;
+  }
+
+  .fetr-specs-table-wrap,
+  .fetr-noise-specs-table-wrap {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+/* ============================================================
+   ОТНОСИТЕЛЬНОЕ VW МАСШТАБИРОВАНИЕ ДЛЯ 2K / 4K (min-width: 1440px)
+   ============================================================ */
+@media (min-width: 1440px) {
+  .fetr-main {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .fetr-veneer-row {
+    margin-left: clamp(20px, 4vw, 120px);
+  }
+}
+
+/* ============================================================
+   АДАПТИВ ДЛЯ МОБИЛЬНЫХ СМАРТФОНОВ (390px - 500px)
+   ============================================================ */
+@media (max-width: 500px) {
+  .fetr-main {
+    padding: 0 10px !important;
+    gap: 10px !important;
+    margin-top: 85px !important;
+  }
+
+  /* Карточки и общие блоки */
+  .fetr-prod-intro-block,
+  .fetr-recyc-block,
+  .fetr-shape-left,
+  .fetr-shape-right,
+  .fetr-app-intro-block,
+  .fetr-thick-right,
+  .fetr-usecases-block,
+  .fetr-props-intro-block,
+  .fetr-specs-table-block,
+  .fetr-noise-specs-block,
+  .fetr-fire-safety-block,
+  .fetr-small-panels-left {
+    padding: 22px 18px !important;
+  }
+
+  /* Заголовки секций */
+  .fetr-palettes-title,
+  .fetr-recyc-title,
+  .fetr-props-title {
+    font-size: 26px !important;
+    line-height: 1.08 !important;
+    letter-spacing: -0.5px !important;
+    font-weight: 500 !important;
+    margin-bottom: 12px !important;
+  }
+
+  .product-type-title-fetr {
+    font-size: 30px !important;
+    line-height: 0.9 !important;
+    letter-spacing: -0.5px !important;
+    font-weight: 500 !important;
+    margin-bottom: 12px !important;
+  }
+
+  /* Баннеры */
+  .fetr-banner-block,
+  .fetr-soundproof-block {
+    height: 600px !important;
+    min-height: 420px !important;
+    padding: 22px 18px !important;
+    text-align: left !important;
+  }
+
+  .product-type-section-fetr {
+    height: 600px !important;
+    min-height: 420px !important;
+    padding: 22px 18px !important;
+    text-align: left !important;
+    background-position: 25% center !important;
+  }
+
+  .product-type-section-fetr .product-type-content,
+  .product-type-section-fetr .product-type-content-fetr {
+    position: absolute !important;
+    top: 30px !important;
+    left: 20px !important;
+    /* right:auto (без width) не ограничивал ширину блока — заголовок
+       (.product-type-title-fetr1) разрастался по контенту и вылезал
+       за край экрана на мобилке. right:20px даёт блоку симметричную
+       ширину, и текст переносится по строкам вместо overflow. */
+    right: 20px !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    text-align: left !important;
+    align-items: flex-start !important;
+    padding: 0 !important;
+  }
+
+  .product-type-section-fetr .product-type-title-fetr1,
+  .product-type-section-fetr .product-type-title-fetr,
+  .product-type-section-fetr .product-type-title {
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+  }
+
+  .fetr-palettes-sub {
+    font-size: 15px;
+  }
+
+  .fetr-banner-title,
+  .fetr-soundproof-title {
+    font-size: 22px !important;
+    line-height: 1.15 !important;
+  }
+
+  /* Блок переработки */
+  .fetr-recyc-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    margin-top: 18px !important;
+  }
+
+  .trends-section-reverce {
+    flex-direction: column-reverse;
+  }
+
+  /* На мобилке блок стекается в колонку — фиксированный 50% flex-basis
+     (для десктопного 50/50 по ширине) в column-direction превратился бы
+     в 50% ВЫСОТЫ, что не нужно. Возвращаем обычную высоту по контенту. */
+  .trends-text-content,
+  .trends-image {
+    flex: none;
+    width: 100%;
+  }
+
+  .trends-title-fetr {
+    font-size: clamp(44px, 6.5vw, 120px);;
+    margin-bottom: 40px;
+  }
+
+  .fetr-usecases-block {
+    padding: 22px 18px !important;
+    width: 100% !important;
+    gap: 50px;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  .fetr-usecases-list {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .fetr-usecases-item {
+    width: 100% !important;
+    gap: 14px !important;
+  }
+
+  .fetr-usecases-icon {
+    width: 70px !important;
+    height: 70px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .fetr-usecases-text {
+    font-size: 15px !important;
+    line-height: 1.3 !important;
+    max-width: 100% !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  /* Таблицы спецификаций */
+  .fetr-specs-table-wrap,
+  .fetr-noise-specs-table-wrap {
+    width: 100% !important;
+    margin-left: 0 !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .fetr-specs-table .col-thick,
+  .fetr-noise-specs-table .col-thick {
+    font-size: 24px !important;
+    padding-bottom: 10px !important;
+  }
+
+  .fetr-specs-table .col-val,
+  .fetr-noise-specs-table .col-val,
+  .fetr-noise-specs-table .col-val1 {
+    font-size: 13px !important;
+  }
+
+  /* Шпонированный фетр */
+  .fetr-veneer-wrapper,
+  .fetr-veneer-wrapper-reverse {
+    flex-direction: column !important;
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+    min-height: auto !important;
+    width: 100% !important;
+  }
+
+  .fetr-veneer-row {
+    margin-left: 0 !important;
+    gap: 4px !important;
+  }
+
+  .fetr-veneer-val,
+  .fetr-veneer-val-flex {
+    font-size: 40px !important;
+    line-height: 1.1 !important;
+  }
+
+  .fetr-veneer-val-flex .color-icon {
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  .fetr-veneer-sub {
+    font-size: 16px !important;
+  }
+
+  /* Пожарная безопасность */
+  .fetr-fire-safety-body {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .fetr-fire-row {
+    grid-template-columns: 1fr !important;
+    gap: 4px !important;
+    padding: 10px 0 !important;
+  }
+
+  .fetr-fire-code {
+    font-size: 60px !important;
+  }
+
+  .fetr-fire-tag,
+  .fetr-fire-text {
+    font-size: 15px !important;
+  }
+
+  .fetr-fire-label {
+    font-size: 16px !important;
+    margin-bottom: 20px;
+  }
+
+  .fetr-palettes-block {
+    min-height: 500px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+  }
+
+  /* Кнопки */
+  .btn-orange-pill {
+    width: 100% !important;
+    padding: 24px 20px !important;
+    font-size: 16px !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+
+  .fetr-palettes-image-wrap img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+  }
+
+  .fetr-prod-title {
+    font-size: 46px;
+  }
+  .fetr-prod-desc {
+    font-size: 16px;
+  }
+
+  .fetr-prod-intro-block {
+    min-height: clamp(500px, 28vw, 600px);
+  }
+
+  .fetr-recyc-desc {
+    font-size: 16px;
+  }
+
+  .fetr-shape-wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .fetr-shape-title {
+    font-size: 28px;
+    color: #4c5262;
+    margin-bottom: 200px;
+  }
+
+  .fetr-shape-desc {
+    font-size: 15px;
+  }
+
+  .fetr-app-title {
+    font-size: 44px;
+    line-height: 0.9;
+    margin-bottom: 150px;
+  }
+
+  .fetr-app-desc {
+    font-size: 16px;
+  }
+
+  .fetr-thick-right {
+    min-height: 400px;
+  }
+  .fetr-thick-desc {
+    font-size: 16px;
+  }
+
+  .main-text-block-fetr {
+    font-size: 15px;
+  }
+  .fetr-usecases-title {
+    font-size: 30px;
+    line-height: 0.8;
+    letter-spacing: -2px;
+  }
+
+  .fetr-app-intro-block {
+    height: 500px;
+    gap: 50px;
+  }
+
+  .fetr-app-title1 {
+    font-size: 60px;
+  }
+
+  .fetr-app-desc1 {
+    font-size: 16px;
+  }
+
+  .fetr-types-cta-block {
+    height: 350px;
+  }
+
+  .fetr-types-title {
+    font-size: 60px;
+  }
+
+  .fetr-specs-top {
+    font-size: 20px;
+  }
+
+  .fetr-specs-m-label {
+    font-size: 16px !important;
+  }
+
+  .fetr-specs-m-thick {
+    font-family: var(
+      --t-headline-font,
+      "TT Firs Neue",
+      "TTNorms",
+      sans-serif
+    ) !important;
+    font-size: 40px !important;
+    font-weight: 500 !important;
+  }
+
+  .fetr-specs-m-val {
+    font-weight: 500 !important;
+    font-size: 16px !important;
+  }
+
+  .product-type-title-fetr1 {
+    /* было 50px, потом уменьшили до 34px — оказалось слишком мелко,
+       остановились на промежуточном значении */
+    font-size: 42px;
+    margin-bottom: 10px !important;
+  }
+
+  .fetr-veneer-right {
+    min-height: auto !important;
+    height: auto !important;
+    padding: 24px 20px 24px 50px !important;
+    gap: 20px !important;
+  }
+
+  .fetr-types-cta-block-one {
+    padding: clamp(20px, 4vw, 70px);
+    display: table-row;
+    min-height: 120px;
+  }
+
+  .types-container-fetr {
+    display: flex;
+    align-items: start;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .types-list-fetr {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    padding-top: 40px;
+    max-width: 1000px;
+  }
+
+  .fetr-types-title1 {
+    font-size: 70px;
+  }
+
+  .product-type-section-fetr {
+    height: 650px !important;
+    min-height: 320px !important;
+    padding: 22px 18px !important;
+    object-fit: cover;
+    background-position: 25% center !important;
+    text-align: left !important;
+  }
+
+  .fetr-noise-specs-title {
+    font-size: 46px;
+  }
+
+  .fetr-noise-m-col-thick {
+    font-family: var(--t-headline-font, "TT Firs Neue", "TTNorms", sans-serif);
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--orange, #fa4616);
+    text-align: center;
+  }
+
+  .fetr-noise-m-col-label {
+    font-family: var(--t-text-font, "TTNorms", sans-serif);
+    font-size: 14px;
+    color: #4c5262;
+    font-weight: 500;
+    line-height: 1.35;
+    text-transform: lowercase;
+  }
+
+  .fetr-noise-m-col-val {
+    font-family: var(--t-text-font, "TTNorms", sans-serif);
+    font-size: 17px;
+    color: var(--orange, #fa4616);
+    font-weight: 500;
+    text-align: center;
+    text-transform: lowercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .fetr-fire-safety-title {
+    font-size: 50px;
+  }
+
+  .fetr-fire-safety-sub {
+    font-family: var(--t-text-font, "TTNorms", sans-serif);
+    font-size: 16px;
+    color: #000000;
+    margin: 0;
+    text-transform: lowercase;
+    font-weight: 500;
+  }
+
+  .fetr-fire-safety-specs {
+    padding-left: 40px;
+  }
+
+  .fetr-fire-compare-list {
+    font-size: 16px;
+  }
+
+  .types-section-fetr1 {
+    padding: 20px 20px;
+    min-height: 300px;
+  }
+
+  .product-type-content,
+  .product-type-content-fetr {
+    position: absolute !important;
+    /* right:auto (без width) не ограничивал ширину — при font-size:50px
+       у .product-type-title-fetr1 ниже текст вылезал за край экрана
+       (left у блока — 20px, унаследован из @media 768px выше). */
+    right: 20px !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    text-align: left !important;
+    align-items: flex-start !important;
+    padding: 0 !important;
+  }
+
+  .fetr-small-panels-title {
+    font-size: 32px !important;
+    line-height: 1.08 !important;
+    letter-spacing: -0.5px !important;
+    font-weight: 500 !important;
+    margin-bottom: 12px !important;
+  }
+
+  .fetr-small-panels-sub {
+    font-size: 16px;
+  }
+
+  .fetr-small-panels-left {
+    min-height: 350px;
+  }
+
+  .fetr-app-title2 {
+    font-size: 50px;
+  }
+
+  .footer-benefits {
+    margin-bottom: 10px;
+  }
+  .footer-designer-block {
+    min-height: 300px;
+    padding: 30px 20px !important;
+  }
+
+  .designer-main-title {
+    font-size: clamp(38px, 9vw, 56px) !important;
+    line-height: 0.95 !important;
+    margin-bottom: 16px !important;
+  }
+
+  .designer-subtitle {
+    font-size: 18px !important;
+    line-height: 1.4 !important;
+    margin-bottom: 25px !important;
+  }
+
+  .btn-designer-action {
+    font-size: 18px !important;
+    padding: 20px 30px !important;
+    width: 100% !important;
+    text-align: center !important;
+    font-weight: 600 !important;
+    box-sizing: border-box !important;
+  }
+
+  .fetr-cleaning-banner {
+    height: 500px !important;
+    min-height: auto !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: 27% center !important;
+  }
+}
+
+/* ===== МОДАЛЬНОЕ ОКНО С ИЗОБРАЖЕНИЯМИ ===== */
+.image-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.image-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.image-modal-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+}
+
+.image-modal-content {
+  position: relative;
+  z-index: 2;
+  max-width: 90vw;
+  max-height: 90vh;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.image-modal.active .image-modal-content {
+  transform: scale(1);
+}
+
+.image-modal-content img {
+  max-width: 100%;
+  max-height: 80vh;
+  height: auto;
+  width: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  display: block;
+}
+
+.image-modal-close {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--orange, #fa4616);
+  color: #ffffff;
+  border: none;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 3;
+}
+
+/* Мобильная адаптация модального окна просмотра изображений */
+@media (max-width: 768px) {
+  .image-modal {
+    padding: 6px !important;
+  }
+
+  .image-modal-content {
+    width: 98vw !important;
+    max-width: 98vw !important;
+    max-height: 94vh !important;
+    padding: 8px !important;
+    border-radius: 12px !important;
+  }
+
+  .image-modal-content img {
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: 90vh !important;
+    object-fit: contain !important;
+  }
+
+  .image-modal-close {
+    top: 8px !important;
+    right: 8px !important;
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 20px !important;
+  }
+}
+
+/* ===== МОДАЛЬНОЕ ОКНО "ЗАКАЗАТЬ ОБРАЗЦЫ" ===== */
+.samples-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.samples-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.samples-modal-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(5px);
+}
+
+.samples-modal-window {
+  position: relative;
+  z-index: 2;
+  width: 92%;
+  max-width: 1350px;
+  background-color: #49505c;
+  border-radius: 24px;
+  padding: clamp(55px, 6vw, 100px) clamp(60px, 6.5vw, 120px);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  transform: scale(0.92);
+  transition: transform 0.3s ease;
+  color: #ffffff;
+}
+
+.samples-modal.active .samples-modal-window {
+  transform: scale(1);
+}
+
+.samples-modal-close {
+  position: absolute;
+  top: 28px;
+  right: 35px;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 38px;
+  font-weight: 300;
+  cursor: pointer;
+  line-height: 1;
+  opacity: 0.85;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.samples-modal-close:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.samples-modal-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 5vw, 90px);
+}
+
+.samples-modal-title {
+  font-family: var(--t-headline-font, 'TT Firs Neue', sans-serif);
+  font-size: clamp(64px, 8vw, 115px);
+  line-height: 0.88;
+  font-weight: 500;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -2.5px;
+  text-transform: lowercase;
+}
+
+.samples-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+}
+
+.samples-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.samples-input-group label {
+  font-family: var(--t-text-font, 'TTNorms', sans-serif);
+  font-size: 18px;
+  color: #c2c7cf;
+  font-weight: 400;
+  text-transform: lowercase;
+}
+
+.samples-input-group input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px dashed #757d8a;
+  color: #ffffff;
+  font-family: var(--t-text-font, 'TTNorms', sans-serif);
+  font-size: 24px;
+  padding: 14px 0 16px 0;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.samples-input-group input:focus {
+  border-bottom-color: #ffffff;
+}
+
+.samples-input-group input::placeholder {
+  color: #9299a4;
+  font-size: 24px;
+}
+
+.samples-checkbox-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.samples-checkbox-group input[type="checkbox"] {
+  width: 24px;
+  height: 24px;
+  margin-top: 2px;
+  accent-color: #cfd4dc;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.samples-checkbox-group label {
+  font-family: var(--t-text-font, 'TTNorms', sans-serif);
+  font-size: 14px;
+  line-height: 1.45;
+  color: #c2c7cf;
+}
+
+.samples-checkbox-group label a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.btn-samples-submit {
+  background-color: #cfd4dc;
+  color: #383e47;
+  border: none;
+  border-radius: 50px;
+  padding: 24px 54px;
+  font-family: var(--t-text-font, 'TTNorms', sans-serif);
+  font-size: 22px;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: lowercase;
+  transition: background-color 0.2s, transform 0.2s;
+  margin-top: 14px;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.btn-samples-submit:hover {
+  background-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Мобильная адаптация модального окна образцов */
+@media (max-width: 768px) {
+  .samples-modal {
+    padding: 12px;
+  }
+
+  .samples-modal-window {
+    padding: 38px 22px 30px 22px;
+    border-radius: 18px;
+    max-width: 100%;
+  }
+
+  .samples-modal-close {
+    top: 16px;
+    right: 18px;
+    font-size: 34px;
+  }
+
+  .samples-modal-body {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .samples-modal-title {
+    font-size: 44px;
+    line-height: 0.92;
+  }
+
+  .samples-modal-form {
+    gap: 22px;
+  }
+
+  .samples-input-group label {
+    font-size: 15px;
+  }
+
+  .samples-input-group input {
+    font-size: 18px;
+    padding: 10px 0;
+  }
+
+  .samples-input-group input::placeholder {
+    font-size: 18px;
+  }
+
+  .samples-checkbox-group label {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .btn-samples-submit {
+    padding: 18px 28px;
+    font-size: 18px;
+    margin-top: 8px;
+  }
+}

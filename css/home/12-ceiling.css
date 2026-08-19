@@ -1,0 +1,179 @@
+/* ==========================================================================
+   12-ceiling.css — секция «решение для потолков»
+   Общие примитивы .solution-* лежат в css/11-walls.css — файл обязателен.
+   Здесь только координаты карточек и отличия от базовых значений.
+   ========================================================================== */
+
+/* ===== МАКЕТ 1200 ===== */
+.solution--ceiling .solution-btn--head {
+  top: 59px;
+}
+
+/* Карточки потолков в оригинале обесцвечены */
+.solution--ceiling .solution-card-media {
+  filter: grayscale(1);
+}
+
+.solution--ceiling .solution-card--1 {
+  --x: 10px;
+  --y: 144px;
+  --mx: 83px;
+  --my: 81px;
+}
+.solution--ceiling .solution-card--2 {
+  --x: 308px;
+  --y: 144px;
+  --mx: 88px;
+  --my: 81px;
+}
+.solution--ceiling .solution-card--3 {
+  --x: 605px;
+  --y: -143px;
+  --mx: 83px;
+  --my: 82px;
+}
+.solution--ceiling .solution-card--4 {
+  --x: 903px;
+  --y: 144px;
+  --mx: 83px;
+  --my: 81px;
+}
+
+/* ===== МАКЕТ 960 ===== */
+@media (max-width: 1199px) {
+  .solution--ceiling .solution-title {
+    left: 70px;
+    top: 51px;
+  }
+
+  .solution--ceiling .solution-card--1 {
+    --x: 10px;
+    --y: 137px;
+    --mx: 83px;
+    --my: 82px;
+  }
+  .solution--ceiling .solution-card--2 {
+    --x: 307px;
+    --y: -160px;
+    --mx: 83px;
+    --my: 83px;
+  }
+  .solution--ceiling .solution-card--3 {
+    --x: 376px;
+    --y: 434px;
+    --mx: 83px;
+    --my: 83px;
+  }
+  .solution--ceiling .solution-card--4 {
+    --x: 663px;
+    --y: 137px;
+    --mx: 83px;
+    --my: 82px;
+  }
+}
+
+/* Подписи с заданной шириной в макете 960.
+   Диапазон, а не «сверху вниз»: правила специфичнее сброса в макете 640. */
+@media (min-width: 960px) and (max-width: 1199px) {
+  .solution--ceiling .solution-card--2 .solution-card-title {
+    width: 189px;
+  }
+
+  .solution--ceiling .solution-card--3 .solution-card-title {
+    width: 230px;
+    white-space: normal;
+  }
+}
+
+/* ===== МАКЕТ 640 ===== */
+@media (max-width: 959px) {
+  .solution--ceiling .solution-title {
+    left: 30px;
+    top: 40px;
+  }
+
+  .solution--ceiling .solution-card--1 {
+    --x: 10px;
+    --y: 172px;
+    --mx: 88px;
+    --my: 88px;
+  }
+  .solution--ceiling .solution-card--2 {
+    --x: 325px;
+    --y: -142px;
+    --mx: 88px;
+    --my: 88px;
+  }
+  .solution--ceiling .solution-card--3 {
+    --x: 325px;
+    --y: 486px;
+    --mx: 88px;
+    --my: 106px;
+  }
+  .solution--ceiling .solution-card--4 {
+    --x: 10px;
+    --y: 800px;
+    --mx: 88px;
+    --my: 106px;
+  }
+}
+
+/* ===== МАКЕТ 360 ===== */
+@media (max-width: 639px) {
+  .solution--ceiling .solution-head {
+    height: 150px;
+  }
+
+  .solution--ceiling .solution-panel {
+    height: 132px;
+  }
+
+  .solution--ceiling .solution-title {
+    left: 24px;
+    top: 32px;
+  }
+
+  .solution--ceiling .solution-cards {
+    height: 842px;
+  }
+
+  .solution--ceiling .solution-btn--cards {
+    left: 30px;
+    top: 771px;
+    width: 311px;
+    height: 41px;
+  }
+
+  .solution--ceiling .solution-card--1 {
+    --x: 184px;
+    --y: -80px;
+    --h: 196px;
+    --tw: 128px;
+    --mx: 36px;
+    --my: 64px;
+  }
+  .solution--ceiling .solution-card--2 {
+    --x: 10px;
+    --y: 124px;
+    --h: 178px;
+    --tw: 136px;
+    --mx: 34px;
+    --my: 46px;
+  }
+  .solution--ceiling .solution-card--3 {
+    --x: 184px;
+    --y: 310px;
+    --h: 236px;
+    --tw: 136px;
+    --mx: 36px;
+    --my: 100px;
+  }
+  .solution--ceiling .solution-card--4 {
+    --x: 10px;
+    --y: 554px;
+    --h: 196px;
+    --tw: 143px;
+    --mx: 34px;
+    --my: 64px;
+  }
+}

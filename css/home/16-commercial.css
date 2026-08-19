@@ -1,0 +1,254 @@
+/* ==========================================================================
+   16-commercial.css — «коммерческие» пространства (макет 1200)
+   Тёмная карточка со списком и слайдер справа; общий слайдер .hb-slider
+   и его скрипт живут в 15-application.
+   ========================================================================== */
+
+.comm {
+  height: 606px;
+  overflow: hidden;
+  background: var(--c-light);
+}
+
+.comm-inner {
+  position: relative;
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.comm-slider {
+  left: 605px;
+  top: 10px;
+  width: 585px;
+  height: 596px;
+  --bar-w: 120px;
+  --bars-gap: 22px;
+}
+
+.comm-slide--1 {
+  background-image: url('../../assets/misc-home/f8f30f50134d4161d0db.jpg');
+}
+
+.comm-slide--2 {
+  background-image: url('../../assets/misc-home/Rectangle_3780.png');
+  background-position: 69.778% 59.268%;
+  background-size: 136.489%;
+}
+
+.comm-slide--3 {
+  background-image: url('../../assets/misc-home/hf_20260310_143228_7.png');
+  background-position: 99.995% 0%;
+  background-size: 136.488%;
+}
+
+.comm-slide--4 {
+  background-image: url('../../assets/misc-home/Img-frame_6.png');
+  background-position: 77.007% -996%;
+  background-size: 181.125%;
+}
+
+.comm-card {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  width: 585px;
+  height: 596px;
+  background: var(--c-ink);
+}
+
+.comm-card-title {
+  position: absolute;
+  left: 40px;
+  top: 40px;
+  width: 425px;
+  font-family: var(--ff-display);
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 25.2px;
+  letter-spacing: -0.7px;
+  color: var(--c-white);
+}
+
+/* ===== СПИСОК НАЗНАЧЕНИЙ ===== */
+.comm-list {
+  position: absolute;
+  left: 40px;
+  top: 113px;
+}
+
+/* шаг неравномерный: пункт в две строки выше прочих, короткий — ниже */
+.comm-list-item {
+  position: absolute;
+  left: 0;
+  top: var(--y);
+  display: flex;
+  align-items: center;
+  height: var(--h, 21px);
+}
+
+.comm-list-item:nth-child(1) {
+  --y: 0px;
+}
+.comm-list-item:nth-child(2) {
+  --y: 33px;
+}
+.comm-list-item:nth-child(3) {
+  --y: 66px;
+}
+.comm-list-item:nth-child(4) {
+  --y: 99px;
+}
+.comm-list-item:nth-child(5) {
+  --y: 132px;
+}
+.comm-list-item:nth-child(6) {
+  --y: 165px;
+  --h: 43px;
+  --tw: 414px;
+}
+.comm-list-item:nth-child(7) {
+  --y: 220px;
+}
+.comm-list-item:nth-child(8) {
+  --y: 253px;
+  --h: 18.2px;
+}
+.comm-list-item:nth-child(9) {
+  --y: 283.2px;
+}
+.comm-list-item:nth-child(10) {
+  --y: 316.2px;
+}
+.comm-list-item:nth-child(11) {
+  --y: 349.2px;
+}
+.comm-list-item:nth-child(12) {
+  --y: 382.2px;
+}
+
+.comm-list-dot {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--c-white);
+  opacity: 0.3;
+}
+
+.comm-list-text {
+  width: var(--tw, 232px);
+  margin-left: 28px;
+  font-family: var(--ff-base);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18.2px;
+  letter-spacing: -0.2px;
+  color: var(--c-white);
+}
+
+/* ===== МАКЕТ 960 ===== */
+@media (max-width: 1199px) {
+  .comm-inner {
+    width: 960px;
+  }
+
+  .comm-slider {
+    left: 485px;
+    width: 465px;
+  }
+
+  .comm-card {
+    width: 465px;
+  }
+
+  .comm-list {
+    top: 150px;
+  }
+
+  .comm-list-item:nth-child(6) {
+    --tw: 338px;
+  }
+
+  .comm-list-text {
+    width: var(--tw, 371px);
+  }
+}
+
+/* ===== МАКЕТ 640 ===== */
+@media (max-width: 959px) {
+  .comm {
+    height: 1213px;
+  }
+
+  .comm-inner {
+    width: 640px;
+  }
+
+  .comm-slider {
+    left: 10px;
+    top: 617px;
+    width: 620px;
+  }
+
+  .comm-card {
+    width: 620px;
+    height: 597px;
+  }
+
+  .comm-card-title {
+    left: 20px;
+  }
+
+  .comm-list {
+    left: 20px;
+    top: 151px;
+  }
+}
+
+/* ===== МАКЕТ 360 ===== */
+@media (max-width: 639px) {
+  .comm {
+    height: 939px;
+  }
+
+  .comm-inner {
+    width: 360px;
+  }
+
+  .comm-slider {
+    left: 8px;
+    top: 8px;
+    width: 344px;
+    height: 377px;
+  }
+
+  .comm-card {
+    left: 8px;
+    top: 393px;
+    width: 345px;
+    height: 546px;
+  }
+
+  .comm-card-title {
+    left: 16px;
+    top: 24px;
+    width: 272px;
+    font-size: 24px;
+    line-height: 19.2px;
+    letter-spacing: -0.2px;
+  }
+
+  .comm-list {
+    left: 16px;
+    top: 103px;
+  }
+
+  .comm-list-item:nth-child(6) {
+    --tw: 310px;
+  }
+
+  .comm-list-text {
+    width: var(--tw, 310px);
+  }
+}

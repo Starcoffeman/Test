@@ -1,0 +1,364 @@
+/* ==========================================================================
+   11-walls.css — секция «решение для стен»
+   Здесь же общие примитивы блоков «решение для ...» (.solution-*): их
+   переиспользуют 12-ceiling.css, 13-doors.css, 14-office.css — файл обязателен
+   и подключается раньше них.
+   Один блок = шапка с заголовком и кнопкой, большой слайдер, ряд карточек.
+   Карточки лежат в шахматном порядке и заходят на слайдер сверху — поэтому
+   раскладка блока карточек абсолютная, как в оригинале.
+   Высоты блоков — значения секции стен; секция, у которой они другие,
+   переопределяет их у себя (см. .solution--ceiling в 12-ceiling.css).
+   ========================================================================== */
+.solution {
+  position: relative;
+  background: var(--c-light);
+}
+
+/* ===== ШАПКА БЛОКА ===== */
+.solution-head {
+  position: relative;
+  height: 307px;
+}
+
+.solution-panel {
+  position: absolute;
+  left: 10px;
+  right: 9px;
+  top: 10px;
+  height: 296px;
+  background: var(--c-white);
+}
+
+.solution-title {
+  position: absolute;
+  left: 50px;
+  top: 50px;
+  width: 873px;
+  font-size: 60px;
+  line-height: 48px;
+  letter-spacing: -2px;
+  font-weight: 500;
+  color: var(--c-ink);
+}
+
+.solution-btn {
+  position: absolute;
+  font-size: 14px;
+  line-height: 14px;
+}
+
+.solution-btn--head {
+  left: 615px;
+  top: 51px;
+  width: 547px;
+  height: 54px;
+}
+
+/* Кнопка под карточками есть только в мобильном макете */
+.solution-btn--cards {
+  display: none;
+}
+
+/* ===== БОЛЬШОЙ СЛАЙДЕР ===== */
+.solution-stage {
+  position: relative;
+  height: 568px;
+}
+
+.solution-slider {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  top: 0;
+  height: 568px;
+}
+
+/* ===== КАРТОЧКИ ===== */
+.solution-cards {
+  position: relative;
+  height: 431px;
+}
+
+.solution-card {
+  --w: 287px;
+  --h: 287px;
+  --tx: 28px;
+  --ty: 28px;
+  --tw: 226px;
+  --ms: 123px;
+
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--w);
+  height: var(--h);
+  background: var(--c-white);
+}
+
+.solution-card-title {
+  position: absolute;
+  left: var(--tx);
+  top: var(--ty);
+  width: var(--tw);
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -0.2px;
+  font-weight: 500;
+  color: var(--c-ink);
+}
+
+.solution-card-media {
+  --uc-dot-size: 4px;
+  --uc-dots-gap: 8px;
+  --uc-dot-color: #c9cbd0;
+  --uc-dot-color-active: var(--c-ink);
+
+  position: absolute;
+  left: var(--mx);
+  top: var(--my);
+  width: var(--ms);
+  height: var(--ms);
+}
+
+/* Карточка без галереи — одна картинка */
+.solution-card-media > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Точки мини-галереи — под картинкой и только в мобильном макете */
+.solution-card-media .uc-slider-dots {
+  left: 0;
+  right: 0;
+  bottom: auto;
+  top: 100%;
+  display: none;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+/* ===== МАКЕТ 960 ===== */
+@media (max-width: 1199px) {
+  .solution-panel {
+    right: 10px;
+  }
+  .solution-btn--head {
+    display: none;
+  }
+  .solution-cards {
+    height: 721px;
+  }
+  /* Подписи в этом макете подгоняются по тексту и не переносятся */
+  .solution-card-title {
+    width: auto;
+    white-space: nowrap;
+  }
+}
+
+/* ===== МАКЕТ 640 ===== */
+@media (max-width: 959px) {
+  .solution-head {
+    height: 292px;
+  }
+  .solution-panel {
+    height: 282px;
+  }
+  .solution-title {
+    left: 30px;
+    top: 40px;
+    width: 552px;
+    font-size: 70px;
+    line-height: 56px;
+  }
+  .solution-cards {
+    height: 1102px;
+  }
+  .solution-card {
+    --w: 305px;
+    --h: 304px;
+    --tx: 30px;
+    --ty: 30px;
+    --tw: 225px;
+    --ms: 131px;
+  }
+  .solution-card-title {
+    width: var(--tw);
+    white-space: normal;
+  }
+}
+
+/* ===== МАКЕТ 360 ===== */
+@media (max-width: 639px) {
+  .solution-head {
+    height: 130px;
+  }
+  .solution-panel {
+    left: 8px;
+    right: 9px;
+    top: 8px;
+    height: 117px;
+  }
+  .solution-title {
+    left: 24px;
+    top: 32px;
+    width: 304px;
+    font-size: 36px;
+    line-height: 29px;
+    letter-spacing: -1px;
+  }
+  .solution-stage {
+    height: 344px;
+  }
+  .solution-slider {
+    --uc-dots-x: 14px;
+    --uc-dots-gap: 8px;
+
+    left: 8px;
+    right: 8px;
+    height: 344px;
+  }
+  .solution-cards {
+    height: 856px;
+  }
+  .solution-card {
+    --w: 168px;
+    --tx: 16px;
+    --ty: 16px;
+    --ms: 100px;
+  }
+  .solution-card-media .uc-slider-arrow {
+    display: none;
+  }
+  .solution-card-media .uc-slider-dots {
+    display: flex;
+  }
+  .solution-btn--cards {
+    display: flex;
+  }
+}
+
+/* ===== КООРДИНАТЫ КАРТОЧЕК СЕКЦИИ СТЕН: МАКЕТ 1200 ===== */
+.solution--walls .solution-card--1 {
+  --x: 10px;
+  --y: 144px;
+  --mx: 83px;
+  --my: 82px;
+}
+.solution--walls .solution-card--2 {
+  --x: 308px;
+  --y: -143px;
+  --mx: 82px;
+  --my: 82px;
+}
+.solution--walls .solution-card--3 {
+  --x: 605px;
+  --y: 144px;
+  --mx: 83px;
+  --my: 82px;
+}
+.solution--walls .solution-card--4 {
+  --x: 903px;
+  --y: -143px;
+  --mx: 83px;
+  --my: 82px;
+}
+
+/* ===== МАКЕТ 960 ===== */
+@media (max-width: 1199px) {
+  .solution--walls .solution-card--1 {
+    --x: 10px;
+    --y: 137px;
+    --mx: 83px;
+    --my: 83px;
+  }
+  .solution--walls .solution-card--2 {
+    --x: 307px;
+    --y: -160px;
+    --mx: 82px;
+    --my: 91px;
+  }
+  .solution--walls .solution-card--3 {
+    --x: 376px;
+    --y: 434px;
+    --mx: 83px;
+    --my: 83px;
+  }
+  .solution--walls .solution-card--4 {
+    --x: 663px;
+    --y: 137px;
+    --mx: 83px;
+    --my: 83px;
+  }
+}
+
+/* ===== МАКЕТ 640 ===== */
+@media (max-width: 959px) {
+  .solution--walls .solution-card--1 {
+    --x: 10px;
+    --y: 172px;
+    --mx: 88px;
+    --my: 87px;
+  }
+  .solution--walls .solution-card--2 {
+    --x: 325px;
+    --y: -142px;
+    --mx: 87px;
+    --my: 105px;
+  }
+  .solution--walls .solution-card--3 {
+    --x: 325px;
+    --y: 486px;
+    --mx: 88px;
+    --my: 87px;
+  }
+  .solution--walls .solution-card--4 {
+    --x: 10px;
+    --y: 800px;
+    --mx: 88px;
+    --my: 87px;
+  }
+}
+
+/* ===== МАКЕТ 360 ===== */
+@media (max-width: 639px) {
+  .solution--walls .solution-btn--cards {
+    left: 25px;
+    top: 776px;
+    width: 311px;
+    height: 49px;
+  }
+  .solution--walls .solution-card--1 {
+    --x: 8px;
+    --y: 552px;
+    --h: 196px;
+    --tw: 142px;
+    --ty: 19px;
+    --mx: 36px;
+    --my: 62px;
+  }
+  .solution--walls .solution-card--2 {
+    --x: 184px;
+    --y: -99px;
+    --h: 209px;
+    --tw: 136px;
+    --mx: 34px;
+    --my: 77px;
+  }
+  .solution--walls .solution-card--3 {
+    --x: 184px;
+    --y: 328px;
+    --h: 224px;
+    --tw: 136px;
+    --mx: 34px;
+    --my: 82px;
+  }
+  .solution--walls .solution-card--4 {
+    --x: 8px;
+    --y: 107px;
+    --h: 226px;
+    --tw: 125px;
+    --mx: 34px;
+    --my: 93px;
+  }
+}

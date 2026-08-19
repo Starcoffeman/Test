@@ -1,0 +1,456 @@
+/* ==========================================================================
+   10-spaces-impact.css — таблица «тип помещения / проблемы / решение hubox»
+   (базовый макет 1200). На широких макетах — строки таблицы, на 640 и 360 —
+   вертикальные карточки с собственными подписями колонок.
+   ========================================================================== */
+
+.spaces {
+  position: relative;
+  height: 670px;
+  overflow: hidden;
+  background: var(--c-light);
+}
+
+.spaces-stage {
+  --row-top: 95;
+  --row-step: 117;
+
+  position: relative;
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+/* ===== ШАПКА ТАБЛИЦЫ ===== */
+.spaces-head-col {
+  position: absolute;
+  top: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  font-family: var(--ff-display);
+  font-size: 33px;
+  font-weight: 500;
+  line-height: 30px;
+  letter-spacing: -0.7px;
+  color: var(--c-ink);
+}
+
+.spaces-head-col--type {
+  left: -52px;
+  width: 439px;
+}
+
+.spaces-head-col--problems {
+  left: 424px;
+  width: 390px;
+}
+
+.spaces-head-col--solution {
+  left: 727px;
+  width: 567px;
+  color: var(--c-accent);
+}
+
+/* ===== СТРОКА ТАБЛИЦЫ ===== */
+.spaces-row {
+  position: absolute;
+  left: 10px;
+  top: calc((var(--row-top) + var(--i) * var(--row-step)) * 1px);
+  width: 1180px;
+  height: 96px;
+  background: var(--c-white);
+}
+
+.spaces-row:nth-of-type(1) {
+  --i: 0;
+}
+.spaces-row:nth-of-type(2) {
+  --i: 1;
+}
+.spaces-row:nth-of-type(3) {
+  --i: 2;
+}
+.spaces-row:nth-of-type(4) {
+  --i: 3;
+}
+.spaces-row:nth-of-type(5) {
+  --i: 4;
+}
+
+.spaces-row-icon {
+  position: absolute;
+  left: 22px;
+  top: 18px;
+  width: 60px;
+  height: 60px;
+}
+
+/* у первой строки иконка нарисована в другом размере */
+.spaces-row:first-of-type .spaces-row-icon {
+  left: 13px;
+  top: 11px;
+  width: 80px;
+  height: 75px;
+}
+
+.spaces-row-type {
+  position: absolute;
+  left: 95px;
+  top: 27px;
+  width: 131px;
+  font-family: var(--ff-display);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -0.7px;
+  color: var(--c-ink);
+}
+
+.spaces-row-type--short {
+  top: 37px;
+}
+
+.spaces-row-photo {
+  position: absolute;
+  left: 245px;
+  top: -1px;
+  width: 200px;
+  height: 97px;
+}
+
+/* подписи колонок внутри строки нужны только в мобильных макетах */
+.spaces-row-label {
+  display: none;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--ff-display);
+  font-weight: 500;
+  letter-spacing: -0.7px;
+  color: var(--c-ink);
+}
+
+.spaces-row-problems {
+  position: absolute;
+  left: 531px;
+  top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.spaces-row-problem {
+  display: flex;
+  align-items: center;
+  min-height: 24px;
+}
+
+.spaces-row-dot {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--c-accent);
+}
+
+.spaces-row-problem-text {
+  margin-left: 28px;
+  font-family: var(--ff-base);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18.2px;
+  letter-spacing: -0.2px;
+  color: var(--c-ink);
+}
+
+.spaces-row-result {
+  position: absolute;
+  left: 883px;
+  top: 20px;
+  width: 147px;
+  font-family: var(--ff-display);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -0.7px;
+  color: var(--c-accent);
+}
+
+.spaces-row:first-of-type .spaces-row-result {
+  width: 180px;
+}
+
+.spaces-row-note {
+  position: absolute;
+  left: 883px;
+  top: 61px;
+  display: flex;
+  align-items: center;
+  width: 229px;
+  height: 19px;
+  font-family: var(--ff-base);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.2px;
+  color: var(--c-ink);
+}
+
+/* ===== МАКЕТ 960 ===== */
+@media (max-width: 1199px) {
+  .spaces {
+    height: 689px;
+  }
+
+  .spaces-stage {
+    --row-step: 116.25;
+
+    width: 960px;
+  }
+
+  .spaces-head-col--type {
+    left: 7px;
+    width: 308px;
+  }
+
+  .spaces-head-col--problems {
+    left: 415px;
+    width: 248px;
+  }
+
+  .spaces-head-col--solution {
+    left: 671px;
+    width: 279px;
+  }
+
+  .spaces-row {
+    width: 940px;
+  }
+
+  .spaces-row-icon {
+    left: 14px;
+    top: 11px;
+  }
+
+  .spaces-row-type,
+  .spaces-row-type--short {
+    left: 93px;
+    top: 26px;
+  }
+
+  .spaces-row-photo {
+    left: 224px;
+    top: 0;
+  }
+
+  .spaces-row-problems {
+    left: 450px;
+    top: 0;
+    gap: 12px;
+  }
+
+  .spaces-row-result {
+    left: 723px;
+    top: 3px;
+  }
+
+  /* подпись занимает две строки, однострочные варианты центрируются в ней */
+  .spaces-row-note {
+    left: 721px;
+    top: 50px;
+    width: 201px;
+    height: 36px;
+  }
+}
+
+/* ===== МАКЕТ 640 ===== */
+@media (max-width: 959px) {
+  .spaces {
+    height: 1810px;
+  }
+
+  .spaces-stage {
+    --row-step: 341;
+
+    width: 640px;
+  }
+
+  .spaces-head {
+    display: none;
+  }
+
+  .spaces-row {
+    width: 620px;
+    height: 321px;
+  }
+
+  .spaces-row-icon {
+    left: 49px;
+    top: 11px;
+    width: 80px;
+    height: 80px;
+  }
+
+  .spaces-row:first-of-type .spaces-row-icon {
+    left: 48px;
+  }
+
+  .spaces-row-type,
+  .spaces-row-type--short {
+    left: 160px;
+    top: 22px;
+  }
+
+  .spaces-row-photo {
+    left: 380px;
+    top: 16px;
+  }
+
+  /* подписи колонок оригинал показывает только у первой карточки */
+  .spaces-row:first-of-type .spaces-row-label {
+    display: flex;
+    font-size: 33px;
+    line-height: 30px;
+  }
+
+  .spaces-row-label--problems {
+    left: 41px;
+    top: 118px;
+    width: 199px;
+    height: 50px;
+  }
+
+  .spaces-row-label--solution {
+    left: 42px;
+    top: 217px;
+    width: 281px;
+    height: 78px;
+    color: var(--c-accent);
+  }
+
+  .spaces-row-problems {
+    left: 379px;
+    top: 132px;
+    gap: 15px;
+  }
+
+  .spaces-row-result,
+  .spaces-row:first-of-type .spaces-row-result {
+    left: 380px;
+    top: 244px;
+    width: 147px;
+  }
+
+  .spaces-row-note {
+    left: 380px;
+    top: 286px;
+    width: 521px;
+    height: 19px;
+  }
+}
+
+/* ===== МАКЕТ 360 ===== */
+@media (max-width: 639px) {
+  .spaces {
+    height: 1820px;
+  }
+
+  .spaces-stage {
+    --row-top: 8;
+    --row-step: 363;
+
+    width: 360px;
+  }
+
+  .spaces-row {
+    left: 8px;
+    width: 344px;
+    height: 343px;
+  }
+
+  .spaces-row-icon {
+    left: 25px;
+    top: 67px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .spaces-row:first-of-type .spaces-row-icon {
+    left: 22px;
+    top: 64px;
+    width: 50px;
+    height: 47px;
+  }
+
+  /* в мобильном макете заголовок центрируется в своей рамке */
+  .spaces-row-type,
+  .spaces-row-type--short {
+    left: 11px;
+    top: 28px;
+    display: flex;
+    align-items: center;
+    width: 114px;
+    height: 38px;
+    font-size: 18px;
+    line-height: 16px;
+    color: var(--c-accent);
+  }
+
+  .spaces-row-photo {
+    left: 133px;
+    top: 31px;
+  }
+
+  .spaces-row-label,
+  .spaces-row:first-of-type .spaces-row-label {
+    display: flex;
+    font-size: 15px;
+    line-height: 14px;
+  }
+
+  .spaces-row-label--problems {
+    left: -1px;
+    top: 151px;
+    width: 98px;
+    height: 50px;
+  }
+
+  .spaces-row-label--solution {
+    left: -7px;
+    top: 206px;
+    width: 146px;
+    height: 126px;
+    color: var(--c-ink);
+  }
+
+  .spaces-row-problems {
+    left: 133px;
+    top: 162px;
+    gap: 1px;
+  }
+
+  .spaces-row-problem-text {
+    width: 273px;
+    margin-left: 12px;
+  }
+
+  .spaces-row-result,
+  .spaces-row:first-of-type .spaces-row-result {
+    left: 135px;
+    top: 266px;
+    width: 205px;
+    font-size: 16px;
+    line-height: 14px;
+  }
+
+  .spaces-row-note {
+    left: 136px;
+    top: 291px;
+    width: 186px;
+    height: 32px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+}

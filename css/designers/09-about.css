@@ -1,0 +1,81 @@
+/* ==========================================================================
+   09-about.css — designers.html: «мы российская компания…» / «мы
+   обеспечиваем контроль…» — две карточки (базовый 1200)
+   ========================================================================== */
+
+.company {
+  padding: 10px 10px 0;
+  background: var(--c-light);
+}
+
+.company-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.company-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 408px;
+  padding: 50px 48px 40px;
+  background: var(--c-white);
+}
+
+.company-card-title {
+  font-family: var(--ff-display);
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.3px;
+  color: var(--c-ink);
+}
+
+.company-card-text {
+  max-width: 420px;
+  font-size: 14px;
+  line-height: 1.6;
+  letter-spacing: -0.2px;
+  color: var(--c-grey);
+}
+
+/* ===== МАКЕТ 960 ===== */
+@media (max-width: 1199px) {
+  .company-card {
+    min-height: 300px;
+    padding: 36px;
+  }
+
+  .company-card-title {
+    font-size: 22px;
+  }
+}
+
+/* ===== МАКЕТ 640 ===== */
+@media (max-width: 959px) {
+  .company-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .company-card {
+    min-height: 0;
+    padding: 36px 30px;
+  }
+}
+
+/* ===== МАКЕТ 360 ===== */
+@media (max-width: 639px) {
+  .company {
+    padding: 8px 8px 0;
+  }
+
+  .company-card {
+    padding: 28px 20px;
+    gap: 12px;
+  }
+
+  .company-card-title {
+    font-size: 20px;
+  }
+}

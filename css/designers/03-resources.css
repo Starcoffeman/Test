@@ -1,0 +1,140 @@
+/* ==========================================================================
+   03-resources.css — designers.html: «цифровой шоурум» — фотогалерея слева,
+   голубая карточка с 2D/3D-пилюлями справа (базовый 1200)
+   ========================================================================== */
+
+.showroom {
+  padding: 10px 10px 0;
+  background: var(--c-light);
+}
+
+.showroom-card {
+  display: flex;
+  gap: 10px;
+  height: 589px;
+}
+
+.showroom-gallery {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* индикатор слайдов на живом сайте — тонкие горизонтальные штрихи, а не
+   круглые точки (rec2131964101: 5 × 95×1px, шаг 113px) */
+.showroom-gallery .uc-slider-dots {
+  left: 31px;
+  right: 31px;
+  bottom: 21px;
+  gap: 18px;
+}
+
+.showroom-gallery .uc-slider-dot {
+  flex: 1;
+  height: 1px;
+  border-radius: 0;
+  background: rgb(255 255 255 / 45%);
+}
+
+.showroom-gallery .uc-slider-dot.is-active {
+  background: var(--c-white);
+}
+
+.showroom-panel {
+  --c-showroom-blue: #cae0f1;
+
+  flex: none;
+  width: 390px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 28px;
+  padding: 48px 40px;
+  background: var(--c-showroom-blue);
+}
+
+.showroom-title {
+  font-family: var(--ff-display);
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  color: var(--c-ink);
+}
+
+.showroom-text {
+  margin-top: 12px;
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: -0.2px;
+  color: var(--c-ink);
+}
+
+.showroom-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.showroom-pill {
+  padding: 10px 18px;
+  border-radius: 30px;
+  background: #eff6fb;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: -0.1px;
+  color: var(--c-ink);
+}
+
+/* ===== МАКЕТ 960 ===== */
+@media (max-width: 1199px) {
+  .showroom-card {
+    height: 460px;
+  }
+
+  .showroom-panel {
+    width: 320px;
+    padding: 36px 28px;
+    gap: 22px;
+  }
+
+  .showroom-title {
+    font-size: 24px;
+  }
+}
+
+/* ===== МАКЕТ 640 ===== */
+@media (max-width: 959px) {
+  .showroom-card {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .showroom-gallery {
+    height: 340px;
+  }
+
+  .showroom-panel {
+    width: 100%;
+  }
+}
+
+/* ===== МАКЕТ 360 ===== */
+@media (max-width: 639px) {
+  .showroom {
+    padding: 8px 8px 0;
+  }
+
+  .showroom-gallery {
+    height: 260px;
+  }
+
+  .showroom-panel {
+    padding: 32px 20px;
+    gap: 18px;
+  }
+
+  .showroom-title {
+    font-size: 22px;
+  }
+}

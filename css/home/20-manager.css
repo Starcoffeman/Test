@@ -1,0 +1,212 @@
+/* ==========================================================================
+   20-manager.css — две белые карточки о работе персонального менеджера
+   и вертикальное фото справа (макет 1200). Фото сильно увеличено и подрезано
+   рамкой — как в оригинале, поэтому кадр задан размерами и сдвигом.
+   ========================================================================== */
+
+.manager {
+  background: var(--c-light);
+}
+
+.manager-stage {
+  display: flex;
+  gap: 10px;
+  width: 1200px;
+  margin: 0 auto;
+  /* контент прижат к низу секции — снизу поля нет */
+  padding: 10px 10px 0;
+}
+
+.manager-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 585px;
+}
+
+.manager-card {
+  position: relative;
+  height: 358px;
+  padding: 40px;
+  background: var(--c-white);
+}
+
+.manager-card-title {
+  width: 436px;
+  font-family: var(--ff-display);
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 25.2px;
+  letter-spacing: -0.7px;
+  color: var(--c-ink);
+}
+
+.manager-card--terms .manager-card-title {
+  width: 461px;
+}
+
+/* описание стоит на фиксированной высоте карточки, независимо от заголовка */
+.manager-card-text {
+  position: absolute;
+  left: 40px;
+  top: 244px;
+  width: 484px;
+  font-family: var(--ff-base);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18.2px;
+  letter-spacing: -0.2px;
+  color: var(--c-ink);
+}
+
+.manager-card--terms .manager-card-text {
+  width: 409px;
+}
+
+/* в разметке фото идёт первым (так оно первое в мобильном макете),
+   на широких экранах и на 640 его место — после карточек */
+.manager-photo {
+  position: relative;
+  order: 1;
+  flex: none;
+  width: 585px;
+  height: 726px;
+  overflow: hidden;
+}
+
+.manager-photo img {
+  position: absolute;
+  left: 50%;
+  top: -274px;
+  width: auto;
+  max-width: none;
+  height: 1034px;
+  transform: translateX(-50%);
+}
+
+/* ===== МАКЕТ 960 ===== */
+@media (max-width: 1199px) {
+  .manager-stage {
+    width: 960px;
+  }
+
+  .manager-cards {
+    width: 465px;
+  }
+
+  .manager-card-title {
+    width: 387px;
+  }
+
+  .manager-card--terms .manager-card-title {
+    width: 377px;
+  }
+
+  .manager-card-text {
+    top: 246px;
+    width: 409px;
+  }
+
+  .manager-card--terms .manager-card-text {
+    width: 371px;
+  }
+
+  .manager-photo {
+    width: 465px;
+  }
+
+  .manager-photo img {
+    top: -226px;
+    height: 822px;
+  }
+}
+
+/* ===== МАКЕТ 640 ===== */
+@media (max-width: 959px) {
+  .manager-stage {
+    flex-direction: column;
+    width: 640px;
+  }
+
+  .manager-cards {
+    width: 620px;
+  }
+
+  .manager-card {
+    height: 429px;
+    padding: 40px 20px;
+  }
+
+  .manager-card-text {
+    left: 20px;
+    top: 337px;
+  }
+
+  .manager-photo {
+    width: 620px;
+    height: 595px;
+  }
+
+  .manager-photo img {
+    top: -283px;
+    height: 1096px;
+  }
+}
+
+/* ===== МАКЕТ 360 ===== */
+@media (max-width: 639px) {
+  .manager-stage {
+    width: 360px;
+    padding: 8px 8px 0;
+    gap: 8px;
+  }
+
+  /* в мобильном макете фото идёт первым */
+  .manager-photo {
+    order: -1;
+    width: 344px;
+    height: 344px;
+  }
+
+  .manager-photo img {
+    top: -158px;
+    height: 608px;
+  }
+
+  .manager-cards {
+    width: 344px;
+  }
+
+  .manager-card {
+    padding: 24px 16px;
+  }
+
+  .manager-card--concept {
+    height: 271px;
+  }
+
+  .manager-card--terms {
+    height: 253px;
+  }
+
+  .manager-card-title {
+    width: 300px;
+    font-size: 24px;
+    line-height: 19.2px;
+    letter-spacing: -0.2px;
+  }
+
+  .manager-card--terms .manager-card-title {
+    width: 284px;
+  }
+
+  .manager-card-text {
+    left: 16px;
+    top: 141px;
+    width: 310px;
+  }
+
+  .manager-card--terms .manager-card-text {
+    width: 310px;
+  }
+}

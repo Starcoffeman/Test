@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 698.88 617.61"
+    data-guides="{&quot;vertical&quot;:[],&quot;horizontal&quot;:[]}">
+    <defs></defs>
+    <mask x="-130.15869140625" y="739.18701171875" width="69.197265625" height="69.19677734375"
+        style="mask-type:luminance" id="tSvg13057241523"></mask>
+    <mask x="-129.4833984375" y="743.880859375" width="67.8447265625" height="59.8076171875" style="mask-type:alpha"
+        id="tSvgcce130f5cb"></mask>
+    <mask x="-1.048828125" y="-41.68408203125" width="700.9943237304688" height="700.9943237304688" id="tSvg67bd666a75">
+    </mask>
+    <mask x="-130.158203125" y="505.1884765625" width="69.19677734375" height="69.19677734375"
+        style="mask-type:luminance" id="tSvgd0b5225415"></mask>
+    <mask x="-1.048828125" y="-41.68408203125" width="700.9943237304688" height="700.9943237304688"
+        id="tSvg11787782003"></mask>
+    <mask x="-130.158203125" y="-655.8056640625" width="69.19677734375" height="69.19677734375"
+        style="mask-type:luminance" id="tSvg18c9cdf17e" maskUnits="userSpaceOnUse"></mask>
+    <mask x="-1.048828125" y="-41.68408203125" width="700.9943237304688" height="700.9943237304688" id="tSvga586330c63">
+    </mask>
+    <mask x="-1.048828125" y="-41.68408203125" width="700.994140625" height="700.994140625" style="mask-type:luminance"
+        maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" id="tSvg921b3aa0ed">
+        <path fill="white" stroke="none" fill-opacity="1" stroke-width="1" stroke-opacity="1" id="tSvg4775c0e3d6"
+            title="Path 63"
+            d="M699.9455 -41.6841C466.2807 -41.6841 232.6159 -41.6841 -1.0488 -41.6841C-1.0488 191.9807 -1.0488 425.6455 -1.0488 659.3102C232.6159 659.3102 466.2807 659.3102 699.9455 659.3102C699.9455 425.6455 699.9455 191.9807 699.9455 -41.6841Z">
+        </path>
+    </mask>
+    <mask x="5.78857421875" y="5.86669921875" width="687.2998046875" height="605.87744140625" style="mask-type:alpha"
+        maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" id="tSvg99ea284a11">
+        <path fill="white" stroke="none" fill-opacity="1" stroke-width="1" stroke-opacity="1" id="tSvg96e1a34864"
+            title="Path 64"
+            d="M489.6372 551.6371C662.8648 451.6229 740.5252 261.8275 663.0958 127.7155C585.6654 -6.3971 382.4671 -34.0397 209.2395 65.974C36.0114 165.9872 -41.6485 355.7827 35.7812 489.8956C113.2112 624.0075 316.4096 651.6503 489.6372 551.6371Z">
+        </path>
+    </mask>
+    <mask x="-1.048828125" y="-41.68408203125" width="700.9943237304688" height="700.9943237304688"
+        data-from-defs="true" clipPathUnits="userSpaceOnUse" maskUnits="userSpaceOnUse"
+        maskContentUnits="userSpaceOnUse" id="tSvge8e6a15e76">
+        <path fill="white" width="701" height="701" id="tSvgd1c330a2bf" title="Rectangle 8" fill-opacity="1"
+            stroke="none" stroke-opacity="1" d="M-1.0488 -41.6841H699.9455V659.3102H-1.0488Z"
+            style="transform-origin: 349.448px 308.813px;"></path>
+    </mask>
+    <path fill="none" stroke="#4C5262" fill-opacity="1" stroke-width="11.6833" stroke-opacity="1"
+        stroke-linejoin="round" id="tSvg649a70dba8" title="Path 65"
+        d="M349.4483 484.0617C419.9528 484.0617 477.9643 426.9601 477.9643 353.5017C477.9643 335.3929 477.1023 316.115 467.3384 286.1773C457.5735 256.0925 455.5635 252.2955 445.2246 233.7487C440.7736 271.5724 417.2238 287.3453 411.1928 292.0182C411.1928 287.0533 396.9779 232.8717 375.2951 200.451C354.0433 168.6142 325.1815 147.7304 308.2377 133.5645C308.2377 160.4363 300.7707 200.451 290.2878 220.8968C279.6619 241.1966 277.6519 241.9266 264.441 257.1145C251.2311 272.3034 245.2002 276.9763 233.9993 295.3772C222.9434 313.778 220.9324 338.3128 220.9324 356.2767C220.9324 429.7351 278.9439 484.0617 349.4483 484.0617Z"
+        mask="url(#tSvge8e6a15e76)"></path>
+    <path fill="none" stroke="#4C5262" fill-opacity="1" stroke-width="11.6833" stroke-opacity="1" stroke-linecap="round"
+        id="tSvg74adcc3b3a" title="Path 66"
+        d="M302.7157 320.497C318.2933 336.0745 333.8708 351.6521 349.4483 367.2296M349.4483 367.2296C365.0259 382.8071 380.6034 398.3847 396.181 413.9622M349.4483 367.2296C365.0259 351.6521 380.6034 336.0745 396.181 320.497M349.4483 367.2296C333.8708 382.8071 318.2933 398.3847 302.7157 413.9622"
+        mask="url(#tSvge8e6a15e76)"></path>
+    <path fill="none" stroke="#FA4616" fill-opacity="1" stroke-width="11.6833" stroke-opacity="1" id="tSvgedbd42adf4"
+        title="Path 67"
+        d="M212.1604 71.034C383.8751 -28.1056 582.8714 0.4472 658.0368 130.6375C733.2022 260.8275 658.4308 447.439 486.7162 546.5792C315.0016 645.7184 116.0052 617.1666 40.84 486.9766C-34.3253 356.7867 40.4455 170.1742 212.1604 71.034Z"
+        mask="url(#tSvge8e6a15e76)"></path>
+</svg>

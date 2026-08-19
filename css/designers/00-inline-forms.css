@@ -1,0 +1,247 @@
+/* ==========================================================================
+   00-inline-forms.css — переиспользуемая инлайн-форма «телефон + согласие +
+   кнопка» для designers.html (секции «цифровой шоурум» и «о компании»).
+   На живом сайте это Tilda-форма с полем на одной нижней границе (класс
+   t-input_bbonly) — НЕ боксовый инпут, как в css/home/23-lead-modal.css.
+   Цвета/размеры сняты через getComputedStyle с form2131964161/form2131964281:
+   инпут — border-bottom 1px, высота 48px, шрифт 14/500; кнопка — pill
+   radius 100px, высота 52px, шрифт 16/500. Тема .inline-form--dark
+   (тёмная карточка шоурума) использует цвета живого сайта дословно
+   (#c9cbd0 / #fff / hover #fa4616); .inline-form--light переиспользует
+   токены сайта (--c-accent/--c-ink/--c-line). .inline-form--accent —
+   форма на оранжевой карточке «о компании» (form2131964281 на живом
+   сайте): инпут там боксовый (border 1px по всем сторонам, не bbonly),
+   цвет текста/лейбла #fdc7b9 (светлый тон акцента), кнопка белая с
+   текстом --c-ink — всё подтверждено getComputedStyle с живого сайта.
+   ========================================================================== */
+
+.inline-form-wrap {
+  width: 100%;
+}
+
+.inline-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.inline-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.inline-form-label {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: -0.1px;
+}
+
+.inline-form-input {
+  width: 100%;
+  height: 48px;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid currentColor;
+  background: transparent;
+  border-radius: 0;
+  font-family: var(--ff-base);
+  font-size: 14px;
+  font-weight: 500;
+  transition: border-color 0.2s ease;
+}
+
+.inline-form-input::placeholder {
+  opacity: 0.5;
+}
+
+.inline-form-input:focus {
+  outline: none;
+}
+
+.inline-form-input.is-invalid {
+  border-color: #e0483a;
+}
+
+.inline-form-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.inline-form-consent input {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin-top: 1px;
+}
+
+.inline-form-consent span {
+  font-size: 12px;
+  line-height: 1.4;
+  letter-spacing: -0.1px;
+}
+
+.inline-form-consent a {
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+
+.inline-form-consent.is-invalid span {
+  color: #e0483a;
+}
+
+.inline-form-submit {
+  width: 100%;
+  height: 52px;
+  border: 0;
+  border-radius: 100px;
+  font-family: var(--ff-base);
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease all;
+}
+
+.inline-form-success {
+  display: none;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.inline-form-wrap.is-success .inline-form {
+  display: none;
+}
+
+.inline-form-wrap.is-success .inline-form-success {
+  display: block;
+}
+
+/* ===== ТЁМНАЯ ТЕМА — на фото/тёмной подложке (шоурум) ===== */
+.inline-form--dark .inline-form-label,
+.inline-form--dark .inline-form-consent span {
+  color: #c9cbd0;
+}
+
+.inline-form--dark .inline-form-input {
+  color: var(--c-white);
+  border-bottom-color: #c9cbd0;
+}
+
+.inline-form--dark .inline-form-input::placeholder {
+  color: var(--c-white);
+}
+
+.inline-form--dark .inline-form-consent a {
+  color: var(--c-white);
+}
+
+.inline-form--dark .inline-form-consent input[type='checkbox'] {
+  accent-color: var(--c-white);
+}
+
+.inline-form--dark .inline-form-submit {
+  color: var(--c-ink);
+  background: #c9cbd0;
+}
+
+.inline-form--dark .inline-form-submit:hover {
+  color: var(--c-white);
+  background: var(--c-accent);
+}
+
+.inline-form--dark .inline-form-success {
+  color: var(--c-white);
+}
+
+/* ===== СВЕТЛАЯ ТЕМА — на белой карточке (о компании) ===== */
+.inline-form--light .inline-form-label,
+.inline-form--light .inline-form-consent span {
+  color: var(--c-grey);
+}
+
+.inline-form--light .inline-form-input {
+  color: var(--c-ink);
+  border-bottom-color: var(--c-line);
+}
+
+.inline-form--light .inline-form-input::placeholder {
+  color: var(--c-grey);
+}
+
+.inline-form--light .inline-form-consent a {
+  color: var(--c-ink);
+}
+
+.inline-form--light .inline-form-consent input[type='checkbox'] {
+  accent-color: var(--c-accent);
+}
+
+.inline-form--light .inline-form-submit {
+  color: var(--c-white);
+  background: var(--c-accent);
+}
+
+.inline-form--light .inline-form-submit:hover {
+  background: var(--c-ink);
+}
+
+.inline-form--light .inline-form-success {
+  color: var(--c-grey);
+}
+
+/* ===== АКЦЕНТНАЯ ТЕМА — на оранжевой карточке (форма «о компании») ===== */
+.inline-form--accent .inline-form-label,
+.inline-form--accent .inline-form-consent span {
+  color: #fdc7b9;
+}
+
+.inline-form--accent .inline-form-input {
+  color: var(--c-white);
+  border: 1px solid #fdc7b9;
+}
+
+.inline-form--accent .inline-form-input::placeholder {
+  color: var(--c-white);
+}
+
+.inline-form--accent .inline-form-consent a {
+  color: var(--c-white);
+}
+
+.inline-form--accent .inline-form-consent input[type='checkbox'] {
+  accent-color: var(--c-white);
+}
+
+.inline-form--accent .inline-form-submit {
+  color: var(--c-ink);
+  background: var(--c-white);
+}
+
+.inline-form--accent .inline-form-submit:hover {
+  color: var(--c-white);
+  background: var(--c-ink);
+}
+
+.inline-form--accent .inline-form-success {
+  color: var(--c-white);
+}
+
+@media (max-width: 639px) {
+  .inline-form {
+    gap: 16px;
+  }
+
+  .inline-form-submit {
+    height: 52px;
+  }
+
+  /* карточка «о компании» — оранжевый блок ощутимо раздувает высоту секции
+     из-за --hb-zoom (639px использует базу 360 => zoom ~1.78), поэтому здесь
+     чуть плотнее внутренние отступы формы, чем у остальных инлайн-форм */
+  .company-form-card .inline-form {
+    gap: 10px;
+  }
+}

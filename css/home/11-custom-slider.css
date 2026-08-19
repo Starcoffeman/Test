@@ -1,0 +1,96 @@
+/* ==========================================================================
+   11-custom-slider.css — общий слайдер (js/11-custom-slider.js)
+   Размеры самого блока задаёт секция, здесь только внутреннее устройство.
+   ========================================================================== */
+.uc-slider {
+  --uc-fade: 600ms;
+  --uc-dot-size: 8px;
+  --uc-dots-gap: 15px;
+  --uc-dots-x: 18px;
+  --uc-dots-y: 20px;
+  --uc-dot-color: #cacaca;
+  --uc-dot-color-active: var(--c-white);
+  --uc-arrow-size: 40px;
+  --uc-arrow-x: 60px;
+
+  position: relative;
+  /* свой контекст наложения: z-index слайдов не должен перекрывать соседние блоки */
+  isolation: isolate;
+  touch-action: pan-y;
+}
+
+.uc-slider-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity var(--uc-fade) ease;
+}
+
+.uc-slider-slide.is-active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.uc-slider-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ===== ТОЧКИ ===== */
+.uc-slider-dots {
+  position: absolute;
+  left: var(--uc-dots-x);
+  bottom: var(--uc-dots-y);
+  z-index: 3;
+  display: flex;
+  gap: var(--uc-dots-gap);
+}
+
+.uc-slider-dot {
+  position: relative;
+  width: var(--uc-dot-size);
+  height: var(--uc-dot-size);
+  border-radius: 50%;
+  background: var(--uc-dot-color);
+  transition: background-color 0.25s ease;
+}
+
+/* Точка мелкая — расширяем область нажатия, не сдвигая ряд */
+.uc-slider-dot::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+}
+
+.uc-slider-dot.is-active {
+  background: var(--uc-dot-color-active);
+}
+
+/* ===== СТРЕЛКИ ===== */
+.uc-slider-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+  width: var(--uc-arrow-size);
+  height: var(--uc-arrow-size);
+  margin-top: calc(var(--uc-arrow-size) / -2);
+  color: var(--c-ink);
+}
+
+.uc-slider-arrow svg {
+  width: 100%;
+  height: 100%;
+}
+
+.uc-slider-arrow--prev {
+  left: calc(var(--uc-arrow-x) * -1);
+  transform: scale(-1);
+}
+
+.uc-slider-arrow--next {
+  right: calc(var(--uc-arrow-x) * -1);
+}

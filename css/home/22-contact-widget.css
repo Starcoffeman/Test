@@ -1,0 +1,159 @@
+/* ==========================================================================
+   22-contact-widget.css — плавающие кнопки связи поверх страницы
+   Кнопки привязаны к окну, а не к макету, поэтому масштаб body { zoom }
+   для них компенсируется обратным zoom: размеры остаются в реальных px.
+   ========================================================================== */
+
+.contact-widget {
+  zoom: calc(1 / var(--hb-zoom));
+}
+
+/* ===== ЛЕВАЯ КНОПКА: ПОЧТА ===== */
+.contact-mail {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: var(--c-accent);
+  color: var(--c-white);
+  box-shadow: 0 19px 38px 0 rgb(34 36 43 / 30%);
+  transition: transform 0.2s ease;
+}
+
+.contact-mail:hover {
+  transform: scale(1.06);
+}
+
+.contact-mail-icon {
+  width: 26px;
+  height: 26px;
+}
+
+/* ===== ПРАВАЯ КНОПКА: МЕССЕНДЖЕРЫ ===== */
+.contact-fab {
+  position: fixed;
+  right: 30px;
+  bottom: 50px;
+  z-index: 1100;
+  width: 60px;
+  height: 60px;
+}
+
+.contact-fab-toggle {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--c-accent);
+  box-shadow: 0 0 20px 0 rgb(0 0 0 / 30%);
+  overflow: hidden;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.contact-fab-toggle:hover {
+  box-shadow: 0 0 20px 0 rgb(0 0 0 / 40%);
+}
+
+/* иконка мессенджера на свёрнутой кнопке */
+.contact-fab-toggle-bg {
+  position: absolute;
+  inset: 0;
+  background: url('../../assets/misc-home/20251114_1344_____re.png.webp') center / cover no-repeat;
+  transition: opacity 0.2s linear;
+}
+
+.contact-fab-toggle-close {
+  width: 16px;
+  height: 16px;
+  color: var(--c-black);
+  opacity: 0;
+  transform: scale(0.1);
+  transition: all 0.2s ease-in-out;
+}
+
+.contact-fab.is-open .contact-fab-toggle {
+  background: var(--c-white);
+}
+
+.contact-fab.is-open .contact-fab-toggle-bg {
+  opacity: 0;
+}
+
+.contact-fab.is-open .contact-fab-toggle-close {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* иконки сложены под кнопкой и разъезжаются вверх шагом 60px */
+.contact-fab-item {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 0 0 20px 0 rgb(0 0 0 / 30%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.contact-fab-item svg {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.contact-fab-item:hover {
+  box-shadow: 0 0 20px 0 rgb(0 0 0 / 40%);
+}
+
+.contact-fab.is-open .contact-fab-item {
+  opacity: 1;
+  visibility: visible;
+}
+
+.contact-fab.is-open .contact-fab-item:nth-of-type(1) {
+  transition-duration: 0.2s;
+  transform: translateY(-67.5px);
+}
+
+.contact-fab.is-open .contact-fab-item:nth-of-type(2) {
+  transition-duration: 0.225s;
+  transform: translateY(-127.5px);
+}
+
+.contact-fab.is-open .contact-fab-item:nth-of-type(3) {
+  transition-duration: 0.25s;
+  transform: translateY(-187.5px);
+}
+
+.contact-fab.is-open .contact-fab-item:nth-of-type(4) {
+  transition-duration: 0.275s;
+  transform: translateY(-247.5px);
+}
+
+@media (max-width: 1199px) {
+  .contact-fab {
+    right: 20px;
+    bottom: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-fab-item,
+  .contact-fab-toggle-close,
+  .contact-mail {
+    transition: none;
+  }
+}

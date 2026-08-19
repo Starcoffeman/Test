@@ -1,0 +1,138 @@
+/* ==========================================================================
+   02-benefits.css — designers.html: «в нашем фокусе», список + фото (базовый 1200)
+   ========================================================================== */
+
+.benefits {
+  padding: 10px 10px 0;
+  background: var(--c-light);
+}
+
+.benefits-stage {
+  display: flex;
+  gap: 10px;
+}
+
+.benefits-copy {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 56px;
+  background: var(--c-white);
+}
+
+.benefits-title {
+  margin-bottom: 48px;
+  font-family: var(--ff-display);
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.7px;
+  color: var(--c-ink);
+}
+
+.benefits-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 460px;
+}
+
+.benefit {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-left: 24px;
+  font-size: 15px;
+  line-height: 1.4;
+  letter-spacing: -0.2px;
+}
+
+.benefit::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--c-ink);
+  opacity: 0.35;
+}
+
+.benefit-title {
+  color: var(--c-ink);
+}
+
+.benefit-text {
+  font-size: 13px;
+  color: var(--c-grey);
+}
+
+.benefits-photo {
+  flex: none;
+  width: 585px;
+}
+
+.benefits-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===== МАКЕТ 960 ===== */
+@media (max-width: 1199px) {
+  .benefits-copy {
+    padding: 56px 40px;
+  }
+
+  .benefits-title {
+    font-size: 24px;
+    margin-bottom: 36px;
+  }
+
+  .benefits-photo {
+    width: 400px;
+  }
+}
+
+/* ===== МАКЕТ 640 ===== */
+@media (max-width: 959px) {
+  .benefits-stage {
+    flex-direction: column;
+  }
+
+  .benefits-copy {
+    padding: 48px 30px;
+  }
+
+  .benefits-photo {
+    width: 100%;
+    height: 420px;
+  }
+}
+
+/* ===== МАКЕТ 360 ===== */
+@media (max-width: 639px) {
+  .benefits {
+    padding: 8px 8px 0;
+  }
+
+  .benefits-copy {
+    padding: 32px 20px;
+  }
+
+  .benefits-title {
+    font-size: 22px;
+    margin-bottom: 24px;
+  }
+
+  .benefits-list {
+    gap: 16px;
+  }
+
+  .benefits-photo {
+    height: 320px;
+  }
+}

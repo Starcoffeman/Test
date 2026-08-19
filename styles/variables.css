@@ -1,0 +1,11 @@
+:root {
+    --t-headline-font: 'TTFirsNeue', Arial, sans-serif;
+    --t-text-font: 'TTNorms', Arial, sans-serif;
+    --orange: #fa4616;
+    --dark: #525965;
+    --text: #4c5262;
+    --light-gray: #dceaf1;
+    --blue-bg: #cae0f1;
+    --white: #ffffff;
+    --gap: clamp(10px, 0.8vw, 25px);
+}

@@ -1,0 +1,262 @@
+/* ==========================================================================
+   08-properties.css — свойства панелей из эко-фетра (базовый макет 1200)
+   Секция состоит из двух карточек: фото с образцом и список преимуществ.
+   ========================================================================== */
+
+/* ===== ФОТО С ОБРАЗЦОМ ===== */
+.properties-photo {
+  background: var(--c-light);
+  padding: 10px 10px 0;
+}
+
+.properties-photo-card {
+  position: relative;
+  height: 660px;
+  overflow: hidden;
+}
+
+.properties-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.properties-sample {
+  position: absolute;
+  top: 328px;
+  left: 41px;
+  display: block;
+  padding: 40px;
+  background: var(--c-white);
+}
+
+.properties-sample img {
+  width: 199px;
+  height: 199px;
+  object-fit: cover;
+}
+
+/* ===== ПРЕИМУЩЕСТВА ===== */
+.properties-main {
+  background: var(--c-light);
+  padding: 10px 10px 0;
+}
+
+.properties-card {
+  position: relative;
+  height: 663px;
+  background: var(--c-white);
+}
+
+.properties-title {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  font-family: var(--ff-display);
+  font-size: 60px;
+  font-weight: 500;
+  line-height: 48px;
+  letter-spacing: -2px;
+  color: var(--c-ink);
+}
+
+.properties-body {
+  position: absolute;
+  top: 216px;
+  left: 596px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 60px;
+  width: 547px;
+}
+
+.properties-subtitle {
+  font-family: var(--ff-display);
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 25.2px;
+  letter-spacing: -0.7px;
+  color: var(--c-ink);
+}
+
+.properties-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+  width: 100%;
+}
+
+.properties-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* высота строки фиксирована и меньше строки текста — так задан шаг списка
+   в оригинале, текст центрируется относительно маркера */
+.properties-item {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  height: 16px;
+}
+
+.properties-item::before {
+  content: '';
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--c-ink);
+  opacity: 0.3;
+}
+
+.properties-item span {
+  width: 443px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18.2px;
+  letter-spacing: -0.2px;
+  color: var(--c-ink);
+}
+
+.properties-btn {
+  width: 547px;
+  height: 54px;
+  background: var(--c-accent);
+  color: var(--c-white);
+  font-size: 14px;
+  line-height: 14px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.properties-btn:hover {
+  background: var(--c-ink);
+}
+
+/* ===== МАКЕТ 960 ===== */
+@media (max-width: 1199px) {
+  .properties-card {
+    height: 723px;
+  }
+
+  .properties-body {
+    left: 40px;
+  }
+
+  .properties-item {
+    height: 24px;
+  }
+
+  .properties-item span {
+    width: 405px;
+  }
+}
+
+/* ===== МАКЕТ 640 ===== */
+@media (max-width: 959px) {
+  .properties-photo-card {
+    height: 487px;
+  }
+
+  .properties-sample {
+    top: 168px;
+    left: 40px;
+  }
+
+  .properties-card {
+    height: 819px;
+  }
+
+  .properties-title {
+    top: 30px;
+    left: 20px;
+    font-size: 70px;
+    line-height: 56px;
+  }
+
+  .properties-body {
+    top: 332px;
+    left: 20px;
+  }
+
+  .properties-item span {
+    width: 521px;
+  }
+}
+
+/* ===== МАКЕТ 360 ===== */
+@media (max-width: 639px) {
+  .properties-photo {
+    padding: 8px 8px 0;
+  }
+
+  .properties-photo-card {
+    height: 416px;
+  }
+
+  .properties-sample {
+    top: 256px;
+    left: 0;
+    padding: 32px;
+  }
+
+  .properties-sample img {
+    width: 96px;
+    height: 96px;
+  }
+
+  .properties-main {
+    padding: 8px 8px 0;
+  }
+
+  .properties-card {
+    height: 694px;
+  }
+
+  .properties-title {
+    top: 24px;
+    left: 16px;
+    font-size: 40px;
+    line-height: 32px;
+    letter-spacing: -1px;
+  }
+
+  .properties-body {
+    top: 176px;
+    left: 16px;
+    width: 312px;
+  }
+
+  .properties-subtitle {
+    width: 231px;
+    font-size: 24px;
+    line-height: 19.2px;
+    letter-spacing: -0.2px;
+  }
+
+  .properties-group {
+    gap: 24px;
+  }
+
+  .properties-item {
+    height: 24px;
+  }
+
+  /* две последние строки переносятся на две строки — шаг списка больше */
+  .properties-item:nth-child(n + 6) {
+    height: 40px;
+  }
+
+  .properties-item span {
+    width: 273px;
+  }
+
+  .properties-btn {
+    width: 311px;
+    height: 64px;
+  }
+}

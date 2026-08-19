@@ -1,0 +1,219 @@
+/* ==========================================================================
+   01-header.css — фиксированная шапка (базовый макет 1200)
+   ========================================================================== */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: var(--z-header);
+}
+
+/* Пока открыто мобильное меню — прячем header-bar целиком, чтобы сверху
+   экрана сразу начиналась .mobile-menu-head (оранжевая шапка меню), а не
+   было видно узкую полоску исходного хедера над ней. .mobile-menu идёт
+   в разметке сразу за .header, поэтому ловим открытое меню через :has(). */
+.header:has(+ .mobile-menu.is-open) {
+  display: none;
+}
+
+.header-bar {
+  position: relative;
+  height: 90px;
+  margin: 0 10px;
+  background: var(--c-white);
+}
+
+/* ===== ЛОГОТИП ===== */
+.header-logo {
+  position: absolute;
+  top: 17px;
+  left: 40px;
+  width: 80px;
+  height: 45.92px;
+}
+
+.header-logo img {
+  width: 100%;
+  height: 100%;
+}
+
+/* ===== РАЗДЕЛИТЕЛИ ===== */
+.header-line {
+  position: absolute;
+  background: var(--c-line);
+}
+
+.header-line--left {
+  top: 0;
+  left: 160px;
+  width: 1px;
+  height: 90px;
+}
+
+.header-line--right {
+  top: 0;
+  left: 985px;
+  width: 1px;
+  height: 90px;
+}
+
+.header-line--mid {
+  top: 48px;
+  left: 160px;
+  width: 826px;
+  height: 1px;
+}
+
+/* ===== ВЕРХНИЙ РЯД ===== */
+.header-top {
+  position: absolute;
+  top: 18px;
+  left: 201px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  height: 18px;
+}
+
+.header-top-link {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -0.2px;
+  color: var(--c-ink);
+  transition: color 0.25s ease;
+}
+
+/* в макете последний пункт отбит чуть шире остальных */
+.header-top-link--last {
+  margin-left: 4px;
+}
+
+.header-top-link:hover,
+.header-top-link.is-current {
+  color: var(--c-accent);
+}
+
+/* ===== НИЖНИЙ РЯД (якоря по странице) ===== */
+.header-menu {
+  position: absolute;
+  top: 60px;
+  left: 201px;
+  display: flex;
+  align-items: center;
+  gap: 21px;
+  height: 12px;
+}
+
+.header-menu-link {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 12px;
+  color: var(--c-ink);
+  transition: color 0.25s ease;
+}
+
+.header-menu-link:hover {
+  color: var(--c-accent);
+}
+
+.header-menu-link.is-active {
+  color: var(--c-accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+/* ===== КНОПКА И ТЕЛЕФОН ===== */
+.header-callback {
+  position: absolute;
+  top: 10px;
+  left: 1023px;
+  width: 117px;
+  height: 34px;
+  font-size: 12px;
+  line-height: 12px;
+}
+
+.header-phone {
+  position: absolute;
+  top: 55px;
+  left: 1024px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -0.2px;
+  color: var(--c-accent);
+}
+
+/* ===== БУРГЕР ===== */
+.header-burger {
+  position: absolute;
+  display: none;
+  top: 8px;
+  left: 855px;
+  width: 45px;
+  height: 45px;
+}
+
+.header-burger svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ===== 960 ===== */
+@media (max-width: 1199px) {
+  .header-bar {
+    height: 60px;
+  }
+
+  .header-logo {
+    top: 7px;
+    left: 40px;
+  }
+
+  .header-line,
+  .header-top,
+  .header-menu,
+  .header-callback,
+  .header-phone {
+    display: none;
+  }
+
+  .header-burger {
+    display: block;
+  }
+}
+
+/* ===== 640 ===== */
+@media (max-width: 959px) {
+  .header-logo {
+    left: 20px;
+  }
+
+  .header-burger {
+    left: 555px;
+  }
+}
+
+/* ===== 360 ===== */
+@media (max-width: 639px) {
+  .header-bar {
+    margin: 0;
+  }
+
+  .header-logo {
+    top: 12px;
+    left: 24px;
+    width: 62px;
+    height: 35.59px;
+  }
+
+  .header-burger {
+    top: 12px;
+    left: 300px;
+    width: 36px;
+    height: 36px;
+  }
+}
