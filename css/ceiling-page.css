@@ -291,6 +291,8 @@
 }
 
 .ceil-production-photo img {
+  position: absolute !important;
+  inset: 0 !important;
   width: 100% !important;
   height: 100% !important;
   min-height: 100% !important;
@@ -691,6 +693,7 @@
 }
 
 .ceil-spot-thumb {
+  position: relative !important;
   width: 42px !important;
   height: 42px !important;
   border-radius: 50% !important;
@@ -700,6 +703,8 @@
 }
 
 .ceil-spot-thumb img {
+  position: absolute !important;
+  inset: 0 !important;
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
@@ -802,6 +807,7 @@
 }
 
 .ceil-specs-swap-detail-photo {
+  position: relative !important;
   flex: 0 0 auto !important;
   width: clamp(64px, 8vw, 96px) !important;
   height: clamp(64px, 8vw, 96px) !important;
@@ -811,6 +817,8 @@
 }
 
 .ceil-specs-swap-detail-photo img {
+  position: absolute !important;
+  inset: 0 !important;
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;

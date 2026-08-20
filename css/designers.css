@@ -189,10 +189,13 @@
 
 /* Блок 1 - Правый: Фото образцов фетра в руках */
 .card-image-samples {
+  position: relative;
   background-color: #f1f5f9;
 }
 
 .card-image-samples img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -203,10 +206,13 @@
 
 /* Блок 2 - Левый: Фото интерьера / Слайдер */
 .card-image-interior {
+  position: relative;
   background-color: #f1f5f9;
 }
 
 .card-image-interior img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
