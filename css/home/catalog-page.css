@@ -1,0 +1,4450 @@
+/* ==========================================================================
+   catalog-page.css — первый экран страницы «Каталог решений»
+   Слева голубая панель с заголовком и описанием, справа кадр интерьера
+   с интерактивными хотспотами «+». Размеры — в px базового макета 1200,
+   пропорции тянет body { zoom: --hb-zoom }.
+   ========================================================================== */
+
+.catalog-hero {
+  position: relative;
+  height: 470px;
+  margin-top: var(--header-h);
+  overflow: hidden;
+  background: var(--c-light);
+}
+
+/* На других страницах серую подложку под шапкой даёт первый экран, который
+   заходит под фикс-хедер. Здесь первый экран сдвинут вниз, поэтому подложку
+   за хедером задаём явно — иначе по бокам белой .header-bar не видно отступов. */
+.header {
+  background: var(--c-light);
+}
+
+/* ===== ГОЛУБАЯ ПАНЕЛЬ ===== */
+.catalog-hero-panel {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  bottom: 10px;
+  width: 392px;
+  background: #cae0f1;
+}
+
+.catalog-hero-title {
+  position: absolute;
+  left: 40px;
+  top: 44px;
+  width: 320px;
+  font-family: var(--ff-display);
+  font-weight: 500;
+  font-size: 54px;
+  line-height: 48px;
+  letter-spacing: -1.5px;
+  color: var(--c-ink);
+}
+
+.catalog-hero-text {
+  position: absolute;
+  left: 40px;
+  bottom: 40px;
+  width: 270px;
+  font-family: var(--ff-base);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: -0.2px;
+  color: var(--c-ink);
+}
+
+/* ===== КАДР ИНТЕРЬЕРА ===== */
+.catalog-hero-media {
+  position: absolute;
+  left: 412px;
+  right: 10px;
+  top: 10px;
+  bottom: 10px;
+}
+
+.catalog-hero-media-frame {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.catalog-hero-media-frame > picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.catalog-hero-media-frame > picture > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* приглушаем кадр — чтобы белые кружки и подписи читались лучше */
+.catalog-hero-media-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(18, 20, 26, 0.24);
+  pointer-events: none;
+}
+
+/* ===== ХОТСПОТЫ «+» ===== */
+.catalog-hotspot {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  /* left/top указывают на центр кружка */
+  transform: translate(-14px, -14px);
+  cursor: pointer;
+}
+
+.catalog-hotspot-dot {
+  flex: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  /* плюс — векторный спрайт: одинаково резкий у всех хотспотов независимо
+     от их субпиксельной позиции */
+  background:
+    var(--c-white)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M5 1V9M1 5H9' stroke='%234c5262' stroke-width='1.67' stroke-linecap='round'/%3E%3C/svg%3E")
+      center / 10px 10px no-repeat;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  transition: background-color 0.2s ease;
+}
+
+.catalog-hotspot-label {
+  font-family: var(--ff-base);
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  text-transform: lowercase;
+  text-align: left;
+  color: var(--c-white);
+}
+
+/* активное состояние — «загорается оранжевым», плюс становится белым */
+.catalog-hotspot.is-active .catalog-hotspot-dot {
+  background:
+    var(--c-accent)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M5 1V9M1 5H9' stroke='%23ffffff' stroke-width='1.67' stroke-linecap='round'/%3E%3C/svg%3E")
+      center / 10px 10px no-repeat;
+}
+
+/* позиции хотспотов в кадре */
+.catalog-hotspot--walls {
+  left: 4%;
+  top: 50%;
+}
+
+.catalog-hotspot--ceiling {
+  left: 42%;
+  top: 31%;
+}
+
+.catalog-hotspot--light {
+  left: 88%;
+  top: 37%;
+}
+
+.catalog-hotspot--work {
+  left: 55%;
+  top: 81%;
+}
+
+/* ===== МАКЕТ 960 ===== */
+@media (max-width: 1199px) {
+  .catalog-hero {
+    height: 430px;
+  }
+
+  .catalog-hero-panel {
+    width: 330px;
+  }
+
+  .catalog-hero-title {
+    font-size: 46px;
+    line-height: 42px;
+  }
+
+  .catalog-hero-media {
+    left: 350px;
+  }
+}
+
+/* ===== МАКЕТ 640 (стопкой) ===== */
+@media (max-width: 959px) {
+  .catalog-hero {
+    height: auto;
+  }
+
+  .catalog-hero-panel {
+    position: static;
+    width: auto;
+    margin: 10px 10px 0;
+    padding: 36px 30px 32px;
+  }
+
+  .catalog-hero-title {
+    position: static;
+    width: auto;
+    font-size: 44px;
+    line-height: 40px;
+  }
+
+  .catalog-hero-text {
+    position: static;
+    width: auto;
+    margin-top: 100px;
+  }
+
+  .catalog-hero-media {
+    position: relative;
+    inset: auto;
+    height: 640px;
+    margin: 10px;
+  }
+
+  .catalog-hotspot-label {
+    font-size: 15px;
+  }
+}
+
+/* ===== МАКЕТ 360 ===== */
+@media (max-width: 639px) {
+  .catalog-hero-panel {
+    margin: 8px 8px 0;
+    padding: 28px 22px 24px;
+  }
+
+  .catalog-hero-title {
+    font-size: 38px;
+    line-height: 34px;
+  }
+
+  .catalog-hero-text {
+    font-size: 13px;
+    line-height: 18px;
+  }
+
+  .catalog-hero-media {
+    height: 540px;
+    margin: 8px;
+  }
+
+  .catalog-hotspot {
+    transform: translate(-13px, -13px);
+  }
+
+  .catalog-hotspot-dot {
+    width: 26px;
+    height: 26px;
+  }
+
+  .catalog-hotspot-label {
+    font-size: 14px;
+    line-height: 1.15;
+  }
+
+  /* подпись «освещение» — справа от кружка, как у остальных хотспотов */
+  .catalog-hotspot--light {
+    left: 19%;
+    top: 36%;
+    flex-direction: row;
+  }
+
+  .catalog-hotspot--light .catalog-hotspot-label {
+    text-align: left;
+  }
+
+  .catalog-hotspot--ceiling {
+    left: 68%;
+    top: 38%;
+  }
+
+  /* стеновые решения — чуть отступаем от левого края кадра */
+  .catalog-hotspot--walls {
+    left: 7%;
+  }
+
+  /* рабочее пространство — поднимаем выше и сдвигаем левее */
+  .catalog-hotspot--work {
+    left: 36%;
+    top: 64%;
+  }
+}
+
+/* ==========================================================================
+   Раздел каталога — крупный оранжевый заголовок
+   Как и hero: серый фон секции, контент на белой подложке с отступом 10px,
+   поэтому по бокам видны те же серые поля, что и у соседних блоков.
+   ========================================================================== */
+.cat-section {
+  position: relative;
+  background: var(--c-light);
+  /* сверху поля нет — зазор до hero задаёт его собственный нижний отступ 10px */
+  padding: 0 10px 10px;
+  /* якорь для перехода по хотспотам — с поправкой на фикс-хедер */
+  scroll-margin-top: calc(var(--header-h) + 12px);
+}
+
+.cat-section-inner {
+  background: var(--c-white);
+  padding: 22px 26px 128px;
+}
+
+/* блок «потолочные решения» — чуть ниже по высоте */
+#ceiling.cat-section .cat-section-inner {
+  padding-bottom: 96px;
+}
+
+.cat-section-title {
+  font-family: var(--ff-display);
+  font-weight: 500;
+  font-size: 66px;
+  line-height: 0.9;
+  letter-spacing: -1.4px;
+  text-transform: lowercase;
+  color: var(--c-accent);
+}
+
+/* ===== МАКЕТ 960 ===== */
+@media (max-width: 1199px) {
+  .cat-section-title {
+    font-size: 58px;
+  }
+}
+
+/* ===== МАКЕТ 640 ===== */
+@media (max-width: 959px) {
+  .cat-section-inner {
+    padding: 20px 22px 100px;
+  }
+
+  .cat-section-title {
+    font-size: 52px;
+  }
+}
+
+/* ===== МАКЕТ 360 ===== */
+@media (max-width: 639px) {
+  .cat-section {
+    padding: 0 8px 8px;
+  }
+
+  .cat-section-inner {
+    padding: 16px 18px 76px;
+  }
+
+  .cat-section-title {
+    font-size: 40px;
+    letter-spacing: -1px;
+  }
+}
+
+/* ==========================================================================
+   Шпонированные панели — описание + галерея карточек и кадр-слайдер
+   ========================================================================== */
+.veneer {
+  position: relative;
+  background: var(--c-light);
+  padding: 0 10px 10px;
+}
+
+.veneer-inner {
+  background: var(--c-white);
+  padding: 30px 30px 32px;
+}
+
+/* ===== ОПИСАНИЕ ===== */
+.veneer-title {
+  font-family: var(--ff-display);
+  font-weight: 500;
+  font-size: 52px;
+  line-height: 0.92;
+  letter-spacing: -1.4px;
+  text-transform: lowercase;
+  color: var(--c-ink);
+}
+
+.veneer-subtitle {
+  margin-top: 22px;
+  font-family: var(--ff-display);
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 1;
+  letter-spacing: -0.6px;
+  text-transform: lowercase;
+  color: var(--c-ink);
+}
+
+.veneer-text {
+  margin-top: 20px;
+  max-width: 920px;
+  font-family: var(--ff-base);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: -0.2px;
+  color: var(--c-ink);
+}
+
+.veneer-text:first-of-type {
+  margin-top: 26px;
+}
+
+/* ===== ГАЛЕРЕЯ ===== */
+.veneer-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  align-items: start;
+  margin-top: 28px;
+}
+
+.veneer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.veneer-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.veneer-card {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.veneer-card-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 268px;
+  background: #ededed;
+  overflow: hidden;
+}
+
+.veneer-card--wide .veneer-card-media {
+  height: 292px;
+}
+
+.veneer-card-media img {
+  width: auto;
+  max-width: 70%;
+  max-height: 82%;
+  object-fit: contain;
+}
+
+.veneer-card--wide .veneer-card-media img {
+  max-width: 42%;
+  max-height: 70%;
+}
+
+.veneer-caption {
+  margin-top: 10px;
+  font-family: var(--ff-base);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.4;
+  letter-spacing: -0.1px;
+  color: var(--c-ink);
+}
+
+.veneer-caption b {
+  font-weight: 700;
+}
+
+/* ===== КАДР-СЛАЙДЕР ===== */
+.veneer-hero {
+  display: flex;
+  flex-direction: column;
+}
+
+.veneer-hero-media {
+  position: relative;
+  display: block;
+  height: 614px;
+  overflow: hidden;
+}
+
+.veneer-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.veneer-hero-label {
+  position: absolute;
+  top: 132px;
+  right: 120px;
+  padding: 9px 20px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.62);
+  font-family: var(--ff-base);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: -0.2px;
+  color: var(--c-ink);
+}
+
+.veneer-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.veneer-swatch {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex: none;
+}
+
+/* ===== МАКЕТ 960 ===== */
+@media (max-width: 1199px) {
+  .veneer-title {
+    font-size: 46px;
+  }
+
+  .veneer-hero-media {
+    height: 560px;
+  }
+
+  .veneer-card--wide .veneer-card-media {
+    height: 262px;
+  }
+
+  .veneer-card-media {
+    height: 244px;
+  }
+}
+
+/* ===== МАКЕТ 640 (в одну колонку) ===== */
+@media (max-width: 959px) {
+  .veneer-inner {
+    padding: 26px 24px 28px;
+  }
+
+  .veneer-title {
+    font-size: 42px;
+  }
+
+  .veneer-subtitle {
+    font-size: 24px;
+  }
+
+  /* стопкой: широкая карточка → кадр-слайдер → пара карточек внизу
+     (в разметке пара карточек лежит внутри .veneer-col вместе с широкой
+     карточкой, поэтому раскладываем .veneer-col через display:contents
+     и расставляем порядок через order) */
+  .veneer-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .veneer-col {
+    display: contents;
+  }
+
+  .veneer-card--wide {
+    order: 1;
+  }
+
+  .veneer-hero {
+    order: 2;
+  }
+
+  .veneer-row {
+    order: 3;
+  }
+
+  .veneer-card--wide .veneer-card-media {
+    height: 240px;
+  }
+
+  /* флэт волны — сама панель по центру, серая рамка вокруг остаётся,
+     но подложка (.veneer-card-media) уже тянется на всю ширину блока */
+  .veneer-card--wide .veneer-card-media img {
+    max-width: 68%;
+    max-height: 90%;
+  }
+
+  .veneer-card-media {
+    height: 300px;
+  }
+
+  /* высота кадра подогнана под пропорции самого фото (1680×937),
+     чтобы cover показывал его целиком по ширине, без обрезки по бокам */
+  .veneer-hero-media {
+    height: auto;
+    aspect-ratio: 1680 / 937;
+  }
+
+  /* подпись «натуральный шпон» — компактнее, в левом нижнем углу кадра */
+  .veneer-hero-label {
+    top: auto;
+    right: auto;
+    bottom: 14px;
+    left: 14px;
+    padding: 7px 14px;
+    font-size: 12px;
+  }
+}
+
+/* ===== МАКЕТ 360 ===== */
+@media (max-width: 639px) {
+  .veneer {
+    padding: 0 8px 8px;
+  }
+
+  .veneer-inner {
+    padding: 20px 18px 22px;
+  }
+
+  .veneer-title {
+    font-size: 34px;
+    letter-spacing: -1px;
+  }
+
+  .veneer-subtitle {
+    font-size: 20px;
+  }
+
+  .veneer-text {
+    font-size: 13px;
+  }
+
+  .veneer-card--wide .veneer-card-media {
+    height: 220px;
+  }
+
+  .veneer-card-media {
+    height: 200px;
+  }
+
+  .veneer-card-media img {
+    max-width: 88%;
+    max-height: 88%;
+  }
+
+  .veneer-card--wide .veneer-card-media img {
+    max-width: 72%;
+  }
+
+  .veneer-hero-media {
+    height: auto;
+  }
+}
+
+/* ==========================================================================
+   Панели из фетра — описание + сетка карточек 3×3 с кадром-слайдером в центре
+   ========================================================================== */
+.felt-cat {
+  position: relative;
+  background: var(--c-light);
+  padding: 0 10px 10px;
+}
+
+.felt-cat-inner {
+  background: var(--c-white);
+  padding: 30px 30px 32px;
+}
+
+.felt-cat-title {
+  font-family: var(--ff-display);
+  font-weight: 500;
+  font-size: 52px;
+  line-height: 0.92;
+  letter-spacing: -1.4px;
+  text-transform: lowercase;
+  color: var(--c-ink);
+}
+
+.felt-cat-subtitle {
+  margin-top: 22px;
+  font-family: var(--ff-display);
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 1;
+  letter-spacing: -0.6px;
+  text-transform: lowercase;
+  color: var(--c-ink);
+}
+
+.felt-cat-text {
+  margin-top: 24px;
+  max-width: 920px;
+  font-family: var(--ff-base);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: -0.2px;
+  color: var(--c-ink);
+}
+
+.felt-cat-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  align-items: start;
+  margin-top: 28px;
+}
+
+/* карточка на 2 колонки (2/4 ширины ряда) */
+.felt-card--w2 {
+  grid-column: span 2;
+}
+
+.felt-card {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.felt-card-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 236px;
+  background: #ededed;
+  overflow: hidden;
+}
+
+/* авангард в среднем ряду — половина ширины (2/4) */
+.felt-card--tall {
+  grid-column: span 2;
+}
+
+.felt-card--tall .felt-card-media {
+  height: 296px;
+}
+
+.felt-card-media img {
+  width: auto;
+  max-width: 76%;
+  max-height: 88%;
+  object-fit: contain;
+}
+
+.felt-caption {
+  margin-top: 10px;
+  font-family: var(--ff-base);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.4;
+  letter-spacing: -0.1px;
+  color: var(--c-ink);
+}
+
+.felt-caption b {
+  font-weight: 700;
+}
+
+/* центральный кадр — занимает 2 колонки в среднем ряду */
+.felt-hero {
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.felt-hero-media {
+  position: relative;
+  display: block;
+  height: 296px;
+  overflow: hidden;
+}
+
+.felt-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.felt-hero-label {
+  position: absolute;
+  top: 42%;
+  right: 14px;
+  transform: translateY(-50%);
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.62);
+  font-family: var(--ff-base);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: -0.2px;
+  color: var(--c-ink);
+}
+
+.felt-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.felt-dots-more {
+  margin-left: 2px;
+  font-family: var(--ff-base);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: -0.2px;
+  color: var(--c-grey);
+}
+
+/* ===== МАКЕТ 960 ===== */
+@media (max-width: 1199px) {
+  .felt-cat-title {
+    font-size: 46px;
+  }
+
+  .felt-card-media {
+    height: 210px;
+  }
+
+  .felt-card--tall .felt-card-media,
+  .felt-hero-media {
+    height: 262px;
+  }
+}
+
+/* ===== МАКЕТ 640 ===== */
+@media (max-width: 959px) {
+  .felt-cat-inner {
+    padding: 26px 24px 28px;
+  }
+
+  .felt-cat-title {
+    font-size: 42px;
+  }
+
+  .felt-cat-subtitle {
+    font-size: 24px;
+  }
+
+  .felt-cat-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .felt-hero {
+    grid-column: span 2;
+  }
+
+  .felt-card-media,
+  .felt-card--tall .felt-card-media {
+    height: 230px;
+  }
+
+  .felt-hero-media {
+    height: 220px;
+  }
+
+  /* подпись — в левый нижний угол кадра, как у остальных hero-блоков */
+  .felt-hero-label {
+    top: auto;
+    right: auto;
+    bottom: 14px;
+    left: 14px;
+    transform: none;
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+}
+
+/* ===== МАКЕТ 360 ===== */
+@media (max-width: 639px) {
+  .felt-cat {
+    padding: 0 8px 8px;
+  }
+
+  .felt-cat-inner {
+    padding: 20px 18px 22px;
+  }
+
+  .felt-cat-title {
+    font-size: 34px;
+    letter-spacing: -1px;
+  }
+
+  .felt-cat-subtitle {
+    font-size: 20px;
+  }
+
+  .felt-cat-text {
+    font-size: 13px;
+  }
+
+  .felt-card--w2 {
+    grid-column: auto;
+  }
+
+  /* порядок карточек как в мобильном макете: риэл, рейка, рейка-акцент,
+     нейро, авангард (во всю ширину), кадр, дзен, нейро */
+  .felt-cat-gallery > *:nth-child(1) { order: 1; }
+  .felt-cat-gallery > *:nth-child(2) { order: 2; }
+  .felt-cat-gallery > *:nth-child(6) { order: 3; }
+  .felt-cat-gallery > *:nth-child(3) { order: 4; }
+  .felt-cat-gallery > *:nth-child(4) { order: 5; }
+  .felt-cat-gallery > *:nth-child(5) { order: 6; }
+  .felt-cat-gallery > *:nth-child(7) { order: 7; }
+  .felt-cat-gallery > *:nth-child(8) { order: 8; }
+
+  .felt-card-media {
+    height: 200px;
+  }
+
+  .felt-card--tall .felt-card-media,
+  .felt-hero-media {
+    height: 190px;
+  }
+}
+
+/* ==========================================================================
+   Малоформатные панели — идёт вплотную к предыдущему блоку (без серого зазора)
+   ========================================================================== */
+.small-cat {
+  position: relative;
+  background: var(--c-light);
+  /* минус нижний отступ предыдущего блока — стыкуются без серой полосы */
+  margin-top: -10px;
+  padding: 0 10px 10px;
+}
+
+.small-cat-inner {
+  background: var(--c-white);
+  padding: 30px 30px 32px;
+}
+
+.small-cat-title {
+  font-family: var(--ff-display);
+  font-weight: 500;
+  font-size: 46px;
+  line-height: 1;
+  letter-spacing: -1.2px;
+  text-transform: lowercase;
+  color: var(--c-ink);
+}
+
+.small-cat-text {
+  margin-top: 24px;
+  max-width: 920px;
+  font-family: var(--ff-base);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: -0.2px;
+  color: var(--c-ink);
+}
+
+.small-cat-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  align-items: start;
+  margin-top: 28px;
+}
+
+.small-card {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.small-card-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 214px;
+  background: #ededed;
+  overflow: hidden;
+}
+
+.small-card--tall .small-card-media {
+  height: 286px;
+}
+
+.small-card-media img {
+  width: auto;
+  max-width: 80%;
+  max-height: 84%;
+  object-fit: contain;
+}
+
+.small-caption {
+  margin-top: 10px;
+  font-family: var(--ff-base);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.4;
+  letter-spacing: -0.1px;
+  color: var(--c-ink);
+}
+
+.small-caption b {
+  font-weight: 700;
+}
+
+/* центральный кадр — 2/4 ширины среднего ряда */
+.small-hero {
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.small-hero-media {
+  position: relative;
+  display: block;
+  height: 286px;
+  overflow: hidden;
+}
+
+.small-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.small-hero-label {
+  position: absolute;
+  top: 66%;
+  left: 57%;
+  transform: translate(-50%, -50%);
+  padding: 9px 20px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.62);
+  font-family: var(--ff-base);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: -0.2px;
+  color: var(--c-ink);
+}
+
+.small-dots {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.small-dots-more {
+  margin-left: 2px;
+  font-family: var(--ff-base);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: -0.2px;
+  color: var(--c-grey);
+}
+
+/* ===== МАКЕТ 960 ===== */
+@media (max-width: 1199px) {
+  .small-cat-title {
+    font-size: 40px;
+  }
+
+  .small-card-media {
+    height: 186px;
+  }
+
+  .small-card--tall .small-card-media,
+  .small-hero-media {
+    height: 252px;
+  }
+}
+
+/* ===== МАКЕТ 640 ===== */
+@media (max-width: 959px) {
+  .small-cat-inner {
+    padding: 26px 24px 28px;
+  }
+
+  .small-cat-title {
+    font-size: 34px;
+  }
+
+  .small-cat-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .small-hero {
+    grid-column: span 2;
+  }
+
+  .small-card-media,
+  .small-card--tall .small-card-media {
+    height: 220px;
+  }
+
+  .small-hero-media {
+    height: 260px;
+  }
+
+  .small-hero-label {
+    left: 63%;
+    white-space: nowrap;
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+
+  .small-dots {
+    margin-top: 8px;
+  }
+}
+
+/* ===== МАКЕТ 360 ===== */
+@media (max-width: 639px) {
+  .small-cat {
+    padding: 0 8px 8px;
+    margin-top: -8px;
+  }
+
+  .small-cat-inner {
+    padding: 20px 18px 22px;
+  }
+
+  .small-cat-title {
+    font-size: 28px;
+    letter-spacing: -0.8px;
+  }
+
+  .small-cat-text {
+    font-size: 13px;
+  }
+
+  .small-card--tall {
+    grid-column: auto;
+  }
+
+  /* кадр «самоклеящийся слой» после фрактала и рейки-акцента, как в макете */
+  .small-cat-gallery > *:nth-child(1) { order: 1; }
+  .small-cat-gallery > *:nth-child(2) { order: 2; }
+  .small-cat-gallery > *:nth-child(3) { order: 3; }
+  .small-cat-gallery > *:nth-child(4) { order: 4; }
+  .small-cat-gallery > *:nth-child(6) { order: 5; }
+  .small-cat-gallery > *:nth-child(7) { order: 6; }
+  .small-cat-gallery > *:nth-child(5) { order: 7; }
+  .small-cat-gallery > *:nth-child(8) { order: 8; }
+  .small-cat-gallery > *:nth-child(9) { order: 9; }
+  .small-cat-gallery > *:nth-child(10) { order: 10; }
+  .small-cat-gallery > *:nth-child(11) { order: 11; }
+
+  .small-dots {
+    justify-content: flex-start;
+  }
+
+  .small-card-media,
+  .small-card--tall .small-card-media {
+    height: 176px;
+  }
+
+  .small-hero-media {
+    height: 240px;
+  }
+
+  .small-hero-label {
+    left: 63%;
+    white-space: nowrap;
+    font-size: 13px;
+    padding: 7px 9px;
+  }
+
+  .small-dots {
+    margin-top: 6px;
+  }
+}
+
+/* ==========================================================================
+   Панели PVC — описание + один продукт слева и кадр интерьера справа
+   ========================================================================== */
+.pvc {
+  position: relative;
+  background: var(--c-light);
+  padding: 0 10px 10px;
+}
+
+.pvc-inner {
+  background: var(--c-white);
+  padding: 30px 30px 32px;
+}
+
+.pvc-title {
+  font-family: var(--ff-display);
+  font-weight: 500;
+  font-size: 52px;
+  line-height: 1;
+  letter-spacing: -1.4px;
+  text-transform: lowercase;
+  color: var(--c-ink);
+}
+
+.pvc-subtitle {
+  margin-top: 22px;
+  font-family: var(--ff-display);
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 1;
+  letter-spacing: -0.6px;
+  text-transform: lowercase;
+  color: var(--c-ink);
+}
+
+.pvc-text {
+  margin-top: 24px;
+  max-width: 920px;
+  font-family: var(--ff-base);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: -0.2px;
+  color: var(--c-ink);
+}
+
+.pvc-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  align-items: start;
+  margin-top: 28px;
+}
+
+.pvc-card {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.pvc-card-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 288px;
+  background: #ededed;
+  overflow: hidden;
+}
+
+.pvc-card-media img {
+  width: auto;
+  max-width: 42%;
+  max-height: 78%;
+  object-fit: contain;
+}
+
+.pvc-caption {
+  margin-top: 10px;
+  font-family: var(--ff-base);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.4;
+  letter-spacing: -0.1px;
+  color: var(--c-ink);
+}
+
+.pvc-caption b {
+  font-weight: 700;
+}
+
+.pvc-hero {
+  display: flex;
+  flex-direction: column;
+}
+
+.pvc-hero-media {
+  position: relative;
+  display: block;
+  height: 288px;
+  overflow: hidden;
+}
+
+.pvc-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-position: 50% 72%;
+  object-fit: cover;
+}
+
+.pvc-hero-label {
+  position: absolute;
+  top: 33%;
+  left: 24px;
+  transform: translateY(-50%);
+  padding: 9px 20px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.62);
+  font-family: var(--ff-base);
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 1;
+  letter-spacing: -0.2px;
+  color: var(--c-ink);
+}
+
+.pvc-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+/* ===== МАКЕТ 960 ===== */
+@media (max-width: 1199px) {
+  .pvc-title {
+    font-size: 46px;
+  }
+
+  .pvc-card-media,
+  .pvc-hero-media {
+    height: 256px;
+  }
+}
+
+/* ===== МАКЕТ 640 ===== */
+@media (max-width: 959px) {
+  .pvc-inner {
+    padding: 26px 24px 28px;
+  }
+
+  .pvc-title {
+    font-size: 42px;
+  }
+
+  .pvc-subtitle {
+    font-size: 23px;
+  }
+
+  .pvc-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .pvc-card-media {
+    height: 268px;
+  }
+
+  .pvc-hero-media {
+    height: 190px;
+  }
+
+  /* подпись — в левый нижний угол кадра, компактнее */
+  .pvc-hero-label {
+    top: auto;
+    bottom: 14px;
+    left: 14px;
+    transform: none;
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}
+
+/* ===== МАКЕТ 360 ===== */
+@media (max-width: 639px) {
+  .pvc {
+    padding: 0 8px 8px;
+  }
+
+  .pvc-inner {
+    padding: 20px 18px 22px;
+  }
+
+  .pvc-title {
+    font-size: 34px;
+    letter-spacing: -1px;
+  }
+
+  .pvc-subtitle {
+    font-size: 19px;
+  }
+
+  .pvc-text {
+    font-size: 13px;
+  }
+
+  /* единственная карточка pvc — на всю ширину блока, без боковых отступов */
+  .pvc-card-media {
+    height: 190px;
+  }
+
+  .pvc-card-media img {
+    max-width: 50%;
+  }
+
+  .pvc-hero-media {
+    height: 160px;
+  }
+}
+
+/* ==========================================================================
+   CTA-баннер «исследуйте коллекции» — текст слева, оранжевая кнопка справа
+   ========================================================================== */
+.cta-banner {
+  position: relative;
+  background: var(--c-light);
+  padding: 0 10px 10px;
+}
+
+.cta-banner-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 44px;
+  background: var(--c-white);
+  padding: 28px 30px 28px;
+}
+
+.cta-banner-text {
+  flex: 0 0 auto;
+  font-family: var(--ff-display);
+  font-weight: 500;
+  font-size: 27px;
+  line-height: 1.18;
+  letter-spacing: -0.6px;
+  text-transform: lowercase;
+  color: var(--c-ink);
+}
+
+.cta-banner-btn {
+  flex: 0 0 46%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--c-accent);
+  font-family: var(--ff-base);
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 1.2;
+  letter-spacing: -0.1px;
+  text-align: center;
+  color: var(--c-white);
+  transition: background-color 0.2s ease;
+}
+
+.cta-banner-btn:hover {
+  background: #3f4147;
+}
+
+/* ===== МАКЕТ 960 ===== */
+@media (max-width: 1199px) {
+  .cta-banner-text {
+    font-size: 24px;
+  }
+}
+
+/* ===== МАКЕТ 640 (стопкой) ===== */
+@media (max-width: 959px) {
+  .cta-banner-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 22px;
+    padding: 28px 24px;
+  }
+
+  .cta-banner-text {
+    font-size: 24px;
+    line-height: 1;
+  }
+
+  .cta-banner-btn {
+    flex: none;
+    min-height: 58px;
+    font-size: 15px;
+  }
+}
+
+/* ===== МАКЕТ 360 ===== */
+@media (max-width: 639px) {
+  .cta-banner {
+    padding: 0 8px 8px;
+  }
+
+  .cta-banner-inner {
+    padding: 22px 18px;
+  }
+
+  .cta-banner-text {
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  .cta-banner-btn {
+    min-height: 54px;
+    font-size: 14px;
+  }
+}
+
+/* ==========================================================================
+   «Не ограничиваем дизайн стандартами» — кадр слева, текст и список справа
+   ========================================================================== */
+.custom {
+  position: relative;
+  background: var(--c-light);
+  padding: 0 10px 10px;
+}
+
+.custom-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--c-white);
+}
+
+.custom-media {
+  position: relative;
+  margin: 0;
+  min-height: 500px;
+  overflow: hidden;
+}
+
+.custom-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.custom-media-note {
+  position: absolute;
+  left: 28px;
+  bottom: 28px;
+  max-width: 340px;
+  padding-left: 54px;
+  font-family: var(--ff-base);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.35;
+  letter-spacing: -0.1px;
+  color: var(--c-white);
+}
+
+.custom-media-star {
+  position: absolute;
+  left: 0;
+  top: -4px;
+  width: 42px;
+  height: 42px;
+  background: var(--c-accent);
+  clip-path: polygon(
+    50% 0%, 58% 42%, 100% 50%, 58% 58%,
+    50% 100%, 42% 58%, 0% 50%, 42% 42%
+  );
+}
+
+.custom-body {
+  display: flex;
+  flex-direction: column;
+  padding: 42px 40px 42px 46px;
+}
+
+.custom-title {
+  font-family: var(--ff-display);
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 1.12;
+  letter-spacing: -0.7px;
+  text-transform: lowercase;
+  color: var(--c-ink);
+}
+
+.custom-text {
+  margin-top: 20px;
+  max-width: 420px;
+  font-family: var(--ff-base);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: -0.2px;
+  color: var(--c-ink);
+}
+
+.custom-list {
+  margin-top: auto;
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.custom-list li {
+  position: relative;
+  padding-left: 24px;
+  max-width: 470px;
+  font-family: var(--ff-base);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.35;
+  letter-spacing: -0.2px;
+  color: var(--c-ink);
+}
+
+.custom-list li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 7px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--c-accent);
+}
+
+/* ===== МАКЕТ 960 ===== */
+@media (max-width: 1199px) {
+  .custom-media {
+    min-height: 456px;
+  }
+
+  .custom-body {
+    padding: 34px 30px;
+  }
+
+  .custom-title {
+    font-size: 27px;
+  }
+}
+
+/* ===== МАКЕТ 640 (стопкой) ===== */
+@media (max-width: 959px) {
+  .custom-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .custom-media {
+    min-height: 0;
+    height: 420px;
+  }
+
+  .custom-body {
+    padding: 28px 24px 30px;
+  }
+
+  .custom-list {
+    padding-top: 28px;
+  }
+}
+
+/* ===== МАКЕТ 360 ===== */
+@media (max-width: 639px) {
+  .custom {
+    padding: 0 8px 8px;
+  }
+
+  .custom-media {
+    height: 340px;
+  }
+
+  .custom-media-note {
+    left: 18px;
+    bottom: 18px;
+  }
+
+  .custom-body {
+    padding: 22px 18px 24px;
+  }
+
+  .custom-title {
+    font-size: 23px;
+  }
+
+  .custom-text,
+  .custom-list li {
+    font-size: 13px;
+  }
+}
+
+/* ==========================================================================
+   Вертикальные баффлы — описание + сетка 4 колонки, кадр-слайдер в ряду 2
+   ========================================================================== */
+.baffle {
+  position: relative;
+  background: var(--c-light);
+  padding: 0 10px 10px;
+}
+
+.baffle-inner {
+  background: var(--c-white);
+  padding: 30px 30px 32px;
+}
+
+.baffle-title {
+  font-family: var(--ff-display);
+  font-weight: 500;
+  font-size: 52px;
+  line-height: 0.92;
+  letter-spacing: -1.4px;
+  text-transform: lowercase;
+  color: var(--c-ink);
+}
+
+.baffle-text {
+  margin-top: 26px;
+  max-width: 920px;
+  font-family: var(--ff-base);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: -0.2px;
+  color: var(--c-ink);
+}
+
+.baffle-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  align-items: start;
+  margin-top: 28px;
+}
+
+.baffle-card {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.baffle-card-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 236px;
+  background: #ededed;
+  overflow: hidden;
+}
+
+.baffle-card-media img {
+  width: auto;
+  max-width: 90%;
+  max-height: 88%;
+  object-fit: contain;
+}
+
+.baffle-caption {
+  margin-top: 10px;
+  font-family: var(--ff-base);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.4;
+  letter-spacing: -0.1px;
+  color: var(--c-ink);
+}
+
+.baffle-caption b {
+  font-weight: 700;
+}
+
+/* кадр интерьера — 2/4 ширины во втором ряду */
+.baffle-hero {
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.baffle-hero-media {
+  position: relative;
+  display: block;
+  height: 236px;
+  overflow: hidden;
+}
+
+.baffle-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.baffle-hero-label {
+  position: absolute;
+  left: auto;
+  right: 20px;
+  bottom: 24px;
+  transform: none;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.62);
+  font-family: var(--ff-base);
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 1;
+  letter-spacing: -0.2px;
+  color: var(--c-ink);
+}
+
+.baffle-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.baffle-dots-more {
+  margin-left: 2px;
+  font-family: var(--ff-base);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: -0.2px;
+  color: var(--c-grey);
+}
+
+/* ===== МАКЕТ 960 ===== */
+@media (max-width: 1199px) {
+  .baffle-title {
+    font-size: 46px;
+  }
+
+  .baffle-card-media,
+  .baffle-hero-media {
+    height: 204px;
+  }
+}
+
+/* ===== МАКЕТ 640 ===== */
+@media (max-width: 959px) {
+  .baffle-inner {
+    padding: 26px 24px 28px;
+  }
+
+  .baffle-title {
+    font-size: 42px;
+  }
+
+  .baffle-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .baffle-hero {
+    grid-column: span 2;
+  }
+
+  .baffle-card-media,
+  .baffle-hero-media {
+    height: 190px;
+  }
+
+  /* подпись — по левому краю, примерно по центру высоты, компактнее */
+  .baffle-hero-label {
+    left: 14px;
+    right: auto;
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+}
+
+/* ===== МАКЕТ 360 ===== */
+@media (max-width: 639px) {
+  .baffle {
+    padding: 0 8px 8px;
+  }
+
+  .baffle-inner {
+    padding: 20px 18px 22px;
+  }
+
+  .baffle-title {
+    font-size: 34px;
+    letter-spacing: -1px;
+  }
+
+  .baffle-text {
+    font-size: 13px;
+  }
+
+  .baffle-card-media {
+    height: 170px;
+  }
+
+  .baffle-hero-media {
+    height: 160px;
+  }
+}
+
+/* ==========================================================================
+   Горизонтальные дизайн-баффлы — сетка 4 колонки: 4 / 1-2-1 / кадр(2)-1-1
+   ========================================================================== */
+.hbaffle {
+  position: relative;
+  background: var(--c-light);
+  padding: 0 10px 10px;
+}
+
+.hbaffle-inner {
+  background: var(--c-white);
+  padding: 30px 30px 32px;
+}
+
+.hbaffle-title {
+  font-family: var(--ff-display);
+  font-weight: 500;
+  font-size: 52px;
+  line-height: 0.92;
+  letter-spacing: -1.4px;
+  text-transform: lowercase;
+  color: var(--c-ink);
+}
+
+.hbaffle-text {
+  margin-top: 26px;
+  max-width: 920px;
+  font-family: var(--ff-base);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: -0.2px;
+  color: var(--c-ink);
+}
+
+.hbaffle-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  align-items: start;
+  margin-top: 28px;
+}
+
+.hbaffle-card--w2 {
+  grid-column: span 2;
+}
+
+.hbaffle-card {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.hbaffle-card-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 236px;
+  background: #ededed;
+  overflow: hidden;
+}
+
+.hbaffle-card-media img {
+  width: auto;
+  max-width: 90%;
+  max-height: 88%;
+  object-fit: contain;
+}
+
+.hbaffle-caption {
+  margin-top: 10px;
+  font-family: var(--ff-base);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.4;
+  letter-spacing: -0.1px;
+  color: var(--c-ink);
+}
+
+.hbaffle-caption b {
+  font-weight: 700;
+}
+
+.hbaffle-hero {
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.hbaffle-hero-media {
+  position: relative;
+  display: block;
+  height: 236px;
+  overflow: hidden;
+}
+
+.hbaffle-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hbaffle-hero-label {
+  position: absolute;
+  left: 22px;
+  top: 26px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.62);
+  font-family: var(--ff-base);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: -0.2px;
+  color: var(--c-ink);
+}
+
+.hbaffle-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.hbaffle-dots-more {
+  margin-left: 2px;
+  font-family: var(--ff-base);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: -0.2px;
+  color: var(--c-grey);
+}
+
+/* ===== МАКЕТ 960 ===== */
+@media (max-width: 1199px) {
+  .hbaffle-title {
+    font-size: 46px;
+  }
+
+  .hbaffle-card-media,
+  .hbaffle-hero-media {
+    height: 204px;
+  }
+}
+
+/* ===== МАКЕТ 640 ===== */
+@media (max-width: 959px) {
+  .hbaffle-inner {
+    padding: 26px 24px 28px;
+  }
+
+  .hbaffle-title {
+    font-size: 42px;
+  }
+
+  .hbaffle-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hbaffle-card--w2,
+  .hbaffle-hero {
+    grid-column: span 2;
+  }
+
+  .hbaffle-card-media,
+  .hbaffle-hero-media {
+    height: 190px;
+  }
+
+  /* подпись — по левому краю, примерно по центру высоты, компактнее */
+  .hbaffle-hero-label {
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+}
+
+/* ===== МАКЕТ 360 ===== */
+@media (max-width: 639px) {
+  .hbaffle {
+    padding: 0 8px 8px;
+  }
+
+  .hbaffle-inner {
+    padding: 20px 18px 22px;
+  }
+
+  .hbaffle-title {
+    font-size: 32px;
+    letter-spacing: -1px;
+  }
+
+  .hbaffle-text {
+    font-size: 13px;
+  }
+
+  /* «квадрат-волна 3D» встаёт в пару к «квадрат-волна»,
+     а одиночный «треугольник-линии» занимает всю ширину */
+  .hbaffle-card--w2 {
+    grid-column: auto;
+  }
+
+  .hbaffle-gallery > .hbaffle-card:nth-child(7) {
+    grid-column: 1 / -1;
+  }
+
+  .hbaffle-card-media {
+    height: 170px;
+  }
+
+  .hbaffle-hero-media {
+    height: 160px;
+  }
+}
+
+/* ==========================================================================
+   Значок «+N» рядом со свотчами — серый кружок (единый вид во всех блоках)
+   ========================================================================== */
+.felt-dots-more,
+.small-dots-more,
+.baffle-dots-more,
+.hbaffle-dots-more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 28px;
+  height: 28px;
+  margin-left: 0;
+  border-radius: 50%;
+  background: var(--c-light);
+  font-family: var(--ff-base);
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: -0.2px;
+  color: var(--c-ink);
+}
+
+/* ==========================================================================
+   Парящие стены — слева 3 карточки (2+1), справа кадр во всю высоту колонки
+   ========================================================================== */
+.float {
+  position: relative;
+  background: var(--c-light);
+  padding: 0 10px 10px;
+}
+
+.float-inner {
+  background: var(--c-white);
+  padding: 30px 30px 32px;
+}
+
+.float-title {
+  font-family: var(--ff-display);
+  font-weight: 500;
+  font-size: 56px;
+  line-height: 1;
+  letter-spacing: -1.4px;
+  text-transform: lowercase;
+  color: var(--c-ink);
+}
+
+.float-text {
+  margin-top: 24px;
+  max-width: 920px;
+  font-family: var(--ff-base);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: -0.2px;
+  color: var(--c-ink);
+}
+
+.float-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  align-items: stretch;
+  margin-top: 28px;
+}
+
+.float-left {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  align-content: start;
+}
+
+.float-card {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* «сегмент» занимает всю ширину левой колонки (2/4 галереи) */
+.float-card--wide {
+  grid-column: 1 / -1;
+}
+
+.float-card-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 236px;
+  background: #ededed;
+  overflow: hidden;
+}
+
+.float-card-media img {
+  width: auto;
+  max-width: 78%;
+  max-height: 94%;
+  object-fit: contain;
+}
+
+.float-caption {
+  margin-top: 10px;
+  font-family: var(--ff-base);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.4;
+  letter-spacing: -0.1px;
+  color: var(--c-ink);
+}
+
+.float-caption b {
+  font-weight: 700;
+}
+
+.float-hero {
+  display: flex;
+  flex-direction: column;
+}
+
+.float-hero-media {
+  position: relative;
+  flex: 1;
+  min-height: 300px;
+  overflow: hidden;
+}
+
+.float-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.float-hero-label {
+  position: absolute;
+  left: auto;
+  right: 44px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.62);
+  font-family: var(--ff-base);
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 1;
+  letter-spacing: -0.2px;
+  color: var(--c-ink);
+}
+
+.float-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.float-dots-more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--c-light);
+  font-family: var(--ff-base);
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: -0.2px;
+  color: var(--c-ink);
+}
+
+/* ===== МАКЕТ 960 ===== */
+@media (max-width: 1199px) {
+  .float-title {
+    font-size: 48px;
+  }
+
+  .float-card-media {
+    height: 200px;
+  }
+}
+
+/* ===== МАКЕТ 640 ===== */
+@media (max-width: 959px) {
+  .float-inner {
+    padding: 26px 24px 28px;
+  }
+
+  .float-title {
+    font-size: 40px;
+  }
+
+  .float-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .float-card-media {
+    height: 240px;
+  }
+
+  .float-hero-media {
+    min-height: 190px;
+    height: 190px;
+    flex: none;
+  }
+
+  /* подпись — в правый нижний угол, компактнее по вертикали, крупнее шрифт */
+  .float-hero-label {
+    left: auto;
+    right: 14px;
+    top: auto;
+    bottom: 14px;
+    transform: none;
+    padding: 5px 12px;
+    font-size: 14px;
+  }
+}
+
+/* ===== МАКЕТ 360 ===== */
+@media (max-width: 639px) {
+  .float {
+    padding: 0 8px 8px;
+  }
+
+  .float-inner {
+    padding: 20px 18px 22px;
+  }
+
+  .float-title {
+    font-size: 32px;
+    letter-spacing: -1px;
+  }
+
+  .float-text {
+    font-size: 13px;
+  }
+
+  .float-card-media {
+    height: 200px;
+  }
+
+  .float-hero-media {
+    height: 150px;
+  }
+}
+
+/* ==========================================================================
+   CTA «нужна помощь в подборе решения?» — кадр слева, голубая панель справа
+   ========================================================================== */
+.help {
+  position: relative;
+  background: var(--c-light);
+  padding: 0 10px 10px;
+}
+
+.help-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* строке нужна ЯВНАЯ высота: без неё img{height:100%} внутри .help-media
+     не может разрешиться в % и откатывается на свою натуральную высоту
+     (ширина колонки / соотношение сторон фото) — отсюда блок «раздувало»
+     до ~390px независимо от паддингов и текста ниже */
+  grid-template-rows: 260px;
+  gap: 10px;
+  background: var(--c-light);
+}
+
+.help-media {
+  margin: 0;
+  overflow: hidden;
+}
+
+.help-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.help-body {
+  display: flex;
+  flex-direction: column;
+  background: #cae0f1;
+  padding: 14px 40px 14px 26px;
+}
+
+.help-title {
+  font-family: var(--ff-display);
+  font-weight: 500;
+  font-size: 23px;
+  line-height: 1.06;
+  letter-spacing: -0.6px;
+  text-transform: lowercase;
+  color: var(--c-ink);
+}
+
+.help-text {
+  margin-top: auto;
+  max-width: 660px;
+  padding-top: 6px;
+  font-family: var(--ff-base);
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.35;
+  letter-spacing: -0.2px;
+  color: var(--c-ink);
+}
+
+.help-btn {
+  margin-top: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 6px 24px;
+  border-radius: 999px;
+  background: var(--c-ink);
+  font-family: var(--ff-base);
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: -0.1px;
+  text-transform: lowercase;
+  color: var(--c-white);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.help-btn:hover {
+  background: var(--c-accent);
+}
+
+/* ===== МАКЕТ 960 ===== */
+@media (max-width: 1199px) {
+  .help-title {
+    font-size: 25px;
+  }
+}
+
+/* ===== МАКЕТ 640 (стопкой) ===== */
+@media (max-width: 959px) {
+  .help-inner {
+    grid-template-columns: 1fr;
+    /* в один столбец строки складываются друг под другом — фикс-высота
+       260px (нужная для десктопной раскладки в два столбца) тут не нужна
+       и раздувает первую строку пустым пространством под фото */
+    grid-template-rows: auto;
+    gap: 10px;
+  }
+
+  .help-media {
+    height: 220px;
+    min-height: 0;
+  }
+
+  .help-body {
+    padding: 30px 24px 28px;
+  }
+
+  .help-text {
+    margin-top: 24px;
+    padding-top: 0;
+  }
+
+  /* больше воздуха между текстом и кнопкой, кнопка крупнее по вертикали и шрифту */
+  .help-btn {
+    margin-top: 22px;
+    padding: 18px 24px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 639px) {
+  .help {
+    padding: 0 8px 8px;
+  }
+
+  .help-title {
+    font-size: 22px;
+  }
+}
+
+/* ==========================================================================
+   Модалка «поможем с дизайн-проектом»
+   ========================================================================== */
+.consult-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.consult-modal.is-open {
+  display: flex;
+}
+
+.consult-modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(18, 20, 26, 0.55);
+}
+
+.consult-card {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  width: 100%;
+  max-width: 980px;
+  max-height: calc(100vh - 40px);
+  overflow: auto;
+  padding: 34px 54px 44px;
+  background: var(--c-accent);
+  color: var(--c-white);
+}
+
+.consult-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  width: 34px;
+  height: 34px;
+  font-size: 30px;
+  line-height: 1;
+  color: var(--c-white);
+  opacity: 0.75;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.consult-close:hover {
+  opacity: 1;
+}
+
+.consult-title {
+  font-family: var(--ff-display);
+  font-weight: 500;
+  font-size: 46px;
+  line-height: 0.88;
+  letter-spacing: -1.4px;
+  text-transform: lowercase;
+  color: var(--c-white);
+}
+
+.consult-list {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.consult-list li {
+  position: relative;
+  padding-left: 22px;
+  max-width: 320px;
+  font-family: var(--ff-base);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.3;
+  letter-spacing: -0.2px;
+  color: var(--c-white);
+}
+
+.consult-list li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 7px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--c-white);
+}
+
+.consult-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.consult-success {
+  margin-bottom: 18px;
+  padding: 26px 24px;
+  background: #7fd88f;
+  font-family: var(--ff-base);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--c-white);
+}
+
+.consult-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.consult-field {
+  display: block;
+}
+
+.consult-field-label {
+  display: block;
+  font-family: var(--ff-base);
+  font-size: 12px;
+  letter-spacing: -0.2px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.consult-input {
+  width: 100%;
+  height: 44px;
+  margin-top: 4px;
+  padding: 0 2px;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  background: transparent;
+  font-family: var(--ff-base);
+  font-size: 16px;
+  color: var(--c-white);
+}
+
+.consult-input::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.consult-input:focus {
+  outline: none;
+  border-bottom-color: var(--c-white);
+}
+
+.consult-input.is-invalid {
+  border-bottom-color: #ffd7cb;
+}
+
+.consult-agree {
+  display: flex;
+  gap: 10px;
+  margin-top: 22px;
+  cursor: pointer;
+}
+
+.consult-agree-input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.consult-agree-box {
+  flex: none;
+  width: 16px;
+  height: 16px;
+  margin-top: 1px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.consult-agree-input:checked ~ .consult-agree-box {
+  background: var(--c-white)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6.5L5 9l5-6' stroke='%23fa4616' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+    center / 10px no-repeat;
+}
+
+.consult-agree.is-invalid .consult-agree-box {
+  border-color: #ffd7cb;
+}
+
+.consult-agree-text {
+  font-family: var(--ff-base);
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 1.35;
+  letter-spacing: -0.1px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.consult-agree-text a {
+  color: var(--c-white);
+  text-decoration: underline;
+}
+
+.consult-submit {
+  margin-top: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: var(--c-white);
+  font-family: var(--ff-base);
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: -0.1px;
+  text-transform: lowercase;
+  color: var(--c-ink);
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.consult-submit:hover {
+  background: #3f4147;
+  color: var(--c-white);
+}
+
+.consult-error {
+  display: block;
+  margin-top: 6px;
+  font-family: var(--ff-base);
+  font-size: 12px;
+  letter-spacing: -0.2px;
+  color: #ffe0d6;
+}
+
+.consult-error[hidden] {
+  display: none;
+}
+
+body.consult-lock {
+  overflow: hidden;
+}
+
+/* ===== МАКЕТ 640 ===== */
+@media (max-width: 959px) {
+  .consult-card {
+    grid-template-columns: 1fr;
+    gap: 26px;
+    padding: 44px 28px 34px;
+  }
+
+  .consult-title {
+    font-size: 38px;
+  }
+
+  .consult-list li {
+    max-width: none;
+  }
+}
+
+/* ==========================================================================
+   Потолочная система армстронг — слева сетка 2×2, справа кадр во всю высоту
+   ========================================================================== */
+.armstrong {
+  position: relative;
+  background: var(--c-light);
+  padding: 0 10px 10px;
+}
+
+.armstrong-inner {
+  background: var(--c-white);
+  padding: 30px 30px 32px;
+}
+
+.armstrong-title {
+  font-family: var(--ff-display);
+  font-weight: 500;
+  font-size: 52px;
+  line-height: 0.92;
+  letter-spacing: -1.4px;
+  text-transform: lowercase;
+  color: var(--c-ink);
+}
+
+.armstrong-text {
+  margin-top: 24px;
+  max-width: 920px;
+  font-family: var(--ff-base);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: -0.2px;
+  color: var(--c-ink);
+}
+
+.armstrong-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  align-items: stretch;
+  margin-top: 28px;
+}
+
+.armstrong-left {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  align-content: start;
+}
+
+.armstrong-card {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.armstrong-card-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 214px;
+  background: #ededed;
+  overflow: hidden;
+}
+
+.armstrong-card-media img {
+  width: auto;
+  max-width: 82%;
+  max-height: 86%;
+  object-fit: contain;
+}
+
+.armstrong-caption {
+  margin-top: 10px;
+  font-family: var(--ff-base);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.4;
+  letter-spacing: -0.1px;
+  color: var(--c-ink);
+}
+
+.armstrong-caption b {
+  font-weight: 700;
+}
+
+.armstrong-hero {
+  display: flex;
+  flex-direction: column;
+}
+
+.armstrong-hero-media {
+  position: relative;
+  flex: 1;
+  min-height: 300px;
+  overflow: hidden;
+}
+
+.armstrong-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.armstrong-hero-label {
+  position: absolute;
+  top: 42px;
+  right: 24px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.62);
+  font-family: var(--ff-base);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: -0.2px;
+  color: var(--c-ink);
+}
+
+.armstrong-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.armstrong-dots-more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--c-light);
+  font-family: var(--ff-base);
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: -0.2px;
+  color: var(--c-ink);
+}
+
+/* ==========================================================================
+   Встраиваемое освещение — 2 карточки в ряд
+   ========================================================================== */
+.embed {
+  position: relative;
+  background: var(--c-light);
+  padding: 0 10px 10px;
+}
+
+.embed-inner {
+  background: var(--c-white);
+  padding: 30px 30px 32px;
+}
+
+.embed-title {
+  font-family: var(--ff-display);
+  font-weight: 500;
+  font-size: 52px;
+  line-height: 1;
+  letter-spacing: -1.4px;
+  text-transform: lowercase;
+  color: var(--c-ink);
+}
+
+.embed-text {
+  margin-top: 24px;
+  max-width: 920px;
+  font-family: var(--ff-base);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: -0.2px;
+  color: var(--c-ink);
+}
+
+.embed-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.embed-card {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.embed-card-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  background: #ededed;
+  overflow: hidden;
+}
+
+.embed-card-media img {
+  width: auto;
+  max-width: 62%;
+  max-height: 78%;
+  object-fit: contain;
+}
+
+.embed-caption {
+  margin-top: 10px;
+  font-family: var(--ff-base);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.4;
+  letter-spacing: -0.1px;
+  color: var(--c-ink);
+}
+
+.embed-caption b {
+  font-weight: 700;
+}
+
+/* ===== МАКЕТ 960 ===== */
+@media (max-width: 1199px) {
+  .armstrong-title,
+  .embed-title {
+    font-size: 46px;
+  }
+
+  .armstrong-card-media {
+    height: 182px;
+  }
+
+  .embed-card-media {
+    height: 260px;
+  }
+}
+
+/* ===== МАКЕТ 640 ===== */
+@media (max-width: 959px) {
+  .armstrong-inner,
+  .embed-inner {
+    padding: 26px 24px 28px;
+  }
+
+  .armstrong-title,
+  .embed-title {
+    font-size: 40px;
+  }
+
+  .armstrong-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .armstrong-hero-media {
+    min-height: 0;
+    height: 190px;
+    flex: none;
+  }
+
+  /* подпись — правый край, по центру высоты, компактнее, крупнее шрифт */
+  .armstrong-hero-label {
+    top: 50%;
+    right: 14px;
+    transform: translateY(-50%);
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  .armstrong-card-media {
+    height: 210px;
+  }
+
+  /* на узких карточках фото выглядело слишком мелким — увеличиваем масштаб */
+  .armstrong-card-media img {
+    max-width: 94%;
+    max-height: 92%;
+  }
+
+  /* спот и профиль — ниже по блоку, но само фото крупнее */
+  .embed-card-media {
+    height: 220px;
+  }
+
+  .embed-card-media img {
+    max-width: 80%;
+    max-height: 90%;
+  }
+}
+
+/* ===== МАКЕТ 360 ===== */
+@media (max-width: 639px) {
+  .armstrong,
+  .embed {
+    padding: 0 8px 8px;
+  }
+
+  .armstrong-inner,
+  .embed-inner {
+    padding: 20px 18px 22px;
+  }
+
+  .armstrong-title,
+  .embed-title {
+    font-size: 32px;
+    letter-spacing: -1px;
+  }
+
+  .armstrong-text,
+  .embed-text {
+    font-size: 13px;
+  }
+
+  .armstrong-card-media {
+    height: 180px;
+  }
+
+  .embed-card-media {
+    height: 170px;
+  }
+}
+
+/* блок «свяжитесь с нашим менеджером» — вместо маркированного списка одна строка */
+.footer-cta-list--plain {
+  padding-left: 0;
+  list-style: none;
+}
+
+/* ==========================================================================
+   Светильники из фетра — 2 карточки + кадр (2/4) с пилюлей
+   ========================================================================== */
+.lamp {
+  position: relative;
+  background: var(--c-light);
+  padding: 0 10px 10px;
+}
+
+.lamp-inner {
+  background: var(--c-white);
+  padding: 30px 30px 32px;
+}
+
+.lamp-title {
+  font-family: var(--ff-display);
+  font-weight: 500;
+  font-size: 52px;
+  line-height: 0.92;
+  letter-spacing: -1.4px;
+  text-transform: lowercase;
+  color: var(--c-ink);
+}
+
+.lamp-text {
+  margin-top: 24px;
+  max-width: 920px;
+  font-family: var(--ff-base);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: -0.2px;
+  color: var(--c-ink);
+}
+
+.lamp-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  align-items: stretch;
+  margin-top: 28px;
+}
+
+.lamp-card {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.lamp-card-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  background: #ededed;
+  overflow: hidden;
+}
+
+.lamp-card-media img {
+  width: auto;
+  max-width: 82%;
+  max-height: 82%;
+  object-fit: contain;
+}
+
+.lamp-caption {
+  margin-top: 10px;
+  font-family: var(--ff-base);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.4;
+  letter-spacing: -0.1px;
+  color: var(--c-ink);
+}
+
+.lamp-hero {
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.lamp-hero-media {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+
+.lamp-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lamp-hero-label {
+  position: absolute;
+  left: 42%;
+  bottom: 26px;
+  transform: translateX(-50%);
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.62);
+  font-family: var(--ff-base);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: -0.2px;
+  color: var(--c-ink);
+}
+
+/* ==========================================================================
+   Акустические экраны и доски — сетка 4 колонки
+   ========================================================================== */
+.screen {
+  position: relative;
+  background: var(--c-light);
+  padding: 0 10px 10px;
+}
+
+.screen-inner {
+  background: var(--c-white);
+  padding: 30px 30px 32px;
+}
+
+.screen-title {
+  font-family: var(--ff-display);
+  font-weight: 500;
+  font-size: 52px;
+  line-height: 0.92;
+  letter-spacing: -1.4px;
+  text-transform: lowercase;
+  color: var(--c-ink);
+}
+
+.screen-text {
+  margin-top: 24px;
+  max-width: 920px;
+  font-family: var(--ff-base);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: -0.2px;
+  color: var(--c-ink);
+}
+
+.screen-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  align-items: start;
+  margin-top: 28px;
+}
+
+.screen-card {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* второй ряд: «волны 3D» и «облако» — по половине ширины */
+.screen-card--wide {
+  grid-column: span 2;
+}
+
+.screen-card-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  background: #ededed;
+  overflow: hidden;
+}
+
+.screen-card-media img {
+  width: auto;
+  max-width: 84%;
+  max-height: 86%;
+  object-fit: contain;
+}
+
+.screen-caption {
+  margin-top: 10px;
+  font-family: var(--ff-base);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.4;
+  letter-spacing: -0.1px;
+  color: var(--c-ink);
+}
+
+.screen-caption b {
+  font-weight: 700;
+}
+
+.screen-hero {
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.screen-hero-media {
+  position: relative;
+  display: block;
+  height: 300px;
+  overflow: hidden;
+}
+
+.screen-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 42%;
+}
+
+.screen-hero-label {
+  position: absolute;
+  left: auto;
+  right: 22px;
+  top: 90px;
+  transform: none;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.62);
+  font-family: var(--ff-base);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: -0.2px;
+  color: var(--c-ink);
+}
+
+.screen-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.screen-dots-more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--c-light);
+  font-family: var(--ff-base);
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: -0.2px;
+  color: var(--c-ink);
+}
+
+/* ===== МАКЕТ 960 ===== */
+@media (max-width: 1199px) {
+  .lamp-title,
+  .screen-title {
+    font-size: 46px;
+  }
+
+  .lamp-card-media,
+  .lamp-hero-media {
+    height: 240px;
+  }
+
+  .screen-card-media,
+  .screen-hero-media {
+    height: 258px;
+  }
+}
+
+/* ===== МАКЕТ 640 ===== */
+@media (max-width: 959px) {
+  .lamp-inner,
+  .screen-inner {
+    padding: 26px 24px 28px;
+  }
+
+  .lamp-title,
+  .screen-title {
+    font-size: 40px;
+  }
+
+  .lamp-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .lamp-hero {
+    grid-column: span 2;
+  }
+
+  .lamp-hero-media {
+    min-height: 0;
+    height: 220px;
+    flex: none;
+  }
+
+  /* по левому краю, в одну строку, компактнее */
+  .lamp-hero-label {
+    left: 14px;
+    transform: none;
+    padding: 6px 12px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  /* карточки светильников — ближе к квадрату, фото крупнее */
+  .lamp-card-media {
+    height: 190px;
+  }
+
+  .lamp-card-media img {
+    max-width: 92%;
+    max-height: 92%;
+  }
+
+  .screen-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .screen-hero,
+  .screen-card--wide {
+    grid-column: span 2;
+  }
+
+  .screen-card-media {
+    height: 140px;
+  }
+
+  /* фото карточек экранов выглядело мелким — приближаем ещё */
+  .screen-card-media img {
+    max-width: 96%;
+    max-height: 96%;
+  }
+
+  .screen-hero-media {
+    height: 200px;
+  }
+
+  /* «невидимые крепления» — выше по кадру, шрифт чуть меньше, компактнее */
+  .screen-hero-label {
+    top: 16px;
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+}
+
+/* ===== МАКЕТ 360 ===== */
+@media (max-width: 639px) {
+  .lamp,
+  .screen {
+    padding: 0 8px 8px;
+  }
+
+  .lamp-inner,
+  .screen-inner {
+    padding: 20px 18px 22px;
+  }
+
+  .lamp-title,
+  .screen-title {
+    font-size: 32px;
+    letter-spacing: -1px;
+  }
+
+  .lamp-text,
+  .screen-text {
+    font-size: 13px;
+  }
+
+  /* «волны 3D» и «облако» — парой, кадр «невидимые крепления» после них */
+  .screen-card--wide {
+    grid-column: auto;
+  }
+
+  .screen-gallery > *:nth-child(1) { order: 1; }
+  .screen-gallery > *:nth-child(2) { order: 2; }
+  .screen-gallery > *:nth-child(4) { order: 3; }
+  .screen-gallery > *:nth-child(5) { order: 4; }
+  .screen-gallery > *:nth-child(3) { order: 5; }
+
+  .screen-card-media {
+    height: 120px;
+  }
+
+  .screen-hero-media {
+    height: 170px;
+  }
+
+  .lamp-hero-media {
+    height: 180px;
+  }
+
+  .lamp-card-media {
+    height: 160px;
+  }
+}
+
+/* ==========================================================================
+   Футер на странице каталога — подгоняем фикс-раскладку 22-footer.css
+   под адаптивную сетку страницы
+   ========================================================================== */
+/* стык с блоком выше без «двойного» серого зазора */
+.footer {
+  margin-top: -10px;
+}
+
+/* сцена не должна выпирать за вьюпорт и обрезаться справа */
+.footer .footer-stage {
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* голубую карточку прижимаем к сетке: 10px и слева, и справа */
+.footer .footer-cta {
+  left: 10px;
+  right: 10px;
+  width: auto;
+  /* на макете каталога карточка голубая, а не тёмная */
+  background: #cae0f1;
+  color: var(--c-ink);
+}
+
+/* иконки соцсетей на голубом фоне — оранжевые */
+.footer .footer-social {
+  color: var(--c-accent);
+}
+
+/* ==========================================================================
+   Модальное окно панели каталога (генерируется из данных, catalog-modal.js)
+   + лёгкое увеличение карточки при наведении
+   ========================================================================== */
+
+/* --- hover-zoom: одинаковый для всех карточек-панелей --- */
+.catalog-panel {
+  cursor: pointer;
+}
+
+/* карточка без данных модалки — только hover-zoom, без клика */
+.catalog-panel--nolink {
+  cursor: default;
+}
+
+.catalog-panel-media {
+  overflow: hidden;
+}
+
+.catalog-panel-media img {
+  transition: transform 0.45s cubic-bezier(0.2, 0.6, 0.2, 1);
+  will-change: transform;
+}
+
+.catalog-panel:hover .catalog-panel-media img,
+.catalog-panel:focus-visible .catalog-panel-media img {
+  transform: scale(1.06);
+}
+
+.catalog-panel:focus-visible {
+  outline: 2px solid var(--c-accent);
+  outline-offset: 2px;
+}
+
+/* --- оболочка --- */
+.pm-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1300;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.pm-modal.is-open {
+  display: flex;
+}
+
+.pm-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(18, 20, 26, 0.55);
+}
+
+.pm-dialog {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 392px 1fr;
+  align-items: stretch;
+  width: 100%;
+  max-width: 1060px;
+  max-height: calc(100vh - 210px);
+  overflow: hidden;
+  background: var(--c-white);
+}
+
+/* --- левая колонка: слайдер + кнопки под ним; бел. отступы от краёв окна --- */
+.pm-left {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 14px 16px 18px;
+}
+
+/* медиа тянется на всю высоту левой колонки (за вычетом кнопок).
+   flex-basis:0 + absolute .pm-viewport — чтобы собственная высота картинки
+   слайда не «продавливала» колонку (иначе img{height:100%} берёт intrinsic). */
+.pm-media {
+  position: relative;
+  flex: 1 1 0;
+  min-height: 300px;
+  background: #ededed;
+  overflow: hidden;
+}
+
+.pm-viewport {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.pm-track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pm-slide {
+  flex: 0 0 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* contain-слайд — «товар на сером», с воздухом вокруг (объект целиком) */
+.pm-slide--contain {
+  padding: 40px 34px 50px;
+}
+
+.pm-slide--contain img {
+  width: 100%;
+  height: 100%;
+  max-width: 92%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+/* contain, но объект крупнее (меньше полей) */
+.pm-slide--contain-tight {
+  padding: 22px 20px 40px;
+}
+
+.pm-slide--contain-tight img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* cover-слайд — фото во всю область слайдера, без полей */
+.pm-slide--cover {
+  padding: 0;
+}
+
+.pm-slide--cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* полоски прогресса — как в hero-слайдере проекта: серая дорожка, белая заливка */
+.pm-progress {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 14px;
+  display: flex;
+  gap: 6px;
+}
+
+.pm-seg {
+  flex: 1;
+  height: 2px;
+  border-radius: 2px;
+  background: #b7bac2;
+  overflow: hidden;
+}
+
+.pm-seg-fill {
+  display: block;
+  width: 0%;
+  height: 100%;
+  background: var(--c-white);
+}
+
+.pm-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 12px;
+}
+
+.pm-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-family: var(--ff-base);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--c-white);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.pm-btn--primary {
+  background: var(--c-accent);
+}
+
+/* ховер основной кнопки — голубой фон, тёмно-серый текст */
+.pm-btn--primary:hover {
+  background: #cae0f1;
+  color: var(--c-ink);
+}
+
+.pm-btn--secondary {
+  background: var(--c-ink);
+}
+
+/* ховер второй кнопки — голубой фон, тёмно-серый текст */
+.pm-btn--secondary:hover {
+  background: #cae0f1;
+  color: var(--c-ink);
+}
+
+/* --- правая колонка: содержимое --- */
+.pm-body {
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 210px);
+  /* нижний отступ = padding-bottom у .pm-left, чтобы обе колонки кончались вровень */
+  padding: 20px 26px 16px;
+  overflow-y: auto;
+}
+
+.pm-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  z-index: 4;
+  width: 30px;
+  height: 30px;
+  font-size: 26px;
+  line-height: 1;
+  color: var(--c-grey);
+  opacity: 0.8;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.pm-close:hover {
+  opacity: 1;
+}
+
+.pm-head {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: start;
+  padding-right: 44px;
+}
+
+.pm-title {
+  max-width: 460px;
+  font-family: var(--ff-display);
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 1.16;
+  letter-spacing: -0.5px;
+  color: var(--c-ink);
+}
+
+.pm-title b {
+  font-weight: 500;
+}
+
+.pm-price {
+  margin-top: 10px;
+  font-family: var(--ff-base);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 0.8;
+  letter-spacing: -0.02em;
+  text-align: left;
+  color: var(--c-ink); /* #4C5262 */
+}
+
+.pm-stats {
+  display: flex;
+  flex: none;
+  gap: 24px;
+}
+
+.pm-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.pm-stat-value {
+  font-family: var(--ff-display);
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 0.9;
+  letter-spacing: -1px;
+  color: var(--c-accent);
+}
+
+.pm-stat-label {
+  margin-top: 8px;
+  max-width: 116px;
+  font-family: var(--ff-base);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: var(--c-accent);
+}
+
+.pm-rule {
+  height: 1px;
+  margin: 11px 0;
+  background: var(--c-line);
+}
+
+.pm-desc {
+  max-width: 640px;
+  font-family: var(--ff-base);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  text-transform: lowercase;
+  color: var(--c-grey);
+}
+
+.pm-specs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 36px;
+  row-gap: 12px;
+  align-items: start;
+}
+
+.pm-specs-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* сетка 2×N (баффлы) — раскрываем строки прямо в .pm-specs, заполнение построчно */
+.pm-specs-grid {
+  display: contents;
+}
+
+/* длинные текстовые значения баффлов переносятся, а не расталкивают колонку */
+.pm-specs-grid .pm-spec-value {
+  max-width: 170px;
+}
+
+.pm-spec {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 14px;
+}
+
+.pm-spec-label {
+  font-size: 12.5px;
+  line-height: 1.35;
+  color: var(--c-grey);
+}
+
+.pm-spec-value {
+  flex: none;
+  max-width: 60%;
+  font-family: var(--ff-base);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  text-align: left;
+  color: var(--c-accent);
+}
+
+.pm-swgroup {
+  margin-top: 10px;
+}
+
+/* заглушка отсутствующей группы цвета — держит высоту окна постоянной
+   (≈ группа цвета + разница в высоте блока спецификаций у одно-/двуслойных) */
+.pm-swgroup--spacer {
+  height: 100px;
+}
+
+.pm-swtitle {
+  margin-bottom: 9px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--c-ink);
+}
+
+.pm-swatches {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+  /* палитра в один ряд; нативный скроллбар скрыт — рисуем свой (.pm-swbar) */
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.pm-swatches::-webkit-scrollbar {
+  display: none;
+}
+
+/* --- своя полоса прокрутки палитры: тонкая линия + бегунок, без рамок --- */
+.pm-swbar {
+  position: relative;
+  height: 10px;
+  margin-top: 8px;
+  cursor: pointer;
+  touch-action: none;
+}
+
+.pm-swbar::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  margin-top: -0.5px;
+  background: #e6e8ea;
+}
+
+.pm-swbar-thumb {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 40px;
+  height: 2px;
+  margin-top: -1px;
+  border-radius: 2px;
+  background: #b7bcc4;
+  transition: background-color 0.15s ease;
+  will-change: transform;
+}
+
+.pm-swbar-thumb:hover,
+.pm-swbar.is-drag .pm-swbar-thumb {
+  background: #8b929c;
+}
+
+.pm-swatch {
+  display: inline-block;
+  flex: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.06);
+}
+
+/* --- блок «закажите тестовые образцы»: текст ровно по контенту, фото — весь остаток --- */
+.pm-samples {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 22px;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.pm-samples-textcol {
+  max-width: 230px;
+}
+
+.pm-samples-title {
+  font-family: var(--ff-display);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.06;
+  letter-spacing: -0.3px;
+  color: var(--c-ink);
+}
+
+.pm-samples-text {
+  margin-top: 8px;
+  font-size: 11.5px;
+  line-height: 1.35;
+  color: var(--c-grey);
+}
+
+.pm-samples-media {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.pm-samples-strip {
+  display: flex;
+  gap: 3px;
+}
+
+.pm-samples-strip img {
+  flex: 1;
+  min-width: 0;
+  height: 60px;
+  object-fit: cover;
+}
+
+body.pm-lock {
+  overflow: hidden;
+}
+
+/* --- адаптив: узкий экран — одна колонка ---
+   .pm-left в разметке содержит и картинку, и кнопки (пришли бы ПЕРЕД
+   описанием при простом сжатии в 1 колонку) — раскладываем его через
+   display:contents и порядок order, чтобы кнопки оказались в самом низу,
+   после блока «закажите тестовые образцы», как в макете. */
+@media (max-width: 959px) {
+  .pm-dialog {
+    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    max-width: 420px;
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
+  }
+
+  .pm-left {
+    display: contents;
+  }
+
+  .pm-media {
+    order: 1;
+    flex: none;
+    height: 300px;
+    min-height: 0;
+    margin: 16px 16px 0;
+  }
+
+  .pm-body {
+    order: 2;
+    max-height: none;
+    padding: 16px 20px 0;
+    overflow: visible;
+  }
+
+  .pm-actions {
+    order: 3;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+  }
+
+  .pm-btn {
+    min-height: 48px;
+    font-size: 13px;
+  }
+
+  .pm-head {
+    grid-template-columns: 1fr;
+  }
+
+  .pm-stats {
+    gap: 28px;
+  }
+
+  /* значения характеристик — общей колонкой слева направо, а не по левому
+     краю каждой отдельной строки: .pm-specs-col и .pm-spec раскрываются
+     через display:contents, чтобы все пары label/value (из обеих групп
+     и из grid-варианта баффлов) легли в ОДНУ сетку с общей шириной колонки
+     подписи — тогда значения начинаются с одного и того же места */
+  .pm-specs {
+    grid-template-columns: auto 1fr;
+    column-gap: 14px;
+    row-gap: 10px;
+    align-items: baseline;
+  }
+
+  .pm-specs-col {
+    display: contents;
+  }
+
+  .pm-spec {
+    display: contents;
+  }
+
+  .pm-spec-value {
+    max-width: none;
+    text-align: left;
+    justify-self: start;
+  }
+
+  .pm-specs-grid .pm-spec-value {
+    max-width: none;
+  }
+
+  .pm-samples {
+    grid-template-columns: 1fr;
+  }
+
+  .pm-samples-media {
+    height: 120px;
+  }
+}
+
+/* --- телефон: модалка на весь экран, без карточных отступов --- */
+@media (max-width: 639px) {
+  .pm-modal {
+    padding: 0;
+    align-items: stretch;
+  }
+
+  .pm-dialog {
+    max-width: 100%;
+    max-height: 100dvh;
+    padding-top: 44px;
+  }
+
+  .pm-media {
+    height: 260px;
+  }
+
+  .pm-close {
+    top: 10px;
+    right: 14px;
+  }
+
+  .pm-body {
+    padding: 0 16px;
+  }
+
+  .pm-actions {
+    padding: 20px 16px;
+  }
+}
+
+/* ==========================================================================
+   Полноэкранная модалка «запросить расчёт или заказать образцы»
+   (открывается кнопкой data-pm-action="calc" из модалки панели)
+   ========================================================================== */
+.pmc-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1400;
+  display: none;
+  background: var(--pmc-bg, var(--c-accent));
+  color: var(--c-white);
+}
+
+/* «запросить расчёт» — оранжевый фон; «запросить каталог» — тёмно-серый */
+.pmc-modal--calc {
+  --pmc-bg: var(--c-accent);
+  --pmc-check: var(--c-accent);
+}
+
+.pmc-modal--catalog {
+  --pmc-bg: var(--c-ink);
+  --pmc-check: var(--c-ink);
+}
+
+.pmc-modal.is-open {
+  display: block;
+}
+
+.pmc-inner {
+  position: absolute;
+  inset: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pmc-title {
+  max-width: 780px;
+  font-family: var(--ff-display);
+  font-weight: 500;
+  font-size: 80px;
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  text-transform: lowercase;
+  color: var(--c-white);
+}
+
+.pmc-close {
+  position: absolute;
+  top: -6px;
+  right: 0;
+  width: 44px;
+  height: 44px;
+  font-size: 40px;
+  font-weight: 300;
+  line-height: 1;
+  color: var(--c-white);
+  opacity: 0.9;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.pmc-close:hover {
+  opacity: 1;
+}
+
+.pmc-form {
+  margin-top: auto;
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  width: min(560px, 47%);
+}
+
+.pmc-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.pmc-label {
+  font-family: var(--ff-base);
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.pmc-input {
+  margin-top: 12px;
+  padding: 4px 0 12px;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 0;
+  background: transparent;
+  font-family: var(--ff-base);
+  font-size: 18px;
+  color: var(--c-white);
+}
+
+.pmc-input::placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.pmc-input:focus {
+  outline: none;
+  border-bottom-color: #fff;
+}
+
+.pmc-input.is-invalid {
+  border-bottom-color: #fff;
+}
+
+.pmc-agree {
+  display: flex;
+  gap: 12px;
+  margin-top: 28px;
+  cursor: pointer;
+}
+
+.pmc-agree-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.pmc-agree-box {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin-top: 1px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.pmc-agree-input:checked + .pmc-agree-box {
+  background: #fff;
+}
+
+.pmc-agree-input:checked + .pmc-agree-box::after {
+  content: "";
+  display: block;
+  width: 5px;
+  height: 10px;
+  margin: 2px auto 0;
+  border: solid var(--pmc-check, var(--c-accent));
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.pmc-agree-input:focus-visible + .pmc-agree-box {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.pmc-agree.is-invalid .pmc-agree-box {
+  border-color: #fff;
+}
+
+.pmc-agree-text {
+  font-family: var(--ff-base);
+  font-size: 11px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.pmc-agree-text a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.pmc-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  min-height: 58px;
+  padding: 8px 20px;
+  border-radius: 999px;
+  background: #fff;
+  font-family: var(--ff-base);
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--c-ink);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* «расчёт»: ховер — тёмно-серый фон, белый текст */
+.pmc-modal--calc .pmc-submit:hover {
+  background: #4c5262;
+  color: #fff;
+}
+
+/* «каталог»: кнопка приглушённая на тёмном фоне, ховер — голубая */
+.pmc-modal--catalog .pmc-submit {
+  background: rgba(255, 255, 255, 0.28);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.pmc-modal--catalog .pmc-submit:hover {
+  background: #cae0f1;
+  color: var(--c-ink);
+}
+
+.pmc-success {
+  margin-bottom: 26px;
+  padding: 34px 28px;
+  background: #5fc98f;
+  font-family: var(--ff-base);
+  font-size: 15px;
+  line-height: 1.5;
+  text-align: center;
+  color: #fff;
+}
+
+.pmc-success[hidden] {
+  display: none;
+}
+
+@media (max-width: 959px) {
+  /* на мобилке контента (заголовок + поле + кнопка) мало, а окно раньше
+     занимало весь экран сплошной заливкой — большая часть оставалась
+     пустой. Вместо полноэкранной заливки — компактная карточка по центру
+     на затемнённой подложке, высотой ровно под контент (с прокруткой,
+     если он всё же не помещается на очень низком экране) */
+  .pmc-modal {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(18, 20, 26, 0.55);
+  }
+
+  .pmc-modal.is-open {
+    display: flex;
+  }
+
+  .pmc-inner {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    max-width: 420px;
+    max-height: calc(100vh - 40px);
+    padding: 30px 24px 24px;
+    border-radius: 20px;
+    background: var(--pmc-bg);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .pmc-title {
+    font-size: 32px;
+  }
+
+  .pmc-close {
+    top: 10px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
+    font-size: 28px;
+  }
+
+  .pmc-success {
+    padding: 20px 18px;
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+
+  .pmc-form {
+    width: 100%;
+    align-self: stretch;
+    margin-top: 24px;
+    padding-bottom: 0;
+  }
+
+  .pmc-agree {
+    margin-top: 20px;
+  }
+
+  .pmc-submit {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 639px) {
+  .pmc-title {
+    font-size: 28px;
+  }
+
+  /* заголовок «свяжитесь / с нашим / менеджером» — три строки, поэтому
+     отпускаем фикс-высоту и опускаем текст под ним, чтобы не наезжало;
+     шрифт крупнее, а межстрочный интервал более плотный */
+  .footer .footer-cta-title {
+    height: auto;
+    min-height: 92px;
+    font-size: 34px;
+    line-height: 30px;
+  }
+
+  .footer .footer-cta-list {
+    top: 132px;
+  }
+}
+
+/* ==========================================================================
+   Отступ сверху у рядов свотчей-кружков — на мобилке значительно меньше,
+   чтобы кружки были ближе к фото над ними. Вынесено в конец файла, чтобы
+   гарантированно перебивать базовые правила .float-dots/.armstrong-dots/
+   .screen-dots, которые в исходнике объявлены ПОСЛЕ прежнего места этого
+   блока (при равной специфичности выигрывает более поздний в каскаде).
+   ========================================================================== */
+@media (max-width: 959px) {
+  .veneer-dots,
+  .felt-dots,
+  .pvc-dots,
+  .baffle-dots,
+  .hbaffle-dots,
+  .float-dots,
+  .armstrong-dots,
+  .screen-dots {
+    margin-top: 8px;
+  }
+}
+
+@media (max-width: 639px) {
+  .veneer-dots,
+  .felt-dots,
+  .pvc-dots,
+  .baffle-dots,
+  .hbaffle-dots,
+  .float-dots,
+  .armstrong-dots,
+  .screen-dots {
+    margin-top: 6px;
+  }
+}

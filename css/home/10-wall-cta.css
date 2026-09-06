@@ -1,0 +1,196 @@
+/* ==========================================================================
+   10-wall-cta.css — промо-блок «решения для стен» (после секции spaces)
+   Полноэкранный кадр интерьера, поверх — заголовок, описание и кнопка-пилюля.
+   Раскладка абсолютная по базовым макетам 1200 / 960 / 640 / 360,
+   пропорции тянет body { zoom: --hb-zoom } — размеры в px базового макета.
+   ========================================================================== */
+
+.wallcta {
+  position: relative;
+  height: 600px;
+  overflow: hidden;
+  background: var(--c-light);
+}
+
+.wallcta-stage {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.wallcta-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* лёгкое затемнение слева — чтобы белый текст читался на светлом дереве */
+.wallcta-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(18, 16, 14, 0.55) 0%,
+    rgba(18, 16, 14, 0.22) 48%,
+    rgba(18, 16, 14, 0.05) 100%
+  );
+}
+
+.wallcta-title {
+  position: absolute;
+  z-index: 2;
+  left: 50px;
+  top: 60px;
+  width: 640px;
+  font-family: var(--ff-display);
+  font-weight: 500;
+  font-size: 56px;
+  line-height: 50px;
+  letter-spacing: -1.5px;
+  color: var(--c-white);
+}
+
+.wallcta-text {
+  position: absolute;
+  z-index: 2;
+  left: 50px;
+  top: 188px;
+  width: 560px;
+  font-family: var(--ff-base);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 21px;
+  letter-spacing: -0.2px;
+  color: var(--c-white);
+}
+
+.wallcta-btn {
+  position: absolute;
+  z-index: 2;
+  left: 50px;
+  bottom: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 484px;
+  height: 44px;
+  border-radius: 52px;
+  background: var(--c-white);
+  font-family: var(--ff-base);
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: -0.2px;
+  color: var(--c-ink);
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.wallcta-btn:hover {
+  background: var(--c-accent);
+  color: var(--c-white);
+}
+
+/* ===== МАКЕТ 960 ===== */
+@media (max-width: 1199px) {
+  .wallcta {
+    height: 600px;
+  }
+
+  .wallcta-title {
+    left: 40px;
+  }
+
+  .wallcta-text {
+    left: 40px;
+    width: 540px;
+  }
+
+  .wallcta-btn {
+    left: 40px;
+  }
+}
+
+/* ===== МАКЕТ 640 ===== */
+@media (max-width: 959px) {
+  .wallcta {
+    height: 780px;
+  }
+
+  .wallcta-title {
+    left: 30px;
+    top: 48px;
+    font-size: 46px;
+    line-height: 42px;
+  }
+
+  .wallcta-text {
+    left: 30px;
+    top: 150px;
+    width: 580px;
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  .wallcta-btn {
+    left: 30px;
+    right: 30px;
+    bottom: 40px;
+    width: auto;
+    height: 48px;
+    font-size: 16px;
+  }
+}
+
+/* ===== МАКЕТ 360 ===== */
+@media (max-width: 639px) {
+  .wallcta {
+    height: 720px;
+  }
+
+  .wallcta-stage {
+    left: 8px;
+    right: 8px;
+  }
+
+  /* на мобильном кадр приглушён сильнее и по всей площади */
+  .wallcta-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(18, 16, 14, 0.5) 0%,
+      rgba(18, 16, 14, 0.34) 45%,
+      rgba(18, 16, 14, 0.5) 100%
+    );
+  }
+
+  .wallcta-title {
+    left: 24px;
+    top: 44px;
+    width: 312px;
+    font-size: 40px;
+    line-height: 36px;
+    letter-spacing: -0.5px;
+  }
+
+  .wallcta-text {
+    left: 24px;
+    top: 150px;
+    width: 312px;
+    font-size: 17px;
+    line-height: 24px;
+  }
+
+  .wallcta-btn {
+    left: 24px;
+    right: 24px;
+    bottom: 32px;
+    width: auto;
+    height: 48px;
+    font-size: 16px;
+  }
+}

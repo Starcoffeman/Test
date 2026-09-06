@@ -1,0 +1,1499 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Каталог — Hubox</title>
+    <meta name="description" content="Каталог продукции Hubox." />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      sizes="any"
+      href="assets/misc-home/123.svg"
+    />
+
+    <link rel="stylesheet" href="css/home/base.css" />
+    <link rel="stylesheet" href="css/home/01-header.css?v=1" />
+    <link rel="stylesheet" href="css/home/02-mobile-menu.css?v=4" />
+    <link rel="stylesheet" href="css/home/24-sticky-header-hide.css" />
+    <link rel="stylesheet" href="css/home/22-footer.css" />
+    <link rel="stylesheet" href="css/home/catalog-page.css?v=144" />
+
+    <script src="js/home/01-header.js"></script>
+    <script src="js/home/02-mobile-menu.js"></script>
+    <script src="js/home/24-sticky-header-hide.js"></script>
+    <script src="js/home/catalog-page.js?v=7"></script>
+    <script src="js/home/catalog-panels.js?v=21"></script>
+    <script src="js/home/catalog-modal.js?v=22"></script>
+    <script src="js/home/main.js"></script>
+  </head>
+  <body>
+    <header class="header header--autohide">
+      <div class="header-bar">
+        <a class="header-logo" href="index.html" aria-label="Hubox — на главную">
+          <img src="img/logo.svg" alt="Hubox acoustic decor" width="80" height="46" />
+        </a>
+
+        <span class="header-line header-line--left" aria-hidden="true"></span>
+        <span class="header-line header-line--right" aria-hidden="true"></span>
+        <span class="header-line header-line--mid" aria-hidden="true"></span>
+
+        <nav class="header-top" aria-label="Разделы сайта">
+          <a class="header-top-link" href="index.html">главная</a>
+          <a class="header-top-link" href="walls.html">стеновые панели</a>
+          <a class="header-top-link" href="designers.html">дизайнерам и строителям</a>
+          <a class="header-top-link" href="fetr.html">о фетре</a>
+          <a class="header-top-link header-top-link--last" href="ceiling.html">потолочные решения</a>
+          <a class="header-top-link is-current" href="catalog.html">каталог</a>
+        </nav>
+
+        <nav class="header-menu" aria-label="Разделы страницы">
+          <a class="header-menu-link is-active" href="#walls">стеновые решения</a>
+          <a class="header-menu-link" href="#ceiling">потолочные решения</a>
+          <a class="header-menu-link" href="#lighting">освещение</a>
+          <a class="header-menu-link" href="#workspace">рабочее пространство</a>
+          <a class="header-menu-link" href="#screen">рабочее пространство</a>
+        </nav>
+
+        <a class="header-callback btn btn--outline" href="#consultModal" data-open-consult>обратный звонок</a>
+        <a class="header-phone" href="tel:+79819200133">+7(981) 920-01-33</a>
+
+        <button class="header-burger" type="button" aria-label="Открыть меню" aria-expanded="false">
+          <svg viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path
+              fill="transparent"
+              stroke="#c9cbd0"
+              d="M22.5 1C34.3741 1 44 10.6259 44 22.5C44 34.3741 34.3741 44 22.5 44C10.6259 44 1 34.3741 1 22.5C1 10.6259 10.6259 1 22.5 1Z"
+            />
+            <line stroke="#4c5262" stroke-linecap="round" x1="13" y1="18.5" x2="32" y2="18.5" />
+            <line stroke="#4c5262" stroke-linecap="round" x1="13" y1="23.5" x2="32" y2="23.5" />
+            <line stroke="#4c5262" stroke-linecap="round" x1="13" y1="28.5" x2="32" y2="28.5" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <div class="mobile-menu-inner">
+        <span class="mobile-menu-bg" aria-hidden="true"></span>
+        <span class="mobile-menu-head" aria-hidden="true"></span>
+
+        <a class="mobile-menu-logo" href="index.html" aria-label="Hubox — на главную">
+          <img src="img/logo-white.svg" alt="Hubox acoustic decor" width="62" height="36" />
+        </a>
+
+        <button class="mobile-menu-close" type="button" aria-label="Закрыть меню">
+          <svg viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path
+              fill="transparent"
+              stroke="#fff"
+              d="M22.5 1C34.374 1 44 10.626 44 22.5C44 34.374 34.374 44 22.5 44C10.626 44 1 34.374 1 22.5C1 10.626 10.626 1 22.5 1Z"
+            />
+            <line stroke="#fff" stroke-linecap="round" x1="15.87" y1="15.87" x2="29.13" y2="29.13" />
+            <line stroke="#fff" stroke-linecap="round" x1="15.87" y1="29.13" x2="29.13" y2="15.87" />
+          </svg>
+        </button>
+
+        <nav class="mobile-menu-nav" aria-label="Основное меню">
+          <a class="mobile-menu-link" href="index.html">главная</a>
+          <span class="mobile-menu-line" aria-hidden="true"></span>
+          <a class="mobile-menu-link" href="walls.html">стеновые панели</a>
+          <span class="mobile-menu-line" aria-hidden="true"></span>
+          <a class="mobile-menu-link" href="designers.html">дизайнерам и строителям</a>
+          <span class="mobile-menu-line" aria-hidden="true"></span>
+          <a class="mobile-menu-link" href="fetr.html">о фетре</a>
+          <span class="mobile-menu-line" aria-hidden="true"></span>
+          <a class="mobile-menu-link" href="ceiling.html">потолочные решения</a>
+          <span class="mobile-menu-line" aria-hidden="true"></span>
+          <a class="mobile-menu-link is-current" href="catalog.html">каталог</a>
+        </nav>
+
+        <a class="mobile-menu-banner" href="#consultModal" data-open-consult>
+          <img
+            src="assets/misc-home/Group_3585.png.webp"
+            alt="Получите персональную консультацию быстро"
+            width="330"
+            height="109"
+            loading="lazy"
+          />
+        </a>
+
+        <div class="mobile-menu-footer">
+          <a
+            class="mobile-menu-social"
+            href="https://wa.me/79819200133"
+            aria-label="WhatsApp"
+            target="_blank"
+            rel="noopener"
+          >
+            <img
+              class="icon-wa"
+              src="img/icon-whatsapp.svg"
+              alt="WhatsApp"
+              width="20"
+              height="20"
+            />
+          </a>
+
+          <a
+            class="mobile-menu-social"
+            href="https://max.ru/u/f9LHodD0cOK3WJPM7sQIj9P2X8cJuJuxbxF_1fQLAGK2vIsiZWf4V0CMH4w"
+            aria-label="MAX"
+            target="_blank"
+            rel="noopener"
+          >
+            <img
+              class="icon-max"
+              src="assets/misc-home/-removebg-preview.png"
+              alt="MAX"
+              width="27"
+              height="27"
+            />
+          </a>
+
+          <a
+            class="mobile-menu-social"
+            href="https://t.me/+79819200133"
+            aria-label="Telegram"
+            target="_blank"
+            rel="noopener"
+          >
+            <img
+              class="icon-tg"
+              src="img/icon-telegram.svg"
+              alt="Telegram"
+              width="21"
+              height="18"
+            />
+          </a>
+
+          <a
+            class="mobile-menu-social"
+            href="tel:+79819200133"
+            aria-label="Позвонить"
+          >
+            <img
+              class="icon-tel"
+              src="assets/misc-home/icons8--100.png"
+              alt="Телефон"
+              width="19"
+              height="19"
+            />
+          </a>
+
+          <a class="mobile-menu-callback btn btn--outline" href="#consultModal" data-open-consult
+            >обратный звонок</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <section class="catalog-hero">
+        <div class="catalog-hero-panel">
+          <h1 class="catalog-hero-title">
+            каталог
+            <br />
+            решений
+          </h1>
+          <p class="catalog-hero-text">
+            акустические решения и освещение для комфортных и функциональных
+            пространств
+          </p>
+        </div>
+
+        <div class="catalog-hero-media">
+          <div class="catalog-hero-media-frame">
+            <picture>
+              <source
+                media="(max-width: 959px)"
+                srcset="assets/image/catalog/panel/42590623c0e203577ba3608bc379ef56d077e533.png"
+              />
+              <img
+                src="assets/image/home/c47263dc4c48840b46c436e3137397a63206bec2.webp"
+                alt="Интерьер офиса с акустическими решениями Hubox"
+              />
+            </picture>
+          </div>
+
+          <button
+            class="catalog-hotspot catalog-hotspot--walls"
+            type="button"
+            data-scroll-target="#walls"
+          >
+            <span class="catalog-hotspot-dot" aria-hidden="true"></span>
+            <span class="catalog-hotspot-label">стеновые<br />решения</span>
+          </button>
+
+          <button
+            class="catalog-hotspot catalog-hotspot--ceiling"
+            type="button"
+            data-scroll-target="#ceiling"
+          >
+            <span class="catalog-hotspot-dot" aria-hidden="true"></span>
+            <span class="catalog-hotspot-label">потолочные<br />решения</span>
+          </button>
+
+          <button
+            class="catalog-hotspot catalog-hotspot--light"
+            type="button"
+            data-scroll-target="#lighting"
+          >
+            <span class="catalog-hotspot-dot" aria-hidden="true"></span>
+            <span class="catalog-hotspot-label">освещение</span>
+          </button>
+
+          <button
+            class="catalog-hotspot catalog-hotspot--work"
+            type="button"
+            data-scroll-target="#workspace"
+          >
+            <span class="catalog-hotspot-dot" aria-hidden="true"></span>
+            <span class="catalog-hotspot-label">рабочее<br />пространство</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="cat-section" id="walls">
+        <div class="cat-section-inner">
+          <h2 class="cat-section-title">
+            стеновые
+            <br />
+            решения
+          </h2>
+        </div>
+      </section>
+
+      <section class="veneer" id="veneer">
+        <div class="veneer-inner">
+          <header class="veneer-head">
+            <h2 class="veneer-title">шпонированные<br />панели</h2>
+            <p class="veneer-subtitle">крупноформатные</p>
+            <p class="veneer-text">
+              высококачественная поверхность из натурального шпона: ощутите
+              подлинную текстуру дерева, которая привносит естественное тепло
+              в любое помещение. панели легко впишутся в современный интерьер
+              вашего дома или офиса, придавая ему изысканность
+            </p>
+            <p class="veneer-text">
+              панели изготовлены из фетровой акустической подложки и лицевого
+              слоя натурального шпона, что обеспечивает высокие звукоизоляционные
+              свойства для пространств требовательных к акустическому комфорту
+              и акцентному зонированию
+            </p>
+          </header>
+
+          <div class="veneer-gallery">
+            <div class="veneer-col">
+              <figure class="veneer-card veneer-card--wide" data-panel="veneer-flat-waves">
+                <span class="veneer-card-media">
+                  <img
+                    src="assets/image/wall/flat-lines.webp"
+                    alt="Шпонированная стеновая панель флэт линии"
+                    loading="lazy"
+                  />
+                </span>
+                <figcaption class="veneer-caption">
+                  двуслойная шпонированная<br />стеновая панель <b>флэт волны</b>
+                </figcaption>
+              </figure>
+
+              <div class="veneer-row">
+                <figure class="veneer-card" data-panel="veneer-flat-lines">
+                  <span class="veneer-card-media">
+                    <img
+                      src="assets/image/wall/flat-waves.webp"
+                      alt="Шпонированная стеновая панель флэт волны"
+                      loading="lazy"
+                    />
+                  </span>
+                  <figcaption class="veneer-caption">
+                    двуслойная шпонированная стеновая панель
+                    <b>флэт линии</b>
+                  </figcaption>
+                </figure>
+
+                <figure class="veneer-card" data-panel="veneer-flat-radius">
+                  <span class="veneer-card-media">
+                    <img
+                      src="assets/image/wall/flat-radius.webp"
+                      alt="Шпонированная стеновая панель флэт радиус"
+                      loading="lazy"
+                    />
+                  </span>
+                  <figcaption class="veneer-caption">
+                    двуслойная шпонированная стеновая панель
+                    <b>флэт радиус</b>
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
+
+            <div class="veneer-hero">
+              <span class="veneer-hero-media">
+                <img
+                  src="assets/image/wall/43e9f1372eec83341ed8.jpg"
+                  alt="Интерьер с акустическими панелями из натурального шпона"
+                  loading="lazy"
+                />
+                <span class="veneer-hero-label">натуральный шпон</span>
+              </span>
+              <span class="veneer-dots" aria-hidden="true">
+                <img class="veneer-swatch" src="assets/image/catalog/tex/rosewood.webp?v=3" alt="" />
+                <img class="veneer-swatch" src="assets/image/catalog/tex/black-walnut.webp?v=3" alt="" />
+                <img class="veneer-swatch" src="assets/image/catalog/tex/wenge.webp?v=3" alt="" />
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="felt-cat" id="felt">
+        <div class="felt-cat-inner">
+          <header class="felt-cat-head">
+            <h2 class="felt-cat-title">панели<br />из фетра</h2>
+            <p class="felt-cat-subtitle">крупноформатные</p>
+            <p class="felt-cat-text">
+              панели доступны в однослойном и двухслойном исполнении, широкий
+              выбор готовых узоров и возможность создания индивидуального дизайна
+              позволяют адаптировать панели под любой интерьер или фирменный
+              стиль. двуслойная конструкция сочетает два цвета фетра, делая
+              рисунок более выразительным, а различные варианты толщины помогают
+              подобрать оптимальный уровень звукопоглощения
+            </p>
+          </header>
+
+          <div class="felt-cat-gallery">
+            <figure class="felt-card" data-panel="felt-riel">
+              <span class="felt-card-media">
+                <img src="assets/image/catalog/panel/e8202120c6729a8ef36be3b060748718fff65054.webp" alt="Стеновая панель риэл" loading="lazy" />
+              </span>
+              <figcaption class="felt-caption">
+                двуслойная стеновая<br />панель <b>риэл</b>
+              </figcaption>
+            </figure>
+
+            <figure class="felt-card felt-card--w2" data-panel="felt-reika">
+              <span class="felt-card-media">
+                <img src="assets/image/catalog/panel/6d9d211808268361bb56c3deffd77c0f1fd7651b.webp" alt="Стеновая панель рейка" loading="lazy" />
+              </span>
+              <figcaption class="felt-caption">
+                однослойная стеновая<br />панель <b>рейка</b>
+              </figcaption>
+            </figure>
+
+            <figure class="felt-card" data-panel="felt-neuro">
+              <span class="felt-card-media">
+                <img src="assets/image/catalog/panel/c64e55828e2004de82820b93133ba0df8d7c58d0.webp" alt="Стеновая панель нейро" loading="lazy" />
+              </span>
+              <figcaption class="felt-caption">
+                двуслойная стеновая<br />панель <b>нейро</b>
+              </figcaption>
+            </figure>
+
+            <figure class="felt-card felt-card--tall" data-panel="felt-avangard">
+              <span class="felt-card-media">
+                <img src="assets/image/catalog/panel/c1fd7037c6ac64767af3ba3e94444bac97ebdeca.webp" alt="Стеновая панель авангард" loading="lazy" />
+              </span>
+              <figcaption class="felt-caption">
+                двуслойная стеновая<br />панель <b>авангард</b>
+              </figcaption>
+            </figure>
+
+            <div class="felt-hero">
+              <span class="felt-hero-media">
+                <img
+                  src="assets/image/design/11__2.jpg"
+                  alt="Интерьер с акустическими панелями из фетра"
+                  loading="lazy"
+                />
+                <span class="felt-hero-label">усиленное шумоподавление</span>
+              </span>
+              <span class="felt-dots" aria-hidden="true">
+                <img class="veneer-swatch" src="assets/image/catalog/tex/sw-felt-1.webp" alt="" />
+                <img class="veneer-swatch" src="assets/image/catalog/tex/sw-felt-2.webp" alt="" />
+                <img class="veneer-swatch" src="assets/image/catalog/tex/sw-felt-3.webp" alt="" />
+                <img class="veneer-swatch" src="assets/image/catalog/tex/sw-felt-4.webp" alt="" />
+                <span class="felt-dots-more">+33</span>
+              </span>
+            </div>
+
+            <figure class="felt-card" data-panel="felt-reika-accent">
+              <span class="felt-card-media">
+                <img src="assets/image/catalog/panel/eafd39c47aff2ba2a245c9b313b3d70ba8b492f4.webp" alt="Стеновая панель рейка-акцент" loading="lazy" />
+              </span>
+              <figcaption class="felt-caption">
+                однослойная стеновая<br />панель <b>рейка-акцент</b>
+              </figcaption>
+            </figure>
+
+            <figure class="felt-card" data-panel="felt-dzen">
+              <span class="felt-card-media">
+                <img src="assets/image/catalog/panel/fa37cd5654a9bd44978a07cc626e93ddbb222359.webp" alt="Стеновая панель дзен" loading="lazy" />
+              </span>
+              <figcaption class="felt-caption">
+                двуслойная стеновая<br />панель <b>дзен</b>
+              </figcaption>
+            </figure>
+
+            <figure class="felt-card felt-card--w2" data-panel="felt-neuro-2">
+              <span class="felt-card-media">
+                <img src="assets/image/catalog/panel/c7c9805cc46400015aca892508cde68d836792f2.webp" alt="Стеновая панель нейро" loading="lazy" />
+              </span>
+              <figcaption class="felt-caption">
+                двуслойная стеновая<br />панель <b>нейро</b>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="small-cat" id="small">
+        <div class="small-cat-inner">
+          <header class="small-cat-head">
+            <h2 class="small-cat-title">малоформатные панели</h2>
+            <p class="small-cat-text">
+              малоформатные панели — компактное решение для создания акустических
+              композиций и акцентных зон. доступны в широком ассортименте готовых
+              узоров, а также могут быть изготовлены с индивидуальным дизайном,
+              отражающим фирменный стиль или особенности проекта. панели имеют
+              толщину 9 мм, обеспечивая эффективное звукопоглощение и сохраняя
+              лёгкость конструкции. благодаря небольшому формату они позволяют
+              создавать разнообразные композиции и легко адаптируются под
+              помещения любого размера
+            </p>
+          </header>
+
+          <div class="small-cat-gallery">
+            <figure class="small-card" data-panel="small-plain">
+              <span class="small-card-media">
+                <img src="assets/image/catalog/panel/374ecae59ae1407eae211fc3ba7e555467c3236c.webp" alt="Стеновая панель плейн" loading="lazy" />
+              </span>
+              <figcaption class="small-caption">
+                однослойная стеновая<br />панель <b>плейн</b>
+              </figcaption>
+            </figure>
+
+            <figure class="small-card" data-panel="small-volny">
+              <span class="small-card-media">
+                <img src="assets/image/catalog/panel/51f34bea8b67c740183b4b35f8505b8fed91589d.webp" alt="Стеновая панель волны" loading="lazy" />
+              </span>
+              <figcaption class="small-caption">
+                однослойная стеновая<br />панель <b>волны</b>
+              </figcaption>
+            </figure>
+
+            <figure class="small-card" data-panel="small-arka">
+              <span class="small-card-media">
+                <img src="assets/image/catalog/panel/a482441196acb729326180c436fcaa085713b264.webp" alt="Стеновая панель арка" loading="lazy" />
+              </span>
+              <figcaption class="small-caption">
+                однослойная стеновая<br />панель <b>арка</b>
+              </figcaption>
+            </figure>
+
+            <figure class="small-card" data-panel="small-segment">
+              <span class="small-card-media">
+                <img src="assets/image/catalog/panel/91caf06a6e23ad498661057613f8b0290efebc56.webp" alt="Стеновая панель сегмент" loading="lazy" />
+              </span>
+              <figcaption class="small-caption">
+                однослойная стеновая<br />панель <b>сегмент</b>
+              </figcaption>
+            </figure>
+
+            <div class="small-hero">
+              <span class="small-hero-media">
+                <img
+                  src="assets/image/catalog/panel/97b866214e3304c771c2b32e1515cd108a396dc3.webp"
+                  alt="Самоклеящиеся малоформатные панели в интерьере"
+                  loading="lazy"
+                />
+                <span class="small-hero-label">самоклеящийся слой</span>
+              </span>
+              <span class="small-dots" aria-hidden="true">
+                <img class="veneer-swatch" src="assets/image/catalog/tex/sw-small-1.webp?v=3" alt="" />
+                <img class="veneer-swatch" src="assets/image/catalog/tex/sw-small-2.webp" alt="" />
+                <img class="veneer-swatch" src="assets/image/catalog/tex/sw-small-3.webp" alt="" />
+                <img class="veneer-swatch" src="assets/image/catalog/tex/sw-small-4.webp" alt="" />
+                <span class="small-dots-more">+25</span>
+              </span>
+            </div>
+
+            <figure class="small-card small-card--tall" data-panel="small-fraktal">
+              <span class="small-card-media">
+                <img src="assets/image/catalog/panel/f01ef8be119c62b68b05d91d539fd260a60a6927.webp" alt="Стеновая панель фрактал" loading="lazy" />
+              </span>
+              <figcaption class="small-caption">
+                однослойная стеновая<br />панель <b>фрактал</b>
+              </figcaption>
+            </figure>
+
+            <figure class="small-card small-card--tall" data-panel="small-reiki-accent">
+              <span class="small-card-media">
+                <img src="assets/image/catalog/panel/87c58aa88480fdffcf4349b26a9a87be48945a0f.webp" alt="Стеновая панель рейки-акцент" loading="lazy" />
+              </span>
+              <figcaption class="small-caption">
+                однослойная стеновая<br />панель <b>рейки-акцент</b>
+              </figcaption>
+            </figure>
+
+            <figure class="small-card" data-panel="small-kvadraty">
+              <span class="small-card-media">
+                <img src="assets/image/catalog/panel/080591804b1fcda09ab89f291d15311f045b1484.webp" alt="Стеновая панель квадраты" loading="lazy" />
+              </span>
+              <figcaption class="small-caption">
+                однослойная стеновая<br />панель <b>квадраты</b>
+              </figcaption>
+            </figure>
+
+            <figure class="small-card" data-panel="small-pyramids">
+              <span class="small-card-media">
+                <img src="assets/image/catalog/panel/dc782e6eaec6aadc7d45ead16670cbd4d07f9848.webp" alt="Стеновая панель 3D пирамиды" loading="lazy" />
+              </span>
+              <figcaption class="small-caption">
+                однослойная стеновая<br />панель <b>3D пирамиды</b>
+              </figcaption>
+            </figure>
+
+            <figure class="small-card" data-panel="small-reika">
+              <span class="small-card-media">
+                <img src="assets/image/catalog/panel/b444ef22d076680cafd3301a1cc85ea2a9926a32.webp" alt="Стеновая панель рейка" loading="lazy" />
+              </span>
+              <figcaption class="small-caption">
+                однослойная стеновая<br />панель <b>рейка</b>
+              </figcaption>
+            </figure>
+
+            <figure class="small-card" data-panel="small-soty">
+              <span class="small-card-media">
+                <img src="assets/image/catalog/panel/fc47a794bfaa09ec775a82e1377c502841397897.webp" alt="Стеновая панель соты" loading="lazy" />
+              </span>
+              <figcaption class="small-caption">
+                однослойная стеновая<br />панель <b>соты</b>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="pvc" id="pvc">
+        <div class="pvc-inner">
+          <header class="pvc-head">
+            <h2 class="pvc-title">панели pvc</h2>
+            <p class="pvc-subtitle">крупноформатные и малоформатные</p>
+            <p class="pvc-text">
+              практичное решение для долговечной и эстетичной отделки стен.
+              водонепроницаемый полимер с текстурой дерева сочетает практичность
+              и выразительный внешний вид, а акустический фетр толщиной 9 мм
+              помогает улучшить акустику помещения. панели легко интегрируются
+              в интерьер, просты в монтаже и уходе
+            </p>
+          </header>
+
+          <div class="pvc-gallery">
+            <figure class="pvc-card" data-panel="pvc-reika">
+              <span class="pvc-card-media">
+                <img
+                  src="assets/image/catalog/panel/907ffd0f67e59d1201079665c3caedd2abc074b0.webp"
+                  alt="PVC панель рейка"
+                  loading="lazy"
+                />
+              </span>
+              <figcaption class="pvc-caption">
+                двуслойная стеновая<br />pvc панель <b>рейка</b>
+              </figcaption>
+            </figure>
+
+            <div class="pvc-hero">
+              <span class="pvc-hero-media">
+                <img
+                  src="assets/image/catalog/panel/25c280682ce0222ce194f3bc9af41794f3b5870f.webp"
+                  alt="Интерьер кабинета с PVC панелями"
+                  loading="lazy"
+                />
+                <span class="pvc-hero-label">водоотталкивающий полимер</span>
+              </span>
+              <span class="pvc-dots" aria-hidden="true">
+                <img class="veneer-swatch" src="assets/image/catalog/panel/907ffd0f67e59d1201079665c3caedd2abc074b0.webp" alt="" />
+                <img class="veneer-swatch" src="assets/image/catalog/panel/2599190c490b1c95532dca0b31d75efae9efe24e.webp" alt="" />
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-banner">
+        <div class="cta-banner-inner">
+          <p class="cta-banner-text">
+            исследуйте коллекции и создайте<br />свое акустическое пространство
+          </p>
+          <a class="cta-banner-btn" href="walls.html">
+            перейти в раздел стеновых панелей
+          </a>
+        </div>
+      </section>
+
+      <section class="custom" id="custom">
+        <div class="custom-inner">
+          <figure class="custom-media">
+            <img
+              src="assets/image/catalog/panel/03441e8354863d26a2290fb14cb56175a6b873c6.webp"
+              alt="Раскладка акустических панелей разной фактуры и цвета"
+              loading="lazy"
+            />
+            <span class="custom-media-note">
+              <span class="custom-media-star" aria-hidden="true"></span>
+              доступна индивидуальная кастомизация — любой размер, цвет
+              и уникальный узор
+            </span>
+          </figure>
+
+          <div class="custom-body">
+            <h2 class="custom-title">не ограничиваем<br />дизайн стандартами</h2>
+            <p class="custom-text">
+              адаптируем наши продукты под конкретный проект — от внешнего вида
+              до функциональных характеристик
+            </p>
+            <ul class="custom-list">
+              <li>создадим индивидуальный узор или адаптируем существующий</li>
+              <li>подберём оттенок под интерьер или фирменную палитру</li>
+              <li>
+                адаптируем размеры и толщину под необходимые акустические
+                характеристики
+              </li>
+              <li>интегрируем световой профиль в акустические решения</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="cat-section" id="ceiling">
+        <div class="cat-section-inner">
+          <h2 class="cat-section-title">
+            потолочные
+            <br />
+            решения
+          </h2>
+        </div>
+      </section>
+
+      <section class="baffle" id="baffle">
+        <div class="baffle-inner">
+          <header class="baffle-head">
+            <h2 class="baffle-title">вертикальные<br />баффлы</h2>
+            <p class="baffle-text">
+              вертикальные потолочные баффлы — подвесные акустические элементы,
+              которые эффективно снижают уровень шума и эха, сохраняя ощущение
+              открытого пространства. выполнены из акустического фетра толщиной
+              24 мм, обеспечивающего высокую эффективность звукопоглощения.
+              конструкция позволяет интегрировать линейное или точечное
+              освещение, объединяя акустику и свет в едином решении
+            </p>
+          </header>
+
+          <div class="baffle-gallery">
+            <figure class="baffle-card" data-panel="baffle-mesh">
+              <span class="baffle-card-media">
+                <img src="assets/image/catalog/panel/852d0e551b6984a3a650be8cccfe5da8da3685ce.webp" alt="Потолочный баффл модуль-сетка" loading="lazy" />
+              </span>
+              <figcaption class="baffle-caption">
+                потолочный баффл<br /><b>модуль-сетка</b>
+              </figcaption>
+            </figure>
+
+            <figure class="baffle-card" data-panel="baffle-plank">
+              <span class="baffle-card-media">
+                <img src="assets/image/catalog/panel/1a3afb84b1777faac173064334141cd861ad4d97.webp" alt="Потолочный баффл модуль-планка" loading="lazy" />
+              </span>
+              <figcaption class="baffle-caption">
+                потолочный баффл<br /><b>модуль-планка</b>
+              </figcaption>
+            </figure>
+
+            <figure class="baffle-card" data-panel="baffle-wave">
+              <span class="baffle-card-media">
+                <img src="assets/image/catalog/panel/cc16f6075c5a7a46cf4dba62cbc5939c596c33f9.webp" alt="Потолочный баффл модуль-волна" loading="lazy" />
+              </span>
+              <figcaption class="baffle-caption">
+                потолочный баффл<br /><b>модуль-волна</b>
+              </figcaption>
+            </figure>
+
+            <figure class="baffle-card" data-panel="baffle-peak">
+              <span class="baffle-card-media">
+                <img src="assets/image/catalog/panel/179b51e15c1cca2bfa6e94211b1f5cc2745b6329.webp" alt="Потолочный баффл рейки-пик" loading="lazy" />
+              </span>
+              <figcaption class="baffle-caption">
+                потолочный баффл<br /><b>рейки-пик</b>
+              </figcaption>
+            </figure>
+
+            <figure class="baffle-card" data-panel="baffle-circle">
+              <span class="baffle-card-media">
+                <img src="assets/image/catalog/panel/e7aefc3a904d4eae7c6a6c612bb79a0139ea22b8.webp" alt="Потолочный баффл рейки-круг" loading="lazy" />
+              </span>
+              <figcaption class="baffle-caption">
+                потолочный баффл<br /><b>рейки-круг</b>
+              </figcaption>
+            </figure>
+
+            <figure class="baffle-card" data-panel="baffle-swave">
+              <span class="baffle-card-media">
+                <img src="assets/image/catalog/panel/19e880e7e814f898ae58d54f8346023e78cc8c14.webp" alt="Потолочный баффл рейки-волна" loading="lazy" />
+              </span>
+              <figcaption class="baffle-caption">
+                потолочный баффл<br /><b>рейки-волна</b>
+              </figcaption>
+            </figure>
+
+            <div class="baffle-hero">
+              <span class="baffle-hero-media">
+                <img
+                  src="assets/image/catalog/panel/e9c768494f1625746d5961fb5040d2d669a133ea.webp"
+                  alt="Интерьер с потолочными баффлами и линейным освещением"
+                  loading="lazy"
+                />
+                <span class="baffle-hero-label">гибкая бесшовная система</span>
+              </span>
+              <span class="baffle-dots" aria-hidden="true">
+                <img class="veneer-swatch" src="assets/image/catalog/tex/sw-baffle-1.webp" alt="" />
+                <img class="veneer-swatch" src="assets/image/catalog/tex/sw-baffle-2.webp" alt="" />
+                <img class="veneer-swatch" src="assets/image/catalog/tex/sw-baffle-3.webp" alt="" />
+                <img class="veneer-swatch" src="assets/image/catalog/tex/sw-baffle-4.webp" alt="" />
+                <span class="baffle-dots-more">+33</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="hbaffle" id="hbaffle">
+        <div class="hbaffle-inner">
+          <header class="hbaffle-head">
+            <h2 class="hbaffle-title">горизонтальные<br />дизайн-баффлы</h2>
+            <p class="hbaffle-text">
+              горизонтальные дизайн-баффлы объединяют эффективное
+              звукопоглощение, выразительный дизайн и возможность интеграции
+              освещения. разнообразие форм (круг, квадрат, треугольник),
+              размеров, узоров и цветов позволяет создавать уникальные
+              потолочные композиции. баффлы изготовлены из акустического фетра
+              толщиной 24 мм, который эффективно работает как эхо-ловушка
+              и обеспечивает высокий акустический комфорт
+            </p>
+          </header>
+
+          <div class="hbaffle-gallery">
+            <figure class="hbaffle-card" data-panel="hbaffle-circle-lines">
+              <span class="hbaffle-card-media">
+                <img src="assets/image/catalog/panel/09a8f2ec67b74c4b54f280708161c4d9c1d14829.webp" alt="Потолочный баффл круг-линии" loading="lazy" />
+              </span>
+              <figcaption class="hbaffle-caption">
+                потолочный баффл<br /><b>круг-линии</b>
+              </figcaption>
+            </figure>
+
+            <figure class="hbaffle-card" data-panel="hbaffle-circle-wave">
+              <span class="hbaffle-card-media">
+                <img src="assets/image/catalog/panel/eb7ad55c879ab2bbadadfea219b01024a535c307.webp" alt="Потолочный баффл круг-волна" loading="lazy" />
+              </span>
+              <figcaption class="hbaffle-caption">
+                потолочный баффл<br /><b>круг-волна</b>
+              </figcaption>
+            </figure>
+
+            <figure class="hbaffle-card" data-panel="hbaffle-circle-wave-3d">
+              <span class="hbaffle-card-media">
+                <img src="assets/image/catalog/panel/b6fc9ef728aa7bb38e9ea1c0dda69673ccf0c312.webp" alt="Потолочный баффл круг-волна 3D" loading="lazy" />
+              </span>
+              <figcaption class="hbaffle-caption">
+                потолочный баффл<br /><b>круг-волна 3D</b>
+              </figcaption>
+            </figure>
+
+            <figure class="hbaffle-card">
+              <span class="hbaffle-card-media">
+                <img src="assets/image/catalog/panel/6eb2e68b1ec7a20ea29e3dd8bdee61898ad40596.webp" alt="Потолочный баффл квадрат-линии" loading="lazy" />
+              </span>
+              <figcaption class="hbaffle-caption">
+                потолочный баффл<br /><b>квадрат-линии</b>
+              </figcaption>
+            </figure>
+
+            <figure class="hbaffle-card">
+              <span class="hbaffle-card-media">
+                <img src="assets/image/catalog/panel/6eb2e68b1ec7a20ea29e3dd8bdee61898ad40596%20(1).webp" alt="Потолочный баффл квадрат-волна" loading="lazy" />
+              </span>
+              <figcaption class="hbaffle-caption">
+                потолочный баффл<br /><b>квадрат-волна</b>
+              </figcaption>
+            </figure>
+
+            <figure class="hbaffle-card hbaffle-card--w2">
+              <span class="hbaffle-card-media">
+                <img src="assets/image/catalog/panel/6eb2e68b1ec7a20ea29e3dd8bdee61898ad40596%20(2).webp" alt="Потолочный баффл квадрат-волна 3D" loading="lazy" />
+              </span>
+              <figcaption class="hbaffle-caption">
+                потолочный баффл<br /><b>квадрат-волна 3D</b>
+              </figcaption>
+            </figure>
+
+            <figure class="hbaffle-card">
+              <span class="hbaffle-card-media">
+                <img src="assets/image/catalog/panel/9cec7d3f6fb67047065f0dba602dc2a31d13d171.webp" alt="Потолочный баффл треугольник-линии" loading="lazy" />
+              </span>
+              <figcaption class="hbaffle-caption">
+                потолочный баффл<br /><b>треугольник-линии</b>
+              </figcaption>
+            </figure>
+
+            <div class="hbaffle-hero">
+              <span class="hbaffle-hero-media">
+                <img
+                  src="assets/image/catalog/panel/4414ef9ac709ed1af00408364d65e61724d918f4.webp"
+                  alt="Интерьер с горизонтальными дизайн-баффлами и световым профилем"
+                  loading="lazy"
+                />
+                <span class="hbaffle-hero-label">встраиваемый световой профиль</span>
+              </span>
+              <span class="hbaffle-dots" aria-hidden="true">
+                <img class="veneer-swatch" src="assets/image/catalog/tex/sw-hbaffle-1.webp" alt="" />
+                <img class="veneer-swatch" src="assets/image/catalog/tex/sw-hbaffle-2.webp" alt="" />
+                <img class="veneer-swatch" src="assets/image/catalog/tex/sw-hbaffle-3.webp" alt="" />
+                <img class="veneer-swatch" src="assets/image/catalog/tex/sw-hbaffle-4.webp" alt="" />
+                <span class="hbaffle-dots-more">+33</span>
+              </span>
+            </div>
+
+            <figure class="hbaffle-card">
+              <span class="hbaffle-card-media">
+                <img src="assets/image/catalog/panel/d6b36bfa9279456a418bfaccd83c8d78e58f57a5.webp" alt="Потолочный баффл треугольник-волна" loading="lazy" />
+              </span>
+              <figcaption class="hbaffle-caption">
+                потолочный баффл<br /><b>треугольник-волна</b>
+              </figcaption>
+            </figure>
+
+            <figure class="hbaffle-card">
+              <span class="hbaffle-card-media">
+                <img src="assets/image/catalog/panel/af7ea84c1ec6f601af97b8ac8ccf5c8dcd775d02.webp" alt="Потолочный баффл треугольник-волна 3D" loading="lazy" />
+              </span>
+              <figcaption class="hbaffle-caption">
+                потолочный баффл<br /><b>треугольник-волна 3D</b>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="float" id="float">
+        <div class="float-inner">
+          <header class="float-head">
+            <h2 class="float-title">парящие стены</h2>
+            <p class="float-text">
+              подвесные акустические панели, закреплённые на тонких тросах. они
+              помогают зонировать пространство, эффективно снижают уровень шума
+              и становятся выразительным архитектурным элементом интерьера.
+              конструкция предусматривает интеграцию освещения, объединяя
+              акустику, свет и дизайн в едином решении
+            </p>
+          </header>
+
+          <div class="float-gallery">
+            <div class="float-left">
+              <figure class="float-card" data-panel="float-lines">
+                <span class="float-card-media">
+                  <img src="assets/image/catalog/panel/7c0d9fd4583318d465a198748fe2e5b31761ee24.webp?v=3" alt="Подвесная панель линии" loading="lazy" />
+                </span>
+                <figcaption class="float-caption">
+                  подвесная панель<br /><b>линии</b>
+                </figcaption>
+              </figure>
+
+              <figure class="float-card">
+                <span class="float-card-media">
+                  <img src="assets/image/catalog/panel/0f6636d3845c6144ee452d0ee652406ab662ecbe.webp?v=3" alt="Подвесная панель перфоманс" loading="lazy" />
+                </span>
+                <figcaption class="float-caption">
+                  подвесная панель<br /><b>перфоманс</b>
+                </figcaption>
+              </figure>
+
+              <figure class="float-card float-card--wide">
+                <span class="float-card-media">
+                  <img src="assets/image/catalog/panel/7c0d9fd4583318d465a198748fe2e5b31761ee24%20(1).webp?v=3" alt="Подвесная панель сегмент" loading="lazy" />
+                </span>
+                <figcaption class="float-caption">
+                  подвесная панель<br /><b>сегмент</b>
+                </figcaption>
+              </figure>
+            </div>
+
+            <div class="float-hero">
+              <span class="float-hero-media">
+                <img
+                  src="assets/image/catalog/panel/3371ccf98f5db63efa2066820a17513fc1ebcce0.webp"
+                  alt="Интерьер с парящими акустическими стенами"
+                  loading="lazy"
+                />
+                <span class="float-hero-label">приватное пространство без ремонта</span>
+              </span>
+              <span class="float-dots" aria-hidden="true">
+                <img class="veneer-swatch" src="assets/image/catalog/tex/sw-float-1.webp" alt="" />
+                <img class="veneer-swatch" src="assets/image/catalog/tex/sw-float-2.webp" alt="" />
+                <img class="veneer-swatch" src="assets/image/catalog/tex/sw-float-3.webp" alt="" />
+                <img class="veneer-swatch" src="assets/image/catalog/tex/sw-float-4.webp" alt="" />
+                <span class="float-dots-more">+33</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="help" id="help">
+        <div class="help-inner">
+          <figure class="help-media">
+            <img
+              src="assets/image/design/_-___2.webp"
+              alt="Раскладка акустических панелей разной фактуры"
+              loading="lazy"
+            />
+          </figure>
+          <div class="help-body">
+            <h2 class="help-title">нужна помощь<br />в подборе решения?</h2>
+            <p class="help-text">
+              мы подберём оптимальные материалы и рассчитаем количество для
+              вашего проекта. а также создадим персонализированные узоры
+            </p>
+            <button class="help-btn" type="button" data-open-consult>
+              связаться с нами
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="armstrong" id="armstrong">
+        <div class="armstrong-inner">
+          <header class="armstrong-head">
+            <h2 class="armstrong-title">потолочная система<br />армстронг</h2>
+            <p class="armstrong-text">
+              панели для системы armstrong предназначены для установки
+              в подвесной потолок, сочетая эффективное звукопоглощение и широкие
+              возможности дизайна. доступны в однослойном и двухслойном
+              исполнении с декоративными узорами и контрастной подложкой
+            </p>
+          </header>
+
+          <div class="armstrong-gallery">
+            <div class="armstrong-left">
+              <figure class="armstrong-card" data-panel="arm-soft">
+                <span class="armstrong-card-media">
+                  <img src="assets/image/catalog/panel/e4dac8ce3efd90b044141db53ffff1634857c906.webp" alt="Потолочная панель армсофт" loading="lazy" />
+                </span>
+                <figcaption class="armstrong-caption">
+                  однослойная потолочная<br />панель <b>армсофт</b>
+                </figcaption>
+              </figure>
+
+              <figure class="armstrong-card" data-panel="arm-soft-lines">
+                <span class="armstrong-card-media">
+                  <img src="assets/image/catalog/panel/0ff0f2ef0d29b386bc30fd89781faafb8ead5dba.webp" alt="Потолочная панель армсофт-линии" loading="lazy" />
+                </span>
+                <figcaption class="armstrong-caption">
+                  двуслойная потолочная<br />панель <b>армсофт-линии</b>
+                </figcaption>
+              </figure>
+
+              <figure class="armstrong-card" data-panel="arm-soft-radius">
+                <span class="armstrong-card-media">
+                  <img src="assets/image/catalog/panel/b11c0ee2dfc23eb7fc04835ff12a63362153dcc6.webp" alt="Потолочная панель армсофт-радиус" loading="lazy" />
+                </span>
+                <figcaption class="armstrong-caption">
+                  двуслойная потолочная<br />панель <b>армсофт-радиус</b>
+                </figcaption>
+              </figure>
+
+              <figure class="armstrong-card" data-panel="arm-soft-3d">
+                <span class="armstrong-card-media">
+                  <img src="assets/image/catalog/panel/309b18c0cb4bb7bfcbc42b9818db177c9398a271.webp" alt="Потолочная панель армсофт 3D" loading="lazy" />
+                </span>
+                <figcaption class="armstrong-caption">
+                  объёмная потолочная<br />панель <b>армсофт 3D</b>
+                </figcaption>
+              </figure>
+            </div>
+
+            <div class="armstrong-hero">
+              <span class="armstrong-hero-media">
+                <img
+                  src="assets/image/catalog/panel/c8308ae36f9ca32fad2584080bbbd336f3381f3b.webp"
+                  alt="Офис с подвесным потолком армстронг из акустических панелей"
+                  loading="lazy"
+                />
+                <span class="armstrong-hero-label">быстрая реновация потолка</span>
+              </span>
+              <span class="armstrong-dots" aria-hidden="true">
+                <img class="veneer-swatch" src="assets/image/catalog/tex/sw-hbaffle-1.webp" alt="" />
+                <img class="veneer-swatch" src="assets/image/catalog/tex/sw-hbaffle-2.webp" alt="" />
+                <img class="veneer-swatch" src="assets/image/catalog/tex/sw-hbaffle-3.webp" alt="" />
+                <img class="veneer-swatch" src="assets/image/catalog/tex/sw-hbaffle-4.webp" alt="" />
+                <span class="armstrong-dots-more">+33</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-banner">
+        <div class="cta-banner-inner">
+          <p class="cta-banner-text">
+            создайте потолок, который<br />работает на акустику и дизайн
+          </p>
+          <a class="cta-banner-btn" href="ceiling.html">
+            перейти в раздел потолочных решений
+          </a>
+        </div>
+      </section>
+
+      <section class="cat-section" id="lighting">
+        <div class="cat-section-inner">
+          <h2 class="cat-section-title">освещение</h2>
+        </div>
+      </section>
+
+      <section class="embed" id="embed">
+        <div class="embed-inner">
+          <header class="embed-head">
+            <h2 class="embed-title">встраиваемое</h2>
+            <p class="embed-text">
+              встраиваемые светильники разработаны специально для интеграции
+              в акустические панели, потолочные баффлы и другие решения hubox.
+              они позволяют объединить качественное освещение и акустический
+              комфорт, сохраняя чистую геометрию и минималистичный внешний вид
+              интерьера
+            </p>
+          </header>
+
+          <div class="embed-gallery">
+            <figure class="embed-card">
+              <span class="embed-card-media">
+                <img src="assets/image/catalog/panel/4f099bd811c838d60e27f2def320b67b81832396.webp" alt="Встраиваемый потолочный светодиодный спот" loading="lazy" />
+              </span>
+              <figcaption class="embed-caption">
+                встраиваемый потолочный<br />светодиодный <b>спот</b>
+              </figcaption>
+            </figure>
+
+            <figure class="embed-card">
+              <span class="embed-card-media">
+                <img src="assets/image/catalog/panel/f6babd6fca1d7e867e1b99e15ccb2779c5a480d2.webp" alt="Встраиваемый потолочный светодиодный профиль" loading="lazy" />
+              </span>
+              <figcaption class="embed-caption">
+                встраиваемый потолочный<br />светодиодный <b>профиль</b>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="lamp" id="lamp">
+        <div class="lamp-inner">
+          <header class="lamp-head">
+            <h2 class="lamp-title">светильники<br />из фетра</h2>
+            <p class="lamp-text">
+              светильники — самостоятельные подвесные световые решения с корпусом
+              из акустического фетра. они обеспечивают комфортное освещение,
+              улучшают акустику помещения и становятся выразительным элементом
+              современного интерьера
+            </p>
+          </header>
+
+          <div class="lamp-gallery">
+            <figure class="lamp-card">
+              <span class="lamp-card-media">
+                <img src="assets/image/catalog/panel/6434211f63f6f085013f65de6642453ec5e1a9a3.webp" alt="Светодиодный кольцевой светильник" loading="lazy" />
+              </span>
+              <figcaption class="lamp-caption">
+                светодиодный кольцевой<br />светильник
+              </figcaption>
+            </figure>
+
+            <figure class="lamp-card">
+              <span class="lamp-card-media">
+                <img src="assets/image/catalog/panel/97f439baa239e139f5259fffaa9f018f6c050948.webp" alt="Светодиодный светильник линия" loading="lazy" />
+              </span>
+              <figcaption class="lamp-caption">
+                светодиодный светильник<br />линия
+              </figcaption>
+            </figure>
+
+            <div class="lamp-hero">
+              <span class="lamp-hero-media">
+                <img
+                  src="assets/image/catalog/panel/782e791074d9e1d175fd9e8bb47c2c9050e7a334.webp"
+                  alt="Интерьер ресторана с подвесными фетровыми светильниками"
+                  loading="lazy"
+                />
+                <span class="lamp-hero-label">освещение и шумоизоляция 2 в 1</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cat-section" id="workspace">
+        <div class="cat-section-inner">
+          <h2 class="cat-section-title">рабочее<br />пространство</h2>
+        </div>
+      </section>
+
+      <section class="screen" id="screen">
+        <div class="screen-inner">
+          <header class="screen-head">
+            <h2 class="screen-title">акустические<br />экраны и доски</h2>
+            <p class="screen-text">
+              функциональные решения из акустического фетра для организации
+              рабочего пространства. акустический экран разделяет рабочие зоны
+              и снижает уровень шума, а пин-доска позволяет размещать заметки,
+              стикеры и важную информацию. разнообразие цветов гармонично
+              интегрирует решение в интерьер
+            </p>
+          </header>
+
+          <div class="screen-gallery">
+            <figure class="screen-card">
+              <span class="screen-card-media">
+                <img src="assets/image/catalog/panel/15f669f633f5e5f8cb6e4f9c39eb51f7d42d7d41.webp" alt="Фетровый экран линии" loading="lazy" />
+              </span>
+              <figcaption class="screen-caption">
+                фетровый экран<br /><b>линии</b>
+              </figcaption>
+            </figure>
+
+            <figure class="screen-card">
+              <span class="screen-card-media">
+                <img src="assets/image/catalog/panel/15f669f633f5e5f8cb6e4f9c39eb51f7d42d7d41%20(1).webp" alt="Фетровый экран волны" loading="lazy" />
+              </span>
+              <figcaption class="screen-caption">
+                фетровый экран<br /><b>волны</b>
+              </figcaption>
+            </figure>
+
+            <div class="screen-hero">
+              <span class="screen-hero-media">
+                <img
+                  src="assets/image/catalog/panel/3064cb3b17fe82320aee5d6561510d93e9aa637c.webp"
+                  alt="Опенспейс с акустическими фетровыми экранами на столах"
+                  loading="lazy"
+                />
+                <span class="screen-hero-label">невидимые крепления</span>
+              </span>
+              <span class="screen-dots" aria-hidden="true">
+                <img class="veneer-swatch" src="assets/image/catalog/tex/sw-hbaffle-1.webp" alt="" />
+                <img class="veneer-swatch" src="assets/image/catalog/tex/sw-hbaffle-2.webp" alt="" />
+                <img class="veneer-swatch" src="assets/image/catalog/tex/sw-hbaffle-3.webp" alt="" />
+                <img class="veneer-swatch" src="assets/image/catalog/tex/sw-hbaffle-4.webp" alt="" />
+                <span class="screen-dots-more">+33</span>
+              </span>
+            </div>
+
+            <figure class="screen-card screen-card--wide">
+              <span class="screen-card-media">
+                <img src="assets/image/catalog/panel/15f669f633f5e5f8cb6e4f9c39eb51f7d42d7d41%20(2).webp" alt="Фетровый экран волны 3D" loading="lazy" />
+              </span>
+              <figcaption class="screen-caption">
+                фетровый экран<br /><b>волны 3D</b>
+              </figcaption>
+            </figure>
+
+            <figure class="screen-card screen-card--wide">
+              <span class="screen-card-media">
+                <img src="assets/image/catalog/panel/7fceea1f977b066b7f73fb8ac196c680d572d613.webp" alt="Фетровая пин-доска облако" loading="lazy" />
+              </span>
+              <figcaption class="screen-caption">
+                фетровая пин-доска<br /><b>облако</b>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer" id="contacts">
+      <div class="footer-stage">
+        <div class="footer-cta">
+          <h2 class="footer-cta-title">свяжитесь<br />с нашим менеджером</h2>
+          <p class="footer-cta-list footer-cta-list--plain">
+            и получите рекомендации по дизайну и акустическому инжинирингу
+            пространства
+          </p>
+
+          <div class="footer-messengers">
+            <a
+              class="footer-messenger"
+              href="https://wa.me/79819200133"
+              target="_blank"
+              rel="nofollow noopener"
+              aria-label="Написать в WhatsApp"
+            >
+              <span class="footer-messenger-circle">
+                <svg
+                  class="footer-messenger-icon footer-messenger-icon--wa"
+                  viewBox="0 0 22 22"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M11 1C16.523 1 21 5.477 21 11C21 16.523 16.523 21 11 21C9.2328 21.003 7.4966 20.5353 5.97 19.645C4.3147 20.0967 2.6593 20.5483 1.004 21C1.4547 19.344 1.9053 17.688 2.356 16.032C1.465 14.5049 0.9969 12.768 1 11C1 5.477 5.477 1 11 1ZM7.592 6.3C7.5253 6.3027 7.4587 6.3053 7.392 6.308C7.2627 6.3169 7.1364 6.3509 7.02 6.408C6.9116 6.4695 6.8126 6.5463 6.726 6.636C6.606 6.749 6.538 6.847 6.465 6.942C6.0951 7.4229 5.896 8.0133 5.899 8.62C5.901 9.11 6.029 9.587 6.229 10.033C6.638 10.935 7.311 11.89 8.199 12.775C8.413 12.988 8.623 13.202 8.849 13.401C9.9524 14.3724 11.2673 15.073 12.689 15.447C12.8784 15.476 13.0677 15.505 13.257 15.534C13.442 15.544 13.627 15.53 13.813 15.521C14.1042 15.5056 14.3885 15.4268 14.646 15.29C14.7768 15.2223 14.9046 15.1489 15.029 15.07C15.029 15.07 15.0713 15.0413 15.154 14.98C15.289 14.88 15.372 14.809 15.484 14.692C15.568 14.6053 15.638 14.5047 15.694 14.39C15.772 14.227 15.85 13.916 15.882 13.657C15.906 13.459 15.899 13.351 15.896 13.284C15.892 13.177 15.803 13.066 15.706 13.019C15.512 12.932 15.318 12.845 15.124 12.758C15.124 12.758 14.254 12.379 13.722 12.137C13.6663 12.1128 13.6067 12.0989 13.546 12.096C13.4776 12.0888 13.4084 12.0965 13.3432 12.1184C13.278 12.1403 13.2182 12.176 13.168 12.223C13.163 12.221 13.096 12.278 12.373 13.154C12.3315 13.2098 12.2743 13.2519 12.2088 13.2751C12.1433 13.2982 12.0723 13.3013 12.005 13.284C11.9398 13.2666 11.876 13.2446 11.814 13.218C11.69 13.166 11.647 13.146 11.562 13.11C10.9879 12.8599 10.4565 12.5215 9.987 12.107C9.861 11.997 9.744 11.877 9.624 11.761C9.2306 11.3842 8.8878 10.958 8.604 10.493C8.5843 10.4613 8.5647 10.4297 8.545 10.398C8.5033 10.3338 8.4691 10.265 8.443 10.193C8.405 10.046 8.504 9.928 8.504 9.928C8.504 9.928 8.747 9.662 8.86 9.518C8.97 9.378 9.063 9.242 9.123 9.145C9.241 8.955 9.278 8.76 9.216 8.609C8.936 7.925 8.6467 7.2447 8.348 6.568C8.289 6.434 8.114 6.338 7.955 6.319C7.901 6.3123 7.847 6.307 7.793 6.303C7.6587 6.2953 7.5241 6.2966 7.39 6.307C7.4573 6.3047 7.5247 6.3023 7.592 6.3Z"
+                  />
+                </svg>
+              </span>
+            </a>
+
+            <a
+              class="footer-messenger"
+              href="https://max.ru/u/f9LHodD0cOK3WJPM7sQIj9P2X8cJuJuxbxF_1fQLAGK2vIsiZWf4V0CMH4w"
+              target="_blank"
+              rel="nofollow noopener"
+              aria-label="Написать в Max"
+            >
+              <span class="footer-messenger-circle">
+                <img
+                  class="footer-messenger-icon footer-messenger-icon--max"
+                  src="assets/misc-home/-removebg-preview.png"
+                  alt=""
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </span>
+            </a>
+
+            <a
+              class="footer-messenger"
+              href="https://t.me/+79819200133"
+              target="_blank"
+              rel="nofollow noopener"
+              aria-label="Написать в Telegram"
+            >
+              <span class="footer-messenger-circle">
+                <svg
+                  class="footer-messenger-icon footer-messenger-icon--tg"
+                  viewBox="0 0 23 19.5"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M20.2096 1.1545C20.2096 1.1545 22.1523 0.397 21.9904 2.2366C21.9364 2.9942 21.4508 5.6454 21.073 8.5131C20.6413 11.3447 20.2096 14.1763 19.7779 17.0079C19.7779 17.0079 19.67 18.2524 18.6987 18.4688C17.7273 18.6852 16.2704 17.7113 16.0005 17.4949C15.7847 17.3326 11.9534 14.8977 10.6043 13.7074C10.2266 13.3827 9.7949 12.7335 10.6582 11.976C12.5469 10.1724 14.4356 8.3688 16.3243 6.5652C16.9719 5.9159 17.6194 4.401 14.9213 6.2406C12.403 7.954 9.8848 9.6674 7.3665 11.3808C7.3665 11.3808 6.5031 11.9219 4.8843 11.4349C3.7151 11.0742 2.5459 10.7135 1.3767 10.3528C1.3767 10.3528 0.0816 9.5412 2.2941 8.7295C7.6903 6.1865 14.3277 3.5893 20.2096 1.1545Z"
+                  />
+                </svg>
+              </span>
+            </a>
+          </div>
+
+          <div class="footer-socials">
+            <a
+              class="footer-social"
+              href="https://ru.pinterest.com/hubox_design/"
+              target="_blank"
+              rel="noopener"
+              aria-label="Pinterest"
+            >
+              <svg
+                class="footer-social-icon footer-social-icon--pin"
+                viewBox="0 0 17 22"
+                aria-hidden="true"
+              >
+                <path
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M7.2716 14.0464C7.2556 14.1038 7.2405 14.1525 7.2283 14.2011C6.5168 17.079 6.4376 17.7182 5.7063 19.0549C5.3576 19.6902 4.9646 20.2925 4.5302 20.8684C4.4812 20.9336 4.435 21.0173 4.337 20.9969C4.2296 20.9735 4.2211 20.8743 4.2098 20.7848C4.0929 19.9101 4.0279 19.0335 4.0562 18.1502C4.0929 17.0002 4.2305 16.6052 5.6667 10.3708C5.6875 10.2755 5.6639 10.1966 5.6337 10.111C5.2898 9.1537 5.2219 8.1818 5.5225 7.1972C6.1728 5.0704 8.508 4.9079 8.9161 6.6621C9.1677 7.7469 8.5024 9.1673 7.9916 11.2669C7.5685 12.9986 9.5437 14.2303 11.2315 12.9655C12.7883 11.8 13.3924 9.0058 13.2774 7.025C13.0512 3.076 8.8567 2.2227 6.1963 3.4943C3.1458 4.9508 2.4523 8.854 3.83 10.6383C4.0044 10.865 4.3333 11.0042 4.2758 11.2338C4.1872 11.5908 4.109 11.9508 4.0128 12.3059C3.9412 12.5705 3.5332 12.6668 3.274 12.5579C2.7661 12.3458 2.3429 12.0121 1.9999 11.5723C0.8304 10.077 0.4959 7.1194 2.0423 4.6151C3.7556 1.8414 6.9427 0.7186 9.8528 1.0591C13.3283 1.4668 15.525 3.9185 15.9359 6.7C16.1234 7.9667 15.9886 11.0908 14.266 13.2992C12.2841 15.8366 9.0716 16.0049 7.5892 14.4473C7.4752 14.3276 7.3837 14.1885 7.2716 14.0455C7.2716 14.0458 7.2716 14.0461 7.2716 14.0464Z"
+                />
+              </svg>
+            </a>
+
+            <a
+              class="footer-social"
+              href="https://vk.com/hubox_design"
+              target="_blank"
+              rel="noopener"
+              aria-label="ВКонтакте"
+            >
+              <svg
+                class="footer-social-icon footer-social-icon--vk"
+                viewBox="0 0 30 20"
+                aria-hidden="true"
+              >
+                <path
+                  fill="currentColor"
+                  d="M25.755 13.0693C24.2708 11.4943 22.707 10.6071 21.6588 10.1189C22.6399 9.55 24.3421 8.3868 25.7969 6.3151C27.2643 4.2222 27.7842 2.1887 27.9938 1.0594C26.4314 1.0594 24.8689 1.0594 23.3065 1.0594C23.034 1.9892 22.489 3.4028 21.3653 4.8207C19.6674 6.9604 17.6004 7.8943 16.59 8.2679C16.583 5.8623 16.5761 3.4566 16.5691 1.0509C15.1115 1.0552 13.6538 1.0594 12.1962 1.0637C12.2074 5.3019 12.2186 9.5401 12.2298 13.7783C11.0558 13.3665 9.8274 12.6958 8.7667 11.6005C7.4083 10.2038 6.8465 8.616 6.3476 7.2151C5.6558 5.2665 5.3288 3.2118 5.3791 1.1104C3.9215 1.0736 2.4639 1.0368 1.0063 1C0.9434 3.6533 1.3542 6.2472 2.2305 8.7137C2.8133 10.3566 3.614 12.6108 5.6432 14.6995C8.3978 17.5396 11.8063 18.4566 14.1793 18.7241C14.9913 18.8161 15.8032 18.908 16.6152 19C16.6096 16.8943 16.604 14.7887 16.5984 12.683C17.4118 12.7594 18.8959 13.0226 20.3927 14.0458C22.8495 15.7226 23.5874 18.2528 23.7677 18.9618C25.5118 18.9618 27.2559 18.9618 29 18.9618C28.673 17.7137 27.8554 15.2981 25.7508 13.0651C25.7522 13.0665 25.7536 13.0679 25.755 13.0693Z"
+                />
+              </svg>
+            </a>
+
+            <a
+              class="footer-social"
+              href="https://t.me/hubox_design"
+              target="_blank"
+              rel="noopener"
+              aria-label="Telegram"
+            >
+              <svg
+                class="footer-social-icon footer-social-icon--tg"
+                viewBox="0 0 19.5 16.58"
+                aria-hidden="true"
+              >
+                <path
+                  fill="currentColor"
+                  d="M17.008 1.1289C17.008 1.1289 18.6269 0.4977 18.492 2.0307C18.447 2.662 18.0423 4.8713 17.7275 7.2611C17.3678 9.6207 17.008 11.9804 16.6483 14.3401C16.6483 14.3401 16.5584 15.3772 15.7489 15.5575C14.9395 15.7379 13.7253 14.9263 13.5005 14.7459C13.3206 14.6107 10.1278 12.5816 9.0036 11.5897C8.6888 11.3191 8.329 10.778 9.0485 10.1468C10.6225 8.6438 12.1964 7.1408 13.7703 5.6379C14.3099 5.0968 14.8495 3.8343 12.6011 5.3673C10.5026 6.7951 8.404 8.223 6.3055 9.6508C6.3055 9.6508 5.586 10.1017 4.2369 9.6959C3.2626 9.3953 2.2883 9.0947 1.3139 8.7941C1.3139 8.7941 0.2347 8.1178 2.0784 7.4414C6.5753 5.3222 12.1065 3.1579 17.008 1.1289Z"
+                />
+              </svg>
+            </a>
+
+            <a
+              class="footer-social footer-social--yt"
+              href="https://www.youtube.com/@HUBOXDESIGN"
+              target="_blank"
+              rel="noopener"
+              aria-label="YouTube"
+            >
+              <svg
+                class="footer-social-icon footer-social-icon--yt"
+                viewBox="0 0 481.73 337.95"
+                aria-hidden="true"
+              >
+                <path
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M197.53 1.1411C120.767 2.6051 67.4465 6.3861 50.7415 11.5471C33.1205 16.9911 18.0615 31.9041 11.9165 49.9951C-1.7175 90.1351 -2.8545 231.664 10.0535 282.132C12.8425 293.036 17.4575 301.682 24.5815 309.346C34.6805 320.21 46.4355 326.195 63.0295 328.92C127.777 339.555 358.619 339.648 419.239 329.064C436.252 326.093 444.982 321.775 455.53 311.114C467.752 298.761 472.125 287.04 475.932 256.43C484.34 188.834 481.284 84.0781 469.915 50.1681C463.151 29.9941 446.188 15.0611 424.53 10.2161C409.807 6.9221 377.41 4.2441 332.03 2.5701C303.126 1.5041 223.069 0.6531 197.53 1.1411ZM193.03 168.979C193.03 192.8493 193.03 216.7197 193.03 240.59C193.9467 240.108 194.8633 239.626 195.78 239.144C208.819 232.286 315.867 169.809 315.898 169.039C315.929 168.263 235.925 121.507 199.28 100.8841C197.1967 99.7118 195.1133 98.5394 193.03 97.3671C193.03 121.2377 193.03 145.1084 193.03 168.979Z"
+                />
+              </svg>
+            </a>
+          </div>
+
+          <a class="footer-phone" href="tel:+79819200133">+7(981) 920-01-33</a>
+          <a class="footer-email" href="mailto:saleshead@hubox.design"
+            >saleshead@hubox.design</a
+          >
+
+          <p class="footer-address">
+            Санкт-Петербург,&#8232;
+            <br />
+            ул. Учительская, 23 лит А, офис 234
+          </p>
+
+          <nav class="footer-nav" aria-label="Разделы сайта">
+            <a href="walls.html">стеновые панели</a>
+            <a href="designers.html">дизайнерам и архитекторам</a>
+          </nav>
+        </div>
+
+        <p class="footer-req footer-req--company">
+          ИП Некрасов А.В.
+          <br />
+          ИНН: 780431457793
+          <br />
+          <br />
+          Россия, Санкт-Петербург, 195269, ул. Учительская, 23 лит А, офис 234
+        </p>
+
+        <p class="footer-req footer-req--contacts">
+          +79819200133
+          <br />
+          saleshead@hubox.design
+          <br />
+          <br />
+          © Hubox. Зарегистрированный товарный знак. Все права защищены.
+        </p>
+
+        <nav class="footer-legal" aria-label="Правовые документы">
+          <a href="privacy.html"
+            >политика в отношении обработки персональных данных</a
+          >
+          <a href="agreement.html">cогласие на обработку персональных данных</a>
+          <a href="terms.html">пользовательское соглашение</a>
+          <a href="cookie.html">политика использования файлов cookie</a>
+        </nav>
+      </div>
+    </footer>
+
+    <div class="consult-modal" id="consultModal" aria-hidden="true">
+      <div class="consult-modal-overlay" data-close-consult></div>
+      <div
+        class="consult-card"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Поможем с дизайн-проектом"
+      >
+        <button
+          class="consult-close"
+          type="button"
+          data-close-consult
+          aria-label="Закрыть"
+        >
+          &times;
+        </button>
+
+        <div class="consult-left">
+          <h2 class="consult-title">поможем<br />с дизайн-<br />проектом</h2>
+          <ul class="consult-list">
+            <li>адаптируем коллекции под помещение заказчика</li>
+            <li>создадим персонализированные узоры</li>
+            <li>улучшим акустику помещения</li>
+          </ul>
+        </div>
+
+        <div class="consult-right">
+          <p class="consult-success" role="status" hidden>
+            Ваш запрос принят!<br />Мы свяжемся с Вами в ближайшее время
+          </p>
+
+          <form class="consult-form" novalidate>
+            <label class="consult-field">
+              <span class="consult-field-label">Телефон</span>
+              <input
+                class="consult-input"
+                type="tel"
+                name="phone"
+                inputmode="tel"
+                autocomplete="tel"
+                placeholder="+7 (999) 999-99-99"
+                required
+              />
+              <span class="consult-error" role="alert" hidden></span>
+            </label>
+
+            <label class="consult-agree">
+              <input
+                class="consult-agree-input"
+                type="checkbox"
+                name="agree"
+                required
+              />
+              <span class="consult-agree-box" aria-hidden="true"></span>
+              <span class="consult-agree-text">
+                нажимая на кнопку, я подтверждаю согласие с
+                <a href="privacy.html" target="_blank" rel="noopener"
+                  >политикой конфиденциальности</a
+                >
+                и даю согласие на
+                <a href="agreement.html" target="_blank" rel="noopener"
+                  >обработку персональных данных</a
+                >
+              </span>
+            </label>
+
+            <button class="consult-submit" type="submit">
+              получить консультацию
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

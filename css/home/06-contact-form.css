@@ -6,8 +6,8 @@
    ========================================================================== */
 
 .offer {
-  height: 698px;
-  padding: 11px 10px;
+  height: 687px;
+  padding: 11px 10px 0;
   overflow: hidden;
   background: var(--c-light);
 
@@ -363,8 +363,8 @@
 /* ===== МАКЕТ 360 ===== */
 @media (max-width: 639px) {
   .offer {
-    height: 739px;
-    padding: 8px 7px 8px 8px;
+    height: 731px;
+    padding: 8px 7px 0 8px;
   }
 
   .offer-card {

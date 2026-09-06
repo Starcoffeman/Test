@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1512 832" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Цифра брокер">
+  <g transform="translate(70 319)">
+    <!-- ЦИФРА -->
+    <g fill="#111111">
+      <!-- Ц -->
+      <rect x="0" y="0" width="38" height="176"/>
+      <rect x="112" y="0" width="38" height="140"/>
+      <rect x="0" y="138" width="168" height="38"/>
+      <rect x="150" y="176" width="20" height="26"/>
+
+      <!-- И -->
+      <rect x="168" y="0" width="38" height="176"/>
+      <rect x="280" y="0" width="38" height="176"/>
+      <polygon points="206,176 250,176 318,0 274,0"/>
+
+      <!-- Ф (стойка + кольцо) -->
+      <rect x="403" y="-16" width="38" height="208"/>
+      <path fill-rule="evenodd" d="M376 44 H468 A40 40 0 0 1 468 164 H376 A40 40 0 0 1 376 44 Z
+                                   M400 74 H444 A26 26 0 0 1 444 134 H400 A26 26 0 0 1 400 74 Z"/>
+
+      <!-- Р -->
+      <rect x="524" y="0" width="38" height="176"/>
+      <path fill-rule="evenodd" d="M550 0 H604 A50 50 0 0 1 604 100 H550 Z
+                                   M578 28 H600 A16 16 0 0 1 600 60 H578 Z"/>
+
+      <!-- А -->
+      <polygon points="672,176 710,176 770,0 736,0"/>
+      <polygon points="828,176 790,176 730,0 764,0"/>
+      <rect x="702" y="110" width="96" height="32"/>
+    </g>
+
+    <!-- зелёный акцент в центре Ф -->
+    <rect x="394" y="78" width="56" height="64" rx="16" fill="#2ED738"/>
+
+    <!-- брокер -->
+    <g fill="#111111">
+      <!-- б -->
+      <path fill-rule="evenodd" d="M918 72 a52 52 0 1 0 0.01 0 z M918 106 a18 18 0 1 0 -0.01 0 z"/>
+      <path d="M876 124 a52 52 0 0 1 52 -52 h34 v30 h-34 a22 22 0 0 0 -22 22 z"/>
+
+      <!-- р -->
+      <rect x="968" y="72" width="34" height="138"/>
+      <path fill-rule="evenodd" d="M1002 72 h30 a52 52 0 0 1 0 104 h-30 z M1020 100 h14 a24 24 0 0 1 0 48 h-14 z"/>
+
+      <!-- о -->
+      <path fill-rule="evenodd" d="M1089 72 a44 52 0 1 0 0.01 0 z M1089 104 a16 22 0 1 0 -0.01 0 z"/>
+
+      <!-- к -->
+      <rect x="1134" y="72" width="34" height="104"/>
+      <polygon points="1168,128 1198,72 1226,72 1180,140"/>
+      <polygon points="1180,112 1226,176 1198,176 1168,148"/>
+
+      <!-- е -->
+      <path fill-rule="evenodd" d="M1250 72 a42 52 0 1 0 0.01 0 z M1250 104 a15 20 0 1 0 -0.01 0 z"/>
+      <rect x="1210" y="110" width="80" height="26"/>
+
+      <!-- р -->
+      <rect x="1296" y="72" width="34" height="138"/>
+      <path fill-rule="evenodd" d="M1330 72 h30 a52 52 0 0 1 0 104 h-30 z M1348 100 h14 a24 24 0 0 1 0 48 h-14 z"/>
+    </g>
+  </g>
+</svg>

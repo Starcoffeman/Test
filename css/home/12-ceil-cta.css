@@ -1,0 +1,212 @@
+/* ==========================================================================
+   12-ceil-cta.css — промо-блок «решения для потолков» (после блока wallcta)
+   Устроен как блоки .solution: серый фон секции, поверх — белая панель
+   с текстом слева и кадр интерьера справа, между ними и по краям видна
+   серая подложка (--gap). Мобильный макет — стопкой: кадр сверху, панель снизу.
+   Размеры — в px базового макета, пропорции тянет body { zoom: --hb-zoom }.
+   ========================================================================== */
+
+.ceilcta {
+  --gap: 10px;
+
+  position: relative;
+  height: 580px;
+  overflow: hidden;
+  background: var(--c-light);
+}
+
+/* белая подложка под заголовок / текст / кнопку (левая половина) */
+.ceilcta-panel {
+  position: absolute;
+  left: var(--gap);
+  top: var(--gap);
+  bottom: var(--gap);
+  width: 585px;
+  background: var(--c-white);
+}
+
+/* кадр интерьера — правая половина, между ним и панелью зазор --gap */
+.ceilcta-media {
+  position: absolute;
+  left: 605px;
+  right: var(--gap);
+  top: var(--gap);
+  bottom: var(--gap);
+}
+
+.ceilcta-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ceilcta-title {
+  position: absolute;
+  z-index: 2;
+  left: 50px;
+  top: 52px;
+  width: 505px;
+  font-family: var(--ff-display);
+  font-weight: 500;
+  font-size: 52px;
+  line-height: 46px;
+  letter-spacing: -1.5px;
+  color: var(--c-ink);
+}
+
+.ceilcta-text {
+  position: absolute;
+  z-index: 2;
+  left: 50px;
+  top: 168px;
+  width: 490px;
+  font-family: var(--ff-base);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 21px;
+  letter-spacing: -0.2px;
+  color: var(--c-ink);
+}
+
+.ceilcta-btn {
+  position: absolute;
+  z-index: 2;
+  left: 50px;
+  bottom: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 505px;
+  height: 48px;
+  border-radius: 52px;
+  background: var(--c-ink);
+  font-family: var(--ff-base);
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: -0.2px;
+  color: var(--c-white);
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.ceilcta-btn:hover {
+  background: var(--c-accent);
+  color: var(--c-white);
+}
+
+/* ===== МАКЕТ 960 ===== */
+@media (max-width: 1199px) {
+  .ceilcta {
+    height: 580px;
+  }
+
+  .ceilcta-panel {
+    width: 465px;
+  }
+
+  .ceilcta-media {
+    left: 485px;
+  }
+
+  .ceilcta-title {
+    left: 40px;
+    width: 405px;
+  }
+
+  .ceilcta-text {
+    left: 40px;
+    width: 405px;
+  }
+
+  .ceilcta-btn {
+    left: 40px;
+    width: 425px;
+  }
+}
+
+/* ===== МАКЕТ 640 (стопкой: кадр сверху, панель снизу) ===== */
+@media (max-width: 959px) {
+  .ceilcta {
+    height: 940px;
+  }
+
+  .ceilcta-media {
+    left: var(--gap);
+    right: var(--gap);
+    top: var(--gap);
+    bottom: auto;
+    height: 370px;
+  }
+
+  .ceilcta-panel {
+    left: var(--gap);
+    right: var(--gap);
+    top: calc(var(--gap) * 2 + 370px);
+    bottom: var(--gap);
+    width: auto;
+  }
+
+  .ceilcta-title {
+    left: 40px;
+    top: calc(var(--gap) * 2 + 370px + 40px);
+    width: 560px;
+    font-size: 46px;
+    line-height: 42px;
+  }
+
+  .ceilcta-text {
+    left: 40px;
+    top: 560px;
+    width: 560px;
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  .ceilcta-btn {
+    left: 40px;
+    right: 40px;
+    bottom: 44px;
+    width: auto;
+    height: 54px;
+    font-size: 16px;
+  }
+}
+
+/* ===== МАКЕТ 360 ===== */
+@media (max-width: 639px) {
+  .ceilcta {
+    --gap: 8px;
+    height: 840px;
+  }
+
+  .ceilcta-media {
+    height: 300px;
+  }
+
+  .ceilcta-title {
+    left: 28px;
+    top: calc(var(--gap) * 2 + 300px + 28px);
+    width: 300px;
+    font-size: 40px;
+    line-height: 36px;
+    letter-spacing: -0.5px;
+  }
+
+  .ceilcta-text {
+    left: 28px;
+    top: 470px;
+    width: 300px;
+    font-size: 17px;
+    line-height: 24px;
+  }
+
+  .ceilcta-btn {
+    left: 28px;
+    right: 28px;
+    bottom: 28px;
+    width: auto;
+    height: 54px;
+    font-size: 16px;
+  }
+}

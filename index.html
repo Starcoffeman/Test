@@ -51,6 +51,10 @@
     <link rel="stylesheet" href="css/home/08-properties.css" />
     <link rel="stylesheet" href="css/home/09-comparison.css" />
     <link rel="stylesheet" href="css/home/10-spaces-impact.css" />
+    <link rel="stylesheet" href="css/home/10-wall-cta.css" />
+    <link rel="stylesheet" href="css/home/12-ceil-cta.css" />
+    <link rel="stylesheet" href="css/home/13-pro-cta.css" />
+    <link rel="stylesheet" href="css/home/14-felt-cta.css" />
     <link rel="stylesheet" href="css/home/11-custom-slider.css" />
     <link rel="stylesheet" href="css/home/11-walls.css" />
     <link rel="stylesheet" href="css/home/12-ceiling.css" />
@@ -90,18 +94,18 @@
           <a class="header-top-link" href="designers.html">дизайнерам и строителям</a>
           <a class="header-top-link" href="fetr.html">о фетре</a>
           <a class="header-top-link header-top-link--last" href="ceiling.html">потолочные решения</a>
+          <a class="header-top-link" href="catalog.html">каталог</a>
         </nav>
 
         <nav class="header-menu" aria-label="Разделы страницы">
-          <a class="header-menu-link is-active" href="#panels">панели</a>
-          <a class="header-menu-link" href="#proizvod">производство</a>
-          <a class="header-menu-link" href="#material">материал</a>
+          <a class="header-menu-link is-active" href="#proizvod">производство</a>
+          <a class="header-menu-link" href="#properties">преимущества</a>
           <a class="header-menu-link" href="#walls">стены</a>
           <a class="header-menu-link" href="#ceiling">потолок</a>
-          <a class="header-menu-link" href="#doors">двери</a>
-          <a class="header-menu-link" href="#zone">зонирование</a>
-          <a class="header-menu-link" href="#application">применение</a>
           <a class="header-menu-link" href="#designers">дизайнерам</a>
+          <a class="header-menu-link" href="#material">эко-фетр</a>
+          <a class="header-menu-link" href="#application">применение</a>
+          <a class="header-menu-link" href="#gallery">галерея вдохновения</a>
           <a class="header-menu-link" href="#contacts">контакты</a>
         </nav>
 
@@ -187,6 +191,8 @@
           <a class="mobile-menu-link" href="fetr.html">о фетре</a>
           <span class="mobile-menu-line" aria-hidden="true"></span>
           <a class="mobile-menu-link" href="ceiling.html">потолочные решения</a>
+          <span class="mobile-menu-line" aria-hidden="true"></span>
+          <a class="mobile-menu-link" href="catalog.html">каталог</a>
         </nav>
 
         <a class="mobile-menu-banner" href="#callbackModal">
@@ -464,77 +470,6 @@
           </article>
         </div>
       </section>
-      <section class="offer" id="form">
-        <div class="offer-card">
-          <h2 class="offer-title">получите персональное предложение</h2>
-
-          <ul class="offer-list">
-            <li class="offer-item">
-              расчет индивидуального проекта за 24 часа
-            </li>
-            <li class="offer-item">каталог готовых решений</li>
-            <li class="offer-item offer-item--base">
-              персональную консультацию по проекту
-            </li>
-          </ul>
-
-          <form class="offer-form" novalidate>
-            <label class="offer-label" for="offerPhone">телефон</label>
-            <input
-              class="offer-input"
-              id="offerPhone"
-              name="phone"
-              type="tel"
-              inputmode="tel"
-              autocomplete="tel"
-              placeholder="+7 (999) 999-99-99"
-              maxlength="18"
-              required
-            />
-
-            <label class="offer-check">
-              <input
-                class="offer-check-input"
-                type="checkbox"
-                name="agree"
-                required
-              />
-              <span class="offer-check-box" aria-hidden="true"></span>
-              <span class="offer-check-text">
-                нажимая на кнопку, я подтверждаю согласие с
-                <a href="privacy.html">политикой конфиденциальности</a>
-                и даю согласие на
-                <a href="agreement.html">обработку персональных данных</a>
-              </span>
-            </label>
-
-            <button class="offer-submit" type="submit">
-              получить предложение
-            </button>
-
-            <p class="offer-error" role="alert" hidden></p>
-          </form>
-        </div>
-      </section>
-
-      <div
-        class="offer-popup"
-        id="offerPopup"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="offerPopupTitle"
-        aria-hidden="true"
-      >
-        <div class="offer-popup-card">
-          <p class="offer-popup-title" id="offerPopupTitle">
-            ваш запрос принят!
-          </p>
-          <p class="offer-popup-text">
-            мы&nbsp;свяжемся с&nbsp;Вами в&nbsp;ближайшее время
-          </p>
-          <button class="offer-popup-btn" type="button">хорошо</button>
-        </div>
-      </div>
       <section class="felt" id="material">
         <div class="felt-card">
           <h2 class="felt-title reveal">
@@ -552,7 +487,7 @@
           </p>
         </div>
       </section>
-      <section class="properties">
+      <section class="properties" id="properties">
         <div class="properties-photo">
           <div class="properties-photo-card">
             <img
@@ -961,415 +896,126 @@
           </article>
         </div>
       </section>
-      <section class="solution solution--walls" id="walls">
-        <div class="solution-head">
-          <div class="solution-panel"></div>
-          <h2 class="solution-title t-display">
-            решение
+
+      <section class="wallcta" id="walls">
+        <div class="wallcta-stage">
+          <img
+            class="wallcta-img"
+            src="assets/image/wall/43e9f1372eec83341ed8.jpg"
+            alt="Интерьер с акустическими панелями на стене"
+            loading="lazy"
+          />
+          <span class="wallcta-overlay" aria-hidden="true"></span>
+
+          <h2 class="wallcta-title">
+            решения
             <br />
             для стен
           </h2>
-          <a
-            class="solution-btn solution-btn--head btn btn--solid"
-            href="walls.html"
-            target="_blank"
-            rel="noopener"
-          >
-            подробнее
-          </a>
-        </div>
 
-        <div class="solution-stage">
-          <div
-            class="uc-slider solution-slider"
-            data-uc-slider
-            data-autoplay="3000"
-            data-fade="800"
-            data-dots
-          >
-            <div class="uc-slider-slide">
-              <img
-                src="assets/misc-home/Frame_589.png.webp"
-                alt="Интерьер с акустическими панелями на стене"
-              />
-            </div>
-            <div class="uc-slider-slide">
-              <img
-                src="assets/misc-home/Frame_2085666645.png.webp"
-                alt="Стеновые панели из эко-фетра в интерьере"
-                loading="lazy"
-              />
-            </div>
-            <div class="uc-slider-slide">
-              <img
-                src="https://static.tildacdn.com/tild3663-3135-4335-b234-623733343663/Frame_2085666671.png"
-                alt="Акустические стеновые панели в офисе"
-                loading="lazy"
-              />
-            </div>
-            <div class="uc-slider-slide">
-              <img
-                src="assets/misc-home/Frame_2085666672.png.webp"
-                alt="Декоративные панели из эко-фетра на стене"
-                loading="lazy"
-              />
-            </div>
-          </div>
-        </div>
+          <p class="wallcta-text">
+            акустические панели, которые работают и на комфорт, и эстетику
+            интерьера. разные форматы, цвета, материалы и варианты узоров
+            позволяют подобрать решение под пространство или создать
+            индивидуальный дизайн. панели помогают поглощать шум и эхо,
+            а&nbsp;персонализация превращает их в полноценный архитектурный
+            элемент
+          </p>
 
-        <div class="solution-cards">
-          <article class="solution-card solution-card--1">
-            <h3 class="solution-card-title">3D–панели из эко-фетра</h3>
-            <div
-              class="uc-slider solution-card-media"
-              data-uc-slider
-              data-fade="0"
-              data-arrows
-              data-dots
-            >
-              <div class="uc-slider-slide">
-                <img
-                  src="assets/misc-home/image_2_1.jpg.webp"
-                  alt="3D–панель из эко-фетра"
-                  loading="lazy"
-                />
-              </div>
-              <div class="uc-slider-slide">
-                <img
-                  src="assets/misc-home/58743754983_1.jpg.webp"
-                  alt="3D–панель из эко-фетра, фактура"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-          </article>
-
-          <article class="solution-card solution-card--2">
-            <h3 class="solution-card-title">
-              шпонированные двухслойные&#8232;большие панели
-            </h3>
-            <div
-              class="uc-slider solution-card-media"
-              data-uc-slider
-              data-fade="0"
-              data-arrows
-              data-dots
-            >
-              <div class="uc-slider-slide">
-                <img
-                  src="assets/misc-home/image_1.png.webp"
-                  alt="Шпонированная двухслойная панель"
-                  loading="lazy"
-                />
-              </div>
-              <div class="uc-slider-slide">
-                <img
-                  src="assets/misc-home/image_2.png.webp"
-                  alt="Шпонированная панель, вариант рисунка"
-                  loading="lazy"
-                />
-              </div>
-              <div class="uc-slider-slide">
-                <img
-                  src="assets/misc-home/image_3.png.webp"
-                  alt="Шпонированная панель, вариант рисунка"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-          </article>
-
-          <article class="solution-card solution-card--3">
-            <h3 class="solution-card-title">
-              однослойные самоклеящиеся панели из эко-фетра
-            </h3>
-            <div
-              class="uc-slider solution-card-media"
-              data-uc-slider
-              data-fade="0"
-              data-arrows
-              data-dots
-            >
-              <div class="uc-slider-slide">
-                <img
-                  src="assets/misc-home/image_3_1.jpg.webp"
-                  alt="Однослойная самоклеящаяся панель из эко-фетра"
-                  loading="lazy"
-                />
-              </div>
-              <div class="uc-slider-slide">
-                <img
-                  src="assets/misc-home/photo_2025-10-07_162.jpeg.webp"
-                  alt="Самоклеящиеся панели, фактура"
-                  loading="lazy"
-                />
-              </div>
-              <div class="uc-slider-slide">
-                <img
-                  src="assets/misc-home/657567786890-_1.jpg.webp"
-                  alt="Самоклеящиеся панели, раскладка"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-          </article>
-
-          <article class="solution-card solution-card--4">
-            <h3 class="solution-card-title">
-              двухслойные и однослойные&#8232;большие панели из эко-фетра
-            </h3>
-            <div
-              class="uc-slider solution-card-media"
-              data-uc-slider
-              data-fade="0"
-              data-arrows
-              data-dots
-            >
-              <div class="uc-slider-slide">
-                <img
-                  src="assets/misc-home/image_4_1.jpg.webp"
-                  alt="Двухслойная большая панель из эко-фетра"
-                  loading="lazy"
-                />
-              </div>
-              <div class="uc-slider-slide">
-                <img
-                  src="assets/misc-home/Frame_2085666574_2.jpg.webp"
-                  alt="Большие панели из эко-фетра, вариант"
-                  loading="lazy"
-                />
-              </div>
-              <div class="uc-slider-slide">
-                <img
-                  src="https://static.tildacdn.com/tild3337-3331-4432-b532-333166636666/Frame_2085666573_2.jpg"
-                  alt="Большие панели из эко-фетра, вариант"
-                  loading="lazy"
-                />
-              </div>
-              <div class="uc-slider-slide">
-                <img
-                  src="assets/misc-home/Frame_2085666572_2.jpg.webp"
-                  alt="Большие панели из эко-фетра, вариант"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-          </article>
-
-          <a
-            class="solution-btn solution-btn--cards btn btn--solid"
-            href="walls.html"
-            target="_blank"
-            rel="noopener"
-          >
-            подробнее
+          <a class="wallcta-btn" href="walls.html">
+            открыть коллекцию для стен
           </a>
         </div>
       </section>
-      <section class="solution solution--ceiling" id="ceiling">
-        <div class="solution-head">
-          <div class="solution-panel"></div>
-          <h2 class="solution-title t-display">
-            решение
+
+      <section class="ceilcta" id="ceiling">
+        <div class="ceilcta-panel" aria-hidden="true"></div>
+
+        <div class="ceilcta-media">
+          <img
+            src="assets/image/fetr/Frame_2085666721.png"
+            alt="Интерьер с акустическими потолочными баффлами"
+            loading="lazy"
+          />
+        </div>
+
+        <h2 class="ceilcta-title">
+          решения
+          <br />
+          для потолков
+        </h2>
+
+        <p class="ceilcta-text">
+          потолочные решения для комфортной акустики и выразительного интерьера.
+          баффлы, дизайн-конструкции, парящие стены и панели для системы
+          armstrong помогают снизить эхо и организовать пространство. разные
+          формы, цвета и возможность интеграции освещения позволяют создавать
+          индивидуальные композиции
+        </p>
+
+        <a class="ceilcta-btn" href="ceiling.html">
+          открыть коллекцию для потолков
+        </a>
+      </section>
+
+      <section class="procta">
+        <div class="procta-stage">
+          <img
+            class="procta-img"
+            src="assets/image/design/_-___2.png"
+            alt="Интерьер с акустическими панелями на стене"
+            loading="lazy"
+          />
+          <span class="procta-overlay" aria-hidden="true"></span>
+
+          <h2 class="procta-title">
+            дизайнерам
             <br />
-            для потолков
+            и строителям
           </h2>
-          <a
-            class="solution-btn solution-btn--head btn btn--solid"
-            href="ceiling.html"
-          >
-            подробнее
-          </a>
-        </div>
 
-        <div class="solution-stage">
-          <div
-            class="uc-slider solution-slider"
-            data-uc-slider
-            data-autoplay="3000"
-            data-fade="800"
-            data-dots
-          >
-            <div class="uc-slider-slide">
-              <img
-                src="assets/misc-home/Frame_2085666568_1.jpg.webp"
-                alt="Акустический потолок в офисе"
-              />
-            </div>
-            <div class="uc-slider-slide">
-              <img
-                src="assets/misc-home/Frame_2085666569_1.jpg.webp"
-                alt="Подвесные баффлы из эко-фетра"
-                loading="lazy"
-              />
-            </div>
-            <div class="uc-slider-slide">
-              <img
-                src="https://static.tildacdn.com/tild6237-6532-4637-a563-343130316534/Frame_2085666570_1.jpg"
-                alt="Потолочные панели из эко-фетра"
-                loading="lazy"
-              />
-            </div>
-            <div class="uc-slider-slide">
-              <img
-                src="assets/misc-home/Frame_2085666651.jpg.webp"
-                alt="Акустические потолочные решения"
-                loading="lazy"
-              />
-            </div>
-          </div>
-        </div>
+          <p class="procta-text">
+            помогаем превратить дизайн-концепцию в готовое акустическое решение.
+            подбираем материалы и конструкции под особенности объекта,
+            предоставляем техническую информацию и сопровождаем проект
+            на&nbsp;этапах выбора и реализации. типовые или персонализированные
+            решения производим на собственном производстве
+          </p>
 
-        <div class="solution-cards">
-          <article class="solution-card solution-card--1">
-            <h3 class="solution-card-title">подвесные баффлы–круги</h3>
-            <div class="solution-card-media">
-              <img
-                src="assets/misc-home/image_5_2.jpg"
-                alt="Подвесные баффлы–круги"
-                loading="lazy"
-              />
-            </div>
-          </article>
-
-          <article class="solution-card solution-card--2">
-            <h3 class="solution-card-title">подвесные баффлы</h3>
-            <div class="solution-card-media">
-              <img
-                src="assets/misc-home/image_8_2.jpg"
-                alt="Подвесные баффлы"
-                loading="lazy"
-              />
-            </div>
-          </article>
-
-          <article class="solution-card solution-card--3">
-            <h3 class="solution-card-title">
-              двухслойные и&nbsp;однослойные панели для системы Арсмстронг
-            </h3>
-            <div class="solution-card-media">
-              <img
-                src="assets/misc-home/image_7_2.jpg"
-                alt="Панели для системы Армстронг"
-                loading="lazy"
-              />
-            </div>
-          </article>
-
-          <article class="solution-card solution-card--4">
-            <h3 class="solution-card-title">
-              3D–панели для системы Арсмстронг
-            </h3>
-            <div class="solution-card-media">
-              <img
-                src="assets/misc-home/image_6_2.jpg"
-                alt="3D–панели для системы Армстронг"
-                loading="lazy"
-              />
-            </div>
-          </article>
-
-          <a
-            class="solution-btn solution-btn--cards btn btn--solid"
-            href="https://drive.google.com/file/d/1C1jS6xdlDnnwhjXtB8e3b3Hkhr0L6oBJ/view"
-            target="_blank"
-            rel="noopener"
-          >
-            посмотреть каталог
+          <a class="procta-btn" href="designers.html">
+            открыть раздел для профессионалов
           </a>
         </div>
       </section>
-      <section class="solution solution--doors" id="doors">
-        <div class="solution-head">
-          <div class="solution-panel"></div>
-          <h2 class="solution-title t-display">
-            решение
-            <br />
-            для дверей
-          </h2>
+
+      <section class="feltcta">
+        <div class="feltcta-panel" aria-hidden="true"></div>
+
+        <div class="feltcta-media">
+          <img
+            src="assets/image/home/welcome-fetr.webp"
+            alt="Панели из эко-фетра hubox разных цветов и с рельефными узорами"
+            loading="lazy"
+          />
         </div>
 
-        <div class="solution-stage">
-          <div class="uc-slider solution-slider" data-uc-slider>
-            <div class="uc-slider-slide">
-              <img
-                src="assets/misc-home/Frame_2085666581_1.jpg.webp"
-                alt="Дверь с панелями из эко-фетра в интерьере"
-              />
-            </div>
-          </div>
-        </div>
+        <h2 class="feltcta-title">
+          эко-фетр
+          <br />
+          hubox
+        </h2>
 
-        <div class="solution-cards">
-          <article class="solution-card solution-card--1">
-            <h3 class="solution-card-title">
-              панели для звукоизоляции и теплоизоляции дверей
-            </h3>
-            <div class="solution-card-media">
-              <img
-                src="assets/misc-home/0696684_1.jpg"
-                alt="Панель для звуко- и теплоизоляции двери"
-                loading="lazy"
-              />
-            </div>
-          </article>
-        </div>
-      </section>
-      <section class="solution solution--office" id="zone">
-        <div class="solution-head">
-          <div class="solution-panel"></div>
-          <h2 class="solution-title t-display">
-            решение
-            <br />
-            для офиса и зонирования
-          </h2>
-        </div>
+        <p class="feltcta-text">
+          материал, который сочетает акустические свойства, экологичность
+          и свободу дизайна. эко-фетр hubox на 100% состоит из полиэфирного
+          волокна и используется как лицевой слой или подложка панелей.
+          более 30 цветов, различные сочетания и возможности создания узоров
+          позволяют адаптировать материал под самые разные интерьеры
+        </p>
 
-        <div class="solution-stage">
-          <div class="uc-slider solution-slider" data-uc-slider>
-            <div class="uc-slider-slide">
-              <img
-                src="assets/misc-home/Frame_2085666588_1.jpg"
-                alt="Зонирование офиса акустическими перегородками"
-              />
-            </div>
-          </div>
-        </div>
-
-        <div class="solution-cards">
-          <article class="solution-card solution-card--1">
-            <h3 class="solution-card-title">акустические экраны</h3>
-            <div class="solution-card-media">
-              <img
-                src="assets/misc-home/image_11_1.jpg"
-                alt="Акустический экран из эко-фетра"
-                loading="lazy"
-              />
-            </div>
-          </article>
-
-          <article class="solution-card solution-card--2">
-            <h3 class="solution-card-title">доски для заметок</h3>
-            <div class="solution-card-media">
-              <img
-                src="assets/misc-home/hf_20260305_090857_e.png"
-                alt="Доска для заметок из эко-фетра"
-                loading="lazy"
-              />
-            </div>
-          </article>
-
-          <article class="solution-card solution-card--3">
-            <h3 class="solution-card-title">шумопоглащающие перегородки</h3>
-            <div class="solution-card-media">
-              <img
-                src="assets/misc-home/image_10_1.jpg"
-                alt="Шумопоглащающая перегородка из эко-фетра"
-                loading="lazy"
-              />
-            </div>
-          </article>
-        </div>
+        <a class="feltcta-btn" href="fetr.html">
+          познакомиться с эко-фетром
+        </a>
       </section>
       <section class="app" id="application">
         <div class="app-head">
@@ -1632,7 +1278,80 @@
           />
         </div>
       </section>
-      <section class="gallery">
+
+      <section class="offer" id="form">
+        <div class="offer-card">
+          <h2 class="offer-title">получите персональное предложение</h2>
+
+          <ul class="offer-list">
+            <li class="offer-item">
+              расчет индивидуального проекта за 24 часа
+            </li>
+            <li class="offer-item">каталог готовых решений</li>
+            <li class="offer-item offer-item--base">
+              персональную консультацию по проекту
+            </li>
+          </ul>
+
+          <form class="offer-form" novalidate>
+            <label class="offer-label" for="offerPhone">телефон</label>
+            <input
+              class="offer-input"
+              id="offerPhone"
+              name="phone"
+              type="tel"
+              inputmode="tel"
+              autocomplete="tel"
+              placeholder="+7 (999) 999-99-99"
+              maxlength="18"
+              required
+            />
+
+            <label class="offer-check">
+              <input
+                class="offer-check-input"
+                type="checkbox"
+                name="agree"
+                required
+              />
+              <span class="offer-check-box" aria-hidden="true"></span>
+              <span class="offer-check-text">
+                нажимая на кнопку, я подтверждаю согласие с
+                <a href="privacy.html">политикой конфиденциальности</a>
+                и даю согласие на
+                <a href="agreement.html">обработку персональных данных</a>
+              </span>
+            </label>
+
+            <button class="offer-submit" type="submit">
+              получить предложение
+            </button>
+
+            <p class="offer-error" role="alert" hidden></p>
+          </form>
+        </div>
+      </section>
+
+      <div
+        class="offer-popup"
+        id="offerPopup"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="offerPopupTitle"
+        aria-hidden="true"
+      >
+        <div class="offer-popup-card">
+          <p class="offer-popup-title" id="offerPopupTitle">
+            ваш запрос принят!
+          </p>
+          <p class="offer-popup-text">
+            мы&nbsp;свяжемся с&nbsp;Вами в&nbsp;ближайшее время
+          </p>
+          <button class="offer-popup-btn" type="button">хорошо</button>
+        </div>
+      </div>
+
+      <section class="gallery" id="gallery">
         <div class="gallery-head">
           <div class="gallery-stage">
             <div class="gallery-head-card" aria-hidden="true"></div>
@@ -1646,85 +1365,130 @@
 
         <div class="gallery-grid">
           <div class="gallery-stage">
-            <figure class="gallery-item gallery-item--big-top">
-              <span class="gallery-frame">
-                <img
-                  src="assets/misc-home/Rectangle_3781.png.webp"
-                  alt="Интерьер с акустическими панелями hubox"
-                  loading="lazy"
-                />
-              </span>
-            </figure>
+            <!-- блок 1 -->
+            <div class="gallery-block gallery-block--solo">
+              <figure class="gallery-item">
+                <span class="gallery-frame">
+                  <img
+                    src="assets/image/wall/43e9f1372eec83341ed8.jpg"
+                    alt="Интерьер с акустическими стеновыми панелями hubox"
+                    loading="lazy"
+                  />
+                </span>
+              </figure>
+            </div>
 
-            <figure class="gallery-item gallery-item--sq-1">
-              <span class="gallery-frame">
-                <img
-                  src="assets/misc-home/Rectangle_3780.png"
-                  alt="Фрагмент акустической панели крупным планом"
-                  loading="lazy"
-                />
-              </span>
-            </figure>
+            <!-- блок 2 -->
+            <div class="gallery-block gallery-block--split">
+              <figure class="gallery-item gallery-item--main">
+                <span class="gallery-frame">
+                  <img
+                    src="assets/image/fetr/hf_20260402_134849_8.png.webp"
+                    alt="Зона отдыха с акустическими панелями"
+                    loading="lazy"
+                  />
+                </span>
+              </figure>
+              <div class="gallery-col">
+                <figure class="gallery-item">
+                  <span class="gallery-frame">
+                    <img
+                      src="assets/image/home/71e43b552bc1631d55b9f23437a3cb6bd4507aec.webp"
+                      alt="Рабочие места с акустическими экранами"
+                      loading="lazy"
+                    />
+                  </span>
+                </figure>
+                <figure class="gallery-item">
+                  <span class="gallery-frame">
+                    <img
+                      src="assets/image/wall/radius-interior.webp"
+                      alt="Интерьер с радиусной акустической отделкой"
+                      loading="lazy"
+                    />
+                  </span>
+                </figure>
+              </div>
+            </div>
 
-            <figure class="gallery-item gallery-item--sq-2">
-              <span class="gallery-frame">
-                <img
-                  src="assets/misc-home/Rectangle_3782_1.jpg.webp"
-                  alt="Акустические панели в интерьере переговорной"
-                  loading="lazy"
-                />
-              </span>
-            </figure>
+            <!-- блок 3 -->
+            <div class="gallery-block gallery-block--split">
+              <div class="gallery-col">
+                <figure class="gallery-item">
+                  <span class="gallery-frame">
+                    <img
+                      src="assets/image/home/284c49d3b5e3b42caf5bed358d34b5465af2b83e%20(1).jpg"
+                      alt="Кофейня с акустическими панелями"
+                      loading="lazy"
+                    />
+                  </span>
+                </figure>
+                <figure class="gallery-item">
+                  <span class="gallery-frame">
+                    <img
+                      src="assets/image/home/Frame_2085666568_1.webp"
+                      alt="Офис с панорамным остеклением и акустической отделкой"
+                      loading="lazy"
+                    />
+                  </span>
+                </figure>
+              </div>
+              <figure class="gallery-item gallery-item--main">
+                <span class="gallery-frame">
+                  <img
+                    src="assets/image/home/6d4daa42ed339f8cbcbb5770338d19b5ecd2dd47.webp"
+                    alt="Ресепшн с зелёными акустическими панелями"
+                    loading="lazy"
+                  />
+                </span>
+              </figure>
+            </div>
 
-            <figure class="gallery-item gallery-item--sq-3">
-              <span class="gallery-frame">
-                <img
-                  src="assets/misc-home/Rectangle_3784_1.jpg.webp"
-                  alt="Стена, отделанная акустическими панелями"
-                  loading="lazy"
-                />
-              </span>
-            </figure>
+            <!-- блок 4 -->
+            <div class="gallery-block gallery-block--solo">
+              <figure class="gallery-item">
+                <span class="gallery-frame">
+                  <img
+                    src="assets/image/home/146886808be17f4cef5e079d3b687c3aba683d3e.webp"
+                    alt="Акустические решения в общественных пространствах"
+                    loading="lazy"
+                  />
+                </span>
+              </figure>
+            </div>
 
-            <figure class="gallery-item gallery-item--wide">
-              <span class="gallery-frame">
-                <img
-                  src="assets/misc-home/9234980438984932_1.jpg"
-                  alt="Панорамный интерьер с акустической отделкой стен"
-                  loading="lazy"
-                />
-              </span>
-            </figure>
-
-            <figure class="gallery-item gallery-item--wide-mob">
-              <span class="gallery-frame">
-                <img
-                  src="assets/misc-home/Frame_2085666557_1.jpg"
-                  alt="Интерьер с акустической отделкой стен"
-                  loading="lazy"
-                />
-              </span>
-            </figure>
-
-            <figure class="gallery-item gallery-item--big-bottom">
-              <span class="gallery-frame">
-                <img
-                  src="assets/misc-home/Rectangle_3788_1.jpg.webp"
-                  alt="Акустические панели в общественном пространстве"
-                  loading="lazy"
-                />
-              </span>
-            </figure>
-
-            <figure class="gallery-item gallery-item--sq-4">
-              <span class="gallery-frame">
-                <img
-                  src="assets/misc-home/Rectangle_3786_1.jpg.webp"
-                  alt="Деталь акустической панели с фактурой фетра"
-                  loading="lazy"
-                />
-              </span>
-            </figure>
+            <!-- блок 5 -->
+            <div class="gallery-block gallery-block--split">
+              <figure class="gallery-item gallery-item--main">
+                <span class="gallery-frame">
+                  <img
+                    src="assets/image/home/2fca302a32c06638ec3accf6d2e670a5ca1fc0ae.webp"
+                    alt="Зонирование офиса акустическими перегородками"
+                    loading="lazy"
+                  />
+                </span>
+              </figure>
+              <div class="gallery-col">
+                <figure class="gallery-item">
+                  <span class="gallery-frame">
+                    <img
+                      src="assets/image/home/fa2f76d56417b6298ffc966ebfa1afb518da3f10.webp"
+                      alt="Open space с акустическими баффлами на потолке"
+                      loading="lazy"
+                    />
+                  </span>
+                </figure>
+                <figure class="gallery-item">
+                  <span class="gallery-frame">
+                    <img
+                      src="assets/image/fetr/Img-frame.webp"
+                      alt="Ресторан с акустическими панелями"
+                      loading="lazy"
+                    />
+                  </span>
+                </figure>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -2235,7 +1999,6 @@
     <script src="js/home/06-contact-form.js"></script>
     <script src="js/home/11-custom-slider.js"></script>
     <script src="js/home/15-application.js"></script>
-    <script src="js/home/18-gallery.js"></script>
     <script src="js/home/20-manager.js"></script>
     <script src="js/home/22-footer.js"></script>
     <script src="js/home/25-callback-modal.js"></script>
