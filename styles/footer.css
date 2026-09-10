@@ -1,6 +1,6 @@
 .main-footer,
 .footer {
-  background-color: #ededee;
+  background-color: #f8f9fa;
   padding: clamp(35px, 3.2vw, 85px) clamp(20px, 3.5vw, 90px) clamp(25px, 2.5vw, 60px) clamp(20px, 3.5vw, 90px);
   margin-top: var(--gap);
   border-radius: 8px;

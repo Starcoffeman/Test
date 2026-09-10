@@ -346,12 +346,12 @@
     'felt-neuro': feltTwo(
       'нейро',
       'c64e55828e2004de82820b93133ba0df8d7c58d0.webp',
-      '47cf941c48e66193041a9900bfc3624e33285ab0.webp'
+      '310c33a42119cc2b5391797b5d30165fa4c8a696.webp'
     ),
     'felt-neuro-2': feltTwo(
       'нейро',
       'c7c9805cc46400015aca892508cde68d836792f2.webp',
-      '310c33a42119cc2b5391797b5d30165fa4c8a696.webp'
+      '47cf941c48e66193041a9900bfc3624e33285ab0.webp'
     ),
     'felt-avangard': feltTwo(
       'авангард',

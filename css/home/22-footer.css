@@ -524,3 +524,77 @@
     top: 702px;
   }
 }
+
+/* ==========================================================================
+   РАЗДЕЛЕНИЕ: карточка-лид («оставьте заявку» / «свяжитесь с менеджером»)
+   вынесена из <footer> в отдельную секцию .footer-lead. <footer> теперь —
+   ТОЛЬКО подвал: реквизиты + правовые ссылки (сливается с фоном страницы).
+   Внешний вид самой карточки не меняется — она по-прежнему абсолютно
+   позиционируется внутри своей сцены.
+   ========================================================================== */
+.footer-lead {
+  position: relative;
+  overflow: hidden;
+  background: var(--c-light);
+}
+
+.footer-stage--lead {
+  height: 540px;
+}
+
+@media (max-width: 1199px) {
+  .footer-stage--lead { height: 507px; }
+}
+
+@media (max-width: 639px) {
+  .footer-stage--lead { height: 566px; }
+}
+
+/* ---- футер-подвал ---- */
+.footer {
+  background: #f1f1f1;
+}
+
+.footer-stage--strip {
+  height: auto !important;
+  min-height: 0 !important;
+  padding: clamp(16px, 1.6vw, 24px) 24px clamp(16px, 1.6vw, 24px) 50px;
+  box-sizing: border-box;
+}
+
+.footer-stage--strip .footer-req,
+.footer-stage--strip .footer-legal {
+  position: static !important;
+  left: auto !important;
+  top: auto !important;
+}
+
+.footer-stage--strip .footer-req {
+  display: inline-block;
+  vertical-align: top;
+  width: auto;
+}
+
+.footer-stage--strip .footer-req--company {
+  width: 555px;
+}
+
+.footer-stage--strip .footer-legal {
+  margin-top: clamp(14px, 1.4vw, 20px);
+  flex-wrap: wrap;
+  white-space: normal;
+  gap: 8px 24px;
+}
+
+@media (max-width: 599px) {
+  .footer-stage--strip {
+    padding: 24px 18px;
+  }
+  .footer-stage--strip .footer-req {
+    display: block;
+  }
+  .footer-stage--strip .footer-req--company {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}

@@ -129,8 +129,8 @@
   color: var(--c-white);
 }
 
-/* активное состояние — «загорается оранжевым», плюс становится белым */
-.catalog-hotspot.is-active .catalog-hotspot-dot {
+/* наведение курсора — «загорается оранжевым», плюс становится белым */
+.catalog-hotspot:hover .catalog-hotspot-dot {
   background:
     var(--c-accent)
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M5 1V9M1 5H9' stroke='%23ffffff' stroke-width='1.67' stroke-linecap='round'/%3E%3C/svg%3E")
@@ -441,8 +441,8 @@
 
 .veneer-card-media img {
   width: auto;
-  max-width: 70%;
-  max-height: 82%;
+  max-width: 62%;
+  max-height: 74%;
   object-fit: contain;
 }
 
@@ -462,7 +462,7 @@
 }
 
 .veneer-caption b {
-  font-weight: 700;
+  font-weight: 500;
 }
 
 /* ===== КАДР-СЛАЙДЕР ===== */
@@ -482,18 +482,19 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 20% center;
 }
 
 .veneer-hero-label {
   position: absolute;
   top: 132px;
-  right: 120px;
-  padding: 9px 20px;
+  right: 32px;
+  padding: 6px 14px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.62);
   font-family: var(--ff-base);
   font-weight: 400;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1;
   letter-spacing: -0.2px;
   color: var(--c-ink);
@@ -934,9 +935,9 @@
 .small-cat-title {
   font-family: var(--ff-display);
   font-weight: 500;
-  font-size: 46px;
+  font-size: 26px;
   line-height: 1;
-  letter-spacing: -1.2px;
+  letter-spacing: -0.6px;
   text-transform: lowercase;
   color: var(--c-ink);
 }
@@ -1522,27 +1523,24 @@
   position: absolute;
   left: 28px;
   bottom: 28px;
-  max-width: 340px;
-  padding-left: 54px;
+  max-width: 360px;
+  padding-left: 62px;
   font-family: var(--ff-base);
   font-weight: 400;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.35;
   letter-spacing: -0.1px;
   color: var(--c-white);
 }
 
+/* теперь инлайн-SVG (см. разметку) — раньше был грубый 8-угольный клин
+   через clip-path, форма/цвет задавались тут */
 .custom-media-star {
   position: absolute;
   left: 0;
-  top: -4px;
-  width: 42px;
-  height: 42px;
-  background: var(--c-accent);
-  clip-path: polygon(
-    50% 0%, 58% 42%, 100% 50%, 58% 58%,
-    50% 100%, 42% 58%, 0% 50%, 42% 42%
-  );
+  top: 0;
+  width: 34px;
+  height: 34px;
 }
 
 .custom-body {
@@ -1684,7 +1682,7 @@
 .baffle-title {
   font-family: var(--ff-display);
   font-weight: 500;
-  font-size: 52px;
+  font-size: 44px;
   line-height: 0.92;
   letter-spacing: -1.4px;
   text-transform: lowercase;
@@ -3461,33 +3459,72 @@ body.consult-lock {
 }
 
 /* ==========================================================================
-   Футер на странице каталога — подгоняем фикс-раскладку 22-footer.css
-   под адаптивную сетку страницы
+   Футер каталога. Карточка-лид «свяжитесь с нашим менеджером» вынесена в
+   отдельную секцию .footer-lead (голубая, фирменная для каталога), <footer>
+   ниже — только подвал с реквизитами и правовыми ссылками.
    ========================================================================== */
-/* стык с блоком выше без «двойного» серого зазора */
-.footer {
+.footer-lead {
   margin-top: -10px;
 }
 
-/* сцена не должна выпирать за вьюпорт и обрезаться справа */
+/* фон футера-подвала на каталоге — #f1f1f1 */
+.footer {
+  background: #f1f1f1;
+}
+
+.footer-lead .footer-stage,
 .footer .footer-stage {
   width: 100%;
   max-width: 1200px;
 }
 
-/* голубую карточку прижимаем к сетке: 10px и слева, и справа */
-.footer .footer-cta {
+.footer-lead .footer-cta {
   left: 10px;
   right: 10px;
   width: auto;
-  /* на макете каталога карточка голубая, а не тёмная */
   background: #cae0f1;
   color: var(--c-ink);
 }
 
-/* иконки соцсетей на голубом фоне — оранжевые */
-.footer .footer-social {
+.footer-lead .footer-social {
   color: var(--c-accent);
+}
+
+/* маркированный список заменён одной строкой */
+.footer-lead .footer-cta-list--plain {
+  padding-left: 0;
+  list-style: none;
+}
+
+/* заголовок в две строки (жёсткий <br>), а фикс-раскладка 22-footer.css
+   рассчитана на одну — отпускаем фикс-высоту и опускаем текст под ним */
+.footer-lead .footer-cta-title {
+  height: auto;
+  font-size: 52px;
+  line-height: 1;
+}
+
+.footer-lead .footer-cta-list {
+  top: 160px;
+}
+
+@media (max-width: 1199px) {
+  .footer-lead .footer-cta-list {
+    top: 146px;
+  }
+}
+
+@media (max-width: 639px) {
+  .footer-lead .footer-cta-title {
+    height: auto;
+    min-height: 92px;
+    font-size: 34px;
+    line-height: 30px;
+  }
+
+  .footer-lead .footer-cta-list {
+    top: 132px;
+  }
 }
 
 /* ==========================================================================
@@ -3668,7 +3705,7 @@ body.consult-lock {
   align-items: center;
   justify-content: center;
   min-height: 42px;
-  padding: 7px 14px;
+  padding: 4px 14px;
   border-radius: 999px;
   font-family: var(--ff-base);
   font-weight: 500;
@@ -3711,17 +3748,41 @@ body.consult-lock {
 
 .pm-close {
   position: absolute;
-  top: 12px;
-  right: 16px;
+  top: 4px;
+  right: 8px;
   z-index: 4;
-  width: 30px;
-  height: 30px;
-  font-size: 26px;
-  line-height: 1;
-  color: var(--c-grey);
+  width: 74px;
+  height: 74px;
+  /* прячем глиф &times; — крестик рисуем двумя тонкими линиями */
+  font-size: 0;
+  line-height: 0;
+  color: transparent;
+  background: none;
+  border: 0;
+  padding: 0;
   opacity: 0.8;
   cursor: pointer;
   transition: opacity 0.2s ease;
+}
+
+.pm-close::before,
+.pm-close::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 34px;
+  height: 1.4px;
+  background: var(--c-grey);
+  border-radius: 1px;
+}
+
+.pm-close::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.pm-close::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 .pm-close:hover {
@@ -3733,15 +3794,15 @@ body.consult-lock {
   grid-template-columns: 1fr auto;
   gap: 24px;
   align-items: start;
-  padding-right: 44px;
+  padding-right: 84px;
 }
 
 .pm-title {
   max-width: 460px;
   font-family: var(--ff-display);
   font-weight: 500;
-  font-size: 21px;
-  line-height: 1.16;
+  font-size: 23px;
+  line-height: 1;
   letter-spacing: -0.5px;
   color: var(--c-ink);
 }
@@ -3795,8 +3856,10 @@ body.consult-lock {
 
 .pm-rule {
   height: 1px;
-  margin: 11px 0;
-  background: var(--c-line);
+  margin: 16px 0;
+  /* было почти неотличимо от белого фона окна (--c-line #edeeef) — линия
+     не читалась как разделитель */
+  background: #dfe1e4;
 }
 
 .pm-desc {
@@ -3818,20 +3881,49 @@ body.consult-lock {
   align-items: start;
 }
 
+/* .pm-spec внутри — display:contents ниже, значения выравниваются в общую
+   колонку (см. правило .pm-specs-col .pm-spec-value) вместо прежнего
+   justify-content:space-between, из-за которого «0,9» и «11» прижимались
+   к правому краю колонки */
 .pm-specs-col {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 14px;
+  row-gap: 10px;
+  align-items: baseline;
 }
 
-/* сетка 2×N (баффлы) — раскрываем строки прямо в .pm-specs, заполнение построчно */
-.pm-specs-grid {
+.pm-specs-col .pm-spec {
   display: contents;
 }
 
-/* длинные текстовые значения баффлов переносятся, а не расталкивают колонку */
+.pm-specs-col .pm-spec-value {
+  max-width: none;
+  text-align: left;
+  justify-self: start;
+}
+
+/* баффлы (вертикальные и горизонтальные): характеристики — единой таблицей
+   на всю ширину, значения (оранжевые) в общую левую колонку, мельче и плотнее */
+.pm-specs-grid {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 14px;
+  row-gap: 6px;
+  align-items: baseline;
+}
+
+.pm-specs-grid .pm-spec {
+  display: contents;
+}
+
 .pm-specs-grid .pm-spec-value {
-  max-width: 170px;
+  max-width: none;
+  text-align: left;
+  justify-self: start;
+  font-size: 14px;
+  line-height: 1.15;
 }
 
 .pm-spec {
@@ -3844,7 +3936,7 @@ body.consult-lock {
 .pm-spec-label {
   font-size: 12.5px;
   line-height: 1.35;
-  color: var(--c-grey);
+  color: var(--c-ink);
 }
 
 .pm-spec-value {
@@ -3945,7 +4037,11 @@ body.consult-lock {
   grid-template-columns: auto 1fr;
   column-gap: 22px;
   align-items: center;
-  margin-top: 16px;
+  /* прижимаем к низу .pm-body — тогда «закажите тестовые образцы» оказывается
+     на одном уровне с кнопками .pm-actions, которые точно так же прижаты
+     к низу левой колонки (.pm-media забирает flex:1 сверху) */
+  margin-top: auto;
+  padding-top: 16px;
 }
 
 .pm-samples-textcol {
@@ -3997,13 +4093,39 @@ body.pm-lock {
    display:contents и порядок order, чтобы кнопки оказались в самом низу,
    после блока «закажите тестовые образцы», как в макете. */
 @media (max-width: 959px) {
+  /* окно раньше само скроллилось внутри (max-height + overflow-y) — при
+     большом наборе характеристик появлялся отдельный внутренний scrollbar.
+     Вместо этого даём диалогу расти на всю высоту контента, а скроллится
+     сама подложка .pm-modal — как обычная страница, без вложенного окна
+     прокрутки. align-items:flex-start — иначе у центрированного flex-контейнера
+     при overflow обрезается и не доскроллится начало контента (баг браузеров
+     с center + overflow). */
+  .pm-modal {
+    align-items: flex-start;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    /* .pm-overlay — position:absolute с inset:0, его высота считается от
+       собственной (фиксированной, = высоте экрана) рамки .pm-modal, а НЕ от
+       полной прокручиваемой высоты диалога — поэтому у самой подложки должен
+       быть свой сплошной фон, иначе после прокрутки ниже экрана сквозь окно
+       становится видна страница позади */
+    background: var(--c-white);
+  }
+
+  .pm-modal::-webkit-scrollbar {
+    display: none;
+  }
+
   .pm-dialog {
     grid-template-columns: 1fr;
     display: flex;
     flex-direction: column;
     max-width: 420px;
-    max-height: calc(100vh - 60px);
-    overflow-y: auto;
+    max-height: none;
+    overflow: visible;
+    margin: auto;
   }
 
   .pm-left {
@@ -4088,12 +4210,21 @@ body.pm-lock {
 @media (max-width: 639px) {
   .pm-modal {
     padding: 0;
-    align-items: stretch;
+    /* align-items:stretch давал диалогу ФИКСИРОВАННУЮ высоту в 100% модалки —
+       контент, которому нужно было больше места, просто вываливался ЗА
+       пределы собственного (закрашенного) блока диалога и полностью или
+       частично не имел фона под собой. flex-start + min-height ниже даёт
+       тот же «во весь экран», когда контента мало, но не мешает диалогу
+       вырасти выше экрана, когда контента много */
+    align-items: flex-start;
   }
 
   .pm-dialog {
     max-width: 100%;
-    max-height: 100dvh;
+    max-height: none;
+    min-height: 100%;
+    width: 100%;
+    margin: 0;
     padding-top: 44px;
   }
 
@@ -4399,20 +4530,6 @@ body.pm-lock {
 @media (max-width: 639px) {
   .pmc-title {
     font-size: 28px;
-  }
-
-  /* заголовок «свяжитесь / с нашим / менеджером» — три строки, поэтому
-     отпускаем фикс-высоту и опускаем текст под ним, чтобы не наезжало;
-     шрифт крупнее, а межстрочный интервал более плотный */
-  .footer .footer-cta-title {
-    height: auto;
-    min-height: 92px;
-    font-size: 34px;
-    line-height: 30px;
-  }
-
-  .footer .footer-cta-list {
-    top: 132px;
   }
 }
 

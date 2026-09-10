@@ -37,7 +37,15 @@
 }
 
 .slider-static-content .main-text-block h1 {
-  line-height: 0.95 !important;
+  font-size: clamp(40px, 5vw, 128px) !important;
+  line-height: 0.8 !important;
+}
+
+/* подпись под заголовком в герой-слайдере — белая (перебиваем .block p из base.css),
+   размер немного меньше */
+.slider-static-content .sub-text {
+  color: #ffffff !important;
+  font-size: clamp(15px, 1.45vw, 21px) !important;
 }
 
 .living-slider-container,

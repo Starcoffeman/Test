@@ -1,13 +1,12 @@
 /* ==========================================================================
    catalog-page.js — хотспоты «+» на первом экране страницы «Каталог»
-   Клик по хотспоту: прокрутка к нужному разделу + вспышка оранжевым,
-   которая сама гаснет через пару секунд.
+   Подсветка оранжевым — по наведению курсора (см. :hover в CSS).
+   Клик по хотспоту только скроллит к нужному разделу.
    ========================================================================== */
 (function () {
   'use strict';
 
   var HB = (window.HB = window.HB || {});
-  var HIGHLIGHT_MS = 2200;
 
   HB.initCatalogHero = function () {
     var spots = Array.prototype.slice.call(
@@ -15,7 +14,6 @@
     );
     if (!spots.length) return;
 
-    var flashTimer = null;
     var scrollAnim = null;
 
     function easeInOutCubic(t) {
@@ -87,18 +85,8 @@
 
     spots.forEach(function (spot) {
       spot.addEventListener('click', function () {
-        // вспышка: подсвечиваем только текущий, остальные гасим
-        spots.forEach(function (s) {
-          s.classList.remove('is-active');
-        });
-        spot.classList.add('is-active');
-
-        clearTimeout(flashTimer);
-        flashTimer = setTimeout(function () {
-          spot.classList.remove('is-active');
-        }, HIGHLIGHT_MS);
-
-        // навигация к соответствующему разделу каталога
+        // подсветка теперь только по наведению (см. CSS :hover) —
+        // клик лишь скроллит к разделу, без вспышки
         goTo(spot.getAttribute('data-scroll-target'));
       });
     });

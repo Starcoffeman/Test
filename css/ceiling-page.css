@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   gap: var(--gap, 10px);
-  padding-top: 6px !important;
   padding-bottom: var(--gap, 10px);
   width: 100%;
   box-sizing: border-box;
@@ -26,9 +25,9 @@
 .hero-two-blocks-wrapper .hero-block-card,
 .hero-two-blocks-wrapper .living-slider-wrapper,
 .hero-two-blocks-wrapper .card-showroom-blue {
-  height: clamp(360px, 34vw, 600px) !important;
-  min-height: clamp(360px, 34vw, 600px) !important;
-  max-height: clamp(360px, 34vw, 600px) !important;
+  height: clamp(420px, 40vw, 760px) !important;
+  min-height: clamp(420px, 40vw, 760px) !important;
+  max-height: clamp(420px, 40vw, 760px) !important;
   border-radius: 0 !important;
   overflow: hidden !important;
   box-sizing: border-box !important;
@@ -36,9 +35,9 @@
 
 @media (min-width: 769px) {
   .hero-two-blocks-wrapper .living-slider-wrapper.reveal.active {
-    height: clamp(360px, 34vw, 600px) !important;
-    min-height: clamp(360px, 34vw, 600px) !important;
-    max-height: clamp(360px, 34vw, 600px) !important;
+    height: clamp(420px, 40vw, 760px) !important;
+    min-height: clamp(420px, 40vw, 760px) !important;
+    max-height: clamp(420px, 40vw, 760px) !important;
     border-radius: 0 !important;
     overflow: hidden !important;
     box-sizing: border-box !important;
@@ -268,7 +267,7 @@
   padding-top: clamp(12px, 1.5vw, 24px) !important;
   font-family: var(--t-headline-font, "TTFirsNeue", sans-serif) !important;
   color: #fa4616 !important;
-  font-size: clamp(13px, 1.3vw, 22px) !important;
+  font-size: clamp(15px, 1.5vw, 24px) !important;
   font-weight: 500 !important;
   letter-spacing: -0.01em !important;
   text-transform: lowercase !important;
@@ -376,10 +375,10 @@
 
 .ceil-product-hero-title {
   font-family: var(--t-headline-font, "TTFirsNeue", sans-serif) !important;
-  font-size: clamp(36px, 5.2vw, 84px) !important;
+  font-size: clamp(26px, 3vw, 48px) !important;
   font-weight: 500 !important;
   color: #ffffff !important;
-  line-height: 0.9 !important;
+  line-height: 1.02 !important;
   letter-spacing: -0.02em !important;
   margin: 0 0 clamp(12px, 1.4vw, 22px) 0 !important;
   text-transform: lowercase !important;
@@ -407,14 +406,15 @@
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  height: clamp(34px, 2.6vw, 44px) !important;
-  padding: 0 clamp(22px, 2.2vw, 36px) !important;
+  height: clamp(32px, 2.4vw, 40px) !important;
+  padding: 0 clamp(20px, 2vw, 30px) !important;
   border: 1px solid rgba(255,255,255,0.65) !important;
   border-radius: 52px !important;
   font-family: var(--t-text-font, "TTNorms", sans-serif) !important;
-  font-size: clamp(12px, 0.88vw, 15px) !important;
+  font-size: clamp(10px, 0.72vw, 12px) !important;
   color: #ffffff !important;
   background: transparent !important;
+  text-transform: uppercase !important;
 }
 
 .ceil-toggle-centered {
@@ -649,8 +649,8 @@
 .ceil-specs-row {
   display: flex !important;
   align-items: center !important;
-  justify-content: space-between !important;
-  gap: 12px !important;
+  justify-content: flex-start !important;
+  gap: 16px !important;
   padding: 12px 0 !important;
   border-bottom: 1px solid #eef0f4 !important;
   width: 100% !important;
@@ -664,8 +664,9 @@
   font-family: var(--t-text-font, "TTNorms", sans-serif) !important;
   font-size: clamp(13px, 0.95vw, 15px) !important;
   color: #6b7280 !important;
-  flex: 1 1 38% !important;
-  min-width: 90px !important;
+  /* фикс-ширина колонки подписи — значения начинаются с одного уровня */
+  flex: 0 0 clamp(180px, 20vw, 280px) !important;
+  min-width: 0 !important;
 }
 
 .ceil-specs-value {
@@ -673,7 +674,7 @@
   font-size: clamp(15px, 1.15vw, 18px) !important;
   font-weight: 500 !important;
   color: #fa4616 !important;
-  text-align: right !important;
+  text-align: left !important;
   flex: 1 1 auto !important;
   text-transform: lowercase !important;
 }
@@ -830,7 +831,7 @@
   align-items: center !important;
   justify-content: center !important;
   width: 100% !important;
-  height: clamp(50px, 4vw, 64px) !important;
+  height: clamp(40px, 3vw, 50px) !important;
   background: #fa4616 !important;
   color: #ffffff !important;
   border-radius: 52px !important;
@@ -1105,9 +1106,9 @@
 .ceil-fire-head h2 {
   font-family: var(--t-headline-font, "TTFirsNeue", sans-serif) !important;
   color: #4c5262 !important;
-  font-size: clamp(22px, 2.2vw, 36px) !important;
+  font-size: clamp(17px, 1.6vw, 27px) !important;
   font-weight: 500 !important;
-  line-height: 1.15 !important;
+  line-height: 1.05 !important;
   margin: 0 !important;
   text-transform: lowercase !important;
 }
@@ -1115,7 +1116,7 @@
 @media (min-width: 769px) {
   .ceil-fire-btns {
     position: absolute !important;
-    top: clamp(28px, 3.5vw, 56px) !important;
+    top: clamp(48px, 5.5vw, 92px) !important;
     right: clamp(32px, 4vw, 64px) !important;
     display: flex !important;
     gap: 16px !important;
@@ -1128,7 +1129,7 @@
   align-items: center !important;
   justify-content: center !important;
   height: clamp(42px, 3.2vw, 52px) !important;
-  padding: 0 clamp(20px, 2vw, 32px) !important;
+  padding: 0 clamp(48px, 5.5vw, 92px) !important;
   background: #fa4616 !important;
   color: #ffffff !important;
   border-radius: 52px !important;
@@ -1149,6 +1150,9 @@
   gap: clamp(12px, 1.5vw, 24px) !important;
   margin-top: clamp(36px, 4vw, 64px) !important;
   width: 100% !important;
+  /* убрана только визуальная линия-разделитель сверху */
+  border-top: 0 !important;
+  padding-top: 0 !important;
 }
 
 .ceil-fire-grid > div {
@@ -1192,7 +1196,7 @@
 
 .ceil-contact-top-grid {
   display: grid !important;
-  grid-template-columns: 1.2fr 1fr !important;
+  grid-template-columns: 1fr 1fr !important;
   gap: clamp(32px, 5vw, 80px) !important;
   align-items: flex-start !important;
   margin-bottom: clamp(40px, 4.5vw, 72px) !important;
@@ -1202,7 +1206,7 @@
   font-family: var(--t-headline-font, "TTFirsNeue", sans-serif) !important;
   font-size: clamp(34px, 3.8vw, 62px) !important;
   font-weight: 500 !important;
-  line-height: 1.08 !important;
+  line-height: 0.98 !important;
   color: #ffffff !important;
   margin: 0 0 clamp(24px, 3vw, 42px) 0 !important;
   text-transform: lowercase !important;
@@ -1255,15 +1259,17 @@
 
 .ceil-orange-circle svg { width: 22px !important; height: 22px !important; display: block !important; }
 
-.ceil-contact-form-col { padding-top: 10px !important; }
+/* форма смещена вниз — «Телефон» примерно на уровне пунктов списка,
+   кнопка «получить консультацию» — на уровне ряда оранжевых кружков (как в макете) */
+.ceil-contact-form-col { padding-top: clamp(70px, 11vw, 150px) !important; }
 
-.ceil-field-group { display: flex !important; flex-direction: column !important; margin-bottom: 20px !important; }
+.ceil-field-group { display: flex !important; flex-direction: column !important; margin-bottom: 26px !important; }
 
 .ceil-field-label {
   font-family: var(--t-text-font, "TTNorms", sans-serif) !important;
-  font-size: 13px !important;
+  font-size: 15px !important;
   color: #a0a6b4 !important;
-  margin-bottom: 6px !important;
+  margin-bottom: 8px !important;
 }
 
 .ceil-line-input {
@@ -1272,8 +1278,8 @@
   border: none !important;
   border-bottom: 1px solid rgba(255,255,255,0.35) !important;
   color: #ffffff !important;
-  font-size: 16px !important;
-  padding: 6px 0 !important;
+  font-size: 19px !important;
+  padding: 9px 0 !important;
   outline: none !important;
   font-family: var(--t-text-font, "TTNorms", sans-serif) !important;
 }
@@ -1281,34 +1287,37 @@
 .ceil-form-checkbox-row {
   display: flex !important;
   align-items: flex-start !important;
-  gap: 10px !important;
-  margin-bottom: 24px !important;
+  gap: 11px !important;
+  margin-bottom: 28px !important;
 }
 
 .ceil-form-checkbox-row input[type="checkbox"] {
   accent-color: #fa4616 !important;
   margin-top: 3px !important;
+  width: 16px !important;
+  height: 16px !important;
+  flex: none !important;
   cursor: pointer !important;
 }
 
 .ceil-form-checkbox-row label {
   font-family: var(--t-text-font, "TTNorms", sans-serif) !important;
-  font-size: 11px !important;
+  font-size: 12.5px !important;
   color: #9aa0b0 !important;
-  line-height: 1.35 !important;
+  line-height: 1.4 !important;
 }
 
 .ceil-form-checkbox-row label a { color: #9aa0b0 !important; text-decoration: underline !important; }
 
 .ceil-exact-submit-btn {
   width: 100% !important;
-  height: 48px !important;
-  border-radius: 48px !important;
+  height: 56px !important;
+  border-radius: 56px !important;
   background: rgba(255,255,255,0.28) !important;
   color: #ffffff !important;
   border: none !important;
   font-family: var(--t-headline-font, "TTFirsNeue", sans-serif) !important;
-  font-size: 14px !important;
+  font-size: 16px !important;
   font-weight: 500 !important;
   cursor: pointer !important;
   transition: background 0.25s ease !important;
@@ -1321,7 +1330,7 @@
   grid-template-columns: 1fr 1fr 1fr !important;
   gap: 24px !important;
   padding-top: clamp(20px, 2.5vw, 36px) !important;
-  border-top: 1px solid rgba(255,255,255,0.1) !important;
+  border-top: 0 !important;
 }
 
 .ceil-mini-socials { display: flex !important; gap: 12px !important; margin-bottom: 12px !important; }
@@ -1344,6 +1353,8 @@
   .ceil-fire-grid { grid-template-columns: repeat(3, 1fr) !important; }
   .ceil-contact-top-grid { grid-template-columns: 1fr !important; gap: 24px !important; }
   .ceil-contact-dark-card { padding: 28px 18px !important; }
+  /* в одну колонку смещение формы вниз не нужно */
+  .ceil-contact-form-col { padding-top: 0 !important; }
 }
 
 @media (max-width: 768px) {

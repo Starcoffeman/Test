@@ -27,12 +27,17 @@
     <link rel="stylesheet" href="css/home/01-header.css?v=1" />
     <link rel="stylesheet" href="css/home/02-mobile-menu.css?v=4" />
     <link rel="stylesheet" href="css/home/24-sticky-header-hide.css" />
-    <link rel="stylesheet" href="css/styles.css?v=32" />
+    <!-- var(--gap) используется в ceiling.css/designers.css/sections.css ниже,
+         но нигде на этой странице не был определён — без variables.css
+         часть отступов между блоками не работала (var(--gap) без fallback)
+         или уезжала на 20px (var(--gap, 20px) в sections.css) -->
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/styles.css?v=39" />
     <link rel="stylesheet" href="css/ceiling.css?v=1" />
     <link rel="stylesheet" href="css/base.css" />
-    <link rel="stylesheet" href="css/styles.css?v=32" />
+    <link rel="stylesheet" href="css/styles.css?v=39" />
     <link rel="stylesheet" href="css/sections.css?v=14" />
-    <link rel="stylesheet" href="css/responsive.css?v=12" />
+    <link rel="stylesheet" href="css/responsive.css?v=14" />
     <link rel="stylesheet" href="css/fetr.css?v=15" />
     <link rel="stylesheet" href="css/designers.css" />
     <link rel="stylesheet" href="css/seiling.css" />
@@ -41,7 +46,7 @@
     <script src="js/home/02-mobile-menu.js"></script>
     <script src="js/home/24-sticky-header-hide.js"></script>
     <script src="js/home/main.js"></script>
-    <link rel="stylesheet" href="css/ceiling-page.css?v=1" />
+    <link rel="stylesheet" href="css/ceiling-page.css?v=17" />
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="css/home/06-contact-form.css" />
     <link rel="stylesheet" href="css/home/22-contact-widget.css" />
@@ -201,7 +206,7 @@
           <img class="ceil-hero-light" src="assets/image/ceiling/black.png" alt="Вертикальные баффлы с освещением" loading="lazy" />
           <div class="ceil-product-hero-overlay">
             <div class="ceil-product-hero-top">
-              <h2 class="ceil-product-hero-title">вертикальные баффлы</h2>
+              <h2 class="ceil-product-hero-title">вертикальные<br />баффлы</h2>
               <p class="ceil-product-hero-desc">
                 оцените наше высокоэффективное потолочное решение для любых помещений.
                 прямые баффлы создают исключительный акустический комфорт в офисах, ресторанах и производственных пространствах
@@ -230,7 +235,7 @@
       <section class="ceil-product-details-wrapper reveal">
         <div class="ceil-details-gallery" id="verticalBafflesGallery">
           <div class="ceil-gallery-badge-topleft">
-            <svg class="ceil-star-icon" width="28" height="28" viewBox="0 0 24 24" fill="#fa4616"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/></svg>
+            <svg class="ceil-star-icon" width="28" height="28" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.9262 0.509682C21.0069 -0.169894 21.9931 -0.169894 22.0738 0.509682L22.7502 6.21071C23.6237 13.5723 29.4277 19.3763 36.7892 20.2498L42.4903 20.9262C43.1699 21.0069 43.1699 21.9931 42.4903 22.0738L36.7892 22.7502C29.4277 23.6237 23.6237 29.4277 22.7502 36.7892L22.0738 42.4903C21.9931 43.1699 21.0069 43.1699 20.9262 42.4903L20.2498 36.7892C19.3763 29.4277 13.5723 23.6237 6.21071 22.7502L0.509682 22.0738C-0.169894 21.9931 -0.169894 21.0069 0.509682 20.9262L6.21071 20.2498C13.5723 19.3763 19.3763 13.5723 20.2498 6.21071L20.9262 0.509682Z" fill="#FE300F"/></svg>
             <span>доступна индивидуальная кастомизация — любой размер, цвет и уникальный узор.</span>
           </div>
           <button class="ceil-gallery-light-btn is-active" type="button">
@@ -342,7 +347,7 @@
       <section class="ceil-product-details-wrapper reveal">
         <div class="ceil-details-gallery" id="horDesignBafflesGallery">
           <div class="ceil-gallery-badge-topleft">
-            <svg class="ceil-star-icon" width="28" height="28" viewBox="0 0 24 24" fill="#fa4616"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/></svg>
+            <svg class="ceil-star-icon" width="28" height="28" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.9262 0.509682C21.0069 -0.169894 21.9931 -0.169894 22.0738 0.509682L22.7502 6.21071C23.6237 13.5723 29.4277 19.3763 36.7892 20.2498L42.4903 20.9262C43.1699 21.0069 43.1699 21.9931 42.4903 22.0738L36.7892 22.7502C29.4277 23.6237 23.6237 29.4277 22.7502 36.7892L22.0738 42.4903C21.9931 43.1699 21.0069 43.1699 20.9262 42.4903L20.2498 36.7892C19.3763 29.4277 13.5723 23.6237 6.21071 22.7502L0.509682 22.0738C-0.169894 21.9931 -0.169894 21.0069 0.509682 20.9262L6.21071 20.2498C13.5723 19.3763 19.3763 13.5723 20.2498 6.21071L20.9262 0.509682Z" fill="#FE300F"/></svg>
             <span>доступна индивидуальная кастомизация — любой размер, цвет и уникальный узор.</span>
           </div>
           <button class="ceil-gallery-light-btn is-active" type="button">
@@ -440,7 +445,7 @@
       <section class="ceil-product-details-wrapper reveal">
         <div class="ceil-details-gallery" id="hoveringWallsGallery">
           <div class="ceil-gallery-badge-topleft">
-            <svg class="ceil-star-icon" width="28" height="28" viewBox="0 0 24 24" fill="#fa4616"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/></svg>
+            <svg class="ceil-star-icon" width="28" height="28" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.9262 0.509682C21.0069 -0.169894 21.9931 -0.169894 22.0738 0.509682L22.7502 6.21071C23.6237 13.5723 29.4277 19.3763 36.7892 20.2498L42.4903 20.9262C43.1699 21.0069 43.1699 21.9931 42.4903 22.0738L36.7892 22.7502C29.4277 23.6237 23.6237 29.4277 22.7502 36.7892L22.0738 42.4903C21.9931 43.1699 21.0069 43.1699 20.9262 42.4903L20.2498 36.7892C19.3763 29.4277 13.5723 23.6237 6.21071 22.7502L0.509682 22.0738C-0.169894 21.9931 -0.169894 21.0069 0.509682 20.9262L6.21071 20.2498C13.5723 19.3763 19.3763 13.5723 20.2498 6.21071L20.9262 0.509682Z" fill="#FE300F"/></svg>
             <span>доступна индивидуальная кастомизация — любой размер, цвет и уникальный узор.</span>
           </div>
           <button class="ceil-gallery-light-btn is-active" type="button">
@@ -524,7 +529,7 @@
       <section class="ceil-product-details-wrapper reveal">
         <div class="ceil-details-gallery" id="armstrongGallery">
           <div class="ceil-gallery-badge-topleft">
-            <svg class="ceil-star-icon" width="28" height="28" viewBox="0 0 24 24" fill="#fa4616"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/></svg>
+            <svg class="ceil-star-icon" width="28" height="28" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.9262 0.509682C21.0069 -0.169894 21.9931 -0.169894 22.0738 0.509682L22.7502 6.21071C23.6237 13.5723 29.4277 19.3763 36.7892 20.2498L42.4903 20.9262C43.1699 21.0069 43.1699 21.9931 42.4903 22.0738L36.7892 22.7502C29.4277 23.6237 23.6237 29.4277 22.7502 36.7892L22.0738 42.4903C21.9931 43.1699 21.0069 43.1699 20.9262 42.4903L20.2498 36.7892C19.3763 29.4277 13.5723 23.6237 6.21071 22.7502L0.509682 22.0738C-0.169894 21.9931 -0.169894 21.0069 0.509682 20.9262L6.21071 20.2498C13.5723 19.3763 19.3763 13.5723 20.2498 6.21071L20.9262 0.509682Z" fill="#FE300F"/></svg>
             <span>доступна индивидуальная кастомизация — любой размер, цвет и уникальный узор.</span>
           </div>
           <div class="ceil-gallery-slides">
@@ -733,33 +738,34 @@
 
     </main>
 
-    <footer class="main-footer">
-      <div class="footer-container reveal">
-        <div class="footer-top">
-          <div class="footer-info-left">
-            <p>ИП Некрасов А.В.</p>
-            <p>ИНН: 780431457793</p>
-            <p class="footer-address">
-              Россия, Санкт-Петербург, 195269, ул. Учительская, 23 лит А, офис
-              234
-            </p>
-          </div>
-          <div class="footer-info-right">
-            <a href="tel:+79819200133" class="footer-link">+79819200133</a>
-            <a href="mailto:saleshead@hubox.design" class="footer-link"
-              >saleshead@hubox.design</a
-            >
-            <p class="footer-copyright">
-              © Hubox. Зарегистрированный товарный знак. Все права защищены.
-            </p>
-          </div>
-        </div>
-        <div class="footer-bottom-links">
-          <a href="privacy.html">политика в отношении обработки персональных данных</a>
-          <a href="agreement.html">согласие на обработку персональных данных</a>
+    <footer class="footer" id="contacts">
+      <div class="footer-stage">
+        <p class="footer-req footer-req--company">
+          ИП Некрасов А.В.
+          <br />
+          ИНН: 780431457793
+          <br />
+          <br />
+          Россия, Санкт-Петербург, 195269, ул. Учительская, 23 лит А, офис 234
+        </p>
+
+        <p class="footer-req footer-req--contacts">
+          +79819200133
+          <br />
+          saleshead@hubox.design
+          <br />
+          <br />
+          © Hubox. Зарегистрированный товарный знак. Все права защищены.
+        </p>
+
+        <nav class="footer-legal" aria-label="Правовые документы">
+          <a href="privacy.html"
+            >политика в отношении обработки персональных данных</a
+          >
+          <a href="agreement.html">cогласие на обработку персональных данных</a>
           <a href="terms.html">пользовательское соглашение</a>
           <a href="cookie.html">политика использования файлов cookie</a>
-        </div>
+        </nav>
       </div>
     </footer>
 

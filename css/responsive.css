@@ -775,11 +775,12 @@ body {
     font-weight: 600;
   }
 
-  /* Мобильный футер — точная копия макета с фото */
-  .main-footer,
-  .footer {
+  /* Мобильный футер — точная копия макета с фото.
+     Только для устаревшего .main-footer; единый .footer (копия главной)
+     стилизуется в css/footer.css и не должен сюда попадать. */
+  .main-footer {
     padding: 30px 18px 35px !important;
-    background-color: #ededee !important;
+    background-color: #f8f9fa !important;
     border-radius: 0 !important;
     margin-top: 0 !important;
   }
@@ -815,7 +816,7 @@ body {
     display: block !important;
     word-break: break-word !important;
   }
-  .footer-address,
+  .main-footer .footer-address,
   .footer-copyright {
     margin-top: 18px !important;
     font-size: 13px !important;
