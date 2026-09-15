@@ -1852,6 +1852,13 @@
   transition: all 0.2s ease;
   margin: 0;
   margin-top: 2px;
+  /* галочка центрируется флексом самого чекбокса, а не фикс. px-координатами —
+     раньше ::after был position:absolute с left:8px/top:3px, рассчитанными на
+     маленький 22px квадрат; на крупных масштабах (клемп растёт до 38px)
+     квадрат увеличивался, а галочка — нет, и оказывалась мелкой и не по центру */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 .checkbox-group-dark input[type="checkbox"]:hover {
   border-color: #ffffff;
@@ -1863,14 +1870,16 @@
 }
 .checkbox-group-dark input[type="checkbox"]:checked::after {
   content: "";
-  position: absolute;
-  left: 8px;
-  top: 3px;
-  width: 6px;
-  height: 12px;
+  /* размер галочки — в тех же пропорциях к квадрату (~27% ширины, ~54%
+     высоты), что и раньше при 22px, но теперь клемпом, а не фикс. px */
+  width: clamp(6px, 0.5vw, 10px);
+  height: clamp(12px, 1vw, 20px);
   border: solid white;
   border-width: 0 2.5px 2.5px 0;
   transform: rotate(45deg);
+  /* у повёрнутой на 45° «L»-галочки визуальный центр ниже геометрического —
+     небольшой сдвиг вверх, чтобы она смотрелась по центру квадрата */
+  margin-top: -12%;
 }
 .checkbox-group-dark a {
   color: #fff;

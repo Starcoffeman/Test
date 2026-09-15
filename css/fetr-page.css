@@ -102,9 +102,20 @@
 .fetr-banner-2 { background-image: url("../assets/image/fetr/Frame_2085666700.png"); }
 .fetr-banner-3 { background-image: url("../assets/image/fetr/Frame_2085666701.png"); }
 .fetr-banner-4 { background-image: url("../assets/image/fetr/Frame_2085666717_1.png"); }
-.fetr-banner-5 { background-image: url("../assets/image/fetr/Frame_2085666718.png"); }
-.fetr-banner-6 { background-image: url("../assets/image/fetr/Frame_2085666721.png"); }
-.fetr-banner-7 { background-image: url("../assets/image/fetr/Frame_2085666723.png"); }
+.fetr-banner-5 {
+  background-image: url("../assets/image/fetr/Frame_2085666718.png");
+  /* пропорции блока чуть шире фото - растягиваем фото по горизонтали
+     на всю ширину блока (небольшое искажение, но без полос по бокам) */
+  background-size: 100% 100%;
+}
+.fetr-banner-6 {
+  background-image: url("../assets/image/fetr/Frame_2085666721.png");
+  background-size: 100% 100%;
+}
+.fetr-banner-7 {
+  background-image: url("../assets/image/fetr/Frame_2085666723.png");
+  background-size: 100% 100%;
+}
 
 .fetr-slide-1 { background-image: url("../assets/image/fetr/Frame_2085666710.png"); }
 .fetr-slide-2 { background-image: url("../assets/image/fetr/Frame_2085666711.png"); }

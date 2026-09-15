@@ -822,7 +822,7 @@
 .fetr-types-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: clamp(16px, 2vw, 30px);
+  gap: clamp(8px, 1vw, 14px);
   width: 100%;
 }
 
@@ -843,7 +843,7 @@
 
 .fetr-type-card-title {
   font-family: var(--t-headline-font, "TT Firs Neue", sans-serif);
-  font-size: clamp(28px, 2.8vw, 46px);
+  font-size: clamp(20px, 1.9vw, 30px);
   line-height: 1.08;
   font-weight: 500;
   color: #ffffff;
@@ -905,11 +905,21 @@
 
 /* Карточка 1 — увеличенная панель на десктопе (заказчик попросил именно
    для карточки 1; мобильную/планшетную ширину не трогаем, тот же брейкпоинт,
-   что и у .fetr-types-grid ниже). */
+   что и у .fetr-types-grid ниже). Картинка тут квадратная (в отличие от
+   карточек 2/3 — у них высокие/узкие), поэтому object-fit:contain упирается
+   в ШИРИНУ контейнера (она уже высоты) и панель на глаз выходит заметно
+   мельче соседних. Даём .fetr-type-visual «вылезти» за горизонтальные
+   паддинги карточки, чтобы квадрат вырастал вплоть до высоты области. */
 @media (min-width: 961px) {
   .fetr-types-grid .fetr-type-card:nth-child(1) .fetr-type-img {
     max-width: 100%;
     max-height: 100%;
+  }
+
+  .fetr-types-grid .fetr-type-card:nth-child(1) .fetr-type-visual {
+    width: calc(100% + 2 * clamp(30px, 3.5vw, 55px));
+    margin-left: calc(-1 * clamp(30px, 3.5vw, 55px));
+    margin-right: calc(-1 * clamp(30px, 3.5vw, 55px));
   }
 }
 
@@ -979,13 +989,17 @@
   border-radius: 50%;
 }
 
+/* было белое «стекло» (rgba белая + backdrop-filter) — такого тона на
+   сайте больше нигде нет. У .ceil-toggle тот же тип стеклянной плашки
+   уже сделан правильно, тёмным тоном: rgba(76,82,98,…) + blur — берём
+   те же значения, только меняем тон, а не убираем блюр целиком. */
 .badge-layer {
   position: absolute;
   z-index: 5;
-  background: rgba(255, 255, 255, 0.18);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(76, 82, 98, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   color: #ffffff;
   padding: clamp(8px, 0.8vw, 12px) clamp(18px, 1.5vw, 28px);
   border-radius: 40px;
@@ -996,14 +1010,25 @@
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
+/* «лицевой слой» — чуть правее, «базовый слой» — чуть левее */
 .badge-layer.top-left {
   top: 15%;
-  left: 5%;
+  left: 9%;
 }
 
 .badge-layer.bottom-right {
   bottom: 15%;
-  right: 5%;
+  right: 9%;
+}
+
+/* на третьей панели («двухслойный премиальный эко-фетр») — наоборот:
+   «лицевой слой» левее, «базовый слой» правее */
+.fetr-types-grid .fetr-type-card:nth-child(3) .badge-layer.top-left {
+  left: 1%;
+}
+
+.fetr-types-grid .fetr-type-card:nth-child(3) .badge-layer.bottom-right {
+  right: 1%;
 }
 
 @media (max-width: 960px) {

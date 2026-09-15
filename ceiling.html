@@ -32,11 +32,11 @@
          часть отступов между блоками не работала (var(--gap) без fallback)
          или уезжала на 20px (var(--gap, 20px) в sections.css) -->
     <link rel="stylesheet" href="css/variables.css" />
-    <link rel="stylesheet" href="css/styles.css?v=39" />
+    <link rel="stylesheet" href="css/styles.css?v=40" />
     <link rel="stylesheet" href="css/ceiling.css?v=1" />
     <link rel="stylesheet" href="css/base.css" />
-    <link rel="stylesheet" href="css/styles.css?v=39" />
-    <link rel="stylesheet" href="css/sections.css?v=14" />
+    <link rel="stylesheet" href="css/styles.css?v=40" />
+    <link rel="stylesheet" href="css/sections.css?v=15" />
     <link rel="stylesheet" href="css/responsive.css?v=14" />
     <link rel="stylesheet" href="css/fetr.css?v=15" />
     <link rel="stylesheet" href="css/designers.css" />
@@ -45,8 +45,8 @@
     <script src="js/home/01-header.js"></script>
     <script src="js/home/02-mobile-menu.js"></script>
     <script src="js/home/24-sticky-header-hide.js"></script>
-    <script src="js/home/main.js"></script>
-    <link rel="stylesheet" href="css/ceiling-page.css?v=17" />
+    <script src="js/home/main.js?v=2"></script>
+    <link rel="stylesheet" href="css/ceiling-page.css?v=33" />
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="css/home/06-contact-form.css" />
     <link rel="stylesheet" href="css/home/22-contact-widget.css" />
@@ -285,27 +285,29 @@
             <div class="ceil-specs-row"><span class="ceil-specs-label">вариативный размер баффла (мм)</span><span class="ceil-specs-value">от 200 x 1200 x 24</span></div>
             <div class="ceil-specs-row"><span class="ceil-specs-label">цвета</span><span class="ceil-specs-value">более 30</span></div>
             <div class="ceil-specs-row"><span class="ceil-specs-label">плотность</span><span class="ceil-specs-value">4700 г/м²</span></div>
-            <div class="ceil-specs-row"><span class="ceil-specs-label">коэффициент NRC</span><span class="ceil-specs-value">0,9</span></div>
-            <div class="ceil-specs-swap">
-              <div class="ceil-specs-swap-rows">
-                <div class="ceil-specs-row"><span class="ceil-specs-label">тип крепления</span><span class="ceil-specs-value" id="vbMountType">регулируемый тросиковый подвес</span></div>
-                <div class="ceil-specs-row ceil-specs-row--last">
-                  <span class="ceil-specs-label">световой источник</span>
-                  <span class="ceil-specs-value" id="vbLightSource">встраиваемый спот</span>
-                  <div class="ceil-spot-badge" role="button" tabindex="0" aria-label="Открыть подробнее">
-                    <div class="ceil-spot-thumb"><img id="vbSpotThumbImg" src="assets/image/ceiling/fon1.jpg" alt="Спот" /></div>
-                    <span class="ceil-plus-badge">+</span>
+            <div class="ceil-specs-swap-group">
+              <div class="ceil-specs-row"><span class="ceil-specs-label">коэффициент NRC</span><span class="ceil-specs-value">0,9</span></div>
+              <div class="ceil-specs-swap">
+                <div class="ceil-specs-swap-rows">
+                  <div class="ceil-specs-row"><span class="ceil-specs-label">тип крепления</span><span class="ceil-specs-value" id="vbMountType">регулируемый тросиковый подвес</span></div>
+                  <div class="ceil-specs-row ceil-specs-row--last">
+                    <span class="ceil-specs-label">световой источник</span>
+                    <span class="ceil-specs-value" id="vbLightSource">встраиваемый спот</span>
+                    <div class="ceil-spot-badge" role="button" tabindex="0" aria-label="Открыть подробнее">
+                      <div class="ceil-spot-thumb"><img id="vbSpotThumbImg" src="assets/image/ceiling/fon1.jpg" alt="Спот" /></div>
+                      <span class="ceil-plus-badge">+</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="ceil-specs-swap-detail">
-                <button class="ceil-specs-swap-close" aria-label="Закрыть">&times;</button>
-                <div class="ceil-specs-swap-detail-body">
-                  <div class="ceil-specs-swap-detail-text">
-                    <h4 class="ceil-specs-swap-detail-title"></h4>
-                    <div class="ceil-specs-swap-detail-specs"></div>
+                <div class="ceil-specs-swap-detail">
+                  <button class="ceil-specs-swap-close" aria-label="Закрыть">&times;</button>
+                  <div class="ceil-specs-swap-detail-body">
+                    <div class="ceil-specs-swap-detail-text">
+                      <h4 class="ceil-specs-swap-detail-title"></h4>
+                      <div class="ceil-specs-swap-detail-specs"></div>
+                    </div>
+                    <div class="ceil-specs-swap-detail-photo"><img src="" alt="" /></div>
                   </div>
-                  <div class="ceil-specs-swap-detail-photo"><img src="" alt="" /></div>
                 </div>
               </div>
             </div>
@@ -384,27 +386,29 @@
             <div class="ceil-specs-row"><span class="ceil-specs-label">диаметр/толщина (мм)</span><span class="ceil-specs-value">до 1200 / 24</span></div>
             <div class="ceil-specs-row"><span class="ceil-specs-label">цвета</span><span class="ceil-specs-value">более 30</span></div>
             <div class="ceil-specs-row"><span class="ceil-specs-label">плотность</span><span class="ceil-specs-value">4700 г/м²</span></div>
-            <div class="ceil-specs-row"><span class="ceil-specs-label">коэффициент NRC</span><span class="ceil-specs-value">0,9</span></div>
-            <div class="ceil-specs-swap">
-              <div class="ceil-specs-swap-rows">
-                <div class="ceil-specs-row"><span class="ceil-specs-label">тип крепления</span><span class="ceil-specs-value">регулируемый тросиковый подвес</span></div>
-                <div class="ceil-specs-row ceil-specs-row--last">
-                  <span class="ceil-specs-label">световой источник</span>
-                  <span class="ceil-specs-value">встраиваемый световой профиль</span>
-                  <div class="ceil-spot-badge" role="button" tabindex="0" aria-label="Открыть подробнее">
-                    <div class="ceil-spot-thumb"><img src="assets/image/ceiling/fon2.png" alt="Профиль" /></div>
-                    <span class="ceil-plus-badge">+</span>
+            <div class="ceil-specs-swap-group">
+              <div class="ceil-specs-row"><span class="ceil-specs-label">коэффициент NRC</span><span class="ceil-specs-value">0,9</span></div>
+              <div class="ceil-specs-swap">
+                <div class="ceil-specs-swap-rows">
+                  <div class="ceil-specs-row"><span class="ceil-specs-label">тип крепления</span><span class="ceil-specs-value">регулируемый тросиковый подвес</span></div>
+                  <div class="ceil-specs-row ceil-specs-row--last">
+                    <span class="ceil-specs-label">световой источник</span>
+                    <span class="ceil-specs-value">встраиваемый световой профиль</span>
+                    <div class="ceil-spot-badge" role="button" tabindex="0" aria-label="Открыть подробнее">
+                      <div class="ceil-spot-thumb"><img src="assets/image/ceiling/fon2.png" alt="Профиль" /></div>
+                      <span class="ceil-plus-badge">+</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="ceil-specs-swap-detail">
-                <button class="ceil-specs-swap-close" aria-label="Закрыть">&times;</button>
-                <div class="ceil-specs-swap-detail-body">
-                  <div class="ceil-specs-swap-detail-text">
-                    <h4 class="ceil-specs-swap-detail-title"></h4>
-                    <div class="ceil-specs-swap-detail-specs"></div>
+                <div class="ceil-specs-swap-detail">
+                  <button class="ceil-specs-swap-close" aria-label="Закрыть">&times;</button>
+                  <div class="ceil-specs-swap-detail-body">
+                    <div class="ceil-specs-swap-detail-text">
+                      <h4 class="ceil-specs-swap-detail-title"></h4>
+                      <div class="ceil-specs-swap-detail-specs"></div>
+                    </div>
+                    <div class="ceil-specs-swap-detail-photo"><img src="" alt="" /></div>
                   </div>
-                  <div class="ceil-specs-swap-detail-photo"><img src="" alt="" /></div>
                 </div>
               </div>
             </div>
@@ -482,27 +486,29 @@
             <div class="ceil-specs-row"><span class="ceil-specs-label">вариативный размер баффла (мм)</span><span class="ceil-specs-value">до 1200 x 2400 x 24</span></div>
             <div class="ceil-specs-row"><span class="ceil-specs-label">цвета</span><span class="ceil-specs-value">более 30</span></div>
             <div class="ceil-specs-row"><span class="ceil-specs-label">плотность</span><span class="ceil-specs-value">4700 г/м²</span></div>
-            <div class="ceil-specs-row"><span class="ceil-specs-label">коэффициент NRC</span><span class="ceil-specs-value">0,9</span></div>
-            <div class="ceil-specs-swap">
-              <div class="ceil-specs-swap-rows">
-                <div class="ceil-specs-row"><span class="ceil-specs-label">тип крепления</span><span class="ceil-specs-value">регулируемый тросиковый подвес</span></div>
-                <div class="ceil-specs-row ceil-specs-row--last">
-                  <span class="ceil-specs-label">световой источник</span>
-                  <span class="ceil-specs-value">встраиваемый световой профиль</span>
-                  <div class="ceil-spot-badge" role="button" tabindex="0" aria-label="Открыть подробнее">
-                    <div class="ceil-spot-thumb"><img src="assets/image/ceiling/fon2.png" alt="Профиль" /></div>
-                    <span class="ceil-plus-badge">+</span>
+            <div class="ceil-specs-swap-group">
+              <div class="ceil-specs-row"><span class="ceil-specs-label">коэффициент NRC</span><span class="ceil-specs-value">0,9</span></div>
+              <div class="ceil-specs-swap">
+                <div class="ceil-specs-swap-rows">
+                  <div class="ceil-specs-row"><span class="ceil-specs-label">тип крепления</span><span class="ceil-specs-value">регулируемый тросиковый подвес</span></div>
+                  <div class="ceil-specs-row ceil-specs-row--last">
+                    <span class="ceil-specs-label">световой источник</span>
+                    <span class="ceil-specs-value">встраиваемый световой профиль</span>
+                    <div class="ceil-spot-badge" role="button" tabindex="0" aria-label="Открыть подробнее">
+                      <div class="ceil-spot-thumb"><img src="assets/image/ceiling/fon2.png" alt="Профиль" /></div>
+                      <span class="ceil-plus-badge">+</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="ceil-specs-swap-detail">
-                <button class="ceil-specs-swap-close" aria-label="Закрыть">&times;</button>
-                <div class="ceil-specs-swap-detail-body">
-                  <div class="ceil-specs-swap-detail-text">
-                    <h4 class="ceil-specs-swap-detail-title"></h4>
-                    <div class="ceil-specs-swap-detail-specs"></div>
+                <div class="ceil-specs-swap-detail">
+                  <button class="ceil-specs-swap-close" aria-label="Закрыть">&times;</button>
+                  <div class="ceil-specs-swap-detail-body">
+                    <div class="ceil-specs-swap-detail-text">
+                      <h4 class="ceil-specs-swap-detail-title"></h4>
+                      <div class="ceil-specs-swap-detail-specs"></div>
+                    </div>
+                    <div class="ceil-specs-swap-detail-photo"><img src="" alt="" /></div>
                   </div>
-                  <div class="ceil-specs-swap-detail-photo"><img src="" alt="" /></div>
                 </div>
               </div>
             </div>

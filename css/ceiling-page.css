@@ -474,6 +474,10 @@
 .ceil-details-gallery {
   position: relative !important;
   width: 100% !important;
+  /* min-width:0 - у grid-элементов он по умолчанию auto, из-за чего
+     колонка не сжималась уже своего контента (текст в .ceil-specs-value
+     не переносился) и вылезала за пределы экрана на мобилке */
+  min-width: 0 !important;
   height: 100% !important;
   min-height: 520px !important;
   background: #2a2a2a !important;
@@ -621,6 +625,11 @@
 }
 
 .ceil-details-specs {
+  position: relative !important;
+  /* min-width:0 - у grid-элементов он по умолчанию auto, из-за чего
+     колонка не сжималась уже своего контента (текст в .ceil-specs-value
+     не переносился) и вылезала за пределы экрана на мобилке */
+  min-width: 0 !important;
   background: #ffffff !important;
   border-radius: 0 !important;
   padding: clamp(20px, 2.8vw, 40px) clamp(24px, 3.8vw, 52px) !important;
@@ -669,6 +678,16 @@
   min-width: 0 !important;
 }
 
+/* на мобилке колонка подписи (180px) вместе с круглым бейджем (44px)
+   оставляла слишком мало места для оранжевого значения - сужаем подпись
+   (она переносится на 2 строки, напр. "вариативный размер" / "баффла (мм)"),
+   освобождая ширину для текста значения рядом с фото, без переносов бейджа */
+@media (max-width: 768px) {
+  .ceil-specs-label {
+    flex-basis: 108px !important;
+  }
+}
+
 .ceil-specs-value {
   font-family: var(--t-headline-font, "TTFirsNeue", sans-serif) !important;
   font-size: clamp(15px, 1.15vw, 18px) !important;
@@ -676,6 +695,7 @@
   color: #fa4616 !important;
   text-align: left !important;
   flex: 1 1 auto !important;
+  min-width: 0 !important;
   text-transform: lowercase !important;
 }
 
@@ -732,20 +752,68 @@
   z-index: 10 !important;
 }
 
-.ceil-specs-swap { position: relative !important; }
+/* на мобилке фото/бейдж делаем чуть крупнее */
+@media (max-width: 768px) {
+  .ceil-spot-badge {
+    width: 52px !important;
+    height: 52px !important;
+  }
+
+  .ceil-spot-thumb {
+    width: 50px !important;
+    height: 50px !important;
+  }
+
+  .ceil-plus-badge {
+    width: 20px !important;
+    height: 20px !important;
+    font-size: 14px !important;
+  }
+}
+
+/* якорь для оверлея .ceil-specs-swap-detail теперь .ceil-specs-swap-group
+   (строки "коэффициент NRC" + "тип крепления" + "световой источник"),
+   а не .ceil-specs-swap (только последние 2 строки) - иначе окну не
+   хватало места по высоте и оно вылезало за нижний край блока */
+.ceil-specs-swap-group { position: relative !important; }
+
+.ceil-specs-swap { position: static !important; }
 
 .ceil-specs-swap-rows { display: flex !important; flex-direction: column !important; }
 
-.ceil-specs-swap.is-expanded .ceil-specs-swap-rows { display: none !important; }
+/* .ceil-specs-swap-rows намеренно НЕ прячем через display:none при
+   is-expanded: .ceil-specs-table распределяет строки через
+   justify-content: space-around по фиксированной (flex:1) высоте, и если
+   спрятать строки, .ceil-specs-swap-group резко "худеет", space-around
+   пересчитывает зазоры и сдвигает группу вниз, к кнопке - окно перекрывало
+   кнопку. Вместо этого прячем строки визуально под непрозрачным окном
+   (background), а само окно снизу подстраховано min-height: 100% ниже */
+
+/* раньше .ceil-specs-swap-detail был position:relative и, встав на место
+   скрытых .ceil-specs-swap-rows, растягивал .ceil-details-specs по высоте -
+   а т.к. колонки блока выровнены по stretch, это тянуло и .ceil-details-gallery
+   с фото. Теперь окно - абсолютный оверлей поверх блока (не участвует в
+   потоке), высота блока и фото больше не меняются */
 
 .ceil-specs-swap-detail {
   display: none !important;
-  position: relative !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  /* расширяем окно вправо - почти до истинного правого края .ceil-details-specs
+     (компенсируем часть его правого padding), а не только до ширины строк таблицы */
+  right: calc(-1 * clamp(14px, 2.3vw, 31px)) !important;
   background: #f2f3f6 !important;
-  border-radius: 20px !important;
-  padding: clamp(16px, 1.8vw, 26px) !important;
+  border-radius: 0 !important;
+  padding: clamp(12px, 1.3vw, 20px) !important;
   box-sizing: border-box !important;
-  width: 100% !important;
+  width: auto !important;
+  /* гарантируем полное перекрытие .ceil-specs-swap-group (строки NRC/тип
+     крепления/световой источник), даже когда в окне данных мало (спот) и
+     по своему контенту оно короче группы */
+  min-height: 100% !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18) !important;
+  z-index: 30 !important;
 }
 
 .ceil-specs-swap.is-expanded .ceil-specs-swap-detail { display: block !important; }
@@ -771,18 +839,20 @@
   display: flex !important;
   align-items: center !important;
   flex-wrap: wrap !important;
-  gap: clamp(14px, 1.8vw, 24px) !important;
+  gap: clamp(10px, 1.4vw, 18px) !important;
 }
 
 .ceil-specs-swap-detail-text { flex: 1 1 200px !important; min-width: 0 !important; }
 
 .ceil-specs-swap-detail-title {
-  font-family: var(--t-headline-font, "TTFirsNeue", sans-serif) !important;
-  font-size: clamp(15px, 1.3vw, 19px) !important;
-  font-weight: 600 !important;
-  color: #262b35 !important;
-  margin: 0 0 clamp(10px, 1.2vw, 16px) 0 !important;
-  line-height: 1.28 !important;
+  font-family: var(--t-text-font, "TTNorms", sans-serif) !important;
+  font-size: clamp(13px, 1.05vw, 16px) !important;
+  font-weight: 500 !important;
+  color: #4c5262 !important;
+  margin: 0 0 clamp(6px, 0.8vw, 10px) 0 !important;
+  line-height: 80% !important;
+  letter-spacing: -0.01em !important;
+  text-transform: lowercase !important;
   padding-right: 24px !important;
 }
 
@@ -793,17 +863,20 @@
   justify-content: space-between !important;
   align-items: baseline !important;
   gap: 10px !important;
-  padding: 7px 0 !important;
+  padding: 5px 0 !important;
   border-bottom: 1px solid #dde0e5 !important;
   font-family: var(--t-text-font, "TTNorms", sans-serif) !important;
   font-size: clamp(12px, 0.85vw, 14px) !important;
+  font-weight: 400 !important;
+  line-height: 80% !important;
+  letter-spacing: -0.01em !important;
 }
 
 .ceil-specs-swap-detail-row:last-child { border-bottom: none !important; }
 .ceil-specs-swap-detail-row span:first-child { color: #6b7280 !important; }
 .ceil-specs-swap-detail-row span:last-child {
-  color: #262b35 !important;
-  font-weight: 500 !important;
+  color: #6b7280 !important;
+  font-weight: 400 !important;
   text-align: right !important;
 }
 

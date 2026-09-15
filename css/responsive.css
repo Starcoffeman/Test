@@ -1629,10 +1629,13 @@ body {
       font-size: 24px !important;
     }
     .promo-title {
-      font-size: 50px !important;
+      /* было 50px !important - крупнее, чем на более широком мобильном
+         брейкпоинте (768px: 32px), из-за чего "персональное предложение"
+         вылезало за паддинги блока на узких экранах */
+      font-size: 36px !important;
     }
     .promo-benefits li {
-      font-size: 26px !important;
+      font-size: 22px !important;
     }
     .checkbox-group label {
       font-size: 14px !important;

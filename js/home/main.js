@@ -29,6 +29,14 @@
 
   HB.applyScale();
 
+  /* этот первый вызов идёт синхронно в <head>, до появления <body> —
+     scrollbar ещё не возник, clientWidth на ~15-17px шире итогового,
+     из-за чего --hb-zoom чуть завышен (легаси-блоки вроде hero-slider
+     на index.html оказываются растянуты неровно, с перекосом отступов
+     слева/справа). Пересчитываем ещё раз после полной загрузки, когда
+     раскладка и скроллбар уже окончательные. */
+  window.addEventListener('load', HB.applyScale);
+
   var scaleFrame = null;
   window.addEventListener('resize', function () {
     if (scaleFrame) return;

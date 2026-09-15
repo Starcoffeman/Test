@@ -12,7 +12,14 @@
 .main-footer,
 .modal-callback,
 .fab-container {
+  /* calc(1/var(--hb-zoom)) — числовая компенсация зума с body — на некоторых
+     сочетаниях реального зума браузера и --hb-zoom (масштаб макета) даёт
+     неточную компенсацию: шрифты, посчитанные из vw (.trends-title,
+     .trends-description и т.п.), рендерятся заметно крупнее, чем должны.
+     zoom: reset — штатное значение спецификации, снимает унаследованный
+     зум без арифметики и такой погрешности не даёт. */
   zoom: calc(1 / var(--hb-zoom));
+  zoom: reset;
 }
 
 .living-spaces-section .living-slider-wrapper,
@@ -497,3 +504,162 @@
 .wall-commercial-slide-1 { background-image: url("../assets/image/wall/deal.jpg"); }
 .wall-commercial-slide-2 { background-image: url("../assets/image/wall/radius-interior.png"); }
 .wall-commercial-slide-3 { background-image: url("../assets/image/wall/Img-frame_3.png"); }
+
+/* ==========================================================================
+   trends-section («мировая тенденция…») — между текстом и фото не было
+   реального зазора: расчёт flex-basis (calc(50% - 7.5px) в sections.css)
+   предполагает gap:15px, а сам .trends-section его не задавал — 15px
+   «зазора» вместо этого повисали пустым местом СПРАВА от фото. Ставим
+   единый отступ 10px между блоками и пересчитываем flex-basis под него.
+   Правки только для .trends-section — .trends-section-reverce (fetr.html)
+   не трогаем.
+   ========================================================================== */
+.trends-section {
+  gap: 10px;
+}
+
+.trends-section .trends-text-content,
+.trends-section .trends-image {
+  flex-basis: calc(50% - 5px);
+}
+
+/* шрифт в trends-text-content при ширине окна ноутбука был слишком крупным */
+.trends-title {
+  font-size: clamp(28px, 2.6vw, 64px);
+}
+
+.trends-description p {
+  font-size: clamp(14px, 1vw + 4px, 20px);
+}
+
+/* ==========================================================================
+   noise-control-section («поможем устранить шум и эхо») — приводим к
+   референсу: кнопка была сплошным белым блоком 94px высотой (fixed
+   padding:30px со всех сторон) вместо тонкой пилюли, а идле/hover-цвета
+   были перевёрнуты (белый по умолчанию, тёмный при наведении). Блок в целом
+   сделан выше (больше вертикальных отступов) — на designers.html этот же
+   класс не трогаем, правки только для .noise-control-section внутри walls.html.
+   ========================================================================== */
+.noise-control-section {
+  padding-top: clamp(40px, 4.4vw, 84px);
+  padding-bottom: clamp(48px, 5vw, 96px);
+  padding-left: clamp(14px, 2.4vw, 56px);
+  padding-right: clamp(14px, 2.4vw, 56px);
+}
+
+/* на референсе заголовок и форма прижаты к верху карточки, а вся «лишняя»
+   высота остаётся пустым полем снизу — sections.css центрирует колонки
+   (align-items: center), перебиваем на прижатие к верху.
+   Раньше высота блока набиралась через padding-bottom секции — это пустое
+   место было СНАРУЖИ ряда, форма (align-self:center) центрировалась только
+   в пределах высоты левой колонки и не «доставала» до этого запаса.
+   Теперь высота задаётся через min-height самого ряда — форма центрируется
+   уже внутри него и по-настоящему смещается ниже. */
+.noise-control-container {
+  align-items: flex-start;
+  min-height: clamp(440px, 46vw, 740px);
+}
+
+/* .reveal анимирует появление через transform:translateY(...) — пока блок
+   не «доиграл» появление (или если IntersectionObserver ещё не сработал),
+   элементы визуально стоят не на своём месте. Убираем translateY у .reveal
+   внутри этого блока — всё сразу стоит в конечном положении, анимация
+   остаётся только через opacity. */
+/* форма (телефон/галочка/кнопка) должна начинаться на уровне начала списка
+   «поможем определить источник…», а не заголовка — сама колонка стоит по
+   верху (align-self не переопределяем, наследует flex-start от контейнера),
+   а внутренний padding-top у неё в точности равен высоте заголовка (3 строки
+   × line-height 0.82) + его margin-bottom — те же clamp()-формулы, что и у
+   .noise-title, чтобы совпадение было точным на любой ширине экрана. */
+@media (min-width: 769px) {
+  .noise-form-wrapper {
+    padding-top: calc(
+      3 * 0.82 * clamp(52px, 6vw, 124px) + clamp(48px, 5vw, 112px)
+    );
+  }
+}
+
+.noise-control-section .reveal {
+  transform: none !important;
+}
+
+/* колонки 50/50 — было 1.2/1.8 (40/60), из-за чего правая часть (и кнопка
+   внутри неё) выглядела непропорционально широкой/огромной */
+.noise-info,
+.noise-form-wrapper {
+  flex: 1;
+}
+
+/* .noise-form-wrapper в sections.css — flex-row (по умолчанию), поэтому
+   .noise-success (зелёная плашка «заявка отправлена») вставала РЯДОМ с
+   формой, а не НАД ней. Нужна колонка, чтобы плашка (первая в разметке)
+   легла сверху, а форма — под ней. */
+.noise-form-wrapper {
+  flex-direction: column;
+}
+
+.noise-title {
+  font-size: clamp(52px, 6vw, 124px);
+  line-height: 0.82;
+  margin-bottom: clamp(48px, 5vw, 112px);
+}
+
+.noise-benefits li {
+  font-size: clamp(19px, 2vw, 42px);
+}
+
+.noise-control-section .input-group-dark label {
+  font-size: clamp(11px, 0.95vw, 18px);
+}
+
+.noise-control-section .input-group-dark input {
+  font-size: clamp(13px, 1.15vw, 24px);
+}
+
+.noise-control-section .checkbox-group-dark {
+  font-size: clamp(11px, 0.95vw, 18px);
+}
+
+.noise-control-section .btn-submit-grey {
+  height: auto;
+  padding: clamp(13px, 1.2vw, 22px) clamp(17px, 1.7vw, 28px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  font-weight: 500;
+  font-size: clamp(13px, 1.15vw, 24px);
+}
+
+.noise-control-section .btn-submit-grey:hover,
+.noise-control-section .btn-submit-grey:focus,
+.noise-control-section .btn-submit-grey:active {
+  background-color: #ffffff !important;
+  border-color: #ffffff !important;
+  color: var(--text) !important;
+  transform: none;
+}
+
+/* зелёная плашка успеха над формой — скрыта до сабмита (js/scripts/noise-form.js) */
+/* .consult-success на каталоге лежит на ярко-оранжевой карточке (--c-accent) —
+   тот же светлый #7fd88f там читается насыщенным. У .noise-control-section
+   карточка серо-синяя (--dark: #525965), на ней тот же цвет выглядит
+   бледнее/светлее — берём более тёмный и насыщенный оттенок зелёного, чтобы
+   плашка визуально читалась так же «густо», как на каталоге. Шрифт также
+   крупнее — 14px каталога тут смотрелись мелко на широкой колонке формы. */
+.noise-success {
+  margin-bottom: 18px;
+  padding: 26px 24px;
+  background: #3fae67;
+  font-family: var(--t-text-font);
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.5;
+  text-align: center;
+  color: #ffffff;
+}
+
+.noise-success[hidden] {
+  display: none;
+}
